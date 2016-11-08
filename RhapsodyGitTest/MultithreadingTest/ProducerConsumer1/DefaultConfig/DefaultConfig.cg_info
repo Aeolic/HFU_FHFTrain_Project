@@ -1,0 +1,105 @@
+I-Logix-RPY-Archive version 8.10.0 * 6930033
+
+- m_fileModifyTime = { IRPYRawContainer 
+	- size = 16;
+	- value = "ProducerConsumer1/DefaultConfig/Buffer.cpp" 11.8.2016::14:32:19
+	"ProducerConsumer1/DefaultConfig/Buffer.h" 11.8.2016::13:59:3
+	"ProducerConsumer1/DefaultConfig/Consumer.cpp" 11.8.2016::14:23:46
+	"ProducerConsumer1/DefaultConfig/Consumer.h" 11.8.2016::14:23:46
+	"ProducerConsumer1/DefaultConfig/Default.cpp" 11.8.2016::14:16:49
+	"ProducerConsumer1/DefaultConfig/Default.h" 11.8.2016::14:16:49
+	"ProducerConsumer1/DefaultConfig/MyThread.cpp" 11.3.2016::10:51:50
+	"ProducerConsumer1/DefaultConfig/MyThread.h" 11.3.2016::10:51:50
+	"ProducerConsumer1/DefaultConfig/ProdCon1.cpp" 11.8.2016::14:32:19
+	"ProducerConsumer1/DefaultConfig/ProdCon1.h" 11.8.2016::14:21:19
+	"ProducerConsumer1/DefaultConfig/Producer.cpp" 11.8.2016::14:14:15
+	"ProducerConsumer1/DefaultConfig/Producer.h" 11.8.2016::14:11:26
+	"ProducerConsumer1/DefaultConfig/Semaphore.cpp" 11.8.2016::13:52:28
+	"ProducerConsumer1/DefaultConfig/Semaphore.h" 11.8.2016::13:50:27
+	"ProducerConsumer1/DefaultConfig/Startup.cpp" 11.3.2016::10:51:50
+	"ProducerConsumer1/DefaultConfig/Startup.h" 11.3.2016::10:51:50
+	
+}
+- size = 9;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "Producer";
+	- _id = GUID 5a92d2db-a5ba-11e6-9d96-001999f10969;
+}
+- genTime = 11.8.2016::14:14:15;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "Startup";
+	- _id = GUID 66913b6c-a1a8-11e6-ad88-001999f1095d;
+}
+- genTime = 11.3.2016::10:51:50;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "Semaphore";
+	- _id = GUID e0d458d9-a1af-11e6-a664-001999f1095d;
+}
+- genTime = 11.8.2016::13:52:28;
+- hElement = { IHandle 
+	- _m2Class = "ISubsystem";
+	- _filename = "Default.sbs";
+	- _subsystem = "";
+	- _class = "";
+	- _name = "Default";
+	- _id = GUID b4a034a6-a1a6-11e6-ab50-001999f1095d;
+}
+- genTime = 11.8.2016::14:23:46;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "ProdCon1";
+	- _id = GUID 5a92d3da-a5ba-11e6-9d96-001999f10969;
+}
+- genTime = 11.8.2016::14:32:19;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "Consumer";
+	- _id = GUID a15bf91d-a5bd-11e6-85f6-001999f10969;
+}
+- genTime = 11.8.2016::14:23:46;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "Buffer";
+	- _id = GUID 04d37b5b-a5b5-11e6-9dc6-001999f10969;
+}
+- genTime = 11.8.2016::14:32:19;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "MyThread";
+	- _id = GUID b4a036af-a1a6-11e6-ab50-001999f1095d;
+}
+- genTime = 11.3.2016::10:51:50;
+- hElement = { IHandle 
+	- _m2Class = "ICodeGenConfigInfo";
+	- _filename = "ProducerConsumer1.cmp";
+	- _subsystem = "";
+	- _class = "";
+	- _name = "ProducerConsumer1/DefaultConfig";
+	- _id = GUID 809c76ee-a1ad-11e6-b19a-001999f1095d;
+}
+- genTime = 11.8.2016::14:34:45;
+
