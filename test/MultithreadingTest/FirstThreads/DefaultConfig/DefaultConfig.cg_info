@@ -1,0 +1,39 @@
+I-Logix-RPY-Archive version 8.10.0 * 6930033
+
+- m_fileModifyTime = { IRPYRawContainer 
+	- size = 4;
+	- value = "FirstThreads/DefaultConfig/MyThread.cpp" 11.3.2016::10:8:44
+	"FirstThreads/DefaultConfig/MyThread.h" 11.3.2016::9:54:37
+	"FirstThreads/DefaultConfig/Startup.cpp" 11.3.2016::10:8:44
+	"FirstThreads/DefaultConfig/Startup.h" 11.3.2016::10:0:36
+	
+}
+- size = 3;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "Startup";
+	- _id = GUID 66913b6c-a1a8-11e6-ad88-001999f1095d;
+}
+- genTime = 11.3.2016::10:8:44;
+- hElement = { IHandle 
+	- _m2Class = "ICodeGenConfigInfo";
+	- _filename = "FirstThreads.cmp";
+	- _subsystem = "";
+	- _class = "";
+	- _name = "FirstThreads/DefaultConfig";
+	- _id = GUID b4a034b2-a1a6-11e6-ab50-001999f1095d;
+}
+- genTime = 11.3.2016::10:8:44;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "MyThread";
+	- _id = GUID b4a036af-a1a6-11e6-ab50-001999f1095d;
+}
+- genTime = 11.3.2016::10:8:44;
+
