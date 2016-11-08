@@ -1,0 +1,78 @@
+I-Logix-RPY-Archive version 8.10.0 C++ 6930033
+{ ISubsystem 
+	- _id = GUID 2297dc03-953d-11e6-a0b4-901b0e891207;
+	- _myState = 8192;
+	- _name = "Default";
+	- _modifiedTimeWeak = 10.18.2016::14:27:17;
+	- _lastID = 1;
+	- weakCGTime = 10.18.2016::14:27:17;
+	- strongCGTime = 1.2.1990::0:0:0;
+	- _defaultComposite = GUID 2297dc04-953d-11e6-a0b4-901b0e891207;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 2;
+		- value = 
+		{ IClass 
+			- _id = GUID 2297dc04-953d-11e6-a0b4-901b0e891207;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _modifiedTimeWeak = 1.2.1990::0:0:0;
+			- weakCGTime = 1.2.1990::0:0:0;
+			- strongCGTime = 1.2.1990::0:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID 2297dd31-953d-11e6-a0b4-901b0e891207;
+			- _myState = 8192;
+			- _name = "Hello";
+			- _modifiedTimeWeak = 10.18.2016::14:29:48;
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Model1";
+				- _id = GUID 2297dc52-953d-11e6-a0b4-901b0e891207;
+			}
+			- weakCGTime = 10.18.2016::14:29:48;
+			- strongCGTime = 10.18.2016::14:27:32;
+			- Operations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IConstructor 
+					- _id = GUID 2297dd3b-953d-11e6-a0b4-901b0e891207;
+					- _myState = 8192;
+					- _modifiedTimeWeak = 10.18.2016::14:29:48;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "";
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "cout << \"Hello World\" << endl;";
+					}
+					- _initializer = "";
+				}
+			}
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 1.1.1970::1:0:0;
+}
+
