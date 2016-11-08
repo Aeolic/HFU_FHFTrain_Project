@@ -3,8 +3,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID b4a034a6-a1a6-11e6-ab50-001999f1095d;
 	- _myState = 8192;
 	- _name = "Default";
-	- _modifiedTimeWeak = 11.8.2016::14:39:0;
-	- _lastID = 7;
+	- _modifiedTimeWeak = 11.8.2016::16:58:51;
+	- _lastID = 8;
 	- Declaratives = { IRPYRawContainer 
 		- size = 1;
 		- value = 
@@ -13,10 +13,10 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID 66913cfd-a1a8-11e6-ad88-001999f1095d;
 		}
 	}
-	- weakCGTime = 11.8.2016::14:39:0;
+	- weakCGTime = 11.8.2016::16:58:51;
 	- strongCGTime = 1.2.1990::0:0:0;
 	- AssociationElements = { IRPYRawContainer 
-		- size = 2;
+		- size = 3;
 		- value = 
 		{ IAssociationClass 
 			- _id = GUID 44e3f845-a5b6-11e6-8664-001999f10969;
@@ -62,18 +62,40 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID 44e3f891-a5b6-11e6-8664-001999f10969;
 			}
 		}
+		{ IAssociationClass 
+			- _id = GUID 80bc43a1-a5d4-11e6-828a-001999f10969;
+			- _myState = 8192;
+			- _name = "asd";
+			- _modifiedTimeWeak = 1.2.1990::0:0:0;
+			- weakCGTime = 1.2.1990::0:0:0;
+			- strongCGTime = 1.2.1990::0:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+			- _isClass = 0;
+			- m_end1 = { IHandle 
+				- _m2Class = "IAssociationEnd";
+				- _id = GUID 80bc4399-a5d4-11e6-828a-001999f10969;
+			}
+			- m_end2 = { IHandle 
+				- _m2Class = "IAssociationEnd";
+				- _id = GUID 80bc43a0-a5d4-11e6-828a-001999f10969;
+			}
+		}
 	}
 	- _defaultComposite = GUID b4a034a7-a1a6-11e6-ab50-001999f1095d;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
-		- size = 8;
+		- size = 9;
 		- value = 
 		{ IClass 
 			- _id = GUID b4a034a7-a1a6-11e6-ab50-001999f1095d;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 11.3.2016::10:52:22;
-			- weakCGTime = 11.3.2016::10:52:22;
+			- _modifiedTimeWeak = 11.8.2016::14:39:0;
+			- weakCGTime = 11.8.2016::14:39:0;
 			- strongCGTime = 1.2.1990::0:0:0;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -1580,7 +1602,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					}
 				}
 			}
-			- _modifiedTimeWeak = 11.8.2016::13:52:23;
+			- _modifiedTimeWeak = 11.8.2016::16:58:51;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -1590,7 +1612,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID e0d4588b-a1af-11e6-a664-001999f1095d;
 			}
 			- _lastID = 10;
-			- weakCGTime = 11.8.2016::13:52:23;
+			- weakCGTime = 11.8.2016::16:58:51;
 			- strongCGTime = 11.3.2016::10:27:33;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -1750,15 +1772,12 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 					- _isConstant = 0;
 				}
 			}
-			- ComponentFiles = { IRPYRawContainer 
-				- size = 0;
-			}
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
 			}
 			- Associations = { IRPYRawContainer 
-				- size = 2;
+				- size = 3;
 				- value = 
 				{ IAssociationEnd 
 					- _id = GUID 44e3f844-a5b6-11e6-8664-001999f10969;
@@ -1802,6 +1821,28 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 					- m_associationClass = { IHandle 
 						- _m2Class = "IAssociationClass";
 						- _id = GUID 44e3f892-a5b6-11e6-8664-001999f10969;
+					}
+				}
+				{ IAssociationEnd 
+					- _id = GUID 80bc43a0-a5d4-11e6-828a-001999f10969;
+					- _myState = 10240;
+					- _name = "itsNeueklasseJurek";
+					- _modifiedTimeWeak = 11.8.2016::16:58:51;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _id = GUID 80bc4319-a5d4-11e6-828a-001999f10969;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID 80bc4399-a5d4-11e6-828a-001999f10969;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = NonNavigable;
+					- m_associationClass = { IHandle 
+						- _m2Class = "IAssociationClass";
+						- _id = GUID 80bc43a1-a5d4-11e6-828a-001999f10969;
 					}
 				}
 			}
@@ -2075,9 +2116,6 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 					- _isConstant = 0;
 				}
 			}
-			- ComponentFiles = { IRPYRawContainer 
-				- size = 0;
-			}
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
@@ -2330,7 +2368,7 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 						}
 					}
 					- _version = 11.8.2016::15:1:2;
-					- _baseVersion = 1.1.1970::1:0:0;
+					- _baseVersion = 1.2.1990::0:0:0;
 					- _diagram = GUID 5a92d2e4-a5ba-11e6-9d96-001999f10969;
 					- Views = { IRPYRawContainer 
 						- size = 1;
@@ -2865,7 +2903,7 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 			- _id = GUID a15bf91d-a5bd-11e6-85f6-001999f10969;
 			- _myState = 8192;
 			- _name = "Consumer";
-			- _modifiedTimeWeak = 11.8.2016::14:23:44;
+			- _modifiedTimeWeak = 11.8.2016::16:59:8;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -2875,7 +2913,7 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 				- _id = GUID e0d4588b-a1af-11e6-a664-001999f1095d;
 			}
 			- _lastID = 5;
-			- weakCGTime = 11.8.2016::14:23:44;
+			- weakCGTime = 11.8.2016::16:59:8;
 			- strongCGTime = 11.8.2016::14:18:2;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -2982,9 +3020,9 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 					- _id = GUID a15bfbad-a5bd-11e6-85f6-001999f10969;
 					- _myState = 10240;
 					- _name = "statechart_2";
-					- _modifiedTimeWeak = 11.8.2016::14:23:44;
+					- _modifiedTimeWeak = 11.8.2016::16:59:8;
 					- _lastID = 6;
-					- weakCGTime = 11.8.2016::14:23:44;
+					- weakCGTime = 11.8.2016::16:59:8;
 					- strongCGTime = 11.8.2016::14:18:2;
 					- _multiplicity = "";
 					- _itsStateChart = { IHandle 
@@ -3042,16 +3080,16 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 							- _id = GUID d2776cbb-a5be-11e6-a742-001999f10969;
 							- _myState = 2048;
 							- _name = "transition_5";
-							- _modifiedTimeWeak = 11.8.2016::14:23:44;
+							- _modifiedTimeWeak = 11.8.2016::16:59:8;
 							- _itsLabel = { ILabel 
 								- _id = GUID d2776cbd-a5be-11e6-a742-001999f10969;
-								- _modifiedTimeWeak = 11.8.2016::14:23:44;
+								- _modifiedTimeWeak = 11.8.2016::16:59:8;
 								- _itsTrigger = { ITimeout 
 									- _id = GUID d2776cbe-a5be-11e6-a742-001999f10969;
-									- _modifiedTimeWeak = 1.2.1990::0:0:0;
-									- _body = "tm(7000);";
+									- _modifiedTimeWeak = 11.8.2016::16:59:8;
+									- _body = "tm(5000)";
 									- _info = "";
-									- _time = "7000";
+									- _time = "5000";
 								}
 								- _itsGuard = NULL;
 								- _itsAction = NULL;
@@ -3085,8 +3123,8 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 							- _defaultTrans = ;
 						}
 					}
-					- _version = 11.8.2016::15:23:44;
-					- _baseVersion = 1.1.1970::1:0:0;
+					- _version = 11.8.2016::17:59:8;
+					- _baseVersion = 1.2.1990::0:0:0;
 					- _diagram = GUID a15bfbae-a5bd-11e6-85f6-001999f10969;
 					- Views = { IRPYRawContainer 
 						- size = 1;
@@ -3162,8 +3200,8 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 								}
 							}
 							- _name = "statechartdiagram_0";
-							- _modifiedTimeWeak = 11.8.2016::14:23:1;
-							- _lastModifiedTime = "11.8.2016::14:23:44";
+							- _modifiedTimeWeak = 11.8.2016::16:59:8;
+							- _lastModifiedTime = "11.8.2016::16:59:8";
 							- _graphicChart = { CGIStateChart 
 								- _id = GUID a15bfbb0-a5bd-11e6-85f6-001999f10969;
 								- m_type = 0;
@@ -3545,7 +3583,7 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 									- m_targetType = 'T';
 									- m_direction = ' ';
 									- m_rpn = { CGIText 
-										- m_str = "tm(7000)";
+										- m_str = "tm(5000)";
 										- m_style = "Arial" 10 0 0 0 1 ;
 										- m_color = { IColor 
 											- m_fgColor = 0;
@@ -3611,6 +3649,53 @@ cout << \"Semaphore mit Value: \" << startValue << \" wurde erstellt.\" << endl;
 					- _linkName = "";
 					- _linkType = Assoc;
 					- _navigability = Navigable;
+				}
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID 80bc4319-a5d4-11e6-828a-001999f10969;
+			- _myState = 8192;
+			- _name = "NeueklasseJurek";
+			- _modifiedTimeWeak = 11.8.2016::16:58:51;
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "ProducerConsumer1";
+				- _id = GUID e0d4588b-a1af-11e6-a664-001999f1095d;
+			}
+			- weakCGTime = 11.8.2016::16:58:51;
+			- strongCGTime = 11.8.2016::16:58:41;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID 80bc4399-a5d4-11e6-828a-001999f10969;
+					- _myState = 10240;
+					- _name = "itsSemaphore";
+					- _modifiedTimeWeak = 11.8.2016::16:58:51;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _id = GUID e0d458d9-a1af-11e6-a664-001999f1095d;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID 80bc43a0-a5d4-11e6-828a-001999f10969;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+					- m_associationClass = { IHandle 
+						- _m2Class = "IAssociationClass";
+						- _id = GUID 80bc43a1-a5d4-11e6-828a-001999f10969;
+					}
 				}
 			}
 			- _classModifier = Unspecified;

@@ -66,8 +66,8 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 2;
-				- m_showCmd = 3;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -4;
@@ -87,15 +87,15 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 				- _id = GUID 5a92d2e4-a5ba-11e6-9d96-001999f10969;
 			}
 			- _UpLeft = 0 30 ;
-			- _DownRight = 1510 802 ;
+			- _DownRight = 1362 353 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 1;
 		}
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 0;
-				- m_showCmd = 1;
+				- m_nFlags = 2;
+				- m_showCmd = 3;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -4;
@@ -115,12 +115,12 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 				- _id = GUID e0d4588b-a1af-11e6-a664-001999f1095d;
 			}
 			- _UpLeft = 136 10 ;
-			- _DownRight = 1458 374 ;
+			- _DownRight = 1646 782 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 2;
 		}
 	}
-	- _fullName = "/user0/oberhaus/MultithreadingTest/MultithreadingTest";
+	- _fullName = "/user0/oberhaus/gitzeug/HFU_FHFTrain_Project/test/MultithreadingTest/MultithreadingTest";
 	- m_SearchScopeList = { IRPYRawContainer 
 		- size = 0;
 	}
