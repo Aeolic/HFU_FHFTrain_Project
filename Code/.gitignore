@@ -28,5 +28,6 @@
 *.out
 *.app
 
-# Dumme Rhapsody Dateien
+# Files for rhapsody
 core
+*.log
