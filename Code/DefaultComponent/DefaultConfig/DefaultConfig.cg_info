@@ -40,7 +40,7 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 	- _name = "DefaultComponent/DefaultConfig";
 	- _id = GUID c5285cb9-ab39-11e6-89be-001999f109b4;
 }
-- genTime = 11.21.2016::10:45:0;
+- genTime = 11.21.2016::10:49:15;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Default.sbs";
