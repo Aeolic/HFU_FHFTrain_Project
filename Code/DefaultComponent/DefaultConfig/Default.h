@@ -23,6 +23,9 @@ class ServerSocket;
 class Socket;
 
 //## auto_generated
+class SocketException;
+
+//## auto_generated
 class class_1;
 
 //## classInstance object_0

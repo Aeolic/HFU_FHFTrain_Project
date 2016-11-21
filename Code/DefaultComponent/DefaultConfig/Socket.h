@@ -29,6 +29,8 @@
 #include <oxf/oxf.h>
 //## auto_generated
 #include "Default.h"
+//## auto_generated
+#include <string>
 //## dependency std
 using namespace std;
 

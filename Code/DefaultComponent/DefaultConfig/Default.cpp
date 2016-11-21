@@ -20,6 +20,8 @@
 #include "ServerSocket.h"
 //## auto_generated
 #include "Socket.h"
+//## auto_generated
+#include "SocketException.h"
 //## package Default
 
 

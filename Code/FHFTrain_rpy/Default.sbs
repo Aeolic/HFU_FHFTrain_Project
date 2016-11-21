@@ -2,9 +2,34 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 { ISubsystem 
 	- _id = GUID c5285cb1-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
+	- _properties = { IPropertyContainer 
+		- Subjects = { IRPYRawContainer 
+			- size = 1;
+			- value = 
+			{ IPropertySubject 
+				- _Name = "CPP_CG";
+				- Metaclasses = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertyMetaclass 
+						- _Name = "Class";
+						- Properties = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IProperty 
+								- _Name = "SpecIncludes";
+								- _Value = "<string>";
+								- _Type = String;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	- _name = "Default";
-	- _modifiedTimeWeak = 11.21.2016::10:10:58;
-	- _lastID = 6;
+	- _modifiedTimeWeak = 11.21.2016::10:44:57;
+	- _lastID = 7;
 	- Declaratives = { IRPYRawContainer 
 		- size = 1;
 		- value = 
@@ -13,19 +38,19 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID 1605d717-ab3b-11e6-a452-001999f109b4;
 		}
 	}
-	- weakCGTime = 11.21.2016::10:10:58;
-	- strongCGTime = 11.15.2016::13:50:16;
+	- weakCGTime = 11.21.2016::10:44:57;
+	- strongCGTime = 11.21.2016::10:44:57;
 	- _defaultComposite = GUID c5285cb2-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
-		- size = 5;
+		- size = 6;
 		- value = 
 		{ IClass 
 			- _id = GUID c5285cb2-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 11.15.2016::14:26:5;
-			- weakCGTime = 11.15.2016::14:26:5;
+			- _modifiedTimeWeak = 11.21.2016::10:10:58;
+			- weakCGTime = 11.21.2016::10:10:58;
 			- strongCGTime = 11.15.2016::13:50:16;
 			- Attrs = { IRPYRawContainer 
 				- size = 3;
@@ -238,7 +263,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- _filename = "";
 							- _subsystem = "";
 							- _class = "";
-							- _name = "Model1";
+							- _name = "FHFTrainModel";
 							- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 						}
 						- weakCGTime = 11.15.2016::13:50:16;
@@ -263,7 +288,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _filename = "";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "Model1";
+				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- weakCGTime = 11.15.2016::13:50:22;
@@ -359,7 +384,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _filename = "";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "Model1";
+				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- weakCGTime = 11.15.2016::13:57:19;
@@ -3561,7 +3586,7 @@ else
 				- _filename = "";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "Model1";
+				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- weakCGTime = 11.15.2016::14:1:51;
@@ -4602,7 +4627,7 @@ return *this;";
 				- _filename = "";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "Model1";
+				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- weakCGTime = 11.15.2016::14:1:46;
@@ -5630,6 +5655,160 @@ return *this;";
 				- _m2Class = "";
 			}
 			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID a60dc8a8-afd3-11e6-b0ac-001999f109b4;
+			- _myState = 8192;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "CPP_CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Class";
+								- Properties = { IRPYRawContainer 
+									- size = 2;
+									- value = 
+									{ IProperty 
+										- _Name = "ImpIncludes";
+										- _Value = "<iostream>";
+										- _Type = String;
+									}
+									{ IProperty 
+										- _Name = "SpecIncludes";
+										- _Value = "<string>";
+										- _Type = String;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _name = "SocketException";
+			- _modifiedTimeWeak = 11.21.2016::10:43:33;
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FHFTrainModel";
+				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
+			}
+			- _lastID = 2;
+			- weakCGTime = 11.21.2016::10:43:33;
+			- strongCGTime = 11.21.2016::10:40:29;
+			- Operations = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IConstructor 
+					- _id = GUID a60dc8c0-afd3-11e6-b0ac-001999f109b4;
+					- _myState = 8192;
+					- _modifiedTimeWeak = 11.21.2016::10:43:33;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IArgument 
+							- _id = GUID a60dc8bc-afd3-11e6-b0ac-001999f109b4;
+							- _myState = 8192;
+							- _name = "s";
+							- _modifiedTimeWeak = 11.21.2016::10:35:13;
+							- myTypeOf = { IType 
+								- _id = GUID a60dcaff-afd3-11e6-b0ac-001999f109b4;
+								- _myState = 8192;
+								- _modifiedTimeWeak = 1.2.1990::0:0:0;
+								- _declaration = "std::string";
+								- _kind = Language;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "";
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "m_s = s;";
+					}
+					- _initializer = "";
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID a60dc8c9-afd3-11e6-b0ac-001999f109b4;
+					- _myState = 8192;
+					- _name = "description";
+					- _modifiedTimeWeak = 11.21.2016::10:35:30;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- myReturnType = { IType 
+						- _id = GUID a60dcb01-afd3-11e6-b0ac-001999f109b4;
+						- _myState = 8192;
+						- _modifiedTimeWeak = 1.2.1990::0:0:0;
+						- _declaration = "std::string";
+						- _kind = Language;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "return m_s;";
+					}
+				}
+			}
+			- Attrs = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAttribute 
+					- _id = GUID a60dc8d0-afd3-11e6-b0ac-001999f109b4;
+					- _myState = 8192;
+					- _name = "m_s";
+					- _modifiedTimeWeak = 11.21.2016::10:33:46;
+					- myTypeOf = { IType 
+						- _id = GUID a60dca42-afd3-11e6-b0ac-001999f109b4;
+						- _myState = 8192;
+						- _modifiedTimeWeak = 1.2.1990::0:0:0;
+						- _declaration = "std::string";
+						- _kind = Language;
+					}
+					- _isOrdered = 0;
+					- _protection = iPrivate;
+					- _static = 0;
+					- _isReference = 0;
+					- _isConstant = 0;
+				}
+			}
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- Types = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IType 
+			- _id = GUID a60dca27-afd3-11e6-b0ac-001999f109b4;
+			- _myState = 8192;
+			- _name = "Str";
+			- _modifiedTimeWeak = 11.21.2016::10:31:43;
+			- _declaration = "";
+			- _kind = Language;
 		}
 	}
 	- _configurationRelatedTime = 11.15.2016::14:26:5;

@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "FHFTrain";
-	- _modifiedTimeWeak = 11.21.2016::10:18:6;
+	- _modifiedTimeWeak = 11.21.2016::10:25:26;
 	- _lastID = 2;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -277,7 +277,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 			- _name = "FHFTrainModel";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "11.21.2016::10:18:6";
+			- _lastModifiedTime = "11.21.2016::10:32:56";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 				- m_type = 0;
@@ -301,7 +301,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				}
 				- m_drawBehavior = 0;
 				- m_bIsPreferencesInitialized = 0;
-				- elementList = 9;
+				- elementList = 10;
 				{ CGIClass 
 					- _id = GUID c5285cbf-ab39-11e6-89be-001999f109b4;
 					- m_type = 78;
@@ -592,7 +592,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.434372 0 0 0.327986 848.131 557.093 ;
+					- m_transform = 0.434372 0 0 0.344029 775.131 553.815 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -627,7 +627,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "m_addr";
@@ -635,7 +635,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "m_sock";
@@ -654,7 +654,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IDestructor";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "~Socket()";
@@ -662,7 +662,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "accept(Socket) const";
@@ -670,7 +670,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "bind(int)";
@@ -678,7 +678,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "connect(const std::string,int)";
@@ -686,7 +686,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "create()";
@@ -694,7 +694,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "is_valid() const";
@@ -702,7 +702,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "listen() const";
@@ -710,7 +710,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "recv(std::string &) const";
@@ -718,7 +718,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "send(const std::string) const";
@@ -726,7 +726,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Default.sbs";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "set_non_blocking(bool)";
@@ -738,7 +738,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "Socket()";
-									- _id = GUID 99ef2e83-ab3a-11e6-9cc8-001999f109b4;
+									- _id = GUID 112b0e16-ab3c-11e6-923e-001999f109b4;
 								}
 							}
 						}
@@ -920,7 +920,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2152;
-					- m_transform = 0.305949 0 0 0.2959 1496.39 580.649 ;
+					- m_transform = 0.305949 0 0 0.2959 1253.39 583.649 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -1081,7 +1081,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "";
+									- _filename = "Pi.sbs";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "PiSpeakerThread(int)";
@@ -1089,7 +1089,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Pi.sbs";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "startServer(int)";
@@ -1201,7 +1201,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "";
+									- _filename = "Pi.sbs";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "PiAlgorithm()";
@@ -1209,7 +1209,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Pi.sbs";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "doInfinite()";
@@ -1399,6 +1399,154 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 8;
 					}
 					- m_specificType = type_122;
+				}
+				{ CGIClass 
+					- _id = GUID a60dc8a5-afd3-11e6-b0ac-001999f109b4;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 2;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "General";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Graphics";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "FitBoxToItsTextuals";
+												- _Value = "False";
+												- _Type = Bool;
+											}
+										}
+									}
+								}
+							}
+							{ IPropertySubject 
+								- _Name = "ObjectModelGe";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Class";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "Compartments";
+												- _Value = "";
+												- _Type = MultiLine;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- m_type = 87;
+					- m_pModelObject = { IHandle 
+						- _m2Class = "IClass";
+						- _filename = "Default.sbs";
+						- _subsystem = "Default";
+						- _class = "";
+						- _name = "SocketException";
+						- _id = GUID a60dc8a8-afd3-11e6-b0ac-001999f109b4;
+					}
+					- m_pParent = GUID c5285cbf-ab39-11e6-89be-001999f109b4;
+					- m_name = { CGIText 
+						- m_str = "SocketException";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 5;
+					}
+					- m_drawBehavior = 2056;
+					- m_transform = 0.235127 0 0 0.283422 1620.53 582.754 ;
+					- m_bIsPreferencesInitialized = 1;
+					- m_AdditionalLabel = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 1;
+					}
+					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
+					- m_nNameFormat = 0;
+					- m_nIsNameFormat = 0;
+					- frameset = "<frameset rows=50%,50%>
+<frame name=AttributeListCompartment>
+<frame name=OperationListCompartment>";
+					- Compartments = { IRPYRawContainer 
+						- size = 2;
+						- value = 
+						{ CGICompartment 
+							- _id = GUID a60dc8a6-afd3-11e6-b0ac-001999f109b4;
+							- m_name = "Attribute";
+							- m_displayOption = Explicit;
+							- m_bShowInherited = 0;
+							- m_bOrdered = 0;
+							- Items = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IHandle 
+									- _m2Class = "IAttribute";
+									- _filename = "Default.sbs";
+									- _subsystem = "Default";
+									- _class = "SocketException";
+									- _name = "m_s";
+									- _id = GUID a60dc8d0-afd3-11e6-b0ac-001999f109b4;
+								}
+							}
+						}
+						{ CGICompartment 
+							- _id = GUID a60dc8a7-afd3-11e6-b0ac-001999f109b4;
+							- m_name = "Operation";
+							- m_displayOption = Explicit;
+							- m_bShowInherited = 0;
+							- m_bOrdered = 0;
+							- Items = { IRPYRawContainer 
+								- size = 2;
+								- value = 
+								{ IHandle 
+									- _m2Class = "IConstructor";
+									- _filename = "Default.sbs";
+									- _subsystem = "Default";
+									- _class = "SocketException";
+									- _name = "SocketException(std::string)";
+									- _id = GUID a60dc8c0-afd3-11e6-b0ac-001999f109b4;
+								}
+								{ IHandle 
+									- _m2Class = "IPrimitiveOperation";
+									- _filename = "Default.sbs";
+									- _subsystem = "Default";
+									- _class = "SocketException";
+									- _name = "description()";
+									- _id = GUID a60dc8c9-afd3-11e6-b0ac-001999f109b4;
+								}
+							}
+						}
+					}
+					- Attrs = { IRPYRawContainer 
+						- size = 0;
+					}
+					- Operations = { IRPYRawContainer 
+						- size = 0;
+					}
 				}
 				
 				- m_access = 'Z';
