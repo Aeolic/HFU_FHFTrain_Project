@@ -22,6 +22,8 @@
 #include "Socket.h"
 //## auto_generated
 #include "SocketException.h"
+//## auto_generated
+#include "startUpClass.h"
 //## package Default
 
 

@@ -28,8 +28,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		}
 	}
 	- _name = "Default";
-	- _modifiedTimeWeak = 11.21.2016::10:44:57;
-	- _lastID = 7;
+	- _modifiedTimeWeak = 11.21.2016::14:21:19;
+	- _lastID = 8;
 	- Declaratives = { IRPYRawContainer 
 		- size = 1;
 		- value = 
@@ -38,20 +38,20 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID 1605d717-ab3b-11e6-a452-001999f109b4;
 		}
 	}
-	- weakCGTime = 11.21.2016::10:44:57;
+	- weakCGTime = 11.21.2016::14:21:19;
 	- strongCGTime = 11.21.2016::10:44:57;
 	- _defaultComposite = GUID c5285cb2-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
-		- size = 6;
+		- size = 7;
 		- value = 
 		{ IClass 
 			- _id = GUID c5285cb2-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 11.21.2016::10:10:58;
-			- weakCGTime = 11.21.2016::10:10:58;
-			- strongCGTime = 11.15.2016::13:50:16;
+			- _modifiedTimeWeak = 11.21.2016::10:44:57;
+			- weakCGTime = 11.21.2016::10:44:57;
+			- strongCGTime = 11.21.2016::10:44:57;
 			- Attrs = { IRPYRawContainer 
 				- size = 3;
 				- value = 
@@ -5795,6 +5795,121 @@ return *this;";
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID eebec949-aff4-11e6-b590-001999f109b4;
+			- _myState = 8192;
+			- _name = "startUpClass";
+			- _modifiedTimeWeak = 11.21.2016::14:21:19;
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FHFTrainModel";
+				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
+			}
+			- weakCGTime = 11.21.2016::14:21:19;
+			- strongCGTime = 11.21.2016::14:18:1;
+			- Operations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IConstructor 
+					- _id = GUID eebeca7f-aff4-11e6-b590-001999f109b4;
+					- _myState = 8192;
+					- _modifiedTimeWeak = 11.21.2016::14:21:19;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "";
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "                          itsPiAlgorithm = new PiAlgorithm();
+                          itsTrainThread = new TrainThread();";
+					}
+					- _initializer = "";
+				}
+			}
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 3;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID eebec9bb-aff4-11e6-b590-001999f109b4;
+					- _myState = 10240;
+					- _name = "itsPiAlgorithm";
+					- _modifiedTimeWeak = 11.21.2016::14:18:8;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _filename = "Pi.sbs";
+						- _subsystem = "Pi";
+						- _class = "";
+						- _name = "PiAlgorithm";
+						- _id = GUID 4a5bf3df-ab3e-11e6-ad2c-001999f109b4;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID eebeca2a-aff4-11e6-b590-001999f109b4;
+					- _myState = 10240;
+					- _name = "itsTrainListenerThread";
+					- _modifiedTimeWeak = 11.21.2016::14:18:13;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _filename = "Train.sbs";
+						- _subsystem = "Train";
+						- _class = "";
+						- _name = "TrainListenerThread";
+						- _id = GUID 55d87e27-afed-11e6-879e-001999f109b4;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID eebeca72-aff4-11e6-b590-001999f109b4;
+					- _myState = 10240;
+					- _name = "itsTrainThread";
+					- _modifiedTimeWeak = 11.21.2016::14:19:26;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _filename = "Train.sbs";
+						- _subsystem = "Train";
+						- _class = "";
+						- _name = "TrainThread";
+						- _id = GUID 19e801c1-aff2-11e6-9d64-001999f109b4;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
 			}
 			- _classModifier = Unspecified;
 		}

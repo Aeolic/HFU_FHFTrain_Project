@@ -31,6 +31,9 @@ class class_1;
 //## classInstance object_0
 class object_0_C;
 
+//## auto_generated
+class startUpClass;
+
 //## package Default
 
 

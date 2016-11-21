@@ -1,28 +1,43 @@
 I-Logix-RPY-Archive version 8.10.0 * 6930033
 
 - m_fileModifyTime = { IRPYRawContainer 
-	- size = 18;
+	- size = 24;
 	- value = "DefaultComponent/DefaultConfig/ClientSocket.cpp" 11.21.2016::10:35:34
 	"DefaultComponent/DefaultConfig/ClientSocket.h" 11.21.2016::10:45:0
-	"DefaultComponent/DefaultConfig/Default.cpp" 11.21.2016::10:35:34
-	"DefaultComponent/DefaultConfig/Default.h" 11.21.2016::10:35:34
-	"DefaultComponent/DefaultConfig/PiAlgorithm.cpp" 11.21.2016::10:35:34
-	"DefaultComponent/DefaultConfig/PiAlgorithm.h" 11.21.2016::10:35:34
-	"DefaultComponent/DefaultConfig/PiSpeakerThread.cpp" 11.21.2016::10:35:34
-	"DefaultComponent/DefaultConfig/PiSpeakerThread.h" 11.21.2016::10:35:34
+	"DefaultComponent/DefaultConfig/Default.cpp" 11.21.2016::14:21:56
+	"DefaultComponent/DefaultConfig/Default.h" 11.21.2016::14:21:56
+	"DefaultComponent/DefaultConfig/PiAlgorithm.cpp" 11.21.2016::14:28:46
+	"DefaultComponent/DefaultConfig/PiAlgorithm.h" 11.21.2016::14:21:56
+	"DefaultComponent/DefaultConfig/PiSpeakerThread.cpp" 11.21.2016::14:28:46
+	"DefaultComponent/DefaultConfig/PiSpeakerThread.h" 11.21.2016::13:55:3
 	"DefaultComponent/DefaultConfig/ServerSocket.cpp" 11.21.2016::10:35:34
 	"DefaultComponent/DefaultConfig/ServerSocket.h" 11.21.2016::10:45:0
 	"DefaultComponent/DefaultConfig/Socket.cpp" 11.21.2016::10:11:55
 	"DefaultComponent/DefaultConfig/Socket.h" 11.21.2016::10:45:0
 	"DefaultComponent/DefaultConfig/SocketException.cpp" 11.21.2016::10:43:36
 	"DefaultComponent/DefaultConfig/SocketException.h" 11.21.2016::10:40:33
+	"DefaultComponent/DefaultConfig/TrainListenerThread.cpp" 11.21.2016::14:33:0
+	"DefaultComponent/DefaultConfig/TrainListenerThread.h" 11.21.2016::14:12:40
+	"DefaultComponent/DefaultConfig/TrainThread.cpp" 11.21.2016::14:33:0
+	"DefaultComponent/DefaultConfig/TrainThread.h" 11.21.2016::14:21:56
 	"DefaultComponent/DefaultConfig/class_1.cpp" 11.21.2016::10:35:34
 	"DefaultComponent/DefaultConfig/class_1.h" 11.21.2016::10:44:59
 	"DefaultComponent/DefaultConfig/object_0.cpp" 11.21.2016::10:35:34
 	"DefaultComponent/DefaultConfig/object_0.h" 11.21.2016::10:45:0
+	"DefaultComponent/DefaultConfig/startUpClass.cpp" 11.21.2016::14:21:56
+	"DefaultComponent/DefaultConfig/startUpClass.h" 11.21.2016::14:21:56
 	
 }
-- size = 10;
+- size = 13;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Train.sbs";
+	- _subsystem = "Train";
+	- _class = "";
+	- _name = "TrainThread";
+	- _id = GUID 19e801c1-aff2-11e6-9d64-001999f109b4;
+}
+- genTime = 11.21.2016::14:33:0;
 - hElement = { IHandle 
 	- _m2Class = "ISubsystem";
 	- _filename = "Default.sbs";
@@ -31,7 +46,7 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 	- _name = "Default";
 	- _id = GUID c5285cb1-ab39-11e6-89be-001999f109b4;
 }
-- genTime = 11.21.2016::10:45:0;
+- genTime = 11.21.2016::14:21:56;
 - hElement = { IHandle 
 	- _m2Class = "ICodeGenConfigInfo";
 	- _filename = "DefaultComponent.cmp";
@@ -40,7 +55,7 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 	- _name = "DefaultComponent/DefaultConfig";
 	- _id = GUID c5285cb9-ab39-11e6-89be-001999f109b4;
 }
-- genTime = 11.21.2016::10:49:15;
+- genTime = 11.21.2016::14:33:0;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Default.sbs";
@@ -59,6 +74,15 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 	- _id = GUID c5285cca-ab39-11e6-89be-001999f109b4;
 }
 - genTime = 11.21.2016::10:45:0;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "startUpClass";
+	- _id = GUID eebec949-aff4-11e6-b590-001999f109b4;
+}
+- genTime = 11.21.2016::14:21:56;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Default.sbs";
@@ -94,7 +118,7 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 	- _name = "PiAlgorithm";
 	- _id = GUID 4a5bf3df-ab3e-11e6-ad2c-001999f109b4;
 }
-- genTime = 11.21.2016::10:35:34;
+- genTime = 11.21.2016::14:28:46;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Pi.sbs";
@@ -103,7 +127,16 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 	- _name = "PiSpeakerThread";
 	- _id = GUID 28d19ffc-ab3d-11e6-8526-001999f109b4;
 }
-- genTime = 11.21.2016::10:45:0;
+- genTime = 11.21.2016::14:28:46;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Train.sbs";
+	- _subsystem = "Train";
+	- _class = "";
+	- _name = "TrainListenerThread";
+	- _id = GUID 55d87e27-afed-11e6-879e-001999f109b4;
+}
+- genTime = 11.21.2016::14:33:0;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Default.sbs";
