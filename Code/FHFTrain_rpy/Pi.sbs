@@ -1,0 +1,1170 @@
+I-Logix-RPY-Archive version 8.10.0 C++ 6930033
+{ ISubsystem 
+	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
+	- _myState = 8192;
+	- _name = "Pi";
+	- _modifiedTimeWeak = 11.21.2016::10:10:58;
+	- _theMainDiagram = { IHandle 
+		- _m2Class = "IDiagram";
+		- _filename = "";
+		- _subsystem = "";
+		- _class = "";
+		- _name = "Model1";
+		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
+	}
+	- _lastID = 3;
+	- weakCGTime = 11.21.2016::10:10:58;
+	- strongCGTime = 11.15.2016::13:50:47;
+	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 3;
+		- value = 
+		{ IClass 
+			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _modifiedTimeWeak = 11.15.2016::14:26:5;
+			- weakCGTime = 11.15.2016::14:26:5;
+			- strongCGTime = 11.15.2016::13:50:47;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID 4a5bf3df-ab3e-11e6-ad2c-001999f109b4;
+			- _myState = 8192;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Class";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "Concurrency";
+										- _Value = "active";
+										- _Type = Enum;
+										- _ExtraTypeInfo = "sequential,active";
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _name = "PiAlgorithm";
+			- _modifiedTimeWeak = 11.15.2016::14:40:20;
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Model1";
+				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
+			}
+			- _lastID = 1;
+			- weakCGTime = 11.15.2016::14:40:20;
+			- strongCGTime = 11.15.2016::14:25:29;
+			- Operations = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IConstructor 
+					- _id = GUID 4a5bf3f6-ab3e-11e6-ad2c-001999f109b4;
+					- _myState = 8192;
+					- _modifiedTimeWeak = 11.15.2016::14:39:41;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "";
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "                                                   itsPiSpeakerThread = new PiSpeakerThread(8080);     
+                                                   doInfinite();";
+					}
+					- _initializer = "";
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID 4a5bf3fb-ab3e-11e6-ad2c-001999f109b4;
+					- _myState = 8192;
+					- _name = "doInfinite";
+					- _modifiedTimeWeak = 11.15.2016::14:40:20;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "               while(true){  
+               cout << \"Vor sleep\" << endl;
+               sleep(5);
+               cout << \"Die Main tut was.\" << endl;
+               }";
+					}
+				}
+			}
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID 4a5bf48c-ab3e-11e6-ad2c-001999f109b4;
+					- _myState = 10240;
+					- _name = "itsPiSpeakerThread";
+					- _modifiedTimeWeak = 11.15.2016::14:25:46;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _id = GUID 28d19ffc-ab3d-11e6-8526-001999f109b4;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID 28d19ffc-ab3d-11e6-8526-001999f109b4;
+			- _myState = 8192;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Class";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "Concurrency";
+										- _Value = "active";
+										- _Type = Enum;
+										- _ExtraTypeInfo = "sequential,active";
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _name = "PiSpeakerThread";
+			- Dependencies = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IDependency 
+					- _id = GUID e8d498a8-ab3d-11e6-8f9a-001999f109b4;
+					- _myState = 2048;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 2;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "CG";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Dependency";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "UsageType";
+												- _Value = "Specification";
+												- _Type = Enum;
+												- _ExtraTypeInfo = "Specification,Implementation,Existence";
+											}
+										}
+									}
+								}
+							}
+							{ IPropertySubject 
+								- _Name = "CPP_CG";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Dependency";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "UseNameSpace";
+												- _Value = "True";
+												- _Type = Bool;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- _name = "std";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "Usage";
+							- _id = GUID 42aa4325-6112-4e88-87ce-66008878f1db;
+						}
+					}
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "ISubsystem";
+						- _filename = "std.sbs";
+						- _subsystem = "Default";
+						- _class = "";
+						- _name = "std";
+						- _id = GUID 1605d717-ab3b-11e6-a452-001999f109b4;
+					}
+				}
+				{ IDependency 
+					- _id = GUID c3e4f7ba-ab3f-11e6-a110-001999f109b4;
+					- _myState = 2048;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "CG";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Dependency";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "UsageType";
+												- _Value = "Implementation";
+												- _Type = Enum;
+												- _ExtraTypeInfo = "Specification,Implementation,Existence";
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- _name = "ServerSocket";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "Usage";
+							- _id = GUID 42aa4325-6112-4e88-87ce-66008878f1db;
+						}
+					}
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "IClass";
+						- _filename = "Default.sbs";
+						- _subsystem = "Default";
+						- _class = "";
+						- _name = "ServerSocket";
+						- _id = GUID 6c6b7340-ab3b-11e6-94dc-001999f109b4;
+					}
+				}
+			}
+			- _modifiedTimeWeak = 11.15.2016::14:41:16;
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Model1";
+				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
+			}
+			- _lastID = 1;
+			- weakCGTime = 11.15.2016::14:41:16;
+			- strongCGTime = 11.15.2016::14:26:5;
+			- Operations = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IConstructor 
+					- _id = GUID 4a5bf3ce-ab3e-11e6-ad2c-001999f109b4;
+					- _myState = 8192;
+					- _modifiedTimeWeak = 11.15.2016::14:35:3;
+					- _lastID = 1;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IArgument 
+							- _id = GUID 4a5bf3d7-ab3e-11e6-ad2c-001999f109b4;
+							- _myState = 8192;
+							- _name = "port";
+							- _modifiedTimeWeak = 11.15.2016::14:22:21;
+							- _typeOf = { IHandle 
+								- _m2Class = "IType";
+								- _filename = "PredefinedTypesC++.sbs";
+								- _subsystem = "PredefinedTypesCpp";
+								- _class = "";
+								- _name = "int";
+								- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "";
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "                   cout << \"PiSpeakerThread wurde aufgerufen.\" << endl;
+                  	startServer(port);";
+					}
+					- _initializer = "";
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID c3e4f431-ab3f-11e6-a110-001999f109b4;
+					- _myState = 8192;
+					- _name = "startServer";
+					- _modifiedTimeWeak = 11.15.2016::14:41:16;
+					- _lastID = 1;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IArgument 
+							- _id = GUID c3e4f43a-ab3f-11e6-a110-001999f109b4;
+							- _myState = 8192;
+							- _name = "i_port";
+							- _modifiedTimeWeak = 11.15.2016::14:34:43;
+							- _typeOf = { IHandle 
+								- _m2Class = "IType";
+								- _filename = "PredefinedTypesC++.sbs";
+								- _subsystem = "PredefinedTypesCpp";
+								- _class = "";
+								- _name = "int";
+								- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "//#[ operation startServer(int)
+                     try{
+                     
+                     
+                     ServerSocket server(i_port);
+                       cout << \"Server mit dem Port \" << i_port << \" wurde gestartet.\" << endl;
+                     while(true){
+                     ServerSocket new_sock;
+                     server.accept (new_sock);
+                     try{
+                     while(true){
+                     std::string data;
+                     data = \"test\";
+                     new_sock << data;
+                     cout << \"Data wurde gesendet.\" << endl;
+                     }
+                     }
+                     catch (SocketException&){}
+                     }
+                     }
+                     catch (SocketException& e)
+                     {
+                     cout << \" Excption was caught:\" << e.description() << endl;
+                     }";
+					}
+				}
+			}
+			- ComponentFiles = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IFile 
+					- _id = GUID c3e4f6f8-ab3f-11e6-a110-001999f109b4;
+					- _myState = 139264;
+					- _name = "PiSpeakerThread";
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- m_path = "";
+					- m_type = specFile;
+					- Fragments = { IRPYRawContainer 
+						- size = 4;
+						- value = 
+						{ IFileFragment 
+							- _id = GUID c3e4f75b-ab3f-11e6-a110-001999f109b4;
+							- _name = "oxf:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency oxf:spec";
+							- m_startRow = 15;
+							- m_startCol_Short = 1;
+							- m_endRow = 15;
+							- m_endCol_Short = 21;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID c3e4f75e-ab3f-11e6-a110-001999f109b4;
+							- _name = "omthread:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency omthread:spec";
+							- m_startRow = 17;
+							- m_startCol_Short = 1;
+							- m_endRow = 17;
+							- m_endCol_Short = 26;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID c3e4f715-ab3f-11e6-a110-001999f109b4;
+							- _name = "std";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = specFragment;
+							- m_text = "";
+							- m_startRow = 22;
+							- m_startCol_Short = 1;
+							- m_endRow = 22;
+							- m_endCol_Short = 1;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IDependency";
+								- _id = GUID e8d498a8-ab3d-11e6-8f9a-001999f109b4;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID c3e4f701-ab3f-11e6-a110-001999f109b4;
+							- _name = "PiSpeakerThread";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- Tags = { IRPYRawContainer 
+								- size = 2;
+								- value = 
+								{ ITag 
+									- _id = GUID c3e4f717-ab3f-11e6-a110-001999f109b4;
+									- _myState = 8192;
+									- _name = "BodyStartLine";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- ValueSpecifications = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ ILiteralSpecification 
+											- _id = GUID c3e4f718-ab3f-11e6-a110-001999f109b4;
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- _value = "30";
+										}
+									}
+									- _typeOf = { IHandle 
+										- _m2Class = "IType";
+										- _filename = "PredefinedTypes.sbs";
+										- _subsystem = "PredefinedTypes";
+										- _class = "";
+										- _name = "RhpString";
+										- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+									}
+									- _isOrdered = 0;
+								}
+								{ ITag 
+									- _id = GUID c3e4f719-ab3f-11e6-a110-001999f109b4;
+									- _myState = 8192;
+									- _name = "BodyStartCol";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- ValueSpecifications = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ ILiteralSpecification 
+											- _id = GUID c3e4f71a-ab3f-11e6-a110-001999f109b4;
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- _value = "41";
+										}
+									}
+									- _typeOf = { IHandle 
+										- _m2Class = "IType";
+										- _filename = "PredefinedTypes.sbs";
+										- _subsystem = "PredefinedTypes";
+										- _class = "";
+										- _name = "RhpString";
+										- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+									}
+									- _isOrdered = 0;
+								}
+							}
+							- m_type = specFragment;
+							- m_text = "";
+							- m_startRow = 30;
+							- m_startCol_Short = 1;
+							- m_endRow = 48;
+							- m_endCol_Short = 1;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IClass";
+								- _id = GUID 28d19ffc-ab3d-11e6-8526-001999f109b4;
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 6;
+								- value = 
+								{ IFileFragment 
+									- _id = GUID c3e4f764-ab3f-11e6-a110-001999f109b4;
+									- _name = "////    Constructors and destructors    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Constructors and destructors    ////
+";
+									- m_startRow = 31;
+									- m_startCol_Short = 5;
+									- m_endRow = 31;
+									- m_endCol_Short = 49;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID c3e4f707-ab3f-11e6-a110-001999f109b4;
+									- _name = "PiSpeakerThread";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 36;
+									- m_startCol_Short = 5;
+									- m_endRow = 36;
+									- m_endCol_Short = 30;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IConstructor";
+										- _id = GUID 4a5bf3ce-ab3e-11e6-ad2c-001999f109b4;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID c3e4f70b-ab3f-11e6-a110-001999f109b4;
+									- _name = "PiSpeakerThread:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation PiSpeakerThread():spec";
+									- m_startRow = 39;
+									- m_startCol_Short = 5;
+									- m_endRow = 39;
+									- m_endCol_Short = 22;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID c3e4f70e-ab3f-11e6-a110-001999f109b4;
+									- _name = "~PiSpeakerThread:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation ~PiSpeakerThread():spec";
+									- m_startRow = 42;
+									- m_startCol_Short = 6;
+									- m_endRow = 42;
+									- m_endCol_Short = 23;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID c3e4f765-ab3f-11e6-a110-001999f109b4;
+									- _name = "////    Operations    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Operations    ////
+";
+									- m_startRow = 44;
+									- m_startCol_Short = 5;
+									- m_endRow = 44;
+									- m_endCol_Short = 31;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID c3e4f713-ab3f-11e6-a110-001999f109b4;
+									- _name = "startServer";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 47;
+									- m_startCol_Short = 10;
+									- m_endRow = 47;
+									- m_endCol_Short = 33;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IPrimitiveOperation";
+										- _id = GUID c3e4f431-ab3f-11e6-a110-001999f109b4;
+									}
+								}
+							}
+						}
+					}
+				}
+				{ IFile 
+					- _id = GUID c3e4f733-ab3f-11e6-a110-001999f109b4;
+					- _myState = 139264;
+					- _name = "PiSpeakerThread";
+					- Dependencies = { IRPYRawContainer 
+						- size = 2;
+						- value = 
+						{ IDependency 
+							- _id = GUID 068211a9-ab41-11e6-8f94-001999f109b4;
+							- _myState = 2048;
+							- _properties = { IPropertyContainer 
+								- Subjects = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertySubject 
+										- _Name = "CG";
+										- Metaclasses = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IPropertyMetaclass 
+												- _Name = "Dependency";
+												- Properties = { IRPYRawContainer 
+													- size = 1;
+													- value = 
+													{ IProperty 
+														- _Name = "UsageType";
+														- _Value = "Implementation";
+														- _Type = Enum;
+														- _ExtraTypeInfo = "Specification,Implementation,Existence";
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							- _name = "SocketException";
+							- Stereotypes = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IHandle 
+									- _m2Class = "IStereotype";
+									- _filename = "PredefinedTypes.sbs";
+									- _subsystem = "PredefinedTypes";
+									- _class = "";
+									- _name = "Usage";
+									- _id = GUID 42aa4325-6112-4e88-87ce-66008878f1db;
+								}
+							}
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- _dependsOn = { INObjectHandle 
+								- _m2Class = "IFile";
+								- _filename = "DefaultComponent.cmp";
+								- _subsystem = "";
+								- _class = "";
+								- _name = "DefaultComponent/Files/SocketException";
+								- _id = GUID 6c6b73bf-ab3b-11e6-94dc-001999f109b4;
+							}
+						}
+						{ IDependency 
+							- _id = GUID 06821384-ab41-11e6-8f94-001999f109b4;
+							- _myState = 2048;
+							- _properties = { IPropertyContainer 
+								- Subjects = { IRPYRawContainer 
+									- size = 2;
+									- value = 
+									{ IPropertySubject 
+										- _Name = "CG";
+										- Metaclasses = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IPropertyMetaclass 
+												- _Name = "Dependency";
+												- Properties = { IRPYRawContainer 
+													- size = 1;
+													- value = 
+													{ IProperty 
+														- _Name = "UsageType";
+														- _Value = "Implementation";
+														- _Type = Enum;
+														- _ExtraTypeInfo = "Specification,Implementation,Existence";
+													}
+												}
+											}
+										}
+									}
+									{ IPropertySubject 
+										- _Name = "CPP_CG";
+										- Metaclasses = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IPropertyMetaclass 
+												- _Name = "Dependency";
+												- Properties = { IRPYRawContainer 
+													- size = 1;
+													- value = 
+													{ IProperty 
+														- _Name = "IncludeStyle";
+														- _Value = "AngleBrackets";
+														- _Type = Enum;
+														- _ExtraTypeInfo = "Default,Quotes,AngleBrackets";
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							- _name = "string";
+							- Stereotypes = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IHandle 
+									- _m2Class = "IStereotype";
+									- _filename = "PredefinedTypes.sbs";
+									- _subsystem = "PredefinedTypes";
+									- _class = "";
+									- _name = "Usage";
+									- _id = GUID 42aa4325-6112-4e88-87ce-66008878f1db;
+								}
+							}
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- _dependsOn = { INObjectHandle 
+								- _m2Class = "IFile";
+								- _filename = "DefaultComponent.cmp";
+								- _subsystem = "";
+								- _class = "";
+								- _name = "DefaultComponent/Files/string";
+								- _id = GUID 99ef2e5a-ab3a-11e6-9cc8-001999f109b4;
+							}
+						}
+					}
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- m_path = "";
+					- m_type = implFile;
+					- Fragments = { IRPYRawContainer 
+						- size = 6;
+						- value = 
+						{ IFileFragment 
+							- _id = GUID c3e4f751-ab3f-11e6-a110-001999f109b4;
+							- _name = "PiSpeakerThread:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency PiSpeakerThread:spec";
+							- m_startRow = 12;
+							- m_startCol_Short = 1;
+							- m_endRow = 12;
+							- m_endCol_Short = 29;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID c3e4f754-ab3f-11e6-a110-001999f109b4;
+							- _name = "iostream:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency iostream:spec";
+							- m_startRow = 14;
+							- m_startCol_Short = 1;
+							- m_endRow = 14;
+							- m_endCol_Short = 20;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID c3e4f757-ab3f-11e6-a110-001999f109b4;
+							- _name = "ServerSocket";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = specFragment;
+							- m_text = "";
+							- m_startRow = 16;
+							- m_startCol_Short = 1;
+							- m_endRow = 16;
+							- m_endCol_Short = 26;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IDependency";
+								- _id = GUID c3e4f7ba-ab3f-11e6-a110-001999f109b4;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID 068211ae-ab41-11e6-8f94-001999f109b4;
+							- _name = "SocketException";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = specFragment;
+							- m_text = "";
+							- m_startRow = 18;
+							- m_startCol_Short = 1;
+							- m_endRow = 18;
+							- m_endCol_Short = 29;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IDependency";
+								- _id = GUID 068211a9-ab41-11e6-8f94-001999f109b4;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID 0682138a-ab41-11e6-8f94-001999f109b4;
+							- _name = "string";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = specFragment;
+							- m_text = "";
+							- m_startRow = 20;
+							- m_startCol_Short = 1;
+							- m_endRow = 20;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IDependency";
+								- _id = GUID 06821384-ab41-11e6-8f94-001999f109b4;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID c3e4f734-ab3f-11e6-a110-001999f109b4;
+							- _name = "PiSpeakerThread";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = implFragment;
+							- m_text = "";
+							- m_startRow = 23;
+							- m_startCol_Short = 18;
+							- m_endRow = 23;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IClass";
+								- _id = GUID 28d19ffc-ab3d-11e6-8526-001999f109b4;
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 4;
+								- value = 
+								{ IFileFragment 
+									- _id = GUID c3e4f735-ab3f-11e6-a110-001999f109b4;
+									- _name = "PiSpeakerThread";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID c3e4f736-ab3f-11e6-a110-001999f109b4;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID c3e4f737-ab3f-11e6-a110-001999f109b4;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "23";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID c3e4f738-ab3f-11e6-a110-001999f109b4;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID c3e4f739-ab3f-11e6-a110-001999f109b4;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "44";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = implFragment;
+									- m_text = "";
+									- m_startRow = 23;
+									- m_startCol_Short = 18;
+									- m_endRow = 28;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IConstructor";
+										- _id = GUID 4a5bf3ce-ab3e-11e6-ad2c-001999f109b4;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID c3e4f73b-ab3f-11e6-a110-001999f109b4;
+									- _name = "PiSpeakerThread:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID c3e4f73c-ab3f-11e6-a110-001999f109b4;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID c3e4f73d-ab3f-11e6-a110-001999f109b4;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "30";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID c3e4f73e-ab3f-11e6-a110-001999f109b4;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID c3e4f73f-ab3f-11e6-a110-001999f109b4;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "36";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation PiSpeakerThread():impl";
+									- m_startRow = 30;
+									- m_startCol_Short = 18;
+									- m_endRow = 31;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID c3e4f741-ab3f-11e6-a110-001999f109b4;
+									- _name = "~PiSpeakerThread:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID c3e4f742-ab3f-11e6-a110-001999f109b4;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID c3e4f743-ab3f-11e6-a110-001999f109b4;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "33";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID c3e4f744-ab3f-11e6-a110-001999f109b4;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID c3e4f745-ab3f-11e6-a110-001999f109b4;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "37";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation ~PiSpeakerThread():impl";
+									- m_startRow = 33;
+									- m_startCol_Short = 19;
+									- m_endRow = 34;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID c3e4f74a-ab3f-11e6-a110-001999f109b4;
+									- _name = "startServer";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID c3e4f74b-ab3f-11e6-a110-001999f109b4;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID c3e4f74c-ab3f-11e6-a110-001999f109b4;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "36";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID c3e4f74d-ab3f-11e6-a110-001999f109b4;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID c3e4f74e-ab3f-11e6-a110-001999f109b4;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "47";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = implFragment;
+									- m_text = "";
+									- m_startRow = 36;
+									- m_startCol_Short = 47;
+									- m_endRow = 63;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IPrimitiveOperation";
+										- _id = GUID c3e4f431-ab3f-11e6-a110-001999f109b4;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 11.15.2016::13:57:19;
+}
+

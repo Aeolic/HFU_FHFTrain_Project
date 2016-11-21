@@ -1,0 +1,30 @@
+I-Logix-RPY-Archive version 8.10.0 * 6930033
+
+- m_fileModifyTime = { IRPYRawContainer 
+	- size = 4;
+	- value = "DefaultComponent/DefaultConfig/Default.cpp" 11.21.2016::10:11:55
+	"DefaultComponent/DefaultConfig/Default.h" 11.21.2016::10:11:55
+	"DefaultComponent/DefaultConfig/Socket.cpp" 11.21.2016::10:11:55
+	"DefaultComponent/DefaultConfig/Socket.h" 11.21.2016::10:11:55
+	
+}
+- size = 2;
+- hElement = { IHandle 
+	- _m2Class = "ISubsystem";
+	- _filename = "Default.sbs";
+	- _subsystem = "";
+	- _class = "";
+	- _name = "Default";
+	- _id = GUID c5285cb1-ab39-11e6-89be-001999f109b4;
+}
+- genTime = 11.21.2016::10:11:55;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "Socket";
+	- _id = GUID 99ef2d1c-ab3a-11e6-9cc8-001999f109b4;
+}
+- genTime = 11.21.2016::10:11:55;
+
