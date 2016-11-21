@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "FHFTrain";
-	- _modifiedTimeWeak = 11.21.2016::10:25:26;
+	- _modifiedTimeWeak = 11.21.2016::11:22:39;
 	- _lastID = 2;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -277,7 +277,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 			- _name = "FHFTrainModel";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "11.21.2016::10:32:56";
+			- _lastModifiedTime = "11.21.2016::11:22:39";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 				- m_type = 0;
@@ -627,7 +627,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "m_addr";
@@ -635,7 +635,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "m_sock";
@@ -654,7 +654,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IDestructor";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "~Socket()";
@@ -662,7 +662,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "accept(Socket) const";
@@ -670,7 +670,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "bind(int)";
@@ -678,7 +678,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "connect(const std::string,int)";
@@ -686,7 +686,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "create()";
@@ -694,7 +694,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "is_valid() const";
@@ -702,7 +702,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "listen() const";
@@ -710,7 +710,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "recv(std::string &) const";
@@ -718,7 +718,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "send(const std::string) const";
@@ -726,7 +726,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "set_non_blocking(bool)";
@@ -734,7 +734,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "Socket";
 									- _name = "Socket()";
@@ -1077,7 +1077,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
 							- Items = { IRPYRawContainer 
-								- size = 2;
+								- size = 3;
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
@@ -1094,6 +1094,14 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _class = "PiSpeakerThread";
 									- _name = "startServer(int)";
 									- _id = GUID c3e4f431-ab3f-11e6-a110-001999f109b4;
+								}
+								{ IHandle 
+									- _m2Class = "IPrimitiveOperation";
+									- _filename = "Pi.sbs";
+									- _subsystem = "Pi";
+									- _class = "PiSpeakerThread";
+									- _name = "sendOrderToTrain(std::string)";
+									- _id = GUID 9f5d45bc-afda-11e6-a2e0-001999f109b4;
 								}
 							}
 						}
@@ -1201,7 +1209,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "PiAlgorithm()";
@@ -1209,7 +1217,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "doInfinite()";
@@ -1505,7 +1513,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "SocketException";
 									- _name = "m_s";
@@ -1524,7 +1532,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "SocketException";
 									- _name = "SocketException(std::string)";
@@ -1532,7 +1540,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "SocketException";
 									- _name = "description()";
