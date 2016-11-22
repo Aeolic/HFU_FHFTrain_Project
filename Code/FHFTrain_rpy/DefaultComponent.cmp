@@ -462,62 +462,6 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				}
 			}
 			{ IFile 
-				- _id = GUID 6c6b73bf-ab3b-11e6-94dc-001999f109b4;
-				- _myState = 139264;
-				- _properties = { IPropertyContainer 
-					- Subjects = { IRPYRawContainer 
-						- size = 2;
-						- value = 
-						{ IPropertySubject 
-							- _Name = "CG";
-							- Metaclasses = { IRPYRawContainer 
-								- size = 1;
-								- value = 
-								{ IPropertyMetaclass 
-									- _Name = "File";
-									- Properties = { IRPYRawContainer 
-										- size = 1;
-										- value = 
-										{ IProperty 
-											- _Name = "AddToMakefile";
-											- _Value = "False";
-											- _Type = Bool;
-										}
-									}
-								}
-							}
-						}
-						{ IPropertySubject 
-							- _Name = "CPP_CG";
-							- Metaclasses = { IRPYRawContainer 
-								- size = 1;
-								- value = 
-								{ IPropertyMetaclass 
-									- _Name = "File";
-									- Properties = { IRPYRawContainer 
-										- size = 1;
-										- value = 
-										{ IProperty 
-											- _Name = "Generate";
-											- _Value = "False";
-											- _Type = Enum;
-											- _ExtraTypeInfo = "True, False, Specification, Implementation";
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				- _name = "SocketException";
-				- _modifiedTimeWeak = 1.2.1990::0:0:0;
-				- m_path = "";
-				- m_type = specFile;
-				- Fragments = { IRPYRawContainer 
-					- size = 0;
-				}
-			}
-			{ IFile 
 				- _id = GUID d6cb65f5-ab3c-11e6-8514-001999f109b4;
 				- _myState = 139264;
 				- _properties = { IPropertyContainer 
@@ -739,6 +683,67 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					}
 				}
 				- _name = "SocketExeception";
+				- _modifiedTimeWeak = 1.2.1990::0:0:0;
+				- m_path = "";
+				- m_type = specFile;
+				- Fragments = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			{ IFile 
+				- _id = GUID 553a5369-b0b6-11e6-96a6-10604b8125e9;
+				- _myState = 139264;
+				- _properties = { IPropertyContainer 
+					- Subjects = { IRPYRawContainer 
+						- size = 2;
+						- value = 
+						{ IPropertySubject 
+							- _Name = "CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ IProperty 
+											- _Name = "AddToMakefile";
+											- _Value = "False";
+											- _Type = Bool;
+										}
+										{ IProperty 
+											- _Name = "SpecExtension";
+											- _Value = " ";
+											- _Type = String;
+										}
+									}
+								}
+							}
+						}
+						{ IPropertySubject 
+							- _Name = "CPP_CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IProperty 
+											- _Name = "Generate";
+											- _Value = "False";
+											- _Type = Enum;
+											- _ExtraTypeInfo = "True, False, Specification, Implementation";
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				- _name = "sstream";
 				- _modifiedTimeWeak = 1.2.1990::0:0:0;
 				- m_path = "";
 				- m_type = specFile;
