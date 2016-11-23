@@ -30,8 +30,8 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _UpLeft = 391 7 ;
-			- _DownRight = 1335 717 ;
+			- _UpLeft = 154 -13 ;
+			- _DownRight = 1437 693 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 0;
 		}

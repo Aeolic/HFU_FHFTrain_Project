@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 11.23.2016::11:6:44;
+	- _modifiedTimeWeak = 11.23.2016::11:11:16;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 3;
-	- weakCGTime = 11.23.2016::11:6:44;
+	- weakCGTime = 11.23.2016::11:11:16;
 	- strongCGTime = 11.15.2016::13:50:47;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -150,7 +150,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.23.2016::11:8:41;
+			- _modifiedTimeWeak = 11.23.2016::11:20:12;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -160,7 +160,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 1;
-			- weakCGTime = 11.23.2016::11:8:41;
+			- weakCGTime = 11.23.2016::11:20:12;
 			- strongCGTime = 11.21.2016::12:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -168,7 +168,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				{ IConstructor 
 					- _id = GUID 4a5bf3f6-ab3e-11e6-ad2c-001999f109b4;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 11.23.2016::10:50:9;
+					- _modifiedTimeWeak = 11.23.2016::11:15:23;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -184,7 +184,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _constant = 0;
 					- _itsBody = { IBody 
 						- _bodyData = "cout << \"PI ERSTELLT.\" << endl;
-itsPiSpeakerThread = new PiSpeakerThread(8080);  
+itsPiSpeakerThread = new PiSpeakerThread(8080);
+itsPiListenerThread = new PiListenerThread(\"localhost\", 8081);  
 cout << \"TEST Constructor\" << endl;   
 start();              
                                                   ";
@@ -195,7 +196,7 @@ start();
 					- _id = GUID 4a5bf3fb-ab3e-11e6-ad2c-001999f109b4;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 11.23.2016::10:30:24;
+					- _modifiedTimeWeak = 11.23.2016::11:20:12;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -215,14 +216,13 @@ start();
 					- _constant = 0;
 					- _itsBody = { IBody 
 						- _bodyData = "               int i = 1;
-               stringstream ss;
                while(true){  
                
                sleep(5);
                cout << \"PI: Ich berechne etwas.\" << endl;
+               stringstream ss;
                ss << i;
-               string str = ss.str();
-               itsPiSpeakerThread->sendOrderToTrain(\"Fahre an Bahnhof \" + str);
+               itsPiSpeakerThread->sendOrderToTrain(\"Fahre an Bahnhof \" + ss.str());
                ++i;
                }";
 					}
@@ -1209,7 +1209,7 @@ start();
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.23.2016::10:31:37;
+			- _modifiedTimeWeak = 11.23.2016::11:13:51;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -1219,7 +1219,7 @@ start();
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 7;
-			- weakCGTime = 11.23.2016::10:31:37;
+			- weakCGTime = 11.23.2016::11:13:51;
 			- strongCGTime = 11.21.2016::12:7:35;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -1272,7 +1272,7 @@ start();
 					- _id = GUID c3e4f431-ab3f-11e6-a110-001999f109b4;
 					- _myState = 8192;
 					- _name = "startServer";
-					- _modifiedTimeWeak = 11.23.2016::10:25:26;
+					- _modifiedTimeWeak = 11.23.2016::11:13:51;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -1301,20 +1301,20 @@ do
 	{   
 		error = false;
 		server = new ServerSocket(i_port);
-		std::cout << \"Server mit Port \" << i_port << \" gestartet.\" << std::endl;
+		std::cout << \"Pi Server mit Port \" << i_port << \" gestartet.\" << std::endl;
 		new_sock = new ServerSocket();
 		server->accept(*new_sock);
 	}
 	catch (SocketException& e)
 	{
-		std::cout << \"Error in startServer: \" << e.description() << std::endl;
+		std::cout << \"Error in Pi startServer: \" << e.description() << std::endl;
 		error = true;
 		delete server;
 		delete new_sock;
 	}
 	catch (...)
 	{
-	    std::cout << \"Unexpected Error in startServer()\" << std::endl;
+	    std::cout << \"Unexpected Error in Pi startServer()\" << std::endl;
 	}
 } while (error);";
 					}
@@ -1418,7 +1418,7 @@ while (error);";
 					- _id = GUID 7c87a803-afee-11e6-86f0-001999f109b4;
 					- _myState = 8192;
 					- _name = "i_port";
-					- _modifiedTimeWeak = 11.21.2016::13:45:51;
+					- _modifiedTimeWeak = 11.23.2016::11:11:16;
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -1428,7 +1428,7 @@ while (error);";
 						- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
 					}
 					- _isOrdered = 0;
-					- _protection = iPublic;
+					- _protection = iPrivate;
 					- _static = 0;
 					- _isReference = 0;
 					- _isConstant = 0;
@@ -1477,7 +1477,7 @@ while (error);";
 					- _id = GUID c3e4f6f8-ab3f-11e6-a110-001999f109b4;
 					- _myState = 139264;
 					- _name = "PiSpeakerThread";
-					- _modifiedTimeWeak = 11.22.2016::12:40:48;
+					- _modifiedTimeWeak = 11.23.2016::11:11:16;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -1544,7 +1544,7 @@ while (error);";
 						{ IFileFragment 
 							- _id = GUID c3e4f701-ab3f-11e6-a110-001999f109b4;
 							- _name = "PiSpeakerThread";
-							- _modifiedTimeWeak = 11.22.2016::12:40:48;
+							- _modifiedTimeWeak = 11.23.2016::11:11:16;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 
@@ -1759,7 +1759,7 @@ while (error);";
 								{ IFileFragment 
 									- _id = GUID 8f7420db-aff1-11e6-bf26-001999f109b4;
 									- _name = "i_port";
-									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- _modifiedTimeWeak = 11.23.2016::11:11:16;
 									- m_type = specFragment;
 									- m_text = "";
 									- m_startRow = 69;
@@ -1855,7 +1855,7 @@ while (error);";
 							}
 						}
 					}
-					- _modifiedTimeWeak = 11.22.2016::12:40:48;
+					- _modifiedTimeWeak = 11.23.2016::11:11:16;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -1922,7 +1922,7 @@ while (error);";
 						{ IFileFragment 
 							- _id = GUID c3e4f734-ab3f-11e6-a110-001999f109b4;
 							- _name = "PiSpeakerThread";
-							- _modifiedTimeWeak = 11.22.2016::12:40:48;
+							- _modifiedTimeWeak = 11.23.2016::11:11:16;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 22;
@@ -2629,7 +2629,7 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.23.2016::11:7:48;
+			- _modifiedTimeWeak = 11.23.2016::11:12:29;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -2639,7 +2639,7 @@ while (error);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 4;
-			- weakCGTime = 11.23.2016::11:7:48;
+			- weakCGTime = 11.23.2016::11:12:29;
 			- strongCGTime = 11.23.2016::11:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -2648,7 +2648,7 @@ while (error);";
 					- _id = GUID 80d4c659-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
 					- _name = "main";
-					- _modifiedTimeWeak = 11.23.2016::11:1:48;
+					- _modifiedTimeWeak = 11.23.2016::11:12:29;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -2681,18 +2681,18 @@ while (true)
 			{
 				string s_order;
 				client_socket >> s_order; 
-				cout << \"   ZUG: Der Zug empfaengt etwas: \" << endl;
-				cout << \"   ZUG: Das habe ich empfangen: \" << s_order << endl;
+				cout << \"   PI: Der Pi empfaengt etwas: \" << endl;
+				cout << \"   PI: Das habe ich empfangen: \" << s_order << endl;
 			}
 			catch (SocketException& e) 
 			{
-				cout << \"TrainListener Main Exception: \" << e.description() << endl;
+				cout << \"PiListener Main Exception: \" << e.description() << endl;
 			}
 		}
 	}
 	catch (SocketException & e)
 	{
-		cout << \"TrainListener Main Exception: \" << e.description() << endl;
+		cout << \"PiListener Main Exception: \" << e.description() << endl;
 		sleep(1);
 	}
 }
