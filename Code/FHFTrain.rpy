@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "FHFTrain";
-	- _modifiedTimeWeak = 11.23.2016::10:56:57;
+	- _modifiedTimeWeak = 11.23.2016::13:5:8;
 	- _lastID = 2;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -277,7 +277,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 			- _name = "FHFTrainModel";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "11.23.2016::11:8:41";
+			- _lastModifiedTime = "11.23.2016::13:29:59";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 				- m_type = 0;
@@ -1067,11 +1067,11 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
 							- Items = { IRPYRawContainer 
-								- size = 3;
+								- size = 4;
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "";
+									- _filename = "Pi.sbs";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "i_port";
@@ -1079,7 +1079,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "";
+									- _filename = "Pi.sbs";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "server";
@@ -1087,11 +1087,19 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "";
+									- _filename = "Pi.sbs";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "new_sock";
 									- _id = GUID 19cbccc7-b0af-11e6-b15a-10604b8125e9;
+								}
+								{ IHandle 
+									- _m2Class = "IAttribute";
+									- _filename = "Pi.sbs";
+									- _subsystem = "Pi";
+									- _class = "PiSpeakerThread";
+									- _name = "clientAccepted";
+									- _id = GUID cef74592-b180-11e6-bb3a-001999f1095a;
 								}
 							}
 						}
@@ -1694,7 +1702,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Train.sbs";
+									- _filename = "";
 									- _subsystem = "Train";
 									- _class = "TrainListenerThread";
 									- _name = "i_port";
@@ -1702,7 +1710,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Train.sbs";
+									- _filename = "";
 									- _subsystem = "Train";
 									- _class = "TrainListenerThread";
 									- _name = "s_ip";
@@ -1732,7 +1740,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _filename = "";
 									- _subsystem = "Train";
 									- _class = "TrainListenerThread";
-									- _name = "TrainListenerThread(int)";
+									- _name = "TrainListenerThread(string,int)";
 									- _id = GUID 19e80345-aff2-11e6-9d64-001999f109b4;
 								}
 								{ IHandle 
@@ -1804,7 +1812,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.213213 0 0 0.369887 554.594 100.578 ;
+					- m_transform = 0.213213 0 0 0.369887 554.594 85.9023 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -1947,7 +1955,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 638 1169 ;
+					- m_SourcePort = 638 1209 ;
 					- m_TargetPort = 513 1400 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
