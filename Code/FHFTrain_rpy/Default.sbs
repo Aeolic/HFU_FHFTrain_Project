@@ -80,7 +80,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 		}
 	}
-	- _modifiedTimeWeak = 11.23.2016::12:58:37;
+	- _modifiedTimeWeak = 11.24.2016::9:8:41;
 	- _lastID = 8;
 	- Declaratives = { IRPYRawContainer 
 		- size = 1;
@@ -90,7 +90,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID 1605d717-ab3b-11e6-a452-001999f109b4;
 		}
 	}
-	- weakCGTime = 11.23.2016::12:58:37;
+	- weakCGTime = 11.24.2016::9:8:41;
 	- strongCGTime = 11.22.2016::13:53:55;
 	- ComponentFiles = { IRPYRawContainer 
 		- size = 2;
@@ -368,8 +368,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cb2-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 11.22.2016::13:53:55;
-			- weakCGTime = 11.22.2016::13:53:55;
+			- _modifiedTimeWeak = 11.23.2016::12:58:37;
+			- weakCGTime = 11.23.2016::12:58:37;
 			- strongCGTime = 11.22.2016::13:53:55;
 			- Attrs = { IRPYRawContainer 
 				- size = 3;
@@ -4894,7 +4894,7 @@ return *this;";
 					}
 				}
 			}
-			- _modifiedTimeWeak = 11.23.2016::13:22:52;
+			- _modifiedTimeWeak = 11.24.2016::9:8:41;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -4904,7 +4904,7 @@ return *this;";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 1;
-			- weakCGTime = 11.23.2016::13:22:52;
+			- weakCGTime = 11.24.2016::9:8:41;
 			- strongCGTime = 11.15.2016::14:1:16;
 			- Operations = { IRPYRawContainer 
 				- size = 7;
@@ -5174,7 +5174,7 @@ return *this;";
 					- _id = GUID 6c6b7406-ab3b-11e6-94dc-001999f109b4;
 					- _myState = 8192;
 					- _name = "accept";
-					- _modifiedTimeWeak = 11.23.2016::13:22:52;
+					- _modifiedTimeWeak = 11.24.2016::9:8:41;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 1;
@@ -5207,12 +5207,7 @@ return *this;";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "
-//if ( ! Socket::listen() )
-  //{
-    //throw SocketException ( \"Could not listen for connections.\" );
-  //}
-if ( ! Socket::accept ( sock ) )
+						- _bodyData = "if ( ! Socket::accept ( sock ) )
   {
     throw SocketException ( \"Could not accept socket.\" );
   }";

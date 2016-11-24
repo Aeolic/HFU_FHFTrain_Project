@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 11.23.2016::13:27:45;
+	- _modifiedTimeWeak = 11.24.2016::8:33:54;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 3;
-	- weakCGTime = 11.23.2016::13:27:45;
+	- weakCGTime = 11.24.2016::8:33:54;
 	- strongCGTime = 11.15.2016::13:50:47;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 11.23.2016::11:11:16;
-			- weakCGTime = 11.23.2016::11:11:16;
+			- _modifiedTimeWeak = 11.23.2016::13:27:45;
+			- weakCGTime = 11.23.2016::13:27:45;
 			- strongCGTime = 11.15.2016::13:50:47;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -150,7 +150,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.23.2016::13:34:10;
+			- _modifiedTimeWeak = 11.24.2016::9:41:44;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -160,7 +160,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 1;
-			- weakCGTime = 11.23.2016::13:34:10;
+			- weakCGTime = 11.24.2016::9:41:44;
 			- strongCGTime = 11.21.2016::12:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -168,7 +168,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				{ IConstructor 
 					- _id = GUID 4a5bf3f6-ab3e-11e6-ad2c-001999f109b4;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 11.23.2016::13:34:10;
+					- _modifiedTimeWeak = 11.24.2016::9:41:44;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -1208,7 +1208,7 @@ while(true)
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.23.2016::13:32:2;
+			- _modifiedTimeWeak = 11.24.2016::9:38:21;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -1217,8 +1217,8 @@ while(true)
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _lastID = 8;
-			- weakCGTime = 11.23.2016::13:32:2;
+			- _lastID = 9;
+			- weakCGTime = 11.24.2016::9:38:21;
 			- strongCGTime = 11.21.2016::12:7:35;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -1271,7 +1271,7 @@ while(true)
 					- _id = GUID c3e4f431-ab3f-11e6-a110-001999f109b4;
 					- _myState = 8192;
 					- _name = "startServer";
-					- _modifiedTimeWeak = 11.23.2016::13:31:9;
+					- _modifiedTimeWeak = 11.24.2016::9:5:23;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -1323,7 +1323,7 @@ do
 					- _id = GUID 9f5d45bc-afda-11e6-a2e0-001999f109b4;
 					- _myState = 8192;
 					- _name = "sendOrderToTrain";
-					- _modifiedTimeWeak = 11.23.2016::13:32:2;
+					- _modifiedTimeWeak = 11.24.2016::9:38:21;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -1509,7 +1509,7 @@ while (error);";
 					- _id = GUID c3e4f6f8-ab3f-11e6-a110-001999f109b4;
 					- _myState = 139264;
 					- _name = "PiSpeakerThread";
-					- _modifiedTimeWeak = 11.23.2016::13:30:51;
+					- _modifiedTimeWeak = 11.24.2016::9:5:38;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -1576,7 +1576,7 @@ while (error);";
 						{ IFileFragment 
 							- _id = GUID c3e4f701-ab3f-11e6-a110-001999f109b4;
 							- _name = "PiSpeakerThread";
-							- _modifiedTimeWeak = 11.23.2016::13:30:51;
+							- _modifiedTimeWeak = 11.24.2016::9:5:38;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 
@@ -1887,7 +1887,7 @@ while (error);";
 							}
 						}
 					}
-					- _modifiedTimeWeak = 11.23.2016::13:30:51;
+					- _modifiedTimeWeak = 11.24.2016::9:5:38;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -1954,7 +1954,7 @@ while (error);";
 						{ IFileFragment 
 							- _id = GUID c3e4f734-ab3f-11e6-a110-001999f109b4;
 							- _name = "PiSpeakerThread";
-							- _modifiedTimeWeak = 11.23.2016::13:30:51;
+							- _modifiedTimeWeak = 11.24.2016::9:5:38;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 22;
@@ -2661,7 +2661,7 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.23.2016::11:12:29;
+			- _modifiedTimeWeak = 11.24.2016::9:16:30;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -2671,7 +2671,7 @@ while (error);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 4;
-			- weakCGTime = 11.23.2016::11:12:29;
+			- weakCGTime = 11.24.2016::9:16:30;
 			- strongCGTime = 11.23.2016::11:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -2680,7 +2680,7 @@ while (error);";
 					- _id = GUID 80d4c659-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
 					- _name = "main";
-					- _modifiedTimeWeak = 11.23.2016::11:12:29;
+					- _modifiedTimeWeak = 11.24.2016::9:16:30;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -2709,17 +2709,10 @@ while (true)
 		cout << \"Client mit \" << s_ip << \"::\" << i_port << \" gestartet\" << endl;
 		while (true)
 		{
-			try
-			{
 				string s_order;
 				client_socket >> s_order; 
 				cout << \"   PI: Der Pi empfaengt etwas: \" << endl;
 				cout << \"   PI: Das habe ich empfangen: \" << s_order << endl;
-			}
-			catch (SocketException& e) 
-			{
-				cout << \"PiListener Main Exception: \" << e.description() << endl;
-			}
 		}
 	}
 	catch (SocketException & e)

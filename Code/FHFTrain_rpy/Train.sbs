@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Train";
-	- _modifiedTimeWeak = 11.23.2016::14:17:44;
+	- _modifiedTimeWeak = 11.24.2016::9:16:10;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 4;
-	- weakCGTime = 11.23.2016::14:17:44;
+	- weakCGTime = 11.24.2016::9:16:10;
 	- strongCGTime = 11.15.2016::13:50:41;
 	- _defaultComposite = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 11.23.2016::12:49:16;
-			- weakCGTime = 11.23.2016::12:49:16;
+			- _modifiedTimeWeak = 11.23.2016::14:17:44;
+			- weakCGTime = 11.23.2016::14:17:44;
 			- strongCGTime = 11.15.2016::13:50:41;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -183,7 +183,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.23.2016::14:20:5;
+			- _modifiedTimeWeak = 11.24.2016::9:16:10;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -193,7 +193,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 4;
-			- weakCGTime = 11.23.2016::14:20:5;
+			- weakCGTime = 11.24.2016::9:16:10;
 			- strongCGTime = 11.21.2016::14:0:9;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -202,7 +202,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 7c87a5a1-afee-11e6-86f0-001999f109b4;
 					- _myState = 8192;
 					- _name = "main";
-					- _modifiedTimeWeak = 11.23.2016::14:20:5;
+					- _modifiedTimeWeak = 11.24.2016::9:16:10;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -231,17 +231,10 @@ while (true)
 		cout << \"Client mit \" << s_ip << \"::\" << i_port << \" gestartet\" << endl;
 		while (true)
 		{
-			//try
-			//{
 				string s_order;
 				client_socket >> s_order; 
 				cout << \"   ZUG: Der Zug empfaengt etwas: \" << endl;
 				cout << \"   ZUG: Das habe ich empfangen: \" << s_order << endl;
-			//}
-			//catch (SocketException& e) 
-			//{
-				//cout << \"TrainListener Main Exception: \" << e.description() << endl;
-			//}
 		}
 	}
 	catch (SocketException & e)
