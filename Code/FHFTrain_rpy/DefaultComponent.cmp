@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb7-ab39-11e6-89be-001999f109b4;
 	- _myState = 139264;
 	- _name = "DefaultComponent";
-	- _modifiedTimeWeak = 11.24.2016::9:10:35;
+	- _modifiedTimeWeak = 11.28.2016::7:30:43;
 	- m_buildType = Executable;
 	- m_libraries = "";
 	- m_additionalSources = "";
@@ -794,7 +794,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				}
 			}
 			- _name = "DefaultConfig";
-			- _modifiedTimeWeak = 11.24.2016::9:41:24;
+			- _modifiedTimeWeak = 11.28.2016::7:39:42;
 			- HyperLinks = { IRPYRawContainer 
 				- size = 2;
 				- value = 
@@ -837,16 +837,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- size = 0;
 			}
 			- InitialInstances = { IRPYRawContainer 
-				- size = 2;
+				- size = 1;
 				- value = 
-				{ IHandle 
-					- _m2Class = "IClass";
-					- _filename = "Pi.sbs";
-					- _subsystem = "Pi";
-					- _class = "";
-					- _name = "PiAlgorithm";
-					- _id = GUID 4a5bf3df-ab3e-11e6-ad2c-001999f109b4;
-				}
 				{ IHandle 
 					- _m2Class = "IClass";
 					- _filename = "Train.sbs";
@@ -869,7 +861,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- size = 0;
 				}
 			}
-			- weakCGTime = 11.24.2016::9:41:24;
+			- weakCGTime = 11.28.2016::7:39:42;
 			- strongCGTime = 11.15.2016::13:52:23;
 			- AnimScopeElements = { IRPYRawContainer 
 				- size = 0;
@@ -920,7 +912,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- SelectedVariants = { IRPYRawContainer 
 		- size = 0;
 	}
-	- weakCGTime = 11.24.2016::9:10:35;
-	- strongCGTime = 1.2.1990::0:0:0;
+	- weakCGTime = 11.28.2016::7:30:43;
+	- strongCGTime = 11.28.2016::7:20:9;
 }
 
