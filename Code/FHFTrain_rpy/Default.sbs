@@ -80,7 +80,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 		}
 	}
-	- _modifiedTimeWeak = 11.24.2016::9:8:41;
+	- _modifiedTimeWeak = 11.28.2016::11:8:26;
 	- _lastID = 8;
 	- Declaratives = { IRPYRawContainer 
 		- size = 1;
@@ -90,7 +90,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID 1605d717-ab3b-11e6-a452-001999f109b4;
 		}
 	}
-	- weakCGTime = 11.24.2016::9:8:41;
+	- weakCGTime = 11.28.2016::11:8:26;
 	- strongCGTime = 11.22.2016::13:53:55;
 	- ComponentFiles = { IRPYRawContainer 
 		- size = 2;
@@ -368,8 +368,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cb2-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 11.23.2016::12:58:37;
-			- weakCGTime = 11.23.2016::12:58:37;
+			- _modifiedTimeWeak = 11.28.2016::11:8:26;
+			- weakCGTime = 11.28.2016::11:8:26;
 			- strongCGTime = 11.22.2016::13:53:55;
 			- Attrs = { IRPYRawContainer 
 				- size = 3;
@@ -697,7 +697,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					}
 				}
 			}
-			- _modifiedTimeWeak = 11.22.2016::12:27:56;
+			- _modifiedTimeWeak = 11.28.2016::13:0:37;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -706,10 +706,11 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- weakCGTime = 11.22.2016::12:27:56;
+			- _lastID = 1;
+			- weakCGTime = 11.28.2016::13:0:37;
 			- strongCGTime = 11.15.2016::13:57:19;
 			- Operations = { IRPYRawContainer 
-				- size = 11;
+				- size = 12;
 				- value = 
 				{ IConstructor 
 					- _id = GUID 112b0e16-ab3c-11e6-923e-001999f109b4;
@@ -940,7 +941,7 @@ return true;";
 					- _id = GUID 99ef2e91-ab3a-11e6-9cc8-001999f109b4;
 					- _myState = 8192;
 					- _name = "accept";
-					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- _modifiedTimeWeak = 11.28.2016::13:0:37;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 1;
@@ -974,6 +975,10 @@ return true;";
 					- _constant = 1;
 					- _itsBody = { IBody 
 						- _bodyData = "int addr_length = sizeof ( m_addr );
+cout << addr_length << endl;
+cout << m_sock << endl;
+// cout << m_addr << endl;
+// cout << addr_length << endl;
 new_socket.m_sock = ::accept ( m_sock, ( sockaddr * ) &m_addr, ( socklen_t * ) &addr_length );
 
 if ( new_socket.m_sock <= 0 )
@@ -1339,6 +1344,34 @@ else
 					- _constant = 1;
 					- _itsBody = { IBody 
 						- _bodyData = "return m_sock != -1;";
+					}
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID 24b30700-b55c-11e6-a492-10604b8125e9;
+					- _myState = 8192;
+					- _name = "close";
+					- _modifiedTimeWeak = 11.28.2016::11:18:59;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "if ( is_valid() )
+	::close ( m_sock );";
 					}
 				}
 			}
@@ -1950,7 +1983,7 @@ else
 							}
 						}
 					}
-					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- _modifiedTimeWeak = 11.28.2016::11:17:33;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -2152,7 +2185,7 @@ else
 						{ IFileFragment 
 							- _id = GUID 99ef2df0-ab3a-11e6-9cc8-001999f109b4;
 							- _name = "Socket";
-							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- _modifiedTimeWeak = 11.28.2016::11:17:33;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 
@@ -2801,7 +2834,7 @@ else
 							}
 						}
 					}
-					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- _modifiedTimeWeak = 11.28.2016::11:17:33;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -2884,7 +2917,7 @@ else
 						{ IFileFragment 
 							- _id = GUID 99ef2e37-ab3a-11e6-9cc8-001999f109b4;
 							- _name = "Socket";
-							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- _modifiedTimeWeak = 11.28.2016::11:17:33;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 26;
@@ -3924,7 +3957,7 @@ else
 					}
 				}
 			}
-			- _modifiedTimeWeak = 11.22.2016::13:44:55;
+			- _modifiedTimeWeak = 11.28.2016::11:17:33;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -3933,7 +3966,7 @@ else
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- weakCGTime = 11.22.2016::13:44:55;
+			- weakCGTime = 11.28.2016::11:17:33;
 			- strongCGTime = 11.22.2016::13:44:55;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -4209,7 +4242,7 @@ return *this;";
 					- _id = GUID 6c6b74d4-ab3b-11e6-94dc-001999f109b4;
 					- _myState = 139264;
 					- _name = "ClientSocket";
-					- _modifiedTimeWeak = 11.15.2016::14:1:51;
+					- _modifiedTimeWeak = 11.28.2016::11:17:33;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -4261,7 +4294,7 @@ return *this;";
 						{ IFileFragment 
 							- _id = GUID 6c6b74d5-ab3b-11e6-94dc-001999f109b4;
 							- _name = "ClientSocket";
-							- _modifiedTimeWeak = 11.15.2016::14:1:51;
+							- _modifiedTimeWeak = 11.28.2016::11:17:33;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 
@@ -4461,7 +4494,7 @@ return *this;";
 					- _id = GUID 6c6b74fe-ab3b-11e6-94dc-001999f109b4;
 					- _myState = 139264;
 					- _name = "ClientSocket";
-					- _modifiedTimeWeak = 11.15.2016::14:1:51;
+					- _modifiedTimeWeak = 11.28.2016::11:17:33;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -4498,7 +4531,7 @@ return *this;";
 						{ IFileFragment 
 							- _id = GUID 6c6b74ff-ab3b-11e6-94dc-001999f109b4;
 							- _name = "ClientSocket";
-							- _modifiedTimeWeak = 11.15.2016::14:1:51;
+							- _modifiedTimeWeak = 11.28.2016::11:17:33;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 20;
@@ -4894,7 +4927,7 @@ return *this;";
 					}
 				}
 			}
-			- _modifiedTimeWeak = 11.24.2016::9:8:41;
+			- _modifiedTimeWeak = 11.28.2016::11:19:9;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -4903,11 +4936,11 @@ return *this;";
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _lastID = 1;
-			- weakCGTime = 11.24.2016::9:8:41;
+			- _lastID = 2;
+			- weakCGTime = 11.28.2016::11:19:9;
 			- strongCGTime = 11.15.2016::14:1:16;
 			- Operations = { IRPYRawContainer 
-				- size = 7;
+				- size = 8;
 				- value = 
 				{ IConstructor 
 					- _id = GUID 6c6b73f2-ab3b-11e6-94dc-001999f109b4;
@@ -5013,7 +5046,7 @@ if ( ! Socket::listen() )
 				{ IDestructor 
 					- _id = GUID 6c6b73f6-ab3b-11e6-94dc-001999f109b4;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- _modifiedTimeWeak = 11.28.2016::11:13:5;
 					- _virtual = 1;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -5240,6 +5273,34 @@ return *this;";
 						- _bodyData = "return Socket::is_valid();";
 					}
 				}
+				{ IPrimitiveOperation 
+					- _id = GUID 2b381b45-b55a-11e6-8ba6-10604b8125e9;
+					- _myState = 8192;
+					- _name = "close";
+					- _modifiedTimeWeak = 11.28.2016::11:19:9;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "if ( isValid() )
+  Socket::close();";
+					}
+				}
 			}
 			- Inheritances = { IRPYRawContainer 
 				- size = 1;
@@ -5262,7 +5323,7 @@ return *this;";
 					- _id = GUID 6c6b738f-ab3b-11e6-94dc-001999f109b4;
 					- _myState = 139264;
 					- _name = "ServerSocket";
-					- _modifiedTimeWeak = 11.23.2016::13:5:8;
+					- _modifiedTimeWeak = 11.28.2016::11:17:33;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -5286,7 +5347,7 @@ return *this;";
 						{ IFileFragment 
 							- _id = GUID 6c6b7390-ab3b-11e6-94dc-001999f109b4;
 							- _name = "ServerSocket";
-							- _modifiedTimeWeak = 11.23.2016::13:5:8;
+							- _modifiedTimeWeak = 11.28.2016::11:17:33;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 7;
@@ -5643,7 +5704,7 @@ return *this;";
 					- _id = GUID 6c6b7361-ab3b-11e6-94dc-001999f109b4;
 					- _myState = 139264;
 					- _name = "ServerSocket";
-					- _modifiedTimeWeak = 11.23.2016::13:5:8;
+					- _modifiedTimeWeak = 11.28.2016::11:17:33;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -5667,7 +5728,7 @@ return *this;";
 						{ IFileFragment 
 							- _id = GUID 6c6b7362-ab3b-11e6-94dc-001999f109b4;
 							- _name = "ServerSocket";
-							- _modifiedTimeWeak = 11.23.2016::13:5:8;
+							- _modifiedTimeWeak = 11.28.2016::11:17:33;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 

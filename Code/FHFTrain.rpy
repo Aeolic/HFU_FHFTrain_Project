@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "FHFTrain";
-	- _modifiedTimeWeak = 11.24.2016::8:33:54;
+	- _modifiedTimeWeak = 11.28.2016::12:28:29;
 	- _lastID = 2;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -277,7 +277,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 			- _name = "FHFTrainModel";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "11.24.2016::9:39:5";
+			- _lastModifiedTime = "11.28.2016::11:25:30";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 				- m_type = 0;
@@ -592,7 +592,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.434372 0 0 0.344029 777.131 551.815 ;
+					- m_transform = 0.434372 0 0 0.332443 777.131 568.627 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -607,10 +607,11 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 1;
 					}
+					- m_bFramesetModified = 1;
 					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
 					- m_nNameFormat = 0;
 					- m_nIsNameFormat = 0;
-					- frameset = "<frameset rows=50%,50%>
+					- frameset = "<frameset rows=23%,77%>
 <frame name=AttributeListCompartment>
 <frame name=OperationListCompartment>";
 					- Compartments = { IRPYRawContainer 
@@ -650,7 +651,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 1;
 							- Items = { IRPYRawContainer 
-								- size = 11;
+								- size = 12;
 								- value = 
 								{ IHandle 
 									- _m2Class = "IDestructor";
@@ -739,6 +740,14 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _class = "Socket";
 									- _name = "Socket()";
 									- _id = GUID 112b0e16-ab3c-11e6-923e-001999f109b4;
+								}
+								{ IHandle 
+									- _m2Class = "IPrimitiveOperation";
+									- _filename = "";
+									- _subsystem = "Default";
+									- _class = "Socket";
+									- _name = "close()";
+									- _id = GUID 24b30700-b55c-11e6-a492-10604b8125e9;
 								}
 							}
 						}
@@ -938,7 +947,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
 					- m_nNameFormat = 0;
 					- m_nIsNameFormat = 0;
-					- frameset = "<frameset rows=50%,50%>
+					- frameset = "<frameset rows=19%,81%>
 <frame name=AttributeListCompartment>
 <frame name=OperationListCompartment>";
 					- Compartments = { IRPYRawContainer 
@@ -1067,24 +1076,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
 							- Items = { IRPYRawContainer 
-								- size = 4;
+								- size = 3;
 								- value = 
-								{ IHandle 
-									- _m2Class = "IAttribute";
-									- _filename = "";
-									- _subsystem = "Pi";
-									- _class = "PiSpeakerThread";
-									- _name = "i_port";
-									- _id = GUID 7c87a803-afee-11e6-86f0-001999f109b4;
-								}
-								{ IHandle 
-									- _m2Class = "IAttribute";
-									- _filename = "";
-									- _subsystem = "Pi";
-									- _class = "PiSpeakerThread";
-									- _name = "server";
-									- _id = GUID 66eeaf06-aff7-11e6-9428-001999f109b4;
-								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
 									- _filename = "";
@@ -1098,8 +1091,16 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
-									- _name = "clientAccepted";
+									- _name = "client_accepted";
 									- _id = GUID cef74592-b180-11e6-bb3a-001999f1095a;
+								}
+								{ IHandle 
+									- _m2Class = "IAttribute";
+									- _filename = "";
+									- _subsystem = "Pi";
+									- _class = "PiSpeakerThread";
+									- _name = "server";
+									- _id = GUID 49fb9aef-b538-11e6-92c6-10604b8125e9;
 								}
 							}
 						}
@@ -1114,23 +1115,15 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
-									- _name = "PiSpeakerThread(int)";
+									- _name = "PiSpeakerThread(ServerSocket*,ServerSocket*,bool*)";
 									- _id = GUID 4a5bf3ce-ab3e-11e6-ad2c-001999f109b4;
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
-									- _subsystem = "Pi";
-									- _class = "PiSpeakerThread";
-									- _name = "startServer()";
-									- _id = GUID c3e4f431-ab3f-11e6-a110-001999f109b4;
-								}
-								{ IHandle 
-									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "sendOrderToTrain(std::string)";
@@ -1138,11 +1131,19 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "execute()";
 									- _id = GUID 7c87a80a-afee-11e6-86f0-001999f109b4;
+								}
+								{ IHandle 
+									- _m2Class = "IPrimitiveOperation";
+									- _filename = "";
+									- _subsystem = "Pi";
+									- _class = "PiSpeakerThread";
+									- _name = "restartServer()";
+									- _id = GUID d4664918-b55c-11e6-a9b8-10604b8125e9;
 								}
 							}
 						}
@@ -1205,7 +1206,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.168067 0 0 0.817807 651.157 -120.936 ;
+					- m_transform = 0.202391 0 0 0.817807 651.111 -120.936 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -1236,7 +1237,32 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
 							- Items = { IRPYRawContainer 
-								- size = 0;
+								- size = 3;
+								- value = 
+								{ IHandle 
+									- _m2Class = "IAttribute";
+									- _filename = "";
+									- _subsystem = "Pi";
+									- _class = "PiAlgorithm";
+									- _name = "server";
+									- _id = GUID d278eb05-b532-11e6-b074-10604b8125e9;
+								}
+								{ IHandle 
+									- _m2Class = "IAttribute";
+									- _filename = "";
+									- _subsystem = "Pi";
+									- _class = "PiAlgorithm";
+									- _name = "new_sock";
+									- _id = GUID d278eb0d-b532-11e6-b074-10604b8125e9;
+								}
+								{ IHandle 
+									- _m2Class = "IAttribute";
+									- _filename = "";
+									- _subsystem = "Pi";
+									- _class = "PiAlgorithm";
+									- _name = "client_accepted";
+									- _id = GUID 6baa7477-b537-11e6-bf96-10604b8125e9;
+								}
 							}
 						}
 						{ CGICompartment 
@@ -1246,7 +1272,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
 							- Items = { IRPYRawContainer 
-								- size = 2;
+								- size = 3;
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
@@ -1263,6 +1289,14 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _class = "PiAlgorithm";
 									- _name = "execute()";
 									- _id = GUID 4a5bf3fb-ab3e-11e6-ad2c-001999f109b4;
+								}
+								{ IHandle 
+									- _m2Class = "IPrimitiveOperation";
+									- _filename = "";
+									- _subsystem = "Pi";
+									- _class = "PiAlgorithm";
+									- _name = "startServer()";
+									- _id = GUID d278eafe-b532-11e6-b074-10604b8125e9;
 								}
 							}
 						}
@@ -1666,7 +1700,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 5;
 					}
-					- m_drawBehavior = 2056;
+					- m_drawBehavior = 2152;
 					- m_transform = 0.271083 0 0 0.374894 872.898 -21.7278 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
@@ -1694,64 +1728,16 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						{ CGICompartment 
 							- _id = GUID 55d87e25-afed-11e6-879e-001999f109b4;
 							- m_name = "Attribute";
-							- m_displayOption = Explicit;
+							- m_displayOption = All;
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
-							- Items = { IRPYRawContainer 
-								- size = 2;
-								- value = 
-								{ IHandle 
-									- _m2Class = "IAttribute";
-									- _filename = "";
-									- _subsystem = "Train";
-									- _class = "TrainListenerThread";
-									- _name = "i_port";
-									- _id = GUID 19e80339-aff2-11e6-9d64-001999f109b4;
-								}
-								{ IHandle 
-									- _m2Class = "IAttribute";
-									- _filename = "";
-									- _subsystem = "Train";
-									- _class = "TrainListenerThread";
-									- _name = "s_ip";
-									- _id = GUID 7da05f44-b16a-11e6-84f6-10604b8125e9;
-								}
-							}
 						}
 						{ CGICompartment 
 							- _id = GUID 55d87e26-afed-11e6-879e-001999f109b4;
 							- m_name = "Operation";
-							- m_displayOption = Explicit;
+							- m_displayOption = All;
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
-							- Items = { IRPYRawContainer 
-								- size = 3;
-								- value = 
-								{ IHandle 
-									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
-									- _subsystem = "Train";
-									- _class = "TrainListenerThread";
-									- _name = "main()";
-									- _id = GUID 7c87a5a1-afee-11e6-86f0-001999f109b4;
-								}
-								{ IHandle 
-									- _m2Class = "IConstructor";
-									- _filename = "";
-									- _subsystem = "Train";
-									- _class = "TrainListenerThread";
-									- _name = "TrainListenerThread(string,int)";
-									- _id = GUID 19e80345-aff2-11e6-9d64-001999f109b4;
-								}
-								{ IHandle 
-									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
-									- _subsystem = "Train";
-									- _class = "TrainListenerThread";
-									- _name = "execute()";
-									- _id = GUID 19e8034a-aff2-11e6-9d64-001999f109b4;
-								}
-							}
 						}
 					}
 					- Attrs = { IRPYRawContainer 
@@ -1830,7 +1816,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
 					- m_nNameFormat = 0;
 					- m_nIsNameFormat = 0;
-					- frameset = "<frameset rows=50%,50%>
+					- frameset = "<frameset rows=29%,71%>
 <frame name=AttributeListCompartment>
 <frame name=OperationListCompartment>";
 					- Compartments = { IRPYRawContainer 
@@ -1843,7 +1829,16 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
 							- Items = { IRPYRawContainer 
-								- size = 0;
+								- size = 1;
+								- value = 
+								{ IHandle 
+									- _m2Class = "IAttribute";
+									- _filename = "";
+									- _subsystem = "Train";
+									- _class = "TrainThread";
+									- _name = "client";
+									- _id = GUID 114e9993-b53b-11e6-9d94-10604b8125e9;
+								}
 							}
 						}
 						{ CGICompartment 
@@ -1853,7 +1848,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
 							- Items = { IRPYRawContainer 
-								- size = 2;
+								- size = 3;
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
@@ -1870,6 +1865,14 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _class = "TrainThread";
 									- _name = "execute()";
 									- _id = GUID 19e80332-aff2-11e6-9d64-001999f109b4;
+								}
+								{ IHandle 
+									- _m2Class = "IPrimitiveOperation";
+									- _filename = "";
+									- _subsystem = "Train";
+									- _class = "TrainThread";
+									- _name = "startClient()";
+									- _id = GUID 410ec4b6-b53c-11e6-96ec-10604b8125e9;
 								}
 							}
 						}
@@ -1956,7 +1959,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
 					- m_SourcePort = 638 1209 ;
-					- m_TargetPort = 513 1400 ;
+					- m_TargetPort = 515 1402 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
 					}
@@ -2535,7 +2538,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 9 1058 ;
+					- m_SourcePort = 8 1058 ;
 					- m_TargetPort = 1039 804 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";

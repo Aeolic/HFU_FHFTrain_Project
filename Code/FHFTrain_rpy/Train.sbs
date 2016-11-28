@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Train";
-	- _modifiedTimeWeak = 11.24.2016::9:16:10;
+	- _modifiedTimeWeak = 11.28.2016::9:1:56;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,8 +13,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 4;
-	- weakCGTime = 11.24.2016::9:16:10;
-	- strongCGTime = 11.15.2016::13:50:41;
+	- weakCGTime = 11.28.2016::9:1:56;
+	- strongCGTime = 11.28.2016::7:20:9;
 	- _defaultComposite = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
@@ -24,9 +24,9 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 11.23.2016::14:17:44;
-			- weakCGTime = 11.23.2016::14:17:44;
-			- strongCGTime = 11.15.2016::13:50:41;
+			- _modifiedTimeWeak = 11.28.2016::7:21:31;
+			- weakCGTime = 11.28.2016::7:21:31;
+			- strongCGTime = 11.28.2016::7:20:9;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
@@ -183,7 +183,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.24.2016::9:16:10;
+			- _modifiedTimeWeak = 11.28.2016::9:17:7;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -193,8 +193,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 4;
-			- weakCGTime = 11.24.2016::9:16:10;
-			- strongCGTime = 11.21.2016::14:0:9;
+			- weakCGTime = 11.28.2016::9:17:7;
+			- strongCGTime = 11.28.2016::7:20:9;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
 				- value = 
@@ -202,7 +202,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 7c87a5a1-afee-11e6-86f0-001999f109b4;
 					- _myState = 8192;
 					- _name = "main";
-					- _modifiedTimeWeak = 11.24.2016::9:16:10;
+					- _modifiedTimeWeak = 11.28.2016::9:17:7;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -227,12 +227,11 @@ while (true)
 {
 	try
 	{
-		ClientSocket client_socket (s_ip, i_port);
-		cout << \"Client mit \" << s_ip << \"::\" << i_port << \" gestartet\" << endl;
+		cout << \"Train Listener gestartet\" << endl;
 		while (true)
 		{
 				string s_order;
-				client_socket >> s_order; 
+				*client >> s_order; 
 				cout << \"   ZUG: Der Zug empfaengt etwas: \" << endl;
 				cout << \"   ZUG: Das habe ich empfangen: \" << s_order << endl;
 		}
@@ -240,7 +239,8 @@ while (true)
 	catch (SocketException & e)
 	{
 		cout << \"TrainListener Main Exception: \" << e.description() << endl;
-		sleep(1);
+		// sleep(1);
+		break;
 	}
 }
 return 0;";
@@ -249,39 +249,23 @@ return 0;";
 				{ IConstructor 
 					- _id = GUID 19e80345-aff2-11e6-9d64-001999f109b4;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 11.23.2016::10:59:52;
+					- _modifiedTimeWeak = 11.28.2016::7:27:30;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
-						- size = 2;
+						- size = 1;
 						- value = 
-						{ IArgument 
-							- _id = GUID 7da05f4b-b16a-11e6-84f6-10604b8125e9;
-							- _myState = 8192;
-							- _name = "ip";
-							- _modifiedTimeWeak = 11.23.2016::10:58:33;
-							- myTypeOf = { IType 
-								- _id = GUID 7da05f59-b16a-11e6-84f6-10604b8125e9;
-								- _myState = 8192;
-								- _modifiedTimeWeak = 1.2.1990::0:0:0;
-								- _declaration = "string";
-								- _kind = Language;
-							}
-							- _isOrdered = 0;
-							- _argumentDirection = In;
-						}
 						{ IArgument 
 							- _id = GUID 19e80341-aff2-11e6-9d64-001999f109b4;
 							- _myState = 8192;
-							- _name = "port";
-							- _modifiedTimeWeak = 1.2.1990::0:0:0;
-							- _typeOf = { IHandle 
-								- _m2Class = "IType";
-								- _filename = "PredefinedTypesC++.sbs";
-								- _subsystem = "PredefinedTypesCpp";
-								- _class = "";
-								- _name = "int";
-								- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
+							- _name = "client";
+							- _modifiedTimeWeak = 11.28.2016::7:27:30;
+							- myTypeOf = { IType 
+								- _id = GUID e6a3ef73-b53b-11e6-98de-10604b8125e9;
+								- _myState = 8192;
+								- _modifiedTimeWeak = 1.2.1990::0:0:0;
+								- _declaration = "ClientSocket*";
+								- _kind = Language;
 							}
 							- _isOrdered = 0;
 							- _argumentDirection = In;
@@ -298,8 +282,7 @@ return 0;";
 					- _constant = 0;
 					- _itsBody = { IBody 
 						- _bodyData = "cout << \"TrainListenerThread wurde gestartet.\" << endl;
-s_ip = ip;
-i_port = port;
+this->client = client;
 start();";
 					}
 					- _initializer = "";
@@ -308,7 +291,7 @@ start();";
 					- _id = GUID 19e8034a-aff2-11e6-9d64-001999f109b4;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 11.21.2016::14:12:37;
+					- _modifiedTimeWeak = 11.28.2016::9:16:44;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -327,42 +310,23 @@ start();";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "                                 main();";
+						- _bodyData = "main();";
 					}
 				}
 			}
 			- Attrs = { IRPYRawContainer 
-				- size = 2;
+				- size = 1;
 				- value = 
-				{ IAttribute 
-					- _id = GUID 19e80339-aff2-11e6-9d64-001999f109b4;
-					- _myState = 8192;
-					- _name = "i_port";
-					- _modifiedTimeWeak = 11.23.2016::10:57:5;
-					- _typeOf = { IHandle 
-						- _m2Class = "IType";
-						- _filename = "PredefinedTypesC++.sbs";
-						- _subsystem = "PredefinedTypesCpp";
-						- _class = "";
-						- _name = "int";
-						- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
-					}
-					- _isOrdered = 0;
-					- _protection = iPrivate;
-					- _static = 0;
-					- _isReference = 0;
-					- _isConstant = 0;
-				}
 				{ IAttribute 
 					- _id = GUID 7da05f44-b16a-11e6-84f6-10604b8125e9;
 					- _myState = 8192;
-					- _name = "s_ip";
-					- _modifiedTimeWeak = 11.23.2016::10:59:41;
+					- _name = "client";
+					- _modifiedTimeWeak = 11.28.2016::7:27:52;
 					- myTypeOf = { IType 
-						- _id = GUID 7da05f69-b16a-11e6-84f6-10604b8125e9;
+						- _id = GUID e6a3ef79-b53b-11e6-98de-10604b8125e9;
 						- _myState = 8192;
 						- _modifiedTimeWeak = 1.2.1990::0:0:0;
-						- _declaration = "string";
+						- _declaration = "ClientSocket*";
 						- _kind = Language;
 					}
 					- _isOrdered = 0;
@@ -527,7 +491,7 @@ start();";
 							}
 						}
 					}
-					- _modifiedTimeWeak = 11.23.2016::10:59:41;
+					- _modifiedTimeWeak = 11.28.2016::7:27:52;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -610,7 +574,7 @@ start();";
 						{ IFileFragment 
 							- _id = GUID 7c87a626-afee-11e6-86f0-001999f109b4;
 							- _name = "TrainListenerThread";
-							- _modifiedTimeWeak = 11.23.2016::10:59:41;
+							- _modifiedTimeWeak = 11.28.2016::7:27:52;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 
@@ -757,7 +721,7 @@ start();";
 					- _id = GUID 7c87a636-afee-11e6-86f0-001999f109b4;
 					- _myState = 139264;
 					- _name = "TrainListenerThread";
-					- _modifiedTimeWeak = 11.23.2016::10:59:41;
+					- _modifiedTimeWeak = 11.28.2016::7:27:52;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -794,7 +758,7 @@ start();";
 						{ IFileFragment 
 							- _id = GUID 7c87a637-afee-11e6-86f0-001999f109b4;
 							- _name = "TrainListenerThread";
-							- _modifiedTimeWeak = 11.23.2016::10:59:41;
+							- _modifiedTimeWeak = 11.28.2016::7:27:52;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 18;
@@ -1079,7 +1043,7 @@ start();";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.23.2016::14:29:4;
+			- _modifiedTimeWeak = 11.28.2016::9:23:31;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -1088,16 +1052,16 @@ start();";
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _lastID = 1;
-			- weakCGTime = 11.23.2016::14:29:4;
-			- strongCGTime = 11.23.2016::11:22:18;
+			- _lastID = 4;
+			- weakCGTime = 11.28.2016::9:23:31;
+			- strongCGTime = 11.28.2016::7:20:9;
 			- Operations = { IRPYRawContainer 
-				- size = 2;
+				- size = 3;
 				- value = 
 				{ IConstructor 
 					- _id = GUID 19e8025b-aff2-11e6-9d64-001999f109b4;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 11.23.2016::14:29:4;
+					- _modifiedTimeWeak = 11.28.2016::7:35:29;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -1114,8 +1078,9 @@ start();";
 					- _itsBody = { IBody 
 						- _bodyData = "               
 cout << \"ZUG ERSTELLT.\" << endl;
-itsTrainListenerThread = new TrainListenerThread(\"localhost\", 8080);
-itsTrainSpeakerThread = new TrainSpeakerThread(8081);
+startClient();
+itsTrainListenerThread = new TrainListenerThread(client);
+itsTrainSpeakerThread = new TrainSpeakerThread(client);
 start();";
 					}
 					- _initializer = "";
@@ -1124,7 +1089,7 @@ start();";
 					- _id = GUID 19e80332-aff2-11e6-9d64-001999f109b4;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 11.23.2016::13:7:30;
+					- _modifiedTimeWeak = 11.28.2016::9:23:31;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -1145,13 +1110,82 @@ start();";
 					- _itsBody = { IBody 
 						- _bodyData = "int i = 0;
 while(true)
-{   
+{
 	stringstream ss;
 	ss << i++;
 	itsTrainSpeakerThread->sendPositionToPi(ss.str());
 	sleep(1);  
 }";
 					}
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID 410ec4b6-b53c-11e6-96ec-10604b8125e9;
+					- _myState = 8192;
+					- _name = "startClient";
+					- _modifiedTimeWeak = 11.28.2016::7:37:16;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPrivate;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "bool error;
+do
+{
+	try
+	{
+		error = false;
+		client = new ClientSocket(\"localhost\", 35035);
+	}
+	catch (SocketException& e)
+	{   
+		error = true;
+		cout << \"startClient exception: \" << e.description() << endl;
+		sleep(1);
+	}
+	catch (...)
+	{   
+		error = true;
+	 	cout << \"startClient unexpected exception\" << endl;
+	 	sleep(1);
+	}
+} while (error);";
+					}
+				}
+			}
+			- Attrs = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAttribute 
+					- _id = GUID 114e9993-b53b-11e6-9d94-10604b8125e9;
+					- _myState = 8192;
+					- _name = "client";
+					- _modifiedTimeWeak = 11.28.2016::7:21:53;
+					- myTypeOf = { IType 
+						- _id = GUID 114e9996-b53b-11e6-9d94-10604b8125e9;
+						- _myState = 8192;
+						- _modifiedTimeWeak = 1.2.1990::0:0:0;
+						- _declaration = "ClientSocket*";
+						- _kind = Language;
+					}
+					- _isOrdered = 0;
+					- _protection = iPrivate;
+					- _static = 0;
+					- _isReference = 0;
+					- _isConstant = 0;
 				}
 			}
 			- _multiplicity = "";
@@ -1165,7 +1199,7 @@ while(true)
 					- _id = GUID 19e8032a-aff2-11e6-9d64-001999f109b4;
 					- _myState = 10240;
 					- _name = "itsTrainListenerThread";
-					- _modifiedTimeWeak = 11.21.2016::14:2:8;
+					- _modifiedTimeWeak = 11.28.2016::7:20:9;
 					- _multiplicity = "1";
 					- _otherClass = { IClassifierHandle 
 						- _m2Class = "IClass";
@@ -1182,7 +1216,7 @@ while(true)
 					- _id = GUID eb1b0851-b16c-11e6-a330-10604b8125e9;
 					- _myState = 10240;
 					- _name = "itsTrainSpeakerThread";
-					- _modifiedTimeWeak = 11.23.2016::11:8:16;
+					- _modifiedTimeWeak = 11.28.2016::7:20:9;
 					- _multiplicity = "1";
 					- _otherClass = { IClassifierHandle 
 						- _m2Class = "IClass";
@@ -1296,7 +1330,7 @@ while(true)
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.23.2016::14:28:30;
+			- _modifiedTimeWeak = 11.28.2016::9:23:39;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -1305,16 +1339,16 @@ while(true)
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _lastID = 8;
-			- weakCGTime = 11.23.2016::14:28:30;
+			- _lastID = 10;
+			- weakCGTime = 11.28.2016::9:23:39;
 			- strongCGTime = 11.23.2016::11:4:52;
 			- Operations = { IRPYRawContainer 
-				- size = 4;
+				- size = 3;
 				- value = 
 				{ IConstructor 
 					- _id = GUID 80d4c29e-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 11.23.2016::12:53:56;
+					- _modifiedTimeWeak = 11.28.2016::7:24:24;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -1323,15 +1357,14 @@ while(true)
 						{ IArgument 
 							- _id = GUID 80d4c29f-b16c-11e6-b280-10604b8125e9;
 							- _myState = 8192;
-							- _name = "port";
-							- _modifiedTimeWeak = 11.15.2016::14:22:21;
-							- _typeOf = { IHandle 
-								- _m2Class = "IType";
-								- _filename = "PredefinedTypesC++.sbs";
-								- _subsystem = "PredefinedTypesCpp";
-								- _class = "";
-								- _name = "int";
-								- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
+							- _name = "client";
+							- _modifiedTimeWeak = 11.28.2016::7:24:12;
+							- myTypeOf = { IType 
+								- _id = GUID 114e99a0-b53b-11e6-9d94-10604b8125e9;
+								- _myState = 8192;
+								- _modifiedTimeWeak = 1.2.1990::0:0:0;
+								- _declaration = "ClientSocket*";
+								- _kind = Language;
 							}
 							- _isOrdered = 0;
 							- _argumentDirection = In;
@@ -1348,7 +1381,7 @@ while(true)
 					- _constant = 0;
 					- _itsBody = { IBody 
 						- _bodyData = "                   cout << \"TrainSpeakerThread wurde aufgerufen.\" << endl;   
-                   i_port = port;
+                   this->client = client;
                    start();
                   	
                   	";
@@ -1356,62 +1389,10 @@ while(true)
 					- _initializer = "";
 				}
 				{ IPrimitiveOperation 
-					- _id = GUID 80d4c2a0-b16c-11e6-b280-10604b8125e9;
-					- _myState = 8192;
-					- _name = "startServer";
-					- _modifiedTimeWeak = 11.23.2016::13:29:3;
-					- _lastID = 1;
-					- _virtual = 0;
-					- Args = { IRPYRawContainer 
-						- size = 0;
-					}
-					- _returnType = { IHandle 
-						- _m2Class = "IType";
-						- _filename = "PredefinedTypesC++.sbs";
-						- _subsystem = "PredefinedTypesCpp";
-						- _class = "";
-						- _name = "void";
-						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
-					}
-					- _abstract = 0;
-					- _final = 0;
-					- _concurrency = Sequential;
-					- _protection = iPrivate;
-					- _static = 0;
-					- _constant = 0;
-					- _itsBody = { IBody 
-						- _bodyData = "//#[ operation startServer(int)
-bool error;
-do
-{
-	try
-	{   
-		error = false;
-		server = new ServerSocket(i_port);
-		std::cout << \"Train Server mit Port \" << i_port << \" gestartet.\" << std::endl;
-		new_sock = new ServerSocket();
-		server->accept(*new_sock);
-		clientAccepted = true;
-	}
-	catch (SocketException& e)
-	{
-		std::cout << \"Error in Train startServer: \" << e.description() << std::endl;
-		error = true;
-		delete server;
-		delete new_sock;
-	}
-	catch (...)
-	{
-	    std::cout << \"Unexpected Error in Train startServer()\" << std::endl;
-	}
-} while (error);";
-					}
-				}
-				{ IPrimitiveOperation 
 					- _id = GUID 80d4c2a1-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
 					- _name = "sendPositionToPi";
-					- _modifiedTimeWeak = 11.23.2016::14:28:30;
+					- _modifiedTimeWeak = 11.28.2016::9:16:33;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -1454,19 +1435,16 @@ do
 {
 	try
 	{   
-		if (!clientAccepted)
-		{
-			throw SocketException(\"No client accepted yet.\");
-		}
 		std::cout << \"Versuche '\" + order + \"' zu senden.\" << std::endl;
 		error = false;
-		*new_sock << order;
+		*client << order;
 	}
 	catch (SocketException& e)
 	{
 		error = true;
 		std::cout << e.description() << std::endl;
-		sleep(1);
+		//sleep(1);
+		break;
 	}
 	catch (...)
 	{
@@ -1480,7 +1458,7 @@ while (error);";
 					- _id = GUID 80d4c2a4-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 11.21.2016::13:49:15;
+					- _modifiedTimeWeak = 11.28.2016::7:28:25;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -1499,89 +1477,24 @@ while (error);";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "      startServer();";
+						- _bodyData = "";
 					}
 				}
 			}
 			- Attrs = { IRPYRawContainer 
-				- size = 4;
+				- size = 1;
 				- value = 
-				{ IAttribute 
-					- _id = GUID 80d4c2a6-b16c-11e6-b280-10604b8125e9;
-					- _myState = 8192;
-					- _name = "i_port";
-					- _modifiedTimeWeak = 11.23.2016::11:11:28;
-					- _typeOf = { IHandle 
-						- _m2Class = "IType";
-						- _filename = "PredefinedTypesC++.sbs";
-						- _subsystem = "PredefinedTypesCpp";
-						- _class = "";
-						- _name = "int";
-						- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
-					}
-					- _isOrdered = 0;
-					- _protection = iPrivate;
-					- _static = 0;
-					- _isReference = 0;
-					- _isConstant = 0;
-				}
 				{ IAttribute 
 					- _id = GUID 80d4c2a7-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
-					- _name = "server";
-					- _modifiedTimeWeak = 11.22.2016::12:40:48;
+					- _name = "client";
+					- _modifiedTimeWeak = 11.28.2016::7:23:34;
 					- myTypeOf = { IType 
-						- _id = GUID 80d4c2a8-b16c-11e6-b280-10604b8125e9;
+						- _id = GUID 114e999c-b53b-11e6-9d94-10604b8125e9;
 						- _myState = 8192;
 						- _modifiedTimeWeak = 1.2.1990::0:0:0;
-						- _declaration = "ServerSocket*";
+						- _declaration = "ClientSocket*";
 						- _kind = Language;
-					}
-					- _isOrdered = 0;
-					- _protection = iPrivate;
-					- _static = 0;
-					- _isReference = 0;
-					- _isConstant = 0;
-				}
-				{ IAttribute 
-					- _id = GUID 80d4c2a9-b16c-11e6-b280-10604b8125e9;
-					- _myState = 8192;
-					- _name = "new_sock";
-					- _modifiedTimeWeak = 11.22.2016::12:40:39;
-					- myTypeOf = { IType 
-						- _id = GUID 80d4c2aa-b16c-11e6-b280-10604b8125e9;
-						- _myState = 8192;
-						- _modifiedTimeWeak = 1.2.1990::0:0:0;
-						- _declaration = "ServerSocket*";
-						- _kind = Language;
-					}
-					- _isOrdered = 0;
-					- _protection = iPrivate;
-					- _static = 0;
-					- _isReference = 0;
-					- _isConstant = 0;
-				}
-				{ IAttribute 
-					- _id = GUID 4cf5c7a4-b17e-11e6-9bba-001999f1095a;
-					- _myState = 8192;
-					- _name = "clientAccepted";
-					- _modifiedTimeWeak = 11.23.2016::13:28:49;
-					- ValueSpecifications = { IRPYRawContainer 
-						- size = 1;
-						- value = 
-						{ ILiteralSpecification 
-							- _id = GUID 4cf5c7a7-b17e-11e6-9bba-001999f1095a;
-							- _modifiedTimeWeak = 11.23.2016::13:14:52;
-							- _value = "false";
-						}
-					}
-					- _typeOf = { IHandle 
-						- _m2Class = "IType";
-						- _filename = "PredefinedTypesC++.sbs";
-						- _subsystem = "PredefinedTypesCpp";
-						- _class = "";
-						- _name = "bool";
-						- _id = GUID e6c263cc-4bc5-4a11-b32d-02148c93add0;
 					}
 					- _isOrdered = 0;
 					- _protection = iPrivate;
@@ -1597,7 +1510,7 @@ while (error);";
 					- _id = GUID 80d4c2ab-b16c-11e6-b280-10604b8125e9;
 					- _myState = 139264;
 					- _name = "TrainSpeakerThread";
-					- _modifiedTimeWeak = 11.23.2016::13:14:52;
+					- _modifiedTimeWeak = 11.28.2016::9:23:39;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -1664,7 +1577,7 @@ while (error);";
 						{ IFileFragment 
 							- _id = GUID 80d4c2b0-b16c-11e6-b280-10604b8125e9;
 							- _name = "TrainSpeakerThread";
-							- _modifiedTimeWeak = 11.23.2016::13:14:52;
+							- _modifiedTimeWeak = 11.28.2016::9:23:39;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 
@@ -1728,7 +1641,7 @@ while (error);";
 								- _id = GUID 80d4c29c-b16c-11e6-b280-10604b8125e9;
 							}
 							- Fragments = { IRPYRawContainer 
-								- size = 11;
+								- size = 9;
 								- value = 
 								{ IFileFragment 
 									- _id = GUID 80d4c2b5-b16c-11e6-b280-10604b8125e9;
@@ -1804,21 +1717,6 @@ while (error);";
 									}
 								}
 								{ IFileFragment 
-									- _id = GUID 80d4c2ba-b16c-11e6-b280-10604b8125e9;
-									- _name = "startServer";
-									- _modifiedTimeWeak = 11.21.2016::13:49:46;
-									- m_type = specFragment;
-									- m_text = "";
-									- m_startRow = 51;
-									- m_startCol_Short = 10;
-									- m_endRow = 51;
-									- m_endCol_Short = 23;
-									- m_subject = { INObjectHandle 
-										- _m2Class = "IPrimitiveOperation";
-										- _id = GUID 80d4c2a0-b16c-11e6-b280-10604b8125e9;
-									}
-								}
-								{ IFileFragment 
 									- _id = GUID 80d4c2bb-b16c-11e6-b280-10604b8125e9;
 									- _name = "sendPositionToPi";
 									- _modifiedTimeWeak = 11.23.2016::11:11:3;
@@ -1874,21 +1772,6 @@ while (error);";
 									- m_endCol_Short = 33;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-								}
-								{ IFileFragment 
-									- _id = GUID 80d4c2bf-b16c-11e6-b280-10604b8125e9;
-									- _name = "i_port";
-									- _modifiedTimeWeak = 11.23.2016::11:11:28;
-									- m_type = specFragment;
-									- m_text = "";
-									- m_startRow = 69;
-									- m_startCol_Short = 9;
-									- m_endRow = 69;
-									- m_endCol_Short = 15;
-									- m_subject = { INObjectHandle 
-										- _m2Class = "IAttribute";
-										- _id = GUID 80d4c2a6-b16c-11e6-b280-10604b8125e9;
 									}
 								}
 							}
@@ -1975,7 +1858,7 @@ while (error);";
 							}
 						}
 					}
-					- _modifiedTimeWeak = 11.23.2016::13:14:52;
+					- _modifiedTimeWeak = 11.28.2016::9:23:39;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -2042,7 +1925,7 @@ while (error);";
 						{ IFileFragment 
 							- _id = GUID 80d4c2c6-b16c-11e6-b280-10604b8125e9;
 							- _name = "TrainSpeakerThread";
-							- _modifiedTimeWeak = 11.23.2016::13:14:52;
+							- _modifiedTimeWeak = 11.28.2016::9:23:39;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 22;
@@ -2054,7 +1937,7 @@ while (error);";
 								- _id = GUID 80d4c29c-b16c-11e6-b280-10604b8125e9;
 							}
 							- Fragments = { IRPYRawContainer 
-								- size = 8;
+								- size = 7;
 								- value = 
 								{ IFileFragment 
 									- _id = GUID 80d4c2c7-b16c-11e6-b280-10604b8125e9;
@@ -2253,73 +2136,6 @@ while (error);";
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-								}
-								{ IFileFragment 
-									- _id = GUID 80d4c2d6-b16c-11e6-b280-10604b8125e9;
-									- _name = "startServer";
-									- _modifiedTimeWeak = 11.21.2016::13:49:46;
-									- Tags = { IRPYRawContainer 
-										- size = 2;
-										- value = 
-										{ ITag 
-											- _id = GUID 80d4c2d7-b16c-11e6-b280-10604b8125e9;
-											- _myState = 8192;
-											- _name = "BodyStartLine";
-											- _modifiedTimeWeak = 1.2.1990::0:0:0;
-											- ValueSpecifications = { IRPYRawContainer 
-												- size = 1;
-												- value = 
-												{ ILiteralSpecification 
-													- _id = GUID 80d4c2d8-b16c-11e6-b280-10604b8125e9;
-													- _modifiedTimeWeak = 1.2.1990::0:0:0;
-													- _value = "38";
-												}
-											}
-											- _typeOf = { IHandle 
-												- _m2Class = "IType";
-												- _filename = "PredefinedTypes.sbs";
-												- _subsystem = "PredefinedTypes";
-												- _class = "";
-												- _name = "RhpString";
-												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
-											}
-											- _isOrdered = 0;
-										}
-										{ ITag 
-											- _id = GUID 80d4c2d9-b16c-11e6-b280-10604b8125e9;
-											- _myState = 8192;
-											- _name = "BodyStartCol";
-											- _modifiedTimeWeak = 1.2.1990::0:0:0;
-											- ValueSpecifications = { IRPYRawContainer 
-												- size = 1;
-												- value = 
-												{ ILiteralSpecification 
-													- _id = GUID 80d4c2da-b16c-11e6-b280-10604b8125e9;
-													- _modifiedTimeWeak = 1.2.1990::0:0:0;
-													- _value = "37";
-												}
-											}
-											- _typeOf = { IHandle 
-												- _m2Class = "IType";
-												- _filename = "PredefinedTypes.sbs";
-												- _subsystem = "PredefinedTypes";
-												- _class = "";
-												- _name = "RhpString";
-												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
-											}
-											- _isOrdered = 0;
-										}
-									}
-									- m_type = implFragment;
-									- m_text = "";
-									- m_startRow = 38;
-									- m_startCol_Short = 37;
-									- m_endRow = 65;
-									- m_endCol_Short = 1;
-									- m_subject = { INObjectHandle 
-										- _m2Class = "IPrimitiveOperation";
-										- _id = GUID 80d4c2a0-b16c-11e6-b280-10604b8125e9;
 									}
 								}
 								{ IFileFragment 
