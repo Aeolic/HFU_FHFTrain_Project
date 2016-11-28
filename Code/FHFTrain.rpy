@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "FHFTrain";
-	- _modifiedTimeWeak = 11.28.2016::6:47:42;
+	- _modifiedTimeWeak = 11.28.2016::12:28:29;
 	- _lastID = 2;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -277,7 +277,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 			- _name = "FHFTrainModel";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "11.28.2016::7:31:12";
+			- _lastModifiedTime = "11.28.2016::11:25:30";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 				- m_type = 0;
@@ -592,7 +592,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.434372 0 0 0.344029 777.131 551.815 ;
+					- m_transform = 0.434372 0 0 0.332443 777.131 568.627 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -607,10 +607,11 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 1;
 					}
+					- m_bFramesetModified = 1;
 					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
 					- m_nNameFormat = 0;
 					- m_nIsNameFormat = 0;
-					- frameset = "<frameset rows=50%,50%>
+					- frameset = "<frameset rows=23%,77%>
 <frame name=AttributeListCompartment>
 <frame name=OperationListCompartment>";
 					- Compartments = { IRPYRawContainer 
@@ -650,7 +651,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 1;
 							- Items = { IRPYRawContainer 
-								- size = 11;
+								- size = 12;
 								- value = 
 								{ IHandle 
 									- _m2Class = "IDestructor";
@@ -739,6 +740,14 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _class = "Socket";
 									- _name = "Socket()";
 									- _id = GUID 112b0e16-ab3c-11e6-923e-001999f109b4;
+								}
+								{ IHandle 
+									- _m2Class = "IPrimitiveOperation";
+									- _filename = "";
+									- _subsystem = "Default";
+									- _class = "Socket";
+									- _name = "close()";
+									- _id = GUID 24b30700-b55c-11e6-a492-10604b8125e9;
 								}
 							}
 						}
@@ -938,7 +947,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
 					- m_nNameFormat = 0;
 					- m_nIsNameFormat = 0;
-					- frameset = "<frameset rows=50%,50%>
+					- frameset = "<frameset rows=19%,81%>
 <frame name=AttributeListCompartment>
 <frame name=OperationListCompartment>";
 					- Compartments = { IRPYRawContainer 
@@ -1071,7 +1080,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "new_sock";
@@ -1079,7 +1088,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "client_accepted";
@@ -1087,7 +1096,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "server";
@@ -1106,7 +1115,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "PiSpeakerThread(ServerSocket*,ServerSocket*,bool*)";
@@ -1117,24 +1126,24 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
-									- _name = "startServer()";
-									- _id = GUID c3e4f431-ab3f-11e6-a110-001999f109b4;
-								}
-								{ IHandle 
-									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
-									- _subsystem = "Pi";
-									- _class = "PiSpeakerThread";
 									- _name = "sendOrderToTrain(std::string)";
 									- _id = GUID 9f5d45bc-afda-11e6-a2e0-001999f109b4;
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiSpeakerThread";
 									- _name = "execute()";
 									- _id = GUID 7c87a80a-afee-11e6-86f0-001999f109b4;
+								}
+								{ IHandle 
+									- _m2Class = "IPrimitiveOperation";
+									- _filename = "";
+									- _subsystem = "Pi";
+									- _class = "PiSpeakerThread";
+									- _name = "restartServer()";
+									- _id = GUID d4664918-b55c-11e6-a9b8-10604b8125e9;
 								}
 							}
 						}
@@ -1232,7 +1241,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "server";
@@ -1240,7 +1249,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "new_sock";
@@ -1248,7 +1257,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "client_accepted";
@@ -1267,7 +1276,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "PiAlgorithm()";
@@ -1275,7 +1284,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "execute()";
@@ -1283,7 +1292,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "startServer()";
@@ -1807,7 +1816,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
 					- m_nNameFormat = 0;
 					- m_nIsNameFormat = 0;
-					- frameset = "<frameset rows=50%,50%>
+					- frameset = "<frameset rows=29%,71%>
 <frame name=AttributeListCompartment>
 <frame name=OperationListCompartment>";
 					- Compartments = { IRPYRawContainer 
@@ -1824,7 +1833,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Train.sbs";
+									- _filename = "";
 									- _subsystem = "Train";
 									- _class = "TrainThread";
 									- _name = "client";
@@ -1843,7 +1852,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "Train.sbs";
+									- _filename = "";
 									- _subsystem = "Train";
 									- _class = "TrainThread";
 									- _name = "TrainThread()";
@@ -1851,7 +1860,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Train.sbs";
+									- _filename = "";
 									- _subsystem = "Train";
 									- _class = "TrainThread";
 									- _name = "execute()";
@@ -1859,7 +1868,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Train.sbs";
+									- _filename = "";
 									- _subsystem = "Train";
 									- _class = "TrainThread";
 									- _name = "startClient()";
