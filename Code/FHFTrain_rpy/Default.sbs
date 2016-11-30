@@ -80,7 +80,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 		}
 	}
-	- _modifiedTimeWeak = 11.28.2016::11:8:26;
+	- _modifiedTimeWeak = 11.30.2016::12:37:18;
 	- _lastID = 8;
 	- Declaratives = { IRPYRawContainer 
 		- size = 1;
@@ -90,7 +90,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID 1605d717-ab3b-11e6-a452-001999f109b4;
 		}
 	}
-	- weakCGTime = 11.28.2016::11:8:26;
+	- weakCGTime = 11.30.2016::12:37:18;
 	- strongCGTime = 11.22.2016::13:53:55;
 	- ComponentFiles = { IRPYRawContainer 
 		- size = 2;
@@ -697,7 +697,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					}
 				}
 			}
-			- _modifiedTimeWeak = 11.28.2016::13:0:37;
+			- _modifiedTimeWeak = 11.30.2016::12:37:18;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -707,7 +707,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 1;
-			- weakCGTime = 11.28.2016::13:0:37;
+			- weakCGTime = 11.30.2016::12:37:18;
 			- strongCGTime = 11.15.2016::13:57:19;
 			- Operations = { IRPYRawContainer 
 				- size = 12;
@@ -941,7 +941,7 @@ return true;";
 					- _id = GUID 99ef2e91-ab3a-11e6-9cc8-001999f109b4;
 					- _myState = 8192;
 					- _name = "accept";
-					- _modifiedTimeWeak = 11.28.2016::13:0:37;
+					- _modifiedTimeWeak = 11.30.2016::12:37:18;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 1;
@@ -975,10 +975,6 @@ return true;";
 					- _constant = 1;
 					- _itsBody = { IBody 
 						- _bodyData = "int addr_length = sizeof ( m_addr );
-cout << addr_length << endl;
-cout << m_sock << endl;
-// cout << m_addr << endl;
-// cout << addr_length << endl;
 new_socket.m_sock = ::accept ( m_sock, ( sockaddr * ) &m_addr, ( socklen_t * ) &addr_length );
 
 if ( new_socket.m_sock <= 0 )

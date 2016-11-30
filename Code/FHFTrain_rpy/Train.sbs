@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Train";
-	- _modifiedTimeWeak = 11.28.2016::9:1:56;
+	- _modifiedTimeWeak = 11.30.2016::12:45:9;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 4;
-	- weakCGTime = 11.28.2016::9:1:56;
+	- weakCGTime = 11.30.2016::12:45:9;
 	- strongCGTime = 11.28.2016::7:20:9;
 	- _defaultComposite = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 11.28.2016::7:21:31;
-			- weakCGTime = 11.28.2016::7:21:31;
+			- _modifiedTimeWeak = 11.28.2016::9:1:56;
+			- weakCGTime = 11.28.2016::9:1:56;
 			- strongCGTime = 11.28.2016::7:20:9;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -1330,7 +1330,7 @@ do
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.28.2016::9:23:39;
+			- _modifiedTimeWeak = 11.30.2016::12:48:43;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -1340,7 +1340,7 @@ do
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 10;
-			- weakCGTime = 11.28.2016::9:23:39;
+			- weakCGTime = 11.30.2016::12:48:43;
 			- strongCGTime = 11.23.2016::11:4:52;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -1392,7 +1392,7 @@ do
 					- _id = GUID 80d4c2a1-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
 					- _name = "sendPositionToPi";
-					- _modifiedTimeWeak = 11.28.2016::9:16:33;
+					- _modifiedTimeWeak = 11.30.2016::12:48:43;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -1443,7 +1443,7 @@ do
 	{
 		error = true;
 		std::cout << e.description() << std::endl;
-		//sleep(1);
+		sleep(1);
 		break;
 	}
 	catch (...)
