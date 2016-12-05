@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "FHFTrain";
-	- _modifiedTimeWeak = 11.30.2016::10:31:8;
+	- _modifiedTimeWeak = 12.5.2016::13:42:15;
 	- _lastID = 2;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -277,7 +277,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 			- _name = "FHFTrainModel";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "11.30.2016::12:33:19";
+			- _lastModifiedTime = "12.5.2016::13:42:15";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 				- m_type = 0;
@@ -1199,14 +1199,6 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _filename = "Pi.sbs";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
-									- _name = "orderlist";
-									- _id = GUID a010726e-b572-11e6-8bd6-10604b8125e9;
-								}
-								{ IHandle 
-									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
-									- _subsystem = "Pi";
-									- _class = "PiAlgorithm";
 									- _name = "trip";
 									- _id = GUID aadd0f60-b57a-11e6-8714-10604b8125e9;
 								}
@@ -1250,6 +1242,14 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _name = "lastOrderTag";
 									- _id = GUID fdc8d91f-b58e-11e6-a292-10604b8125e9;
 								}
+								{ IHandle 
+									- _m2Class = "IAttribute";
+									- _filename = "Pi.sbs";
+									- _subsystem = "Pi";
+									- _class = "PiAlgorithm";
+									- _name = "orderList";
+									- _id = GUID 829a7b94-baef-11e6-93dc-10604b8125e9;
+								}
 							}
 						}
 						{ CGICompartment 
@@ -1259,7 +1259,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
 							- Items = { IRPYRawContainer 
-								- size = 9;
+								- size = 8;
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
@@ -1282,20 +1282,12 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
-									- _name = "startServer()";
-									- _id = GUID d278eafe-b532-11e6-b074-10604b8125e9;
-								}
-								{ IHandle 
-									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
-									- _subsystem = "Pi";
-									- _class = "PiAlgorithm";
 									- _name = "execute()";
 									- _id = GUID d19a9956-b571-11e6-abce-10604b8125e9;
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "createOrderlist()";
@@ -1303,7 +1295,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "sendOrderToCommunication()";
@@ -1311,7 +1303,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "canSendOrder()";
@@ -1319,7 +1311,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "canReadTrainPosition()";
@@ -1327,7 +1319,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "PiAlgorithm";
 									- _name = "repairOrderlist()";
@@ -3059,7 +3051,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "Communication";
 									- _name = "server";
@@ -3067,7 +3059,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "Communication";
 									- _name = "new_sock";
@@ -3075,7 +3067,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "Communication";
 									- _name = "client_accepted";
@@ -3083,7 +3075,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "Communication";
 									- _name = "trainPos";
@@ -3102,7 +3094,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "Communication";
 									- _name = "sendOrder(string)";
@@ -3110,7 +3102,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "Communication";
 									- _name = "Communication(TrainPos*)";
@@ -3118,7 +3110,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Pi.sbs";
+									- _filename = "";
 									- _subsystem = "Pi";
 									- _class = "Communication";
 									- _name = "execute()";
