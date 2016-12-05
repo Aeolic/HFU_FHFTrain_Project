@@ -30,13 +30,13 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _UpLeft = 1041 -16 ;
-			- _DownRight = 2136 581 ;
+			- _UpLeft = 968 -16 ;
+			- _DownRight = 1817 570 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 0;
 		}
 	}
-	- _fullName = "/user0/langmaxm/HFU_FHFTrain_Project/Code/FHFTrain";
+	- _fullName = "/user0/grituceu/FHFTrain/Github/HFU_FHFTrain_Project/Code/FHFTrain";
 	- m_SearchScopeList = { IRPYRawContainer 
 		- size = 0;
 	}
