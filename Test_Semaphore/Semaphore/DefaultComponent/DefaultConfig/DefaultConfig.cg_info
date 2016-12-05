@@ -1,0 +1,28 @@
+I-Logix-RPY-Archive version 8.12.0 * 9728113
+
+- m_fileModifyTime = { IRPYRawContainer 
+	- size = 2;
+	- value = "DefaultComponent/DefaultConfig/Semaphore.cpp" 12.5.2016::17:39:20
+	"DefaultComponent/DefaultConfig/Semaphore.h" 12.5.2016::17:33:54
+	
+}
+- size = 2;
+- hElement = { IHandle 
+	- _m2Class = "ICodeGenConfigInfo";
+	- _filename = "DefaultComponent.cmp";
+	- _subsystem = "";
+	- _class = "";
+	- _name = "DefaultComponent/DefaultConfig";
+	- _id = GUID a4679c33-bb06-11e6-9ab2-10604b8125e9;
+}
+- genTime = 12.5.2016::17:39:20;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Default.sbs";
+	- _subsystem = "Default";
+	- _class = "";
+	- _name = "Semaphore";
+	- _id = GUID e10bcd0a-bb0b-11e6-a2e0-10604b8125e9;
+}
+- genTime = 12.5.2016::17:39:20;
+

@@ -1,0 +1,226 @@
+I-Logix-RPY-Archive version 8.12.0 C++ 9728113
+{ ISubsystem 
+	- _id = GUID a4679c2b-bb06-11e6-9ab2-10604b8125e9;
+	- _myState = 8192;
+	- _name = "Default";
+	- _modifiedTimeWeak = 12.5.2016::17:22:36;
+	- _lastID = 1;
+	- weakCGTime = 12.5.2016::17:22:36;
+	- strongCGTime = 1.2.1990::0:0:0;
+	- _defaultComposite = GUID a4679c2c-bb06-11e6-9ab2-10604b8125e9;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 2;
+		- value = 
+		{ IClass 
+			- _id = GUID a4679c2c-bb06-11e6-9ab2-10604b8125e9;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _modifiedTimeWeak = 12.5.2016::16:53:27;
+			- weakCGTime = 12.5.2016::16:53:27;
+			- strongCGTime = 1.2.1990::0:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID e10bcd0a-bb0b-11e6-a2e0-10604b8125e9;
+			- _myState = 8192;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Class";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "Concurrency";
+										- _Value = "active";
+										- _Type = Enum;
+										- _ExtraTypeInfo = "sequential,active";
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _name = "Semaphore";
+			- Stereotypes = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IStereotype";
+					- _filename = "PredefinedTypes.sbs";
+					- _subsystem = "PredefinedTypes";
+					- _class = "";
+					- _name = "Task";
+					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
+				}
+			}
+			- _modifiedTimeWeak = 12.5.2016::17:39:18;
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Model1";
+				- _id = GUID a4679c7a-bb06-11e6-9ab2-10604b8125e9;
+			}
+			- _lastID = 4;
+			- weakCGTime = 12.5.2016::17:39:18;
+			- strongCGTime = 12.5.2016::17:0:22;
+			- Operations = { IRPYRawContainer 
+				- size = 3;
+				- value = 
+				{ IPrimitiveOperation 
+					- _id = GUID e10bcda3-bb0b-11e6-a2e0-10604b8125e9;
+					- _myState = 8192;
+					- _name = "request";
+					- _modifiedTimeWeak = 12.5.2016::17:38:52;
+					- _lastID = 2;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "s->wait(-1);";
+					}
+				}
+				{ IConstructor 
+					- _id = GUID e10bcdbd-bb0b-11e6-a2e0-10604b8125e9;
+					- _myState = 8192;
+					- _modifiedTimeWeak = 12.5.2016::17:38:9;
+					- _lastID = 1;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IArgument 
+							- _id = GUID e10bcdc3-bb0b-11e6-a2e0-10604b8125e9;
+							- _myState = 8192;
+							- _name = "startValue";
+							- _modifiedTimeWeak = 12.5.2016::17:29:26;
+							- ValueSpecifications = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ ILiteralSpecification 
+									- _id = GUID e10bcdc7-bb0b-11e6-a2e0-10604b8125e9;
+									- _modifiedTimeWeak = 12.5.2016::17:29:26;
+									- _value = "1";
+								}
+							}
+							- _typeOf = { IHandle 
+								- _m2Class = "IType";
+								- _filename = "PredefinedTypesC++.sbs";
+								- _subsystem = "PredefinedTypesCpp";
+								- _class = "";
+								- _name = "int";
+								- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "";
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "s = OMOSFactory::instance()->createOMOSSemaphore(0,startValue, 100, NULL); 
+
+
+
+
+";
+					}
+					- _initializer = "";
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID e10bcddb-bb0b-11e6-a2e0-10604b8125e9;
+					- _myState = 8192;
+					- _name = "release";
+					- _modifiedTimeWeak = 12.5.2016::17:39:18;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "s->signal();";
+					}
+				}
+			}
+			- Attrs = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAttribute 
+					- _id = GUID e10bcdd2-bb0b-11e6-a2e0-10604b8125e9;
+					- _myState = 8192;
+					- _name = "s";
+					- _modifiedTimeWeak = 12.5.2016::17:31:25;
+					- myTypeOf = { IType 
+						- _id = GUID e10bcdd5-bb0b-11e6-a2e0-10604b8125e9;
+						- _myState = 8192;
+						- _modifiedTimeWeak = 1.2.1990::0:0:0;
+						- _declaration = "OMOSSemaphore *";
+						- _kind = Language;
+					}
+					- _isOrdered = 0;
+					- _protection = iPublic;
+					- _static = 0;
+					- _isReference = 0;
+					- _isConstant = 0;
+				}
+			}
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 1.2.1990::0:0:0;
+}
+

@@ -1,0 +1,14 @@
+I-Logix-RPY-Archive version 8.12.0 * 9728113
+
+- filesTable = { IRPYRawContainer 
+	- size = 7;
+	- value = "Semaphore.rpy" ""
+	"Semaphore_rpy/CGCompatibilityPre812Cpp.sbs" "CGCompatibilityPre812Cpp"
+	"Semaphore_rpy/CGCompatibilityPre813Cpp.sbs" "CGCompatibilityPre813Cpp"
+	"Semaphore_rpy/CGCompatibilityPre814Cpp.sbs" "CGCompatibilityPre814Cpp"
+	"Semaphore_rpy/CGCompatibilityPre815Cpp.sbs" "CGCompatibilityPre815Cpp"
+	"Semaphore_rpy/Default.sbs" "Default"
+	"Semaphore_rpy/DefaultComponent.cmp" "DefaultComponent"
+	
+}
+
