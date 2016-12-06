@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 12.6.2016::8:33:19;
+	- _modifiedTimeWeak = 12.6.2016::10:0:41;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 12.6.2016::8:33:19;
+	- weakCGTime = 12.6.2016::10:0:41;
 	- strongCGTime = 11.15.2016::13:50:47;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 12.6.2016::9:56:24;
+			- _modifiedTimeWeak = 12.6.2016::10:4:46;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 25;
-			- weakCGTime = 12.6.2016::9:56:24;
+			- weakCGTime = 12.6.2016::10:4:46;
 			- strongCGTime = 11.21.2016::12:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 9;
@@ -216,7 +216,7 @@ return (lastOrderTag != currentPos);";
 					- _id = GUID a0107267-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "createOrderlistFuture";
-					- _modifiedTimeWeak = 12.6.2016::9:56:24;
+					- _modifiedTimeWeak = 12.6.2016::10:4:46;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -269,8 +269,9 @@ for (int i=0; i<(2*dim-2); ++i)
 //check the matrix 'trip' in order to create orders. 
 //First, initialize 'stop[]' with new values. The orders can be created out of this array.
 
-
-
+for (int i=0; i < dim; ++i) 
+  for (int j=0; j < dim; ++j)
+    trip[(startStation + i) % dim][j] //siehe Blatt IV!  Station(Zeile), Station(Spalte)
 
 
 
