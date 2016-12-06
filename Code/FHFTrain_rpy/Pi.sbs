@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 12.5.2016::22:0:54;
+	- _modifiedTimeWeak = 12.5.2016::22:6:58;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 12.5.2016::22:0:54;
+	- weakCGTime = 12.5.2016::22:6:58;
 	- strongCGTime = 11.15.2016::13:50:47;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 12.5.2016::16:9:0;
-			- weakCGTime = 12.5.2016::16:9:0;
+			- _modifiedTimeWeak = 12.5.2016::22:6:58;
+			- weakCGTime = 12.5.2016::22:6:58;
 			- strongCGTime = 11.15.2016::13:50:47;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 12.5.2016::21:44:42;
+			- _modifiedTimeWeak = 12.6.2016::0:47:51;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -84,11 +84,11 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _lastID = 24;
-			- weakCGTime = 12.5.2016::21:44:42;
+			- _lastID = 25;
+			- weakCGTime = 12.6.2016::0:47:51;
 			- strongCGTime = 11.21.2016::12:7:48;
 			- Operations = { IRPYRawContainer 
-				- size = 8;
+				- size = 9;
 				- value = 
 				{ IConstructor 
 					- _id = GUID 4a5bf3f6-ab3e-11e6-ad2c-001999f109b4;
@@ -216,7 +216,7 @@ return (lastOrderTag != currentPos);";
 					- _id = GUID a0107267-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "createOrderlist";
-					- _modifiedTimeWeak = 12.5.2016::21:44:42;
+					- _modifiedTimeWeak = 12.6.2016::0:47:51;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -237,25 +237,16 @@ return (lastOrderTag != currentPos);";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "Order o1(1,0,1);
-orderList.push_back(o1);
-cout << \"testing afterSpeed attribute: \" << o1.getAfterSpeed() << endl; 
-
-Order o2(2,0.5,2);
-Order o3(3,1,3);
-//orderList.push_back(o2);
-//orderList.push_back(o3);
+						- _bodyData = "                                     
                                            
-                                           
-                                           
-// erst testen ob leerer Bahnhof
+// Max: erst testen ob leerer Bahnhof
 	// weg zum n\ächsten erstelle
  
  
-// ist an einem vollen Bahnhof
+// Max: ist an einem vollen Bahnhof
 	//weiter mit der oderlist machen   
 	
-	
+//currentPos in this context is the START STATION of the train	 
 int currentLine = currentPos; // Line in matrix trip, with which we are working      
 int startStation = currentPos;
 bool startFound = false;
@@ -284,11 +275,15 @@ if (startFound) //then move the train to its startStation - where the first pass
 } 
 //else let the user know why the train is not moving     
 
-//test output from orderList
+//TEST output from orderList
 //for (Order x: orderList)   //for-each loop does not work in C++98
 for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)      
-
-  cout << \"\\t\\t\\t\\t\\tOrder (Tag): \" << (*it).getTag() << endl;
+  cout << \"\\t\\t\\t\\t\\t(in createOrderlist())--> Order (Tag): \" << (*it).getTag() << endl;        
+  
+//now add the orders between the startStation and the initial station of the train (currentPos).
+  
+  
+  
 	  
                                       
                                       
@@ -315,7 +310,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _id = GUID d19a9956-b571-11e6-abce-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 12.5.2016::14:25:36;
+					- _modifiedTimeWeak = 12.5.2016::22:35:28;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -334,7 +329,9 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "// __________________________________________
+						- _bodyData = "//execute() - like run()-method in Java. Thread will perform this method after it has been started.
+
+// __________________________________________
 // TEST for the Socket connection
 // __________________________________________
 // executeSocket();
@@ -349,9 +346,11 @@ cout << \"test output for execute()\" << endl;
 for (int i = 0; i<dim; ++i)
   for (int j = 0; j<dim; ++j)
   	trip[i][j] = 0;  
-trip[0][2] = 7;
-trip[1][3] = 3;
-//trip[3][1] = 2;
+
+//TEST-values in the matrix
+//trip[0][2] = 7;
+//trip[1][3] = 3;
+trip[3][1] = 2;
 //---------------------  	  
 
 // Save the converted order in this string
@@ -465,6 +464,108 @@ while(true)
 					- _itsBody = { IBody 
 						- _bodyData = "//compare the tags currentPos and lastOrderTag and do smth if not equal
 //e.g.: the missed stations should be taken care of (passengers brought home)";
+					}
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID e6f39c3b-bb3e-11e6-9f70-10604b8125e9;
+					- _myState = 8192;
+					- _name = "createOrderlistOld";
+					- _modifiedTimeWeak = 12.6.2016::0:33:6;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = " //This function should be deleted after createOrderlist() is fully implemented
+
+Order o1(1,0,1);
+//orderList.push_back(o1);
+cout << \"testing afterSpeed attribute: \" << o1.getAfterSpeed() << endl; 
+
+Order o2(2,0.5,2);
+Order o3(3,1,3);
+//orderList.push_back(o2);
+//orderList.push_back(o3);
+                                           
+                                           
+                                           
+// erst testen ob leerer Bahnhof
+	// weg zum n\ächsten erstelle
+ 
+ 
+// ist an einem vollen Bahnhof
+	//weiter mit der oderlist machen   
+	
+	
+int currentLine = currentPos; // Line in matrix trip, with which we are working      
+int startStation = currentPos;
+bool startFound = false;
+for (int i = 0; i < dim; ++i)
+{
+  for (int j = 0; j < dim; ++j)
+  	if (trip[currentLine][j] != 0){
+  		startStation = currentLine;                                        
+  		startFound = true;
+  	}  
+  if(startFound == true)
+  	break;
+  currentLine = (currentLine + 1) % dim;
+}         
+//startStation now has the value of the first station having passengers on it
+  //if startFound stays false, it means no passengers at all at any station
+  //in this case eventually some kind of output so that it is clear why the train does not move  
+if (startFound) //then move the train to its startStation - where the first passengers are waiting
+{                                               
+  currentLine = currentPos;
+  for (int i = 0; i < (startStation - currentLine + dim) % 4; ++i) //create 2*orders so often
+  {
+  	orderList.push_back(Order(1,((currentLine+i)%dim) + 0.5 ,1 ));
+  	orderList.push_back(Order(1,((currentLine+i)%dim) + 1 ,1));	
+  }	 
+} 
+//else let the user know why the train is not moving     
+
+//TEST output from orderList
+//for (Order x: orderList)   //for-each loop does not work in C++98
+for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)      
+  cout << \"\\t\\t\\t\\t\\t(in createOrderlist())--> Order (Tag): \" << (*it).getTag() << endl;  
+  
+  
+  
+	  
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      ";
 					}
 				}
 			}
@@ -644,7 +745,7 @@ while(true)
 					- _id = GUID 553a532b-b0b6-11e6-96a6-10604b8125e9;
 					- _myState = 139264;
 					- _name = "PiAlgorithm";
-					- _modifiedTimeWeak = 12.5.2016::13:54:24;
+					- _modifiedTimeWeak = 12.6.2016::0:31:27;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -751,7 +852,7 @@ while(true)
 						{ IFileFragment 
 							- _id = GUID 553a532c-b0b6-11e6-96a6-10604b8125e9;
 							- _name = "PiAlgorithm";
-							- _modifiedTimeWeak = 12.5.2016::13:54:24;
+							- _modifiedTimeWeak = 12.6.2016::0:31:27;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 28;
@@ -2639,7 +2740,7 @@ while(true)
 							}
 						}
 					}
-					- _modifiedTimeWeak = 12.5.2016::13:54:24;
+					- _modifiedTimeWeak = 12.6.2016::0:31:27;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -2789,7 +2890,7 @@ while(true)
 						{ IFileFragment 
 							- _id = GUID 553a52f0-b0b6-11e6-96a6-10604b8125e9;
 							- _name = "PiAlgorithm";
-							- _modifiedTimeWeak = 12.5.2016::13:54:24;
+							- _modifiedTimeWeak = 12.6.2016::0:31:27;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 
@@ -6982,7 +7083,7 @@ afterSpeed = aSp;";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.30.2016::12:27:22;
+			- _modifiedTimeWeak = 12.5.2016::22:17:49;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -6992,7 +7093,7 @@ afterSpeed = aSp;";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 7;
-			- weakCGTime = 11.30.2016::12:27:22;
+			- weakCGTime = 12.5.2016::22:17:49;
 			- strongCGTime = 11.30.2016::10:31:59;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -7001,7 +7102,7 @@ afterSpeed = aSp;";
 					- _id = GUID 16a39bbc-b6e7-11e6-8ba6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "sendOrder";
-					- _modifiedTimeWeak = 11.30.2016::11:4:2;
+					- _modifiedTimeWeak = 12.5.2016::22:14:44;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -7113,7 +7214,7 @@ start();";
 					- _id = GUID 16a39c00-b6e7-11e6-8ba6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 11.30.2016::12:27:22;
+					- _modifiedTimeWeak = 12.5.2016::22:17:49;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -7147,11 +7248,11 @@ start();";
 	}
 	catch (SocketException& e)
 	{
-	    cout << \"Communication Error: \" << e.description() << endl;
+	    cout << \"Communication Error in Communication Thread's execute(): \" << e.description() << endl;
 	}
 	catch (...)
 	{
-	 	cout << \"Unexpected error in Communication\" << endl;
+	 	cout << \"Unexpected error in Communication Thread's execute()\" << endl;
 	}
 }";
 					}
