@@ -1,12 +1,13 @@
 I-Logix-RPY-Archive version 8.10.0 * 6930033
 
 - filesTable = { IRPYRawContainer 
-	- size = 6;
+	- size = 7;
 	- value = "FHFTrain.rpy" ""
 	"FHFTrain_rpy/Default.sbs" "Default"
 	"FHFTrain_rpy/DefaultComponent.cmp" "DefaultComponent"
 	"FHFTrain_rpy/Pi.sbs" "Pi"
 	"FHFTrain_rpy/Train.sbs" "Train"
+	"FHFTrain_rpy/TrainTest.sbs" "TrainTest"
 	"FHFTrain_rpy/std.sbs" "Default::std"
 	
 }

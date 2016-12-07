@@ -3,8 +3,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "FHFTrain";
-	- _modifiedTimeWeak = 12.7.2016::10:23:47;
-	- _lastID = 2;
+	- _modifiedTimeWeak = 12.7.2016::14:1:38;
+	- _lastID = 3;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
 		- value = 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 
@@ -46,7 +46,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		}
 	}
 	- Subsystems = { IRPYRawContainer 
-		- size = 3;
+		- size = 4;
 		- value = 
 		{ ISubsystem 
 			- fileName = "Default";
@@ -59,6 +59,10 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		{ ISubsystem 
 			- fileName = "Pi";
 			- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
+		}
+		{ ISubsystem 
+			- fileName = "TrainTest";
+			- _id = GUID 29eae1fc-bc85-11e6-aa7e-10604b8125e9;
 		}
 	}
 	- Diagrams = { IRPYRawContainer 
@@ -277,7 +281,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 			- _name = "FHFTrainModel";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "12.7.2016::10:35:27";
+			- _lastModifiedTime = "12.7.2016::14:1:38";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 				- m_type = 0;
@@ -301,7 +305,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				}
 				- m_drawBehavior = 0;
 				- m_bIsPreferencesInitialized = 0;
-				- elementList = 25;
+				- elementList = 26;
 				{ CGIClass 
 					- _id = GUID c5285cbf-ab39-11e6-89be-001999f109b4;
 					- m_type = 78;
@@ -592,7 +596,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.434372 0 0 0.332443 777.131 568.627 ;
+					- m_transform = 0.225685 0 0 0.288771 1345.55 521.995 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -829,7 +833,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2088;
-					- m_transform = 0.338999 0 0 0.311052 387.322 573.664 ;
+					- m_transform = 0.222852 0 0 0.15508 1066.55 561.979 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -844,10 +848,11 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 1;
 					}
+					- m_bFramesetModified = 1;
 					- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
 					- m_nNameFormat = 0;
 					- m_nIsNameFormat = 0;
-					- frameset = "<frameset rows=50%,50%>
+					- frameset = "<frameset rows=37%,63%>
 <frame name=AttributeListCompartment>
 <frame name=OperationListCompartment>";
 					- Compartments = { IRPYRawContainer 
@@ -864,7 +869,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Default.sbs";
+									- _filename = "";
 									- _subsystem = "Default";
 									- _class = "ClientSocket";
 									- _name = "connected";
@@ -891,8 +896,27 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 6c6b733d-ab3b-11e6-94dc-001999f109b4;
 					- _properties = { IPropertyContainer 
 						- Subjects = { IRPYRawContainer 
-							- size = 1;
+							- size = 2;
 							- value = 
+							{ IPropertySubject 
+								- _Name = "General";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Graphics";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "FitBoxToItsTextuals";
+												- _Value = "False";
+												- _Type = Bool;
+											}
+										}
+									}
+								}
+							}
 							{ IPropertySubject 
 								- _Name = "ObjectModelGe";
 								- Metaclasses = { IRPYRawContainer 
@@ -938,7 +962,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2152;
-					- m_transform = 0.305949 0 0 0.2959 1255.39 582.649 ;
+					- m_transform = 0.241737 0 0 0.2959 1615.52 514.649 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -1422,7 +1446,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.235127 0 0 0.283422 1620.53 582.754 ;
+					- m_transform = 0.235127 0 0 0.283422 1897.53 519.754 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -1859,7 +1883,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_bImplicitSetRectPoints = 0;
 					}
 					- m_targetRole = { CGIText 
-						- m_str = "";
+						- m_str = "itsTrainListenerThread";
 						- m_style = "Arial" 10 0 0 0 1 ;
 						- m_color = { IColor 
 							- m_fgColor = 0;
@@ -3766,7 +3790,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								- value = 
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Train.sbs";
+									- _filename = "";
 									- _subsystem = "Train";
 									- _class = "TrainCommunication";
 									- _name = "client";
@@ -3774,7 +3798,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 								}
 								{ IHandle 
 									- _m2Class = "IAttribute";
-									- _filename = "Train.sbs";
+									- _filename = "";
 									- _subsystem = "Train";
 									- _class = "TrainCommunication";
 									- _name = "connected";
@@ -3970,6 +3994,79 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 8;
 					}
 					- m_specificType = type_122;
+				}
+				{ CGIPackage 
+					- _id = GUID 29eae1f9-bc85-11e6-aa7e-10604b8125e9;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "General";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Graphics";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "FitBoxToItsTextuals";
+												- _Value = "False";
+												- _Type = Bool;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- m_type = 127;
+					- m_pModelObject = { IHandle 
+						- _m2Class = "ISubsystem";
+						- _filename = "TrainTest.sbs";
+						- _subsystem = "";
+						- _class = "";
+						- _name = "TrainTest";
+						- _id = GUID 29eae1fc-bc85-11e6-aa7e-10604b8125e9;
+					}
+					- m_pParent = GUID c5285cbf-ab39-11e6-89be-001999f109b4;
+					- m_name = { CGIText 
+						- m_str = "TrainTest";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 5;
+					}
+					- m_drawBehavior = 4104;
+					- m_transform = 0.773849 0 0 0.568202 13 549.709 ;
+					- m_bIsPreferencesInitialized = 1;
+					- m_AdditionalLabel = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 1;
+					}
+					- m_polygon = 4 0 0  0 1151  1216 1151  1216 0  ;
+					- m_nNameFormat = 0;
+					- m_nIsNameFormat = 0;
+					- Compartments = { IRPYRawContainer 
+						- size = 0;
+					}
 				}
 				
 				- m_access = 'Z';

@@ -1,0 +1,38 @@
+I-Logix-RPY-Archive version 8.10.0 C++ 6930033
+{ ISubsystem 
+	- _id = GUID 29eae1fc-bc85-11e6-aa7e-10604b8125e9;
+	- _myState = 8192;
+	- _name = "TrainTest";
+	- _modifiedTimeWeak = 12.7.2016::14:1:38;
+	- _theMainDiagram = { IHandle 
+		- _m2Class = "IDiagram";
+		- _filename = "";
+		- _subsystem = "";
+		- _class = "";
+		- _name = "FHFTrainModel";
+		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
+	}
+	- weakCGTime = 12.7.2016::14:1:38;
+	- strongCGTime = 12.7.2016::14:1:38;
+	- _defaultComposite = GUID 29eae1fd-bc85-11e6-aa7e-10604b8125e9;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IClass 
+			- _id = GUID 29eae1fd-bc85-11e6-aa7e-10604b8125e9;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _modifiedTimeWeak = 1.2.1990::0:0:0;
+			- weakCGTime = 1.2.1990::0:0:0;
+			- strongCGTime = 1.2.1990::0:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 1.1.1970::1:0:0;
+}
+
