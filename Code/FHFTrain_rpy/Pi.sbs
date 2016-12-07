@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 12.6.2016::14:37:31;
+	- _modifiedTimeWeak = 12.7.2016::17:9:56;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 12.6.2016::14:37:31;
+	- weakCGTime = 12.7.2016::17:9:56;
 	- strongCGTime = 11.15.2016::13:50:47;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 12.6.2016::10:0:41;
-			- weakCGTime = 12.6.2016::10:0:41;
+			- _modifiedTimeWeak = 12.6.2016::14:37:31;
+			- weakCGTime = 12.6.2016::14:37:31;
 			- strongCGTime = 11.15.2016::13:50:47;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 12.6.2016::14:37:31;
+			- _modifiedTimeWeak = 12.7.2016::18:5:45;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 25;
-			- weakCGTime = 12.6.2016::14:37:31;
+			- weakCGTime = 12.7.2016::18:5:45;
 			- strongCGTime = 11.21.2016::12:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 9;
@@ -216,7 +216,7 @@ return (lastOrderTag != currentPos);";
 					- _id = GUID a0107267-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "createOrderlist";
-					- _modifiedTimeWeak = 12.6.2016::14:35:34;
+					- _modifiedTimeWeak = 12.7.2016::18:5:45;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -237,13 +237,11 @@ return (lastOrderTag != currentPos);";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "//-----------------Eugeniu is working on this method. When finished, should replace the createOrderlist()------
-// Max said: erst testen ob leerer Bahnhof      	// weg zum n\ächsten erstelle
-// Max said: ist an einem vollen Bahnhof     	//weiter mit der oderlist machen 
-//Eugeniu said: will use another idea here. Let's see if it works  
-	
-//currentPos in this context is the START STATION of the train	      
+						- _bodyData = "//currentPos in this context is the START STATION of the train	      
+
+currentPos = 3; //TO DELETE
 int startStation = currentPos;  //double -> integer. Make sure the train is standing on a real station, not a \"middle\" one
+
 bool passengersFound = false;
 for (int i = 0; i < dim; ++i)
 {
@@ -262,44 +260,87 @@ if (!passengersFound)
 	
 //else move the train. startStation could be [0...dim-1]
 
-bool stop[2*dim-2]; // value of stop[0] set on 'true' shows the necessity to stop the train at (startStation+1)%dim
-//2*dim-2 comes from: dim = 4 => 6*2 Orders, dim = 6 => 10*2 Orders
+bool stop[2*dim-2]; // value of stop[0] set on 'true' shows the necessity to stop the train at (startStation + 1 + i) % dim
+//example: stop[] = {1,0,1,0,0,1} and startStation is 1. This means: Stop at station 2, no stop at 3, stop at 0, no stop at 1-2, stop at 3.
+//2*dim-2 comes from: dim = 4 => 6*2 Orders, dim = 6 => 10*2 Orders. 
+//Conclusion: the train's longest trip will be 2 stations before completing 2 full circles.
+//Initialization. At the beginning, the train is not stopping anywhere (no orders yet created)
 for (int i=0; i<(2*dim-2); ++i)
-	stop[i] = false; //at the beginning, the train is not stopping anywhere (no orders yet)
+	stop[i] = false;
 	
 //check the matrix 'trip' in order to create orders. 
 //First, initialize 'stop[]' with new values. The orders can be created out of this array.
  
-//Idea: if there is a value != 0 in a line (except the startStation line!), train should stop at Station(line) 
-//if there is a value != 0 above the \"diagonal\", train should likewise stop at Station(column)    
-int line;
-int column=0;
+//Idea: Part-1) if there is a value != 0 in a line (except the startStation line!), train should stop at Station(line) 
+//Part-2) if there is a value != 0 above the \"diagonal\", train should likewise stop at Station(column)    
+int line;  //real line in the matrix  
 for (int i=1; i < dim; ++i){
-  line = (startStation + i) % dim; //works starts with the line following the startStation-line
+  line = (startStation + i) % dim; 
   //column = (column + 1) % dim;
   for (int j=0; j < dim; ++j)
-  	//if (column + j >= dim)
+  	//if (column + j >= dim)    //TO HAVE A LOOK - maybe it helps
   		//break;
-    if (trip[line][j] != 0){ //siehe Blatt IV!  Station(Zeile), Station(Spalte)
-    	stop[i-1] = true;
+    if (trip[line][j] != 0){ //siehe Blatt IV!  Station(Zeile), Station(Spalte)   
+    	   //Part-1) works for the lines following the startStation-line
+    	stop[i-1] = true;  //the 1st station after the startStation corresponds the position [0] in 'stop'-array
+    	cout << \"stop[\" << i-1 << \"] wurde auf true gesetzt (i-1)\" << endl;  
     	break;
     }
+}            
+//Part2)   
+int column = -1;
+int counter = dim;
+int index = -1; 
+for (int i=0; i < dim; ++i){  
+  line = (startStation + i) % dim; 
+  column = line; //diagonal
+  for (int j=0; j < counter; ++j){
+  	  column = (line + j) % dim;
+      if(trip[line][column] != 0){     
+     	 index = (dim + j - startStation - 1) % dim;
+    	 stop[index] = true; //Part-2)             
+    	 cout << \"stop[\" << column << \"] wurde auf true gesetzt (column). Line: \" << line << endl;
+      }
+ 
+  }	
+  --counter;
+  
 }
+               
+              /*
+        	if (j > i){   //Bediengung is not correct               
+    		column = (dim + j - startStation - 1) % dim;
+    		stop[column] = true; //Part-2)                            
+    		cout << \"stop[\" << column << \"] wurde auf true gesetzt (column). Line: \" << line << endl;
+    	}       */
+
+
+
  
 int finalStation = -1; //station -1 does not exist 
 for (int i=0; i<2*dim-2; ++i) 
 	if (stop[i])
-		finalStation = (startStation + i + 1) % dim; //explain, why
+		//finalStation = (startStation + i + 1) % dim; //explain, why
+		finalStation = i; //explain, why
 
-//move the train from startStation to finalStation				
+//move the train from startStation to \"finalStation\" (middle station, final for Parts 1-2))			
 
-for (int i=0; i<finalStation; ++i){ //create 2 orders
-	orderList.push_back(Order(1,i + 0.5,1));
-	orderList.push_back(Order(1,i + 1,1)); 
+for (int i=0; i<=finalStation; ++i){ //create 2 orders
+  if (stop[i]){
+	int tag = (startStation + i) % dim;
+	double tag1 = tag + 0.5;
+	double tag2 = tag + 1;
+	if ((tag2 + 0.3) > dim)
+		tag2 = 0;
+	orderList.push_back(Order(1,tag1,1));
+	orderList.push_back(Order(1,tag2,1)); 
+  }
 }
 	
 
-
+for (int i=0; i<2*dim-2; ++i)
+	cout << \"\\t\" << stop[i];
+cout << endl;
 
 
 //--------------------TEST-----------------
@@ -310,11 +351,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
   
 //now add the orders between the startStation and the initial station of the train (currentPos).
   
-  
-  
-	  
-                                      
-                                      
+              
                                       
                                       
                                       
@@ -338,7 +375,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _id = GUID d19a9956-b571-11e6-abce-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 12.6.2016::14:37:31;
+					- _modifiedTimeWeak = 12.7.2016::15:39:44;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -376,9 +413,9 @@ for (int i = 0; i<dim; ++i)
   	trip[i][j] = 0;  
 
 //TEST-values in the matrix
-//trip[0][2] = 7;
-//trip[1][3] = 3;
-trip[2][1] = 2;
+trip[0][2] = 7;
+trip[1][3] = 3;
+//trip[2][1] = 2;
 //---------------------  	  
 
 // Save the converted order in this string
