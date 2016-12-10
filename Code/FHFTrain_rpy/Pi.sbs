@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 12.7.2016::17:9:56;
+	- _modifiedTimeWeak = 12.10.2016::13:31:29;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 12.7.2016::17:9:56;
+	- weakCGTime = 12.10.2016::13:31:29;
 	- strongCGTime = 11.15.2016::13:50:47;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 12.6.2016::14:37:31;
-			- weakCGTime = 12.6.2016::14:37:31;
+			- _modifiedTimeWeak = 12.7.2016::17:9:56;
+			- weakCGTime = 12.7.2016::17:9:56;
 			- strongCGTime = 11.15.2016::13:50:47;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 12.7.2016::18:5:45;
+			- _modifiedTimeWeak = 12.10.2016::13:31:56;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 25;
-			- weakCGTime = 12.7.2016::18:5:45;
+			- weakCGTime = 12.10.2016::13:31:56;
 			- strongCGTime = 11.21.2016::12:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 9;
@@ -216,7 +216,7 @@ return (lastOrderTag != currentPos);";
 					- _id = GUID a0107267-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "createOrderlist";
-					- _modifiedTimeWeak = 12.7.2016::18:5:45;
+					- _modifiedTimeWeak = 12.10.2016::13:31:56;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -239,7 +239,7 @@ return (lastOrderTag != currentPos);";
 					- _itsBody = { IBody 
 						- _bodyData = "//currentPos in this context is the START STATION of the train	      
 
-currentPos = 3; //TO DELETE
+currentPos = 3; //TEST ONLY. currentPos is supposed to be set by PiListenerThread
 int startStation = currentPos;  //double -> integer. Make sure the train is standing on a real station, not a \"middle\" one
 
 bool passengersFound = false;
