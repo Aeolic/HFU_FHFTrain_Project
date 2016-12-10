@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 12.10.2016::14:34:7;
+	- _modifiedTimeWeak = 12.10.2016::16:4:8;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 12.10.2016::14:34:7;
+	- weakCGTime = 12.10.2016::16:4:8;
 	- strongCGTime = 11.15.2016::13:50:47;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 12.10.2016::14:47:33;
+			- _modifiedTimeWeak = 12.10.2016::16:32:35;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 25;
-			- weakCGTime = 12.10.2016::14:47:33;
+			- weakCGTime = 12.10.2016::16:32:35;
 			- strongCGTime = 11.21.2016::12:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 9;
@@ -216,7 +216,7 @@ return (lastOrderTag != currentPos);";
 					- _id = GUID a0107267-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "createOrderlist";
-					- _modifiedTimeWeak = 12.10.2016::14:47:33;
+					- _modifiedTimeWeak = 12.10.2016::16:32:35;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -263,8 +263,8 @@ if (!passengersFound)
 bool stop[2*dim-2]; // value of stop[0] set on 'true' shows the necessity to stop the train at (startStation + 1 + i) % dim
 //example: stop[] = {1,0,1,0,0,1} and startStation is 1. This means: Stop at station 2, no stop at 3, stop at 0, no stop at 1-2, stop at 3.
 //2*dim-2 comes from: dim = 4 => 6*2 Orders, dim = 6 => 10*2 Orders. 
-//Conclusion: the train's longest trip will be 2 stations before completing 2 full circles.
-//Initialization. At the beginning, the train is not stopping anywhere (no orders yet created)
+//Conclusion: the train's longest trip will be : 2 stations before completing 2 full circles.
+//Initialization of stop[]. At the beginning, the train is not stopping anywhere (no orders yet created)
 for (int i=0; i<(2*dim-2); ++i)
 	stop[i] = false;
 	
@@ -272,30 +272,28 @@ for (int i=0; i<(2*dim-2); ++i)
 //First, initialize 'stop[]' with new values. The orders can be created out of this array.
  
 //Idea: Part-1) if there is a value != 0 in a line (except the startStation line!), train should stop at Station(line) to let passengers IN
-//Part-2) if there is a value != 0 above the \"diagonal\", train should likewise stop at Station(column) to let passengers OUT  
-int line;  //real line in the matrix  
+//Part-2) if there is a value != 0 above the \"diagonal\", train should likewise stop at Station(column) to let passengers OUT   
+
+//Part1) : looking for at least one value != 0 in each line except the currentPos-line
+int line = -1;  //real line in the matrix  
 for (int i=1; i < dim; ++i){  //i=1, because the currentPos-line is ignored in Part-1)
   line = (startStation + i) % dim; 
-  //column = (column + 1) % dim;
   for (int j=0; j < dim; ++j)
-  	//if (column + j >= dim)    //TO HAVE A LOOK - maybe it helps
-  		//break;
     if (trip[line][j] != 0){ //means there is someone going FROM this station   
     	stop[i-1] = true;  //the 1st station after the startStation corresponds the position [0] in 'stop'-array
     	cout << \"stop[\" << i-1 << \"] wurde auf true gesetzt (i-1)\" << endl;  
     	break;
     }
-}       
+} //Part1) ready ---------------------------------       
      
-//Part2)   
+//Part2) : values in matrix above the diagonal   
 int column = -1;
 int counter = dim;
 int index = -1; 
 for (int i=0; i < dim; ++i){  
   line = (startStation + i) % dim; 
-  //column = line; //diagonal
   for (int j=0; j < counter; ++j){
-  	  column = (line + j) % dim;
+  	  column = (line + j) % dim;  //diagonal and above
       if(trip[line][column] != 0){ //means there is someone going TO the station column        
      	 index = (dim + column - startStation - 1) % dim; //worked for TEST1 and TEST3
     	 stop[index] = true; //Part-2)             
@@ -303,20 +301,26 @@ for (int i=0; i < dim; ++i){
       }
  
   }	
-  --counter;
-  
-}
-               
-              /*
-        	if (j > i){   //Bediengung is not correct               
-    		column = (dim + j - startStation - 1) % dim;
-    		stop[column] = true; //Part-2)                            
-    		cout << \"stop[\" << column << \"] wurde auf true gesetzt (column). Line: \" << line << endl;
-    	}       */
+  --counter;  
+} //Part2) ready ---------------------------------  
 
-
-
+//Part3) : values in matrix under the diagonal    
+//Idea: stop[dim-1] corresponds the currentPos after a full circle
+counter = 1;
+for (int i=0; i < dim; ++i){  
+  line = (startStation + i) % dim; 
+  for (int j=0; j < counter; ++j){
+  	  column = (dim + line - j) % dim; //diagonal and under
+      if(trip[line][column] != 0){ //means there is someone going TO the station column, AFTER completing a full circle        
+     	 index = ( (dim + column - startStation) % dim) + dim - 1; //TO CHANGE
+    	 stop[index] = true; //Part-3) //TO CHANGE             
+    	 cout << \"stop[\" << index << \"] wurde auf true gesetzt (column). Line: \" << line << endl;
+      }
  
+  }	
+  ++counter;  
+} //Part3) ready ---------------------------------  
+                
 int finalStation = -1; //station -1 does not exist 
 for (int i=0; i<2*dim-2; ++i) 
 	if (stop[i])
@@ -326,18 +330,21 @@ for (int i=0; i<2*dim-2; ++i)
 //move the train from startStation to \"finalStation\" (middle station, final for Parts 1-2))			
 
 for (int i=0; i<=finalStation; ++i){ //create 2 orders
-  if (stop[i]){
 	int tag = (startStation + i) % dim;
 	double tag1 = tag + 0.5;
-	double tag2 = tag + 1;
+	double tag2 = tag + 1; //here tag2 can get too big (tag == dim does not exist)
 	if ((tag2 + 0.3) > dim)
 		tag2 = 0;
-	orderList.push_back(Order(1,tag1,1));
-	orderList.push_back(Order(1,tag2,1)); 
-  }
+	orderList.push_back(Order(1,tag1,1));  //LATER: making train go slower at middle tags before stopping at real stations
+	if (stop[i])
+		orderList.push_back(Order(1,tag2,0));  //train stops at the station
+	else                                   
+		orderList.push_back(Order(1,tag2,1)); //train keeps on moving through the station  
 }
 	
 
+//TEST output of stop[] array
+cout << \"stop[]:\" << endl;
 for (int i=0; i<2*dim-2; ++i)
 	cout << \"\\t\" << stop[i];
 cout << endl;
@@ -385,7 +392,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _id = GUID d19a9956-b571-11e6-abce-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 12.7.2016::15:39:44;
+					- _modifiedTimeWeak = 12.10.2016::16:19:40;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -424,8 +431,8 @@ for (int i = 0; i<dim; ++i)
 
 //TEST-values in the matrix
 trip[0][2] = 7;
-trip[1][3] = 3;
-//trip[2][1] = 2;
+trip[1][3] = 7;
+trip[2][1] = 7;
 //---------------------  	  
 
 // Save the converted order in this string
