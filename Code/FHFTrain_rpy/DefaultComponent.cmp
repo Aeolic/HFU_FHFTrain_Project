@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb7-ab39-11e6-89be-001999f109b4;
 	- _myState = 139264;
 	- _name = "DefaultComponent";
-	- _modifiedTimeWeak = 12.7.2016::10:49:3;
+	- _modifiedTimeWeak = 12.10.2016::14:5:58;
 	- m_buildType = Executable;
 	- m_libraries = "";
 	- m_additionalSources = "";
@@ -807,7 +807,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				}
 			}
 			- _name = "DefaultConfig";
-			- _modifiedTimeWeak = 12.7.2016::10:49:3;
+			- _modifiedTimeWeak = 12.10.2016::14:6:49;
 			- HyperLinks = { IRPYRawContainer 
 				- size = 2;
 				- value = 
@@ -854,11 +854,11 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- value = 
 				{ IHandle 
 					- _m2Class = "IClass";
-					- _filename = "Train.sbs";
-					- _subsystem = "Train";
+					- _filename = "Pi.sbs";
+					- _subsystem = "Pi";
 					- _class = "";
-					- _name = "TrainThread";
-					- _id = GUID 19e801c1-aff2-11e6-9d64-001999f109b4;
+					- _name = "PiAlgorithm";
+					- _id = GUID 4a5bf3df-ab3e-11e6-ad2c-001999f109b4;
 				}
 			}
 			- _root = { IFolder 
@@ -874,7 +874,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- size = 0;
 				}
 			}
-			- weakCGTime = 12.7.2016::10:49:3;
+			- weakCGTime = 12.10.2016::14:6:49;
 			- strongCGTime = 12.5.2016::13:43:54;
 			- AnimScopeElements = { IRPYRawContainer 
 				- size = 0;
@@ -884,7 +884,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		}
 	}
 	- HandlesInMe = { IRPYRawContainer 
-		- size = 4;
+		- size = 5;
 		- value = 
 		{ IHandle 
 			- _m2Class = "ISubsystem";
@@ -918,6 +918,14 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _name = "Pi";
 			- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "TrainTest.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "TrainTest";
+			- _id = GUID 29eae1fc-bc85-11e6-aa7e-10604b8125e9;
+		}
 	}
 	- VariationPoints = { IRPYRawContainer 
 		- size = 0;
@@ -925,7 +933,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- SelectedVariants = { IRPYRawContainer 
 		- size = 0;
 	}
-	- weakCGTime = 12.7.2016::10:49:3;
+	- weakCGTime = 12.10.2016::14:5:58;
 	- strongCGTime = 11.29.2016::6:31:12;
 }
 
