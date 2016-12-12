@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 12.12.2016::11:48:16;
+	- _modifiedTimeWeak = 12.12.2016::14:46:1;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 12.12.2016::11:48:16;
+	- weakCGTime = 12.12.2016::14:46:1;
 	- strongCGTime = 11.15.2016::13:50:47;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 12.10.2016::16:4:8;
-			- weakCGTime = 12.10.2016::16:4:8;
+			- _modifiedTimeWeak = 12.12.2016::11:48:16;
+			- weakCGTime = 12.12.2016::11:48:16;
 			- strongCGTime = 11.15.2016::13:50:47;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 12.10.2016::16:32:35;
+			- _modifiedTimeWeak = 12.12.2016::16:23:38;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 25;
-			- weakCGTime = 12.10.2016::16:32:35;
+			- weakCGTime = 12.12.2016::16:23:38;
 			- strongCGTime = 11.21.2016::12:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 9;
@@ -186,7 +186,7 @@ while(true)
 					- _id = GUID a01072c7-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "canSendOrder";
-					- _modifiedTimeWeak = 11.29.2016::6:31:12;
+					- _modifiedTimeWeak = 12.12.2016::15:13:56;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -209,14 +209,14 @@ while(true)
 						- _bodyData = "//checks whether Algorithm can send next order to Train
 //it means the position of the train (currentPos) is the one that is expected by Pi (lastOrderTag), so the one sent by Pi.
 //So we compare the last order we sent to Train with its current position we receive from it  
-return (lastOrderTag != currentPos);";
+return (lastOrderTag == currentPos);";
 					}
 				}
 				{ IPrimitiveOperation 
 					- _id = GUID a0107267-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "createOrderlist";
-					- _modifiedTimeWeak = 12.10.2016::16:32:35;
+					- _modifiedTimeWeak = 12.12.2016::16:23:38;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -239,7 +239,8 @@ return (lastOrderTag != currentPos);";
 					- _itsBody = { IBody 
 						- _bodyData = "//currentPos in this context is the START STATION of the train	      
 
-currentPos = 0; //TEST ONLY. currentPos is supposed to be set by PiListenerThread
+// currentPos is alredy set in the execute method.
+//currentPos = 0; //TEST ONLY. currentPos is supposed to be set by PiListenerThread
 int startStation = currentPos;  //double -> integer. Make sure the train is standing on a real station, not a \"middle\" one
 
 bool passengersFound = false;
@@ -392,7 +393,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _id = GUID d19a9956-b571-11e6-abce-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 12.10.2016::16:19:40;
+					- _modifiedTimeWeak = 12.12.2016::16:11:44;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -450,8 +451,10 @@ orderlist.remove(oTest);
 		                               
 //TEST-------------------------   
 */
-  
-  
+
+// It's the first run so we don't have to check if the orderList ist wrong, because
+// we have just made it.  
+bool firstRun = true;   
  
 while(true)
 {                     
@@ -464,7 +467,7 @@ while(true)
     //Polling, we know it is bad, we will replace it with a smart semaphore or smth else
     	;
                    
-                   
+    cout << \"reading the position from aldCanRead\" << endl;               
     currentPos = itsTrainPos->getPosition(); // now we know the position of the train
     itsTrainPos->setAlgCanRead(false);
     
@@ -476,7 +479,7 @@ while(true)
 		orderListUpToDate = true;
 	}
 	
-	if (!canSendOrder())
+	if (!canSendOrder() && firstRun != true)
 		//sendOrderToPiSpeaker ...
 		repairOrderlist(); //if smth unexpected happened (RFID-Tag not read prorerly, etc.), adjusting the orderlist
 		                    
@@ -484,11 +487,12 @@ while(true)
 	//cout << \"TEST: execute in PI. size of orderlist: \" << orderlist.getSize() << endl;	                    
 	//for (iterator it = orderlist.begin(); it != orderlist.end(); ++it)
 	//	cout << \"TESTING orderlist: \" << it->getTag() << endl;
-		                    
-	//sendOrderToPiSpeaker()
+	
+	// Here we send the order to the Communication;	                    
+	sendOrderToCommunication();  
 	       
     //itsPiSpeakerThread->sendOrderToTrain(\"Fahre an Bahnhof \" + ss.str());
-       
+    firstRun = false;   
 	sleep(1);
 }";
 					}
@@ -497,7 +501,7 @@ while(true)
 					- _id = GUID a01072bc-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "sendOrderToCommunication";
-					- _modifiedTimeWeak = 11.30.2016::10:37:59;
+					- _modifiedTimeWeak = 12.12.2016::15:2:3;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -517,14 +521,34 @@ while(true)
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "";
+						- _bodyData = "Order tempOrder = orderList.front();
+string order;
+order = \"\";
+
+order += \"[\";
+order += tempOrder.getBeforeSpeed();
+order += \",\";
+order += tempOrder.getTag();
+order += \",\";
+order += tempOrder.getAfterSpeed();
+order += \"]\";
+
+// Save the Tag we will send to the Train so we can check the position 
+// the Train will send when he arrives at the next Tag.
+lastOrderTag = tempOrder.getTag();
+                
+// Deleted the first Order in our orderList so we can send the first Order
+// from our orderList the next time again.
+orderList.pop_front();
+
+itsCommunication->sendOrder(order);";
 					}
 				}
 				{ IPrimitiveOperation 
 					- _id = GUID e5ec66c5-b589-11e6-a9da-10604b8125e9;
 					- _myState = 8192;
 					- _name = "repairOrderlist";
-					- _modifiedTimeWeak = 11.29.2016::6:31:12;
+					- _modifiedTimeWeak = 12.12.2016::16:13:16;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -545,7 +569,29 @@ while(true)
 					- _constant = 0;
 					- _itsBody = { IBody 
 						- _bodyData = "//compare the tags currentPos and lastOrderTag and do smth if not equal
-//e.g.: the missed stations should be taken care of (passengers brought home)";
+//e.g.: the missed stations should be taken care of (passengers brought home)  
+
+// Case 1: We at a Train station. So we just remake our orderList   
+if(currentPos == 0.0 | currentPos == 1.0 | currentPos == 2.0 | currentPos == 3.0)
+{
+  while(!orderList.empty())
+  {
+    orderList.pop_front();
+  }
+  createOrderlist(); 	
+}
+
+// Case 2: We are between a Train station. We delete our current orderList
+//         and create one order which lets uns drive to the next Train station
+else
+{
+  while(!orderList.empty())
+  {
+    orderList.pop_front();
+  }
+  orderListUpToDate = false; 
+  orderList.push_back(Order(1,(currentPos + 0.5),0));
+}";
 					}
 				}
 				{ IPrimitiveOperation 
@@ -5056,7 +5102,7 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 12.12.2016::11:52:57;
+			- _modifiedTimeWeak = 12.12.2016::15:30:14;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -5066,7 +5112,7 @@ while (error);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 10;
-			- weakCGTime = 12.12.2016::11:52:57;
+			- weakCGTime = 12.12.2016::15:30:14;
 			- strongCGTime = 11.23.2016::11:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -5132,7 +5178,7 @@ start();";
 					- _id = GUID 80d4c65e-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 12.12.2016::11:52:57;
+					- _modifiedTimeWeak = 12.12.2016::15:30:14;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -5151,8 +5197,7 @@ start();";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "//stringstream ss;
-//double tag = -2; //station -2 does not exist. If -2 Received, smth went wrong.
+						- _bodyData = "
 while (!close)
 {
 	try
@@ -5166,12 +5211,7 @@ while (!close)
 				cout << \"   PI: Das habe ich empfangen: \" << s_order << endl;   
 				
 				itsTrainPos->updatePosition(s_order);
-				/*
-				ss << s_order;   
-				ss >> tag;
-				itsTrainPos->setPosition(tag); 
-				itsTrainPos->setAlgCanRead(true);
-				*/
+			
 		}
 	}
 	catch (SocketException & e)
@@ -6861,7 +6901,7 @@ while (!close)
 			- _id = GUID a832de21-b56c-11e6-bb98-10604b8125e9;
 			- _myState = 8192;
 			- _name = "TrainPos";
-			- _modifiedTimeWeak = 12.12.2016::11:56:22;
+			- _modifiedTimeWeak = 12.12.2016::15:50:26;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -6871,7 +6911,7 @@ while (!close)
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 3;
-			- weakCGTime = 12.12.2016::11:56:22;
+			- weakCGTime = 12.12.2016::15:50:26;
 			- strongCGTime = 11.28.2016::14:33:20;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -6903,7 +6943,7 @@ while (!close)
 					- _id = GUID 5526aced-c060-11e6-89b4-001999f10960;
 					- _myState = 8192;
 					- _name = "updatePosition";
-					- _modifiedTimeWeak = 12.12.2016::11:56:22;
+					- _modifiedTimeWeak = 12.12.2016::15:50:26;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -6943,12 +6983,13 @@ while (!close)
 						- _bodyData = "stringstream ss;
 double tag = -2; //station -2 does not exist. If -2 Received, smth went wrong.
 
-
+cout << \" setting the new position in TrainPos\" << endl;
 ss << position;   
 ss >> tag;  
 cout << tag;
-setPosition(tag); 
-setAlgCanRead(true);";
+position = tag;
+algCanRead = true;
+";
 					}
 				}
 			}
