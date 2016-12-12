@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "FHFTrain";
-	- _modifiedTimeWeak = 12.12.2016::15:33:50;
+	- _modifiedTimeWeak = 12.12.2016::17:13:25;
 	- _lastID = 3;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -281,7 +281,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 			- _name = "FHFTrainModel";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "12.12.2016::15:33:50";
+			- _lastModifiedTime = "12.12.2016::17:13:25";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 				- m_type = 0;
@@ -4263,7 +4263,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2152;
-					- m_transform = 0.201341 0 0 0.24156 161.127 167.61 ;
+					- m_transform = 0.201341 0 0 0.24156 157.25 164.09 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -4382,7 +4382,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 528 984 ;
+					- m_SourcePort = 528 999 ;
 					- m_TargetPort = 532 1002 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
@@ -5422,7 +5422,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 682 1370 ;
+					- m_SourcePort = 702 1370 ;
 					- m_TargetPort = 110 742 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";

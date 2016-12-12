@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID 29eae1fc-bc85-11e6-aa7e-10604b8125e9;
 	- _myState = 8192;
 	- _name = "TrainTest";
-	- _modifiedTimeWeak = 12.12.2016::16:54:2;
+	- _modifiedTimeWeak = 12.12.2016::17:20:10;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 4;
-	- weakCGTime = 12.12.2016::16:54:2;
+	- weakCGTime = 12.12.2016::17:20:10;
 	- strongCGTime = 12.7.2016::14:1:38;
 	- _defaultComposite = GUID 29eae1fd-bc85-11e6-aa7e-10604b8125e9;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID 29eae1fd-bc85-11e6-aa7e-10604b8125e9;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 12.12.2016::10:47:41;
-			- weakCGTime = 12.12.2016::10:47:41;
+			- _modifiedTimeWeak = 12.12.2016::16:54:2;
+			- weakCGTime = 12.12.2016::16:54:2;
 			- strongCGTime = 12.7.2016::14:1:38;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -82,7 +82,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				}
 			}
 			- _name = "TrainTestThread";
-			- _modifiedTimeWeak = 12.12.2016::17:3:8;
+			- _modifiedTimeWeak = 12.12.2016::17:25:38;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -92,7 +92,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 2;
-			- weakCGTime = 12.12.2016::17:3:8;
+			- weakCGTime = 12.12.2016::17:25:38;
 			- strongCGTime = 12.7.2016::15:29:35;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -126,7 +126,7 @@ start();";
 					- _id = GUID ef8a4858-bc88-11e6-bdaa-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 12.12.2016::17:3:8;
+					- _modifiedTimeWeak = 12.12.2016::17:25:38;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -160,7 +160,14 @@ sleep(2);
 // Get random start tag
 int startTag = allowedStartTags[rand() % 4];
 cout << \"TrainTest: stopped at tag \" << startTag << endl;
-itsTrainTestCommunication->sendPositionToPi(\"[\" + startTag + \"]\");
+ 
+//CHANGES_______________________________ 
+// this generates an error at the moment. (invalid operands of differen types)
+//itsTrainTestCommunication->sendPositionToPi(\"[\" + startTag + \"]\");
+// so i did a quick fix with just one string     
+string s;
+s = startTag;
+itsTrainTestCommunication->sendPositionToPi( s );
 
 double testTag = 0.0;
 // Check for new order
@@ -168,10 +175,15 @@ while (true)
 {
 	if (itsTrainTestOrder->getNewTag())
 	{
-		String s;
+		// moved the string s up 
 		testTag = itsTrainTestOrder->getTag();
 		sleep(5);
-		s = \"[\" + testTag + \"]\";
+		
+		//CHANGES_______________________________ 
+		// this generates an error at the moment. (invalid operands of differen types)
+		//s = \"[\" + testTag + \"]\";
+		// so i did a quick fix with just one string
+		s = testTag;
 		itsTrainTestCommunication->sendPositionToPi(s);
 	}	
 }
