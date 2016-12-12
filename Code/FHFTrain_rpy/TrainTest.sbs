@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID 29eae1fc-bc85-11e6-aa7e-10604b8125e9;
 	- _myState = 8192;
 	- _name = "TrainTest";
-	- _modifiedTimeWeak = 12.7.2016::15:39:35;
+	- _modifiedTimeWeak = 12.12.2016::10:47:41;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 4;
-	- weakCGTime = 12.7.2016::15:39:35;
+	- weakCGTime = 12.12.2016::10:47:41;
 	- strongCGTime = 12.7.2016::14:1:38;
 	- _defaultComposite = GUID 29eae1fd-bc85-11e6-aa7e-10604b8125e9;
 	- _eventsBaseID = -1;
@@ -24,9 +24,9 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID 29eae1fd-bc85-11e6-aa7e-10604b8125e9;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- weakCGTime = 1.2.1990::0:0:0;
-			- strongCGTime = 1.2.1990::0:0:0;
+			- _modifiedTimeWeak = 12.7.2016::15:39:35;
+			- weakCGTime = 12.7.2016::15:39:35;
+			- strongCGTime = 12.7.2016::14:1:38;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
@@ -82,7 +82,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				}
 			}
 			- _name = "TrainTestThread";
-			- _modifiedTimeWeak = 12.7.2016::15:31:16;
+			- _modifiedTimeWeak = 12.12.2016::11:13:30;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -92,7 +92,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 2;
-			- weakCGTime = 12.7.2016::15:31:16;
+			- weakCGTime = 12.12.2016::11:13:30;
 			- strongCGTime = 12.7.2016::15:29:35;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -100,7 +100,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				{ IConstructor 
 					- _id = GUID ef8a4853-bc88-11e6-bdaa-10604b8125e9;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 12.7.2016::14:44:45;
+					- _modifiedTimeWeak = 12.12.2016::10:55:20;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -116,6 +116,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _constant = 0;
 					- _itsBody = { IBody 
 						- _bodyData = "cout << \"Running TrainTest\" << endl;
+itsTrainTestOrder = new TrainTestOrder();
 itsTrainTestCommunication = new TrainTestCommunication();
 start();";
 					}
@@ -125,7 +126,7 @@ start();";
 					- _id = GUID ef8a4858-bc88-11e6-bdaa-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 12.7.2016::15:31:16;
+					- _modifiedTimeWeak = 12.12.2016::11:13:30;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -159,6 +160,10 @@ sleep(2);
 // Get random start tag
 int startTag = allowedStartTags[rand() % 4];
 cout << \"TrainTest: stopped at tag \" << startTag << endl;
+itsTrainTestOrder->newOrder(\"[1, 0.5, 0]\");
+cout << \"New Tag: \" << itsTrainTestOrder->getNewTag() << endl;
+cout << \"Tag: \" << itsTrainTestOrder->getTag() << endl;
+cout << \"New Tag: \" << itsTrainTestOrder->getNewTag() << endl;
 
 // Check for new order
 while (true)
@@ -175,7 +180,7 @@ while (true)
 				- _m2Class = "";
 			}
 			- Associations = { IRPYRawContainer 
-				- size = 1;
+				- size = 2;
 				- value = 
 				{ IAssociationEnd 
 					- _id = GUID bb30768e-bc87-11e6-ae5c-10604b8125e9;
@@ -186,6 +191,23 @@ while (true)
 					- _otherClass = { IClassifierHandle 
 						- _m2Class = "IClass";
 						- _id = GUID 29eae32d-bc85-11e6-aa7e-10604b8125e9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID 5c39c1e9-c059-11e6-8df4-10604b8125e9;
+					- _myState = 10240;
+					- _name = "itsTrainTestOrder";
+					- _modifiedTimeWeak = 12.12.2016::10:54:40;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _id = GUID f639a100-bc91-11e6-aa6a-10604b8125e9;
 					}
 					- _inverse = { IHandle 
 						- _m2Class = "";
@@ -684,7 +706,7 @@ itsTrainTestSpeakerThread->sendPositionToPi(position);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 12.7.2016::14:27:46;
+			- _modifiedTimeWeak = 12.12.2016::10:54:35;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -694,7 +716,7 @@ itsTrainTestSpeakerThread->sendPositionToPi(position);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 6;
-			- weakCGTime = 12.7.2016::14:27:46;
+			- weakCGTime = 12.12.2016::10:54:35;
 			- strongCGTime = 12.7.2016::14:27:46;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -1020,7 +1042,7 @@ return 0;";
 							}
 						}
 					}
-					- _modifiedTimeWeak = 12.7.2016::14:27:46;
+					- _modifiedTimeWeak = 12.12.2016::10:54:35;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -1103,7 +1125,7 @@ return 0;";
 						{ IFileFragment 
 							- _id = GUID 29eae4fa-bc85-11e6-aa7e-10604b8125e9;
 							- _name = "TrainTestListenerThread";
-							- _modifiedTimeWeak = 12.7.2016::14:27:46;
+							- _modifiedTimeWeak = 12.12.2016::10:54:35;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 
@@ -1235,7 +1257,7 @@ return 0;";
 					- _id = GUID 29eae503-bc85-11e6-aa7e-10604b8125e9;
 					- _myState = 139264;
 					- _name = "TrainTestListenerThread";
-					- _modifiedTimeWeak = 12.7.2016::14:27:46;
+					- _modifiedTimeWeak = 12.12.2016::10:54:35;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -1272,7 +1294,7 @@ return 0;";
 						{ IFileFragment 
 							- _id = GUID 29eae506-bc85-11e6-aa7e-10604b8125e9;
 							- _name = "TrainTestListenerThread";
-							- _modifiedTimeWeak = 12.7.2016::14:27:46;
+							- _modifiedTimeWeak = 12.12.2016::10:54:35;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 18;
@@ -1426,6 +1448,27 @@ return 0;";
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID 5c39c15c-c059-11e6-8df4-10604b8125e9;
+					- _myState = 10240;
+					- _name = "itsTrainTestOrder";
+					- _modifiedTimeWeak = 12.12.2016::10:54:35;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _id = GUID f639a100-bc91-11e6-aa6a-10604b8125e9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
 			}
 			- _classModifier = Unspecified;
 		}
@@ -1912,7 +1955,7 @@ while (error);";
 								}
 								{ IFileFragment 
 									- _id = GUID bb3072f2-bc87-11e6-ae5c-10604b8125e9;
-									- _name = "TrainSpeakerThread";
+									- _name = "TrainTestSpeakerThread";
 									- _modifiedTimeWeak = 1.2.1990::0:0:0;
 									- m_type = specFragment;
 									- m_text = "";
@@ -2193,7 +2236,7 @@ while (error);";
 								- value = 
 								{ IFileFragment 
 									- _id = GUID bb307301-bc87-11e6-ae5c-10604b8125e9;
-									- _name = "TrainSpeakerThread";
+									- _name = "TrainTestSpeakerThread";
 									- _modifiedTimeWeak = 1.2.1990::0:0:0;
 									- Tags = { IRPYRawContainer 
 										- size = 2;
@@ -2671,7 +2714,7 @@ while (error);";
 			- _id = GUID f639a100-bc91-11e6-aa6a-10604b8125e9;
 			- _myState = 8192;
 			- _name = "TrainTestOrder";
-			- _modifiedTimeWeak = 12.7.2016::16:5:55;
+			- _modifiedTimeWeak = 12.12.2016::11:10:58;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -2680,20 +2723,37 @@ while (error);";
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _lastID = 4;
-			- weakCGTime = 12.7.2016::16:5:55;
+			- _lastID = 6;
+			- weakCGTime = 12.12.2016::11:10:58;
 			- strongCGTime = 12.7.2016::15:56:5;
 			- Operations = { IRPYRawContainer 
-				- size = 1;
+				- size = 2;
 				- value = 
 				{ IPrimitiveOperation 
 					- _id = GUID f639a1ad-bc91-11e6-aa6a-10604b8125e9;
 					- _myState = 8192;
-					- _name = "parse";
-					- _modifiedTimeWeak = 12.7.2016::16:2:23;
+					- _name = "newOrder";
+					- _modifiedTimeWeak = 12.12.2016::11:10:18;
+					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
-						- size = 0;
+						- size = 1;
+						- value = 
+						{ IArgument 
+							- _id = GUID 9e151fc4-c057-11e6-9b42-10604b8125e9;
+							- _myState = 8192;
+							- _name = "order";
+							- _modifiedTimeWeak = 12.12.2016::10:47:58;
+							- myTypeOf = { IType 
+								- _id = GUID 9e151fc8-c057-11e6-9b42-10604b8125e9;
+								- _myState = 8192;
+								- _modifiedTimeWeak = 1.2.1990::0:0:0;
+								- _declaration = "string";
+								- _kind = Language;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
 					}
 					- _returnType = { IHandle 
 						- _m2Class = "IType";
@@ -2709,10 +2769,50 @@ while (error);";
 					- _protection = iPublic;
 					- _static = 0;
 					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "string subOrder = order.substr(1, order.length() - 2);
+beforeSpeed = atoi(subOrder.substr(0, subOrder.find(\",\")).c_str());
+subOrder.erase(0, subOrder.find(\",\") + 1);
+tag = atof(subOrder.substr(0, subOrder.find(\",\")).c_str());
+subOrder.erase(0, subOrder.find(\",\") + 1);
+afterSpeed = atoi(subOrder.c_str());
+newTag = true;
+
+
+";
+					}
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID f16f3ed2-c059-11e6-8714-10604b8125e9;
+					- _myState = 8192;
+					- _name = "getTag";
+					- _modifiedTimeWeak = 12.12.2016::11:10:58;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "double";
+						- _id = GUID 02ef7294-6849-47b9-9fb2-cfb87b56d2ad;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "newTag = false;
+return tag;";
+					}
 				}
 			}
 			- Attrs = { IRPYRawContainer 
-				- size = 3;
+				- size = 4;
 				- value = 
 				{ IAttribute 
 					- _id = GUID f639a105-bc91-11e6-aa6a-10604b8125e9;
@@ -2764,6 +2864,25 @@ while (error);";
 						- _class = "";
 						- _name = "double";
 						- _id = GUID 02ef7294-6849-47b9-9fb2-cfb87b56d2ad;
+					}
+					- _isOrdered = 0;
+					- _protection = iPublic;
+					- _static = 0;
+					- _isReference = 0;
+					- _isConstant = 0;
+				}
+				{ IAttribute 
+					- _id = GUID f16f3ecb-c059-11e6-8714-10604b8125e9;
+					- _myState = 8192;
+					- _name = "newTag";
+					- _modifiedTimeWeak = 12.12.2016::11:9:59;
+					- _typeOf = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "bool";
+						- _id = GUID e6c263cc-4bc5-4a11-b32d-02148c93add0;
 					}
 					- _isOrdered = 0;
 					- _protection = iPublic;
