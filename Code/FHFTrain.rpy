@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "FHFTrain";
-	- _modifiedTimeWeak = 12.12.2016::10:43:21;
+	- _modifiedTimeWeak = 12.12.2016::11:48:16;
 	- _lastID = 3;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -281,7 +281,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			}
 			- _name = "FHFTrainModel";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "12.12.2016::10:54:40";
+			- _lastModifiedTime = "12.12.2016::11:58:48";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 				- m_type = 0;
@@ -504,7 +504,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 4104;
-					- m_transform = 0.95148 0 0 0.524761 989 -16.4124 ;
+					- m_transform = 0.95148 0 0 0.524761 992 -16.4124 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -2485,15 +2485,23 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 							- m_bShowInherited = 0;
 							- m_bOrdered = 0;
 							- Items = { IRPYRawContainer 
-								- size = 1;
+								- size = 2;
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "";
+									- _filename = "Pi.sbs";
 									- _subsystem = "Pi";
 									- _class = "TrainPos";
 									- _name = "TrainPos()";
 									- _id = GUID b38a267f-b57e-11e6-904e-10604b8125e9;
+								}
+								{ IHandle 
+									- _m2Class = "IPrimitiveOperation";
+									- _filename = "Pi.sbs";
+									- _subsystem = "Pi";
+									- _class = "TrainPos";
+									- _name = "updatePosition(string)";
+									- _id = GUID 5526aced-c060-11e6-89b4-001999f10960;
 								}
 							}
 						}
@@ -2575,7 +2583,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 1 1573 356  ;
+					- m_arrow = 1 1576 356  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
@@ -3581,7 +3589,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 7;
 					}
-					- m_arrow = 2 1472 105  1472 350  ;
+					- m_arrow = 2 1475 105  1475 350  ;
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
@@ -4255,7 +4263,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2152;
-					- m_transform = 0.201341 0 0 0.24156 159.835 171.13 ;
+					- m_transform = 0.201341 0 0 0.24156 161.127 167.61 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -4374,7 +4382,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 528 969 ;
+					- m_SourcePort = 528 984 ;
 					- m_TargetPort = 532 1002 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";
@@ -5414,7 +5422,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- m_anglePoint1 = 0 0 ;
 					- m_anglePoint2 = 0 0 ;
 					- m_line_style = 2;
-					- m_SourcePort = 689 1370 ;
+					- m_SourcePort = 682 1370 ;
 					- m_TargetPort = 110 742 ;
 					- m_pInverseModelObject = { IAssociationEndHandle 
 						- _m2Class = "";

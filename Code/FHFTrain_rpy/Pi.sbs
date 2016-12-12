@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 12.10.2016::16:4:8;
+	- _modifiedTimeWeak = 12.12.2016::11:48:16;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 12.10.2016::16:4:8;
+	- weakCGTime = 12.12.2016::11:48:16;
 	- strongCGTime = 11.15.2016::13:50:47;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 12.7.2016::17:9:56;
-			- weakCGTime = 12.7.2016::17:9:56;
+			- _modifiedTimeWeak = 12.10.2016::16:4:8;
+			- weakCGTime = 12.10.2016::16:4:8;
 			- strongCGTime = 11.15.2016::13:50:47;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -5056,7 +5056,7 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 11.30.2016::12:32:18;
+			- _modifiedTimeWeak = 12.12.2016::11:52:57;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -5066,7 +5066,7 @@ while (error);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 10;
-			- weakCGTime = 11.30.2016::12:32:18;
+			- weakCGTime = 12.12.2016::11:52:57;
 			- strongCGTime = 11.23.2016::11:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -5132,7 +5132,7 @@ start();";
 					- _id = GUID 80d4c65e-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 11.30.2016::12:32:18;
+					- _modifiedTimeWeak = 12.12.2016::11:52:57;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -5151,8 +5151,8 @@ start();";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "stringstream ss;
-double tag = -2; //station -2 does not exist. If -2 Received, smth went wrong.
+						- _bodyData = "//stringstream ss;
+//double tag = -2; //station -2 does not exist. If -2 Received, smth went wrong.
 while (!close)
 {
 	try
@@ -5163,12 +5163,15 @@ while (!close)
 				string s_order;
 				*new_sock >> s_order; 
 				cout << \"   PI: Der Pi empfaengt etwas: \" << endl;
-				cout << \"   PI: Das habe ich empfangen: \" << s_order << endl;
+				cout << \"   PI: Das habe ich empfangen: \" << s_order << endl;   
+				
+				itsTrainPos->updatePosition(s_order);
+				/*
 				ss << s_order;   
 				ss >> tag;
 				itsTrainPos->setPosition(tag); 
 				itsTrainPos->setAlgCanRead(true);
-				
+				*/
 		}
 	}
 	catch (SocketException & e)
@@ -6858,7 +6861,7 @@ while (!close)
 			- _id = GUID a832de21-b56c-11e6-bb98-10604b8125e9;
 			- _myState = 8192;
 			- _name = "TrainPos";
-			- _modifiedTimeWeak = 12.5.2016::22:4:27;
+			- _modifiedTimeWeak = 12.12.2016::11:56:22;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -6867,11 +6870,11 @@ while (!close)
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _lastID = 2;
-			- weakCGTime = 12.5.2016::22:4:27;
+			- _lastID = 3;
+			- weakCGTime = 12.12.2016::11:56:22;
 			- strongCGTime = 11.28.2016::14:33:20;
 			- Operations = { IRPYRawContainer 
-				- size = 1;
+				- size = 2;
 				- value = 
 				{ IConstructor 
 					- _id = GUID b38a267f-b57e-11e6-904e-10604b8125e9;
@@ -6895,6 +6898,58 @@ while (!close)
 //algCanRead = false;";
 					}
 					- _initializer = "";
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID 5526aced-c060-11e6-89b4-001999f10960;
+					- _myState = 8192;
+					- _name = "updatePosition";
+					- _modifiedTimeWeak = 12.12.2016::11:56:22;
+					- _lastID = 1;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IArgument 
+							- _id = GUID 5526acf3-c060-11e6-89b4-001999f10960;
+							- _myState = 8192;
+							- _name = "position";
+							- _modifiedTimeWeak = 12.12.2016::11:51:50;
+							- myTypeOf = { IType 
+								- _id = GUID 5526acf8-c060-11e6-89b4-001999f10960;
+								- _myState = 8192;
+								- _modifiedTimeWeak = 1.2.1990::0:0:0;
+								- _declaration = "string";
+								- _kind = Language;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "stringstream ss;
+double tag = -2; //station -2 does not exist. If -2 Received, smth went wrong.
+
+
+ss << position;   
+ss >> tag;  
+cout << tag;
+setPosition(tag); 
+setAlgCanRead(true);";
+					}
 				}
 			}
 			- Attrs = { IRPYRawContainer 
