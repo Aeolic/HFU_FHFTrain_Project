@@ -10,16 +10,16 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 2;
+				- m_nFlags = 3;
 				- m_showCmd = 3;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -4;
 				- m_ptMaxPositionY = -23;
-				- m_nLeft = 80;
-				- m_nTop = 88;
-				- m_nRight = 1370;
-				- m_nBottom = 616;
+				- m_nLeft = 34;
+				- m_nTop = 85;
+				- m_nRight = 1324;
+				- m_nBottom = 613;
 			}
 			- _wasOpenedOnCloseProject = 1;
 			- _theDiagram = { IHandle 
@@ -30,8 +30,8 @@ I-Logix-RPY-Archive version 8.10.0 * 6930033
 				- _name = "FHFTrainModel";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _UpLeft = 0 529 ;
-			- _DownRight = 2732 1304 ;
+			- _UpLeft = 1351 14 ;
+			- _DownRight = 2163 578 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 0;
 		}
