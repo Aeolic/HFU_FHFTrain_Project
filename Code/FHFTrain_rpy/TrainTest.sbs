@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID 29eae1fc-bc85-11e6-aa7e-10604b8125e9;
 	- _myState = 8192;
 	- _name = "TrainTest";
-	- _modifiedTimeWeak = 12.12.2016::17:20:10;
+	- _modifiedTimeWeak = 12.13.2016::13:21:42;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,19 +13,19 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 4;
-	- weakCGTime = 12.12.2016::17:20:10;
+	- weakCGTime = 12.13.2016::13:21:42;
 	- strongCGTime = 12.7.2016::14:1:38;
 	- _defaultComposite = GUID 29eae1fd-bc85-11e6-aa7e-10604b8125e9;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
-		- size = 6;
+		- size = 7;
 		- value = 
 		{ IClass 
 			- _id = GUID 29eae1fd-bc85-11e6-aa7e-10604b8125e9;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 12.12.2016::16:54:2;
-			- weakCGTime = 12.12.2016::16:54:2;
+			- _modifiedTimeWeak = 12.12.2016::17:20:10;
+			- weakCGTime = 12.12.2016::17:20:10;
 			- strongCGTime = 12.7.2016::14:1:38;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -82,7 +82,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				}
 			}
 			- _name = "TrainTestThread";
-			- _modifiedTimeWeak = 12.12.2016::17:25:38;
+			- _modifiedTimeWeak = 12.13.2016::13:21:5;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -92,7 +92,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 2;
-			- weakCGTime = 12.12.2016::17:25:38;
+			- weakCGTime = 12.13.2016::13:21:5;
 			- strongCGTime = 12.7.2016::15:29:35;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -126,7 +126,7 @@ start();";
 					- _id = GUID ef8a4858-bc88-11e6-bdaa-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 12.12.2016::17:25:38;
+					- _modifiedTimeWeak = 12.13.2016::13:21:5;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -160,31 +160,27 @@ sleep(2);
 // Get random start tag
 int startTag = allowedStartTags[rand() % 4];
 cout << \"TrainTest: stopped at tag \" << startTag << endl;
- 
-//CHANGES_______________________________ 
-// this generates an error at the moment. (invalid operands of differen types)
-//itsTrainTestCommunication->sendPositionToPi(\"[\" + startTag + \"]\");
-// so i did a quick fix with just one string     
-string s;
-s = startTag;
-itsTrainTestCommunication->sendPositionToPi( s );
+    
+stringstream ss;
+ss << \"[\" << startTag << \"]\";
+itsTrainTestCommunication->sendPositionToPi( ss.str() );
 
 double testTag = 0.0;
+
 // Check for new order
 while (true)
 {
 	if (itsTrainTestOrder->getNewTag())
-	{
-		// moved the string s up 
+	{   
+		// clear stringstream
+		ss.str(std::string());
+		cout << \"TrainTest: driving forward\" << endl; 
 		testTag = itsTrainTestOrder->getTag();
 		sleep(5);
 		
-		//CHANGES_______________________________ 
-		// this generates an error at the moment. (invalid operands of differen types)
-		//s = \"[\" + testTag + \"]\";
-		// so i did a quick fix with just one string
-		s = testTag;
-		itsTrainTestCommunication->sendPositionToPi(s);
+		cout << \"TrainTest: found tag \" << testTag << endl;
+		ss << \"[\" << testTag << \"]\";
+		itsTrainTestCommunication->sendPositionToPi( ss.str() );
 	}	
 }
 
@@ -2964,6 +2960,221 @@ return tag;";
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID 141ac6de-c137-11e6-8b2e-001999f10960;
+			- _myState = 8192;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 2;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Class";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "Concurrency";
+										- _Value = "active";
+										- _Type = Enum;
+										- _ExtraTypeInfo = "sequential,active";
+									}
+								}
+							}
+						}
+					}
+					{ IPropertySubject 
+						- _Name = "CPP_CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Class";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "ImpIncludes";
+										- _Value = "<iostream>,<string>,<sstream>,<vector>,<stdlib.h>,<time.h>";
+										- _Type = String;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _name = "TrainTestFailureThread";
+			- _modifiedTimeWeak = 12.13.2016::13:43:1;
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "FHFTrainModel";
+				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
+			}
+			- _lastID = 2;
+			- weakCGTime = 12.13.2016::13:43:1;
+			- strongCGTime = 12.13.2016::13:28:31;
+			- Operations = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IConstructor 
+					- _id = GUID 141ac6df-c137-11e6-8b2e-001999f10960;
+					- _myState = 8192;
+					- _modifiedTimeWeak = 12.12.2016::16:54:55;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "";
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "cout << \"Running TrainTest\" << endl;
+itsTrainTestOrder = new TrainTestOrder();
+itsTrainTestCommunication = new TrainTestCommunication(itsTrainTestOrder);
+start();";
+					}
+					- _initializer = "";
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID 141ac6e0-c137-11e6-8b2e-001999f10960;
+					- _myState = 8192;
+					- _name = "execute";
+					- _modifiedTimeWeak = 12.13.2016::13:43:1;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- myReturnType = { IType 
+						- _id = GUID 141ac6e1-c137-11e6-8b2e-001999f10960;
+						- _myState = 8192;
+						- _modifiedTimeWeak = 1.2.1990::0:0:0;
+						- _declaration = "OMReactive*";
+						- _kind = Language;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "// List of all allowed tags to find at start
+int allowedStartTags[4] = {0, 1, 2, 3};
+// Time, needed as seed
+time_t t;
+// Set time
+time(&t);
+// Init rand
+srand((unsigned int)t);
+
+cout << \"TrainTestFailure: driving forward\" << endl;
+sleep(2);
+
+// Get random start tag
+int startTag = allowedStartTags[rand() % 4];
+cout << \"TrainTestFailure: stopped at tag \" << startTag << endl;
+    
+stringstream ss;
+ss << \"[\" << startTag << \"]\";
+itsTrainTestCommunication->sendPositionToPi( ss.str() );
+
+double testTag = 0.0;
+double lastTag = startTag;
+// Count the amount of tags already read
+int amount = 0;
+
+// Check for new order
+while (true)
+{
+	if (itsTrainTestOrder->getNewTag())
+	{   
+		++amount;
+		// clear stringstream
+		ss.str(std::string());
+		cout << \"TrainTestFailure: driving forward\" << endl; 
+		testTag = itsTrainTestOrder->getTag();
+		
+		if (amount % 3 == 1)
+		{
+			testTag = lastTag;
+		} else if (amount % 3 == 2)
+		{
+			testTag += 0.5;
+			if (testTag >= 4)
+				testTag -= 4;
+		}
+		
+		sleep(5);
+		
+		cout << \"TrainTestFailure: found tag \" << testTag << endl;
+		ss << \"[\" << testTag << \"]\";
+		itsTrainTestCommunication->sendPositionToPi( ss.str() );
+		lastTag = testTag;
+	}	
+}
+
+ ";
+					}
+				}
+			}
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID 141ac6e2-c137-11e6-8b2e-001999f10960;
+					- _myState = 10240;
+					- _name = "itsTrainTestCommunication";
+					- _modifiedTimeWeak = 12.7.2016::14:28:38;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _id = GUID 29eae32d-bc85-11e6-aa7e-10604b8125e9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID 141ac6e3-c137-11e6-8b2e-001999f10960;
+					- _myState = 10240;
+					- _name = "itsTrainTestOrder";
+					- _modifiedTimeWeak = 12.12.2016::10:54:40;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _id = GUID f639a100-bc91-11e6-aa6a-10604b8125e9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
 			}
 			- _classModifier = Unspecified;
 		}
