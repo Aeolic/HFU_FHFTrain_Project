@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cb7-ab39-11e6-89be-001999f109b4;
 	- _myState = 139264;
 	- _name = "DefaultComponent";
-	- _modifiedTimeWeak = 12.13.2016::13:52:3;
+	- _modifiedTimeWeak = 12.14.2016::13:16:46;
 	- m_buildType = Executable;
 	- m_libraries = "";
 	- m_additionalSources = "";
@@ -807,7 +807,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				}
 			}
 			- _name = "DefaultConfig";
-			- _modifiedTimeWeak = 12.13.2016::13:55:47;
+			- _modifiedTimeWeak = 12.14.2016::13:17:39;
 			- HyperLinks = { IRPYRawContainer 
 				- size = 2;
 				- value = 
@@ -874,7 +874,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- size = 0;
 				}
 			}
-			- weakCGTime = 12.13.2016::13:55:47;
+			- weakCGTime = 12.14.2016::13:17:39;
 			- strongCGTime = 12.5.2016::13:43:54;
 			- AnimScopeElements = { IRPYRawContainer 
 				- size = 0;
@@ -933,7 +933,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- SelectedVariants = { IRPYRawContainer 
 		- size = 0;
 	}
-	- weakCGTime = 12.13.2016::13:52:3;
+	- weakCGTime = 12.14.2016::13:16:46;
 	- strongCGTime = 11.29.2016::6:31:12;
 }
 

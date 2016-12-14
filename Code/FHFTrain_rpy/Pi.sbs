@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 12.13.2016::14:28:0;
+	- _modifiedTimeWeak = 12.14.2016::13:14:30;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 12.13.2016::14:28:0;
+	- weakCGTime = 12.14.2016::13:14:30;
 	- strongCGTime = 11.15.2016::13:50:47;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 12.13.2016::13:58:46;
-			- weakCGTime = 12.13.2016::13:58:46;
+			- _modifiedTimeWeak = 12.13.2016::14:28:0;
+			- weakCGTime = 12.13.2016::14:28:0;
 			- strongCGTime = 11.15.2016::13:50:47;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 12.13.2016::14:41:1;
+			- _modifiedTimeWeak = 12.14.2016::13:14:30;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.10.0 C++ 6930033
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 28;
-			- weakCGTime = 12.13.2016::14:41:1;
+			- weakCGTime = 12.14.2016::13:14:30;
 			- strongCGTime = 11.21.2016::12:7:48;
 			- Operations = { IRPYRawContainer 
 				- size = 9;
@@ -186,7 +186,7 @@ while(true)
 					- _id = GUID a01072c7-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "canSendOrder";
-					- _modifiedTimeWeak = 12.12.2016::15:13:56;
+					- _modifiedTimeWeak = 12.14.2016::13:14:30;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -209,6 +209,7 @@ while(true)
 						- _bodyData = "//checks whether Algorithm can send next order to Train
 //it means the position of the train (currentPos) is the one that is expected by Pi (lastOrderTag), so the one sent by Pi.
 //So we compare the last order we sent to Train with its current position we receive from it  
+cout << \" In canSendOrder()  lastOrderTag == \" << lastOrderTag << \" currentPos == \" << currentPos << endl;
 return (lastOrderTag == currentPos);";
 					}
 				}
@@ -6998,7 +6999,7 @@ while (!close)
 			- _id = GUID a832de21-b56c-11e6-bb98-10604b8125e9;
 			- _myState = 8192;
 			- _name = "TrainPos";
-			- _modifiedTimeWeak = 12.13.2016::14:8:9;
+			- _modifiedTimeWeak = 12.14.2016::13:22:15;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -7008,7 +7009,7 @@ while (!close)
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 5;
-			- weakCGTime = 12.13.2016::14:8:9;
+			- weakCGTime = 12.14.2016::13:22:15;
 			- strongCGTime = 11.28.2016::14:33:20;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -7042,7 +7043,7 @@ pid = id;";
 					- _id = GUID 5526aced-c060-11e6-89b4-001999f10960;
 					- _myState = 8192;
 					- _name = "updatePosition";
-					- _modifiedTimeWeak = 12.13.2016::14:8:9;
+					- _modifiedTimeWeak = 12.14.2016::13:22:15;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -7084,7 +7085,7 @@ double tag = -2; //station -2 does not exist. If -2 Received, smth went wrong.
 
 cout << \" setting the new position in TrainPos\" << endl; 
   
-ss << position.substr(1,1);
+ss << position.substr(1,position.length() - 2);
 ss >> tag;
 cout << tag;
 this->position = tag;
