@@ -1,0 +1,299 @@
+I-Logix-RPY-Archive version 8.12.0 C++ 9728113
+{ ISubsystem 
+	- _id = GUID 7552c7f9-9da6-415e-819e-3a31b3f7f9cd;
+	- _myState = 8192;
+	- _name = "Web";
+	- _modifiedTimeWeak = 12.21.2016::10:30:40;
+	- _lastID = 1;
+	- weakCGTime = 12.21.2016::10:30:40;
+	- strongCGTime = 4.27.2016::14:46:5;
+	- _defaultComposite = GUID 9bd7e0de-17cc-455f-aaae-e09ee8de9998;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 2;
+		- value = 
+		{ IClass 
+			- _id = GUID 9bd7e0de-17cc-455f-aaae-e09ee8de9998;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _modifiedTimeWeak = 6.14.2016::8:23:55;
+			- weakCGTime = 6.14.2016::8:23:55;
+			- strongCGTime = 4.27.2016::14:46:5;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID d18d2699-4eca-47b2-8741-b51399de41c4;
+			- _myState = 8192;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "CPP_CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Class";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "ImpIncludes";
+										- _Value = "<fstream>, <iostream>";
+										- _Type = String;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _name = "SM_Read";
+			- _modifiedTimeWeak = 6.14.2016::8:23:55;
+			- _lastID = 2;
+			- weakCGTime = 6.14.2016::8:23:55;
+			- strongCGTime = 6.7.2016::10:57:25;
+			- Operations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IConstructor 
+					- _id = GUID b5333abc-c349-4639-8dfe-7b53c3efafa0;
+					- _myState = 8192;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "CPP_CG";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Class";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "ImpIncludes";
+												- _Value = "<iostream>, <fstream>";
+												- _Type = String;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- _modifiedTimeWeak = 6.14.2016::8:23:55;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 2;
+						- value = 
+						{ IArgument 
+							- _id = GUID 3a30dd86-0a1e-4759-9e71-6b378f7f93da;
+							- _myState = 8192;
+							- _name = "argc";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- _typeOf = { IHandle 
+								- _m2Class = "IType";
+								- _filename = "PredefinedTypesC++.sbs";
+								- _subsystem = "PredefinedTypesCpp";
+								- _class = "";
+								- _name = "int";
+								- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
+						{ IArgument 
+							- _id = GUID 6c6b049b-268f-4a62-b69e-1c9f1a3e8593;
+							- _myState = 8192;
+							- _name = "argv";
+							- _modifiedTimeWeak = 5.4.2016::13:19:45;
+							- myTypeOf = { IType 
+								- _id = GUID 52f8e7e9-41d2-46be-9b63-64a8570217f9;
+								- _myState = 8192;
+								- _modifiedTimeWeak = 1.2.1990::0:0:0;
+								- _declaration = "char**";
+								- _kind = Language;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "";
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "shm = SHM_Connection::instance();
+int value;  
+bool hasError = false;
+
+if (argc == 3) //Write Data
+{       
+	if (strcmp(argv[1], \"power\") == 0)
+	{
+		value = atoi(argv[2]);
+		shm->set_target_speed(value);
+	} 
+	else
+		hasError = true;	
+}
+else if (argc == 2) // Read Data
+{
+	if (strcmp(argv[1], \"power\") == 0)  {                
+		float d;      
+		shm->read(Speed, d, false);
+		std::cout << d  << std::endl;  
+		
+	}
+	else if (strcmp(argv[1], \"distance\") == 0) 
+	{       
+		float d;      
+		shm->read(Distance, d, false); 
+		std::cout << d  << std::endl; 
+	}
+	else if (strcmp(argv[1], \"ip\") == 0)   
+	{
+        char* ipBuff;
+		shm->read(IP, ipBuff, false);   
+		std::cout << ipBuff << std::endl; 
+	}   
+	else if (strcmp(argv[1], \"all\") == 0)   
+	{       
+        char* ipBuff;
+        float fBuff =0 ;
+		shm->read(IP, ipBuff, false);        
+		
+		std::cout <<  \"{\" << std::endl;  
+		                              
+		std::cout <<  \"\\\"IP\\\": \\\"\" << ipBuff << \"\\\", \"<< std::endl;   
+		              
+		shm->read(Rfid, ipBuff, false);  
+		std::cout <<  \"\\\"RFID\\\": \\\"\" << ipBuff << \"\\\", \"<< std::endl;   
+		
+		shm->read(Distance, fBuff, false);
+		std::cout << \"\\\"Distance\\\": \" << fBuff << \", \"<< std::endl;  
+		                                                       
+		shm->read(DistanceAbs, fBuff, false);
+		std::cout << \"\\\"DistanceAbs\\\": \" << fBuff << \", \"<< std::endl;
+		 
+		shm->read(Temperature, fBuff, false);
+		std::cout <<  \"\\\"Temperature\\\": \" << fBuff << \", \"<< std::endl; 
+		 
+		shm->read(Speed, fBuff, false);
+		std::cout << \"\\\"Speed\\\": \" << fBuff << \", \"<< std::endl;  
+		 
+		shm->read(AmpereMotor, fBuff, false);
+		std::cout << \"\\\"AmpereMotor\\\": \" << fBuff << \", \"<< std::endl;  
+		 
+		shm->read(AmpereExtern, fBuff, false);
+		std::cout <<  \"\\\"AmpereExtern\\\": \" << fBuff << \", \"<< std::endl;  
+		 
+		shm->read(VoltageMotor, fBuff, false);
+		std::cout <<  \"\\\"VoltageMotor\\\": \" << fBuff << \", \"<< std::endl;  
+		 
+		shm->read(VoltageExtern, fBuff, false);
+		std::cout <<  \"\\\"VoltageExtern\\\": \" << fBuff << \", \"<< std::endl;  
+		
+		//----THIS IS LAST:
+		                                                             
+		shm->read(VoltageAux, fBuff, false);
+		std::cout <<  \"\\\"VoltageAux\\\": \" << fBuff << \" \"<< std::endl; 
+
+		std::cout << \"}\" << std::endl;
+	} 
+	else if (strcmp(argv[1], \"test\") == 0)   
+	{
+		std::cout << \"{ \\\"test\\\" : 12.33}\" << std::endl; 
+	}
+	else
+		hasError = true;	
+}    
+else
+	hasError = true;	       
+
+if(hasError) {
+	printf(\"ARGC: %d\\n\", argc);
+	int idx = 0;
+	for(idx=0;idx<argc;idx++) {
+		printf(\"IDX: %d ARGV: %s\\n\", idx, argv[idx]);	
+	}
+	Log->error(\"Invalid call of parameter\\n\"); 
+	Log->error(\"onNo!\\n\"); 
+}	
+
+std::exit(0);                                                     
+                                                     
+return;";
+					}
+					- _initializer = "";
+				}
+			}
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID 8caab671-cffc-4186-b150-f2659fe538ef;
+					- _myState = 8192;
+					- _name = "Log";
+					- _modifiedTimeWeak = 4.27.2016::14:56:7;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _filename = "Common.sbs";
+						- _subsystem = "Common";
+						- _class = "";
+						- _name = "Logger";
+						- _id = GUID f9d7e938-c17c-4cab-9bcf-c52d3828cb49;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID 739857b7-8712-42a4-9b03-2d47c5d64ed2;
+					- _myState = 8192;
+					- _name = "shm";
+					- _modifiedTimeWeak = 4.27.2016::15:55:42;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _filename = "Common.sbs";
+						- _subsystem = "Common";
+						- _class = "";
+						- _name = "SHM_Connection";
+						- _id = GUID d795257c-2dbf-4572-89a5-5bd2ee1f6b84;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 1.2.1990::0:0:0;
+}
+

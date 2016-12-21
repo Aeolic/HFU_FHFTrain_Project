@@ -1,0 +1,165 @@
+I-Logix-RPY-Archive version 8.12.0 C++ 9728113
+{ IComponent 
+	- _id = GUID eb2e8451-91db-48d6-8a3a-98d9f2b11fde;
+	- _myState = 8192;
+	- _name = "LCD_W";
+	- _modifiedTimeWeak = 12.21.2016::10:30:40;
+	- m_buildType = Executable;
+	- m_libraries = "";
+	- m_additionalSources = "";
+	- m_standardHeaders = "";
+	- m_includePath = "";
+	- m_initializationCode = "";
+	- m_folder = { IFolder 
+		- _id = GUID ae0b37b9-1678-4b0b-9dfd-fc7ec4ae42ff;
+		- _myState = 73728;
+		- _name = "Files";
+		- _modifiedTimeWeak = 5.11.2016::13:8:1;
+		- m_path = "";
+		- Elements = { IRPYRawContainer 
+			- size = 2;
+			- value = 
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Common.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Common";
+				- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
+			}
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Workstation.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Workstation";
+				- _id = GUID 213f284d-6306-4efe-90bb-406805da80b2;
+			}
+		}
+		- Files = { IRPYRawContainer 
+			- size = 0;
+		}
+	}
+	- m_configActive = { ICodeGenConfigInfoHandle 
+		- _m2Class = "ICodeGenConfigInfo";
+		- _id = GUID 54a78e49-e9e9-4882-b091-fa32d421d69e;
+	}
+	- Configs = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ ICodeGenConfigInfo 
+			- _id = GUID 54a78e49-e9e9-4882-b091-fa32d421d69e;
+			- _myState = 8192;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "CPP_CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Configuration";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "Environment";
+										- _Value = "Linux";
+										- _Type = Enum;
+										- _ExtraTypeInfo = "MSVC,MSVCDLL,MSVCStandardLibrary,VxWorks,VxWorks6diab,VxWorks6gnu,VxWorks6diab_RTP,VxWorks6gnu_RTP,Solaris2,Cygwin,MicrosoftWinCE600,OseSfk,Linux,Solaris2GNU,QNXNeutrinoGCC, QNXNeutrinoMomentics,NucleusPLUS-PPC,WorkbenchManaged,WorkbenchManaged653,WorkbenchManaged_RTP";
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _name = "LCD_W";
+			- _modifiedTimeWeak = 12.12.2016::11:46:13;
+			- HyperLinks = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IMHyperLink 
+					- _id = GUID 8e292749-5e7a-4582-9d7e-b9ccfdf935ce;
+					- _modifiedTimeWeak = 12.12.2016::11:46:13;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Makefile";
+					- _linkType = "FREE";
+					- _linkTarget = "/nfs4cross/mueller/fhftrain/sw/br_lok/application/projects/RhapsodySS2016/LCD_W/LCD_W/LCD_W.mak";
+					- isConfigurationFileHyperLink = 1;
+				}
+				{ IMHyperLink 
+					- _id = GUID 01a01668-5bd5-43bc-84db-b17e7b4dc5e4;
+					- _modifiedTimeWeak = 12.12.2016::11:46:13;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Main File";
+					- _linkType = "FREE";
+					- _linkTarget = "/nfs4cross/mueller/fhftrain/sw/br_lok/application/projects/RhapsodySS2016/LCD_W/LCD_W/MainLCD_W";
+					- isConfigurationFileHyperLink = 1;
+				}
+			}
+			- _scopeType = Explicit;
+			- _libraries = "";
+			- _additionalSources = "";
+			- _standardHeaders = "";
+			- _includePath = "";
+			- _targetMain = "";
+			- _instrumentation = None;
+			- _timeModel = RealTime;
+			- m_generateActors = 1;
+			- _statechartImplementation = Flat;
+			- _initializationCode = "";
+			- _checksList = 0 ;
+			- ScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- InitialInstances = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IClass";
+					- _filename = "Common.sbs";
+					- _subsystem = "Common";
+					- _class = "";
+					- _name = "LCD_Main";
+					- _id = GUID 78e634c7-dac5-4663-8d4c-1f3550f1a34f;
+				}
+			}
+			- _root = { IFolder 
+				- _id = GUID 70a59930-d91e-4413-97be-fbd7d10327ed;
+				- _myState = 73728;
+				- _name = "LCD_W";
+				- _modifiedTimeWeak = 12.12.2016::11:46:13;
+				- m_path = "";
+				- Elements = { IRPYRawContainer 
+					- size = 0;
+				}
+				- Files = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			- weakCGTime = 12.12.2016::11:46:13;
+			- strongCGTime = 12.12.2016::11:46:13;
+			- AnimScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- m_allInAnimScope = 1;
+			- m_generateUsecases = 0;
+		}
+	}
+	- VariationPoints = { IRPYRawContainer 
+		- size = 0;
+	}
+	- SelectedVariants = { IRPYRawContainer 
+		- size = 0;
+	}
+	- weakCGTime = 12.21.2016::10:30:40;
+	- strongCGTime = 5.11.2016::13:8:1;
+}
+

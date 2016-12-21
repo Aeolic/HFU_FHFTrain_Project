@@ -1,0 +1,564 @@
+I-Logix-RPY-Archive version 8.12.0 C++ 9728113
+{ IComponent 
+	- _id = GUID 0be64627-e475-4cbf-8cc8-30d2c4100231;
+	- _myState = 8192;
+	- _name = "LCD_T";
+	- _modifiedTimeWeak = 12.21.2016::10:30:40;
+	- _lastID = 1;
+	- m_buildType = Executable;
+	- m_libraries = "";
+	- m_additionalSources = "";
+	- m_standardHeaders = "";
+	- m_includePath = "";
+	- m_initializationCode = "";
+	- m_folder = { IFolder 
+		- _id = GUID 850b22d8-6762-45a2-8be7-0bfdb7174bad;
+		- _myState = 73728;
+		- _name = "Files";
+		- _modifiedTimeWeak = 4.26.2016::14:14:11;
+		- _lastID = 1;
+		- m_path = "";
+		- Elements = { IRPYRawContainer 
+			- size = 2;
+			- value = 
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Common.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Common";
+				- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
+			}
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Train.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Train";
+				- _id = GUID 16023396-0db4-45f2-a947-df07372aa9a9;
+			}
+		}
+		- Files = { IRPYRawContainer 
+			- size = 6;
+			- value = 
+			{ IFile 
+				- _id = GUID ce3c8f8f-93db-40f4-8197-ceb8ccdd2790;
+				- _myState = 139264;
+				- _properties = { IPropertyContainer 
+					- Subjects = { IRPYRawContainer 
+						- size = 2;
+						- value = 
+						{ IPropertySubject 
+							- _Name = "CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IProperty 
+											- _Name = "AddToMakefile";
+											- _Value = "False";
+											- _Type = Bool;
+										}
+									}
+								}
+							}
+						}
+						{ IPropertySubject 
+							- _Name = "CPP_CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IProperty 
+											- _Name = "Generate";
+											- _Value = "False";
+											- _Type = Enum;
+											- _ExtraTypeInfo = "True, False, Specification, Implementation";
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				- _name = "string";
+				- _modifiedTimeWeak = 1.2.1990::0:0:0;
+				- m_path = "";
+				- m_type = specFile;
+				- Fragments = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			{ IFile 
+				- _id = GUID 7788933f-510e-4ff9-87c6-6ce5ad71e0e6;
+				- _myState = 139264;
+				- _properties = { IPropertyContainer 
+					- Subjects = { IRPYRawContainer 
+						- size = 2;
+						- value = 
+						{ IPropertySubject 
+							- _Name = "CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IProperty 
+											- _Name = "AddToMakefile";
+											- _Value = "False";
+											- _Type = Bool;
+										}
+									}
+								}
+							}
+						}
+						{ IPropertySubject 
+							- _Name = "CPP_CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IProperty 
+											- _Name = "Generate";
+											- _Value = "False";
+											- _Type = Enum;
+											- _ExtraTypeInfo = "True, False, Specification, Implementation";
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				- _name = "semaphore";
+				- _modifiedTimeWeak = 1.2.1990::0:0:0;
+				- m_path = "";
+				- m_type = specFile;
+				- Fragments = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			{ IFile 
+				- _id = GUID 80c49fd3-643b-4dcf-9249-11ab8d8544e7;
+				- _myState = 139264;
+				- _properties = { IPropertyContainer 
+					- Subjects = { IRPYRawContainer 
+						- size = 2;
+						- value = 
+						{ IPropertySubject 
+							- _Name = "CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ IProperty 
+											- _Name = "AddToMakefile";
+											- _Value = "False";
+											- _Type = Bool;
+										}
+										{ IProperty 
+											- _Name = "SpecExtension";
+											- _Value = " ";
+											- _Type = String;
+										}
+									}
+								}
+							}
+						}
+						{ IPropertySubject 
+							- _Name = "CPP_CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IProperty 
+											- _Name = "Generate";
+											- _Value = "False";
+											- _Type = Enum;
+											- _ExtraTypeInfo = "True, False, Specification, Implementation";
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				- _name = "iostream";
+				- _modifiedTimeWeak = 1.2.1990::0:0:0;
+				- m_path = "";
+				- m_type = specFile;
+				- Fragments = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			{ IFile 
+				- _id = GUID b1a8afa1-957b-466f-aaa7-1b337b782e11;
+				- _myState = 139264;
+				- _properties = { IPropertyContainer 
+					- Subjects = { IRPYRawContainer 
+						- size = 2;
+						- value = 
+						{ IPropertySubject 
+							- _Name = "CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IProperty 
+											- _Name = "AddToMakefile";
+											- _Value = "False";
+											- _Type = Bool;
+										}
+									}
+								}
+							}
+						}
+						{ IPropertySubject 
+							- _Name = "CPP_CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IProperty 
+											- _Name = "Generate";
+											- _Value = "False";
+											- _Type = Enum;
+											- _ExtraTypeInfo = "True, False, Specification, Implementation";
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				- _name = "ifaddrs";
+				- _modifiedTimeWeak = 1.2.1990::0:0:0;
+				- m_path = "";
+				- m_type = specFile;
+				- Fragments = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			{ IFile 
+				- _id = GUID ea9ddbc8-4b4f-4d5a-836f-99b2c4ad3706;
+				- _myState = 139264;
+				- _properties = { IPropertyContainer 
+					- Subjects = { IRPYRawContainer 
+						- size = 2;
+						- value = 
+						{ IPropertySubject 
+							- _Name = "CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IProperty 
+											- _Name = "AddToMakefile";
+											- _Value = "False";
+											- _Type = Bool;
+										}
+									}
+								}
+							}
+						}
+						{ IPropertySubject 
+							- _Name = "CPP_CG";
+							- Metaclasses = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ IPropertyMetaclass 
+									- _Name = "File";
+									- Properties = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IProperty 
+											- _Name = "Generate";
+											- _Value = "False";
+											- _Type = Enum;
+											- _ExtraTypeInfo = "True, False, Specification, Implementation";
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				- _name = "netdb";
+				- _modifiedTimeWeak = 1.2.1990::0:0:0;
+				- m_path = "";
+				- m_type = specFile;
+				- Fragments = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			{ IFolder 
+				- _id = GUID 73efc222-1252-4a48-ab3b-32babe181f07;
+				- _myState = 139264;
+				- _name = "sys";
+				- _modifiedTimeWeak = 1.2.1990::0:0:0;
+				- m_path = "";
+				- Elements = { IRPYRawContainer 
+					- size = 0;
+				}
+				- Files = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IFile 
+						- _id = GUID 9fa5c47c-b23a-4d68-be5b-9eb18a95061b;
+						- _myState = 139264;
+						- _properties = { IPropertyContainer 
+							- Subjects = { IRPYRawContainer 
+								- size = 2;
+								- value = 
+								{ IPropertySubject 
+									- _Name = "CG";
+									- Metaclasses = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IPropertyMetaclass 
+											- _Name = "File";
+											- Properties = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ IProperty 
+													- _Name = "AddToMakefile";
+													- _Value = "False";
+													- _Type = Bool;
+												}
+											}
+										}
+									}
+								}
+								{ IPropertySubject 
+									- _Name = "CPP_CG";
+									- Metaclasses = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ IPropertyMetaclass 
+											- _Name = "File";
+											- Properties = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ IProperty 
+													- _Name = "Generate";
+													- _Value = "False";
+													- _Type = Enum;
+													- _ExtraTypeInfo = "True, False, Specification, Implementation";
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+						- _name = "types";
+						- _modifiedTimeWeak = 1.2.1990::0:0:0;
+						- m_path = "";
+						- m_type = specFile;
+						- Fragments = { IRPYRawContainer 
+							- size = 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	- m_configActive = { ICodeGenConfigInfoHandle 
+		- _m2Class = "ICodeGenConfigInfo";
+		- _id = GUID 4f7cf13a-6f08-4d12-a087-f11b33b8af27;
+	}
+	- Configs = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ ICodeGenConfigInfo 
+			- _id = GUID 4f7cf13a-6f08-4d12-a087-f11b33b8af27;
+			- _myState = 8192;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 2;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "CPP_CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 2;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Configuration";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "Environment";
+										- _Value = "FHFTrain";
+										- _Type = Enum;
+										- _ExtraTypeInfo = "BUILDROOT,MSVC,MSVCDLL,MSVCStandardLibrary,VxWorks,VxWorks6diab,VxWorks6gnu,VxWorks6diab_RTP,VxWorks6gnu_RTP,Solaris2,Cygwin,MicrosoftWinCE600,OseSfk,Linux,Solaris2GNU,QNXNeutrinoGCC, QNXNeutrinoMomentics,NucleusPLUS-PPC,WorkbenchManaged,WorkbenchManaged653,WorkbenchManaged_RTP";
+									}
+								}
+							}
+							{ IPropertyMetaclass 
+								- _Name = "Linux";
+								- Properties = { IRPYRawContainer 
+									- size = 3;
+									- value = 
+									{ IProperty 
+										- _Name = "BuildServerIP";
+										- _Value = "141.28.57.66";
+										- _Type = String;
+									}
+									{ IProperty 
+										- _Name = "BuildServerSoftwareDir";
+										- _Value = "/home/$BuildServerUsername/FHFTRAIN_IN_SS16/application";
+										- _Type = String;
+									}
+									{ IProperty 
+										- _Name = "InvokeMake";
+										- _Value = "$OMROOT/Profiles/NativeLinuxAdaptor/MakeRedirect.bat $BuildServerSoftwareDir $BuildServerIP $BuildServerUsername $BuildServerPassword $makefile $maketarget $BuildServerOMROOT $BuildServerGCC $BuildServerGPP $OMROOT";
+										- _Type = String;
+									}
+								}
+							}
+						}
+					}
+					{ IPropertySubject 
+						- _Name = "Dialog";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Configuration";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "CommonProperties";
+										- _Value = "CG::CGGeneral::GeneratedCodeInBrowser;CPP_CG::Linux::MakeFileContent";
+										- _Type = String;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _name = "LCD_T";
+			- _modifiedTimeWeak = 12.12.2016::11:43:35;
+			- HyperLinks = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IMHyperLink 
+					- _id = GUID 42b9a5b3-46de-46df-85a7-535805c01a1d;
+					- _modifiedTimeWeak = 12.12.2016::11:43:35;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Makefile";
+					- _linkType = "FREE";
+					- _linkTarget = "/nfs4cross/mueller/fhftrain/sw/br_lok/application/projects/RhapsodySS2016/LCD_T/LCD_T/LCD_T.mak";
+					- isConfigurationFileHyperLink = 1;
+				}
+				{ IMHyperLink 
+					- _id = GUID bbead7e2-4b0e-45e5-9fe0-077bec2a24ca;
+					- _modifiedTimeWeak = 12.12.2016::11:43:35;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Main File";
+					- _linkType = "FREE";
+					- _linkTarget = "/nfs4cross/mueller/fhftrain/sw/br_lok/application/projects/RhapsodySS2016/LCD_T/LCD_T/MainLCD_T";
+					- isConfigurationFileHyperLink = 1;
+				}
+			}
+			- _scopeType = Explicit;
+			- _libraries = "-lm";
+			- _additionalSources = "";
+			- _standardHeaders = "";
+			- _includePath = "";
+			- _targetMain = "";
+			- _instrumentation = None;
+			- _timeModel = RealTime;
+			- m_generateActors = 1;
+			- _statechartImplementation = Flat;
+			- _initializationCode = "";
+			- _checksList = 0 ;
+			- ScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- InitialInstances = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IClass";
+					- _filename = "Common.sbs";
+					- _subsystem = "Common";
+					- _class = "";
+					- _name = "LCD_Main";
+					- _id = GUID 78e634c7-dac5-4663-8d4c-1f3550f1a34f;
+				}
+			}
+			- _root = { IFolder 
+				- _id = GUID 570df634-0a2d-400e-92f7-e95fd1aeb5ac;
+				- _myState = 73728;
+				- _name = "LCD_T";
+				- _modifiedTimeWeak = 12.8.2016::14:25:2;
+				- m_path = "";
+				- Elements = { IRPYRawContainer 
+					- size = 0;
+				}
+				- Files = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			- weakCGTime = 12.12.2016::11:43:35;
+			- strongCGTime = 12.8.2016::14:25:12;
+			- AnimScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- m_allInAnimScope = 1;
+			- m_generateUsecases = 0;
+		}
+	}
+	- VariationPoints = { IRPYRawContainer 
+		- size = 0;
+	}
+	- SelectedVariants = { IRPYRawContainer 
+		- size = 0;
+	}
+	- weakCGTime = 12.21.2016::10:30:40;
+	- strongCGTime = 4.27.2016::13:34:31;
+}
+

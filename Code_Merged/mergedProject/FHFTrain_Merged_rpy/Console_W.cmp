@@ -1,0 +1,165 @@
+I-Logix-RPY-Archive version 8.12.0 C++ 9728113
+{ IComponent 
+	- _id = GUID fb10276f-a12b-43ca-97ff-255b6899e100;
+	- _myState = 8192;
+	- _name = "Console_W";
+	- _modifiedTimeWeak = 12.21.2016::10:30:40;
+	- m_buildType = Executable;
+	- m_libraries = "";
+	- m_additionalSources = "";
+	- m_standardHeaders = "";
+	- m_includePath = "";
+	- m_initializationCode = "";
+	- m_folder = { IFolder 
+		- _id = GUID 344e1e5e-6096-4d8a-abee-ff67189b245e;
+		- _myState = 73728;
+		- _name = "Files";
+		- _modifiedTimeWeak = 5.11.2016::15:0:46;
+		- m_path = "";
+		- Elements = { IRPYRawContainer 
+			- size = 2;
+			- value = 
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Common.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Common";
+				- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
+			}
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Workstation.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Workstation";
+				- _id = GUID 213f284d-6306-4efe-90bb-406805da80b2;
+			}
+		}
+		- Files = { IRPYRawContainer 
+			- size = 0;
+		}
+	}
+	- m_configActive = { ICodeGenConfigInfoHandle 
+		- _m2Class = "ICodeGenConfigInfo";
+		- _id = GUID c3c8ed75-3e04-402d-a9bd-4c094d9a372e;
+	}
+	- Configs = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ ICodeGenConfigInfo 
+			- _id = GUID c3c8ed75-3e04-402d-a9bd-4c094d9a372e;
+			- _myState = 8192;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "CPP_CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Configuration";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "Environment";
+										- _Value = "Linux";
+										- _Type = Enum;
+										- _ExtraTypeInfo = "MSVC,MSVCDLL,MSVCStandardLibrary,VxWorks,VxWorks6diab,VxWorks6gnu,VxWorks6diab_RTP,VxWorks6gnu_RTP,Solaris2,Cygwin,MicrosoftWinCE600,OseSfk,Linux,Solaris2GNU,QNXNeutrinoGCC, QNXNeutrinoMomentics,NucleusPLUS-PPC,WorkbenchManaged,WorkbenchManaged653,WorkbenchManaged_RTP";
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _name = "Console_W";
+			- _modifiedTimeWeak = 12.12.2016::11:45:53;
+			- HyperLinks = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IMHyperLink 
+					- _id = GUID b6c8a9bd-f95f-412b-8d51-f122134a6ef6;
+					- _modifiedTimeWeak = 12.12.2016::11:45:53;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Makefile";
+					- _linkType = "FREE";
+					- _linkTarget = "/nfs4cross/mueller/fhftrain/sw/br_lok/application/projects/RhapsodySS2016/Console_W/Console_W/Console_W.mak";
+					- isConfigurationFileHyperLink = 1;
+				}
+				{ IMHyperLink 
+					- _id = GUID adf67f22-6054-412e-9c4f-145088096744;
+					- _modifiedTimeWeak = 12.12.2016::11:45:53;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Main File";
+					- _linkType = "FREE";
+					- _linkTarget = "/nfs4cross/mueller/fhftrain/sw/br_lok/application/projects/RhapsodySS2016/Console_W/Console_W/MainConsole_W";
+					- isConfigurationFileHyperLink = 1;
+				}
+			}
+			- _scopeType = Explicit;
+			- _libraries = "";
+			- _additionalSources = "";
+			- _standardHeaders = "";
+			- _includePath = "";
+			- _targetMain = "";
+			- _instrumentation = None;
+			- _timeModel = RealTime;
+			- m_generateActors = 1;
+			- _statechartImplementation = Flat;
+			- _initializationCode = "";
+			- _checksList = 0 ;
+			- ScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- InitialInstances = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IClass";
+					- _filename = "Common.sbs";
+					- _subsystem = "Common";
+					- _class = "";
+					- _name = "Console";
+					- _id = GUID a6aa507e-f395-46de-83bd-7a853d2b1bd9;
+				}
+			}
+			- _root = { IFolder 
+				- _id = GUID 261642f4-f2a5-4a45-9f6a-a61ab9addfc8;
+				- _myState = 73728;
+				- _name = "Console_W";
+				- _modifiedTimeWeak = 12.12.2016::11:45:53;
+				- m_path = "";
+				- Elements = { IRPYRawContainer 
+					- size = 0;
+				}
+				- Files = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			- weakCGTime = 12.12.2016::11:45:53;
+			- strongCGTime = 12.12.2016::11:45:53;
+			- AnimScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- m_allInAnimScope = 1;
+			- m_generateUsecases = 0;
+		}
+	}
+	- VariationPoints = { IRPYRawContainer 
+		- size = 0;
+	}
+	- SelectedVariants = { IRPYRawContainer 
+		- size = 0;
+	}
+	- weakCGTime = 12.21.2016::10:30:40;
+	- strongCGTime = 5.11.2016::15:0:46;
+}
+

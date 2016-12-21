@@ -1,0 +1,182 @@
+I-Logix-RPY-Archive version 8.12.0 C++ 9728113
+{ IComponent 
+	- _id = GUID 0aa1588c-47b5-47ac-a6ff-c88d636896a5;
+	- _myState = 8192;
+	- _name = "SensRead_T";
+	- _modifiedTimeWeak = 12.21.2016::10:30:40;
+	- m_buildType = Executable;
+	- m_libraries = "";
+	- m_additionalSources = "";
+	- m_standardHeaders = "";
+	- m_includePath = "";
+	- m_initializationCode = "";
+	- m_folder = { IFolder 
+		- _id = GUID 4ed836f2-be75-4367-be8c-979bbf7ad60d;
+		- _myState = 73728;
+		- _name = "Files";
+		- _modifiedTimeWeak = 4.28.2016::10:31:56;
+		- m_path = "";
+		- Elements = { IRPYRawContainer 
+			- size = 2;
+			- value = 
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Common.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Common";
+				- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
+			}
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Train.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Train";
+				- _id = GUID 16023396-0db4-45f2-a947-df07372aa9a9;
+			}
+		}
+		- Files = { IRPYRawContainer 
+			- size = 0;
+		}
+	}
+	- m_configActive = { ICodeGenConfigInfoHandle 
+		- _m2Class = "ICodeGenConfigInfo";
+		- _id = GUID 33cff4c6-e223-4689-90d9-185b8e31d13a;
+	}
+	- Configs = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ ICodeGenConfigInfo 
+			- _id = GUID 33cff4c6-e223-4689-90d9-185b8e31d13a;
+			- _myState = 8192;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "CPP_CG";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 2;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Configuration";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "Environment";
+										- _Value = "FHFTrain";
+										- _Type = Enum;
+										- _ExtraTypeInfo = "Linux,RaspberryLinux,FHFTrain";
+									}
+								}
+							}
+							{ IPropertyMetaclass 
+								- _Name = "Linux";
+								- Properties = { IRPYRawContainer 
+									- size = 2;
+									- value = 
+									{ IProperty 
+										- _Name = "BuildServerIP";
+										- _Value = "141.28.57.66";
+										- _Type = String;
+									}
+									{ IProperty 
+										- _Name = "BuildServerSoftwareDir";
+										- _Value = "/home/$BuildServerUsername/FHFTRAIN_IN_SS16/application";
+										- _Type = String;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- _name = "SensRead_T";
+			- _modifiedTimeWeak = 12.12.2016::11:41:8;
+			- HyperLinks = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IMHyperLink 
+					- _id = GUID d7e71d0c-af7b-438a-a1a4-248e3b511396;
+					- _modifiedTimeWeak = 12.12.2016::11:40:45;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Makefile";
+					- _linkType = "FREE";
+					- _linkTarget = "/nfs4cross/mueller/fhftrain/sw/br_lok/application/projects/RhapsodySS2016/SensRead_T/SensRead_T/SensRead_T.mak";
+					- isConfigurationFileHyperLink = 1;
+				}
+				{ IMHyperLink 
+					- _id = GUID 57ee7e0a-4849-4eab-ace2-d1bb91792737;
+					- _modifiedTimeWeak = 12.12.2016::11:40:45;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Main File";
+					- _linkType = "FREE";
+					- _linkTarget = "/nfs4cross/mueller/fhftrain/sw/br_lok/application/projects/RhapsodySS2016/SensRead_T/SensRead_T/MainSensRead_T";
+					- isConfigurationFileHyperLink = 1;
+				}
+			}
+			- _scopeType = Explicit;
+			- _libraries = "-lm";
+			- _additionalSources = "";
+			- _standardHeaders = "";
+			- _includePath = "";
+			- _targetMain = "";
+			- _instrumentation = None;
+			- _timeModel = RealTime;
+			- m_generateActors = 1;
+			- _statechartImplementation = Flat;
+			- _initializationCode = "";
+			- _checksList = 0 ;
+			- ScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- InitialInstances = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IClass";
+					- _filename = "Common.sbs";
+					- _subsystem = "Common";
+					- _class = "";
+					- _name = "SensReader";
+					- _id = GUID f04b4b6f-286c-42e8-9ca7-30de4a5eedff;
+				}
+			}
+			- _root = { IFolder 
+				- _id = GUID 4addfe75-3699-432f-9335-38cb35281afb;
+				- _myState = 73728;
+				- _name = "SensRead_T";
+				- _modifiedTimeWeak = 12.8.2016::14:26:3;
+				- m_path = "";
+				- Elements = { IRPYRawContainer 
+					- size = 0;
+				}
+				- Files = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			- weakCGTime = 12.12.2016::11:41:8;
+			- strongCGTime = 12.12.2016::11:41:8;
+			- AnimScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- m_allInAnimScope = 1;
+			- m_generateUsecases = 0;
+		}
+	}
+	- VariationPoints = { IRPYRawContainer 
+		- size = 0;
+	}
+	- SelectedVariants = { IRPYRawContainer 
+		- size = 0;
+	}
+	- weakCGTime = 12.21.2016::10:30:40;
+	- strongCGTime = 4.28.2016::10:31:56;
+}
+

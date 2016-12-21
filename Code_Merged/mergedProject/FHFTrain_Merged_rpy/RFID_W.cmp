@@ -1,0 +1,139 @@
+I-Logix-RPY-Archive version 8.12.0 C++ 9728113
+{ IComponent 
+	- _id = GUID 7d3c7b33-f77e-4546-902b-57ddcd6c83b8;
+	- _myState = 8192;
+	- _name = "RFID_W";
+	- _modifiedTimeWeak = 12.21.2016::10:30:40;
+	- m_buildType = Executable;
+	- m_libraries = "";
+	- m_additionalSources = "";
+	- m_standardHeaders = "";
+	- m_includePath = "";
+	- m_initializationCode = "";
+	- m_folder = { IFolder 
+		- _id = GUID 419b9b8f-592b-4f20-9136-3455403a03b6;
+		- _myState = 73728;
+		- _name = "Files";
+		- _modifiedTimeWeak = 5.25.2016::10:47:6;
+		- m_path = "";
+		- Elements = { IRPYRawContainer 
+			- size = 2;
+			- value = 
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Common.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Common";
+				- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
+			}
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Workstation.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Workstation";
+				- _id = GUID 213f284d-6306-4efe-90bb-406805da80b2;
+			}
+		}
+		- Files = { IRPYRawContainer 
+			- size = 0;
+		}
+	}
+	- m_configActive = { ICodeGenConfigInfoHandle 
+		- _m2Class = "ICodeGenConfigInfo";
+		- _id = GUID 3e12489f-2ba9-432f-bf84-f0c8b0940e55;
+	}
+	- Configs = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ ICodeGenConfigInfo 
+			- _id = GUID 3e12489f-2ba9-432f-bf84-f0c8b0940e55;
+			- _myState = 8192;
+			- _name = "RFID_W";
+			- _modifiedTimeWeak = 12.12.2016::11:46:23;
+			- HyperLinks = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IMHyperLink 
+					- _id = GUID a6d21a4b-af9f-41f4-9f9c-9bfb602c88b1;
+					- _modifiedTimeWeak = 12.12.2016::11:46:23;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Makefile";
+					- _linkType = "FREE";
+					- _linkTarget = "/nfs4cross/mueller/fhftrain/sw/br_lok/application/projects/RhapsodySS2016/RFID_W/RFID_W/RFID_W.mak";
+					- isConfigurationFileHyperLink = 1;
+				}
+				{ IMHyperLink 
+					- _id = GUID 0c1bc583-07cc-450a-b7de-ea555819d49c;
+					- _modifiedTimeWeak = 12.12.2016::11:46:23;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Main File";
+					- _linkType = "FREE";
+					- _linkTarget = "/nfs4cross/mueller/fhftrain/sw/br_lok/application/projects/RhapsodySS2016/RFID_W/RFID_W/MainRFID_W";
+					- isConfigurationFileHyperLink = 1;
+				}
+			}
+			- _scopeType = Explicit;
+			- _libraries = "";
+			- _additionalSources = "";
+			- _standardHeaders = "";
+			- _includePath = "";
+			- _targetMain = "";
+			- _instrumentation = None;
+			- _timeModel = RealTime;
+			- m_generateActors = 1;
+			- _statechartImplementation = Flat;
+			- _initializationCode = "";
+			- _checksList = 0 ;
+			- ScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- InitialInstances = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IClass";
+					- _filename = "Common.sbs";
+					- _subsystem = "Common";
+					- _class = "";
+					- _name = "Rfid_Main";
+					- _id = GUID 799ad41e-03c0-4572-ab69-a88bd20f5442;
+				}
+			}
+			- _root = { IFolder 
+				- _id = GUID 44d38220-9645-4011-8e40-8b5762d86602;
+				- _myState = 8192;
+				- _name = "RFID_W";
+				- _modifiedTimeWeak = 5.25.2016::10:46:44;
+				- m_path = "";
+				- Elements = { IRPYRawContainer 
+					- size = 0;
+				}
+				- Files = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			- weakCGTime = 12.12.2016::11:46:23;
+			- strongCGTime = 5.25.2016::10:46:44;
+			- AnimScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- m_allInAnimScope = 1;
+			- m_generateUsecases = 0;
+		}
+	}
+	- VariationPoints = { IRPYRawContainer 
+		- size = 0;
+	}
+	- SelectedVariants = { IRPYRawContainer 
+		- size = 0;
+	}
+	- weakCGTime = 12.21.2016::10:30:40;
+	- strongCGTime = 5.25.2016::10:47:6;
+}
+
