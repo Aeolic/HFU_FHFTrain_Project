@@ -1,0 +1,23 @@
+I-Logix-RPY-Archive version 8.12.0 C++ 9728113
+{ IWorkspace 
+	- m_SavedActiveProjectsName = "FHFTrain_Merged";
+	- _id = GUID fe5d4ad1-c765-11e6-8a28-10604b8125e9;
+	- _myState = 8192;
+	- _name = "Projects";
+	- _modifiedTimeWeak = 1.2.1990::0:0:0;
+	- Declaratives = { IRPYRawContainer 
+		- size = 2;
+		- value = 
+		{ IProject 
+			- fileName = "UnserProject";
+			- _persistAs = "/user0/oberhaus/mergerepo/unserProjectRenamed";
+			- _id = GUID c5285cb0-ab39-11e6-89be-001999f109b4;
+		}
+		{ IProject 
+			- fileName = "FHFTrain_Merged";
+			- _persistAs = "/user0/oberhaus/mergerepo/mergedProject";
+			- _id = GUID 71d71cdf-4ae7-4612-980e-4051b21ac036;
+		}
+	}
+}
+
