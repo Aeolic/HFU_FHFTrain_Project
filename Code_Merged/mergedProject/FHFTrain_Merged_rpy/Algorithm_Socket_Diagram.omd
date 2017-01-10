@@ -212,7 +212,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	}
 	- _name = "Algorithm_Socket_Diagram";
 	- _modifiedTimeWeak = 1.2.1990::0:0:0;
-	- _lastModifiedTime = "12.21.2016::12:17:36";
+	- _lastModifiedTime = "1.10.2017::13:2:2";
 	- _graphicChart = { CGIClassChart 
 		- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 		- m_type = 0;
@@ -236,7 +236,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		}
 		- m_drawBehavior = 0;
 		- m_bIsPreferencesInitialized = 0;
-		- elementList = 44;
+		- elementList = 45;
 		{ CGIClass 
 			- _id = GUID c5285cbf-ab39-11e6-89be-001999f109b4;
 			- m_type = 78;
@@ -563,7 +563,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "m_addr";
@@ -571,7 +571,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "m_sock";
@@ -593,7 +593,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IDestructor";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "~Socket()";
@@ -601,7 +601,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "accept(Socket) const";
@@ -609,7 +609,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "bind(int)";
@@ -617,7 +617,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "connect(const std::string,int)";
@@ -625,7 +625,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "create()";
@@ -633,7 +633,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "is_valid() const";
@@ -641,7 +641,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "listen() const";
@@ -649,7 +649,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "recv(std::string &) const";
@@ -657,7 +657,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "send(const std::string) const";
@@ -665,7 +665,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "set_non_blocking(bool)";
@@ -673,7 +673,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IConstructor";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "Socket()";
@@ -681,7 +681,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "Socket";
 							- _name = "close()";
@@ -816,7 +816,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "ClientSocket";
 							- _name = "connected";
@@ -1200,7 +1200,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "trip";
@@ -1208,7 +1208,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "currentStation";
@@ -1216,7 +1216,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "dim";
@@ -1224,7 +1224,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "orderListUpToDate";
@@ -1232,7 +1232,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "currentPos";
@@ -1240,7 +1240,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "lastOrderTag";
@@ -1248,7 +1248,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "orderList";
@@ -1275,7 +1275,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IConstructor";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "PiAlgorithm()";
@@ -1283,7 +1283,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "executeSocket()";
@@ -1291,7 +1291,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "execute()";
@@ -1299,7 +1299,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "createOrderlist()";
@@ -1307,7 +1307,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "sendOrderToCommunication()";
@@ -1315,7 +1315,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "canSendOrder()";
@@ -1323,7 +1323,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "canReadTrainPosition()";
@@ -1331,7 +1331,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "repairOrderlist()";
@@ -1339,7 +1339,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "PiAlgorithm";
 							- _name = "createOrderlist2()";
@@ -1470,7 +1470,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "SocketException";
 							- _name = "m_s";
@@ -1491,7 +1491,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IConstructor";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "SocketException";
 							- _name = "SocketException(std::string)";
@@ -1499,7 +1499,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Socket.sbs";
+							- _filename = "";
 							- _subsystem = "Socket";
 							- _class = "SocketException";
 							- _name = "description()";
@@ -1631,7 +1631,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- _itemValueOfFontPropertiesMapCount = 4;
 					- _fontPropValues = " -1 -1 -1 0 0 0";
 					- _fontPropValues = " -1 -1 -1 0 0 0";
-					- _fontPropValues = "Tahoma";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
 					- _fontPropValues = " -1 -1 -1 0 0 0";
 				}
 			}
@@ -1728,7 +1728,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "TrainCommunicationPackage.sbs";
+							- _filename = "";
 							- _subsystem = "TrainCommunicationPackage";
 							- _class = "TrainThread";
 							- _name = "client";
@@ -1749,7 +1749,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IConstructor";
-							- _filename = "TrainCommunicationPackage.sbs";
+							- _filename = "";
 							- _subsystem = "TrainCommunicationPackage";
 							- _class = "TrainThread";
 							- _name = "TrainThread()";
@@ -1757,7 +1757,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "TrainCommunicationPackage.sbs";
+							- _filename = "";
 							- _subsystem = "TrainCommunicationPackage";
 							- _class = "TrainThread";
 							- _name = "execute()";
@@ -1765,7 +1765,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "TrainCommunicationPackage.sbs";
+							- _filename = "";
 							- _subsystem = "TrainCommunicationPackage";
 							- _class = "TrainThread";
 							- _name = "startClient()";
@@ -2486,7 +2486,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "TrainPos";
 							- _name = "position";
@@ -2494,7 +2494,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "TrainPos";
 							- _name = "algCanRead";
@@ -2502,7 +2502,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "TrainPos";
 							- _name = "id";
@@ -2510,7 +2510,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "TrainPos";
 							- _name = "pid";
@@ -2534,7 +2534,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IConstructor";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "TrainPos";
 							- _name = "TrainPos()";
@@ -2542,7 +2542,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "TrainPos";
 							- _name = "updatePosition(string)";
@@ -2992,7 +2992,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Order";
 							- _name = "beforeSpeed";
@@ -3000,7 +3000,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Order";
 							- _name = "afterSpeed";
@@ -3008,7 +3008,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Order";
 							- _name = "tag";
@@ -3031,7 +3031,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IConstructor";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Order";
 							- _name = "Order(int,double,int)";
@@ -3154,7 +3154,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Communication";
 							- _name = "server";
@@ -3162,7 +3162,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Communication";
 							- _name = "new_sock";
@@ -3170,7 +3170,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Communication";
 							- _name = "client_accepted";
@@ -3178,7 +3178,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Communication";
 							- _name = "trainPos";
@@ -3202,7 +3202,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Communication";
 							- _name = "sendOrder(string)";
@@ -3210,7 +3210,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IConstructor";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Communication";
 							- _name = "Communication(TrainPos*)";
@@ -3218,7 +3218,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Pi.sbs";
+							- _filename = "";
 							- _subsystem = "Pi";
 							- _class = "Communication";
 							- _name = "execute()";
@@ -3861,7 +3861,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "TrainCommunicationPackage.sbs";
+							- _filename = "";
 							- _subsystem = "TrainCommunicationPackage";
 							- _class = "TrainCommunication";
 							- _name = "client";
@@ -3869,7 +3869,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "TrainCommunicationPackage.sbs";
+							- _filename = "";
 							- _subsystem = "TrainCommunicationPackage";
 							- _class = "TrainCommunication";
 							- _name = "connected";
@@ -6286,7 +6286,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- m_nOrientationCtrlPt = 4;
 			}
 			- m_targetRole = { CGIText 
-				- m_str = "";
+				- m_str = "itsSHM_Connection";
 				- m_style = "Arial" 10 0 0 0 1 ;
 				- m_color = { IColor 
 					- m_fgColor = 0;
@@ -6450,7 +6450,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IConstructor";
-							- _filename = "TrainCommunicationPackage.sbs";
+							- _filename = "";
 							- _subsystem = "TrainCommunicationPackage";
 							- _class = "SHM_Tag_Listener";
 							- _name = "SHM_Tag_Listener()";
@@ -6458,7 +6458,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "TrainCommunicationPackage.sbs";
+							- _filename = "";
 							- _subsystem = "TrainCommunicationPackage";
 							- _class = "SHM_Tag_Listener";
 							- _name = "execute()";
@@ -6466,8 +6466,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 					}
 					- _itemValueOfFontPropertiesMapCount = 2;
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
 				}
 			}
 			- Attrs = { IRPYRawContainer 
@@ -6547,12 +6547,12 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- m_bImplicitSetRectPoints = 0;
 				- m_nOrientationCtrlPt = 7;
 			}
-			- m_arrow = 2 534 186  534 64  ;
+			- m_arrow = 2 534 186  534 84  ;
 			- m_anglePoint1 = 0 0 ;
 			- m_anglePoint2 = 0 0 ;
 			- m_line_style = 2;
 			- m_SourcePort = 1061 421 ;
-			- m_TargetPort = 2 920 ;
+			- m_TargetPort = -5 1116 ;
 			- m_pInverseModelObject = { IAssociationEndHandle 
 				- _m2Class = "";
 			}
@@ -6585,7 +6585,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- m_nOrientationCtrlPt = 0;
 			}
 			- m_targetRole = { CGIText 
-				- m_str = "";
+				- m_str = "itsSHM_Connection";
 				- m_style = "Arial" 10 0 0 0 1 ;
 				- m_color = { IColor 
 					- m_fgColor = 0;
@@ -6831,6 +6831,182 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- m_nOrientationCtrlPt = 8;
 			}
 			- m_specificType = symmetric_type;
+		}
+		{ CGIAssociationEnd 
+			- _id = GUID 138dfae0-d731-11e6-800a-10604b8125e9;
+			- _properties = { IPropertyContainer 
+				- Subjects = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertySubject 
+						- _Name = "General";
+						- Metaclasses = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertyMetaclass 
+								- _Name = "Graphics";
+								- Properties = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IProperty 
+										- _Name = "ShowLabels";
+										- _Value = "False";
+										- _Type = Bool;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			- m_type = 92;
+			- m_pModelObject = { IHandle 
+				- _m2Class = "IAssociationEnd";
+				- _filename = "TrainCommunicationPackage.sbs";
+				- _subsystem = "TrainCommunicationPackage";
+				- _class = "TrainThread";
+				- _name = "itsSHM_Connection";
+				- _id = GUID 138dfae1-d731-11e6-800a-10604b8125e9;
+			}
+			- m_pParent = ;
+			- m_name = { CGIText 
+				- m_str = "";
+				- m_style = "Arial" 10 0 0 0 1 ;
+				- m_color = { IColor 
+					- m_fgColor = 0;
+					- m_bgColor = 0;
+					- m_bgFlag = 0;
+				}
+				- m_position = 1 0 0  ;
+				- m_nIdent = 0;
+				- m_bImplicitSetRectPoints = 0;
+				- m_nOrientationCtrlPt = 8;
+			}
+			- m_drawBehavior = 4096;
+			- m_bIsPreferencesInitialized = 1;
+			- m_pSource = GUID 19e801be-aff2-11e6-9d64-001999f109b4;
+			- m_sourceType = 'F';
+			- m_pTarget = GUID ee46389a-c771-11e6-8b30-10604b8125e9;
+			- m_targetType = 'T';
+			- m_direction = ' ';
+			- m_rpn = { CGIText 
+				- m_str = "";
+				- m_style = "Arial" 10 0 0 0 1 ;
+				- m_color = { IColor 
+					- m_fgColor = 0;
+					- m_bgColor = 0;
+					- m_bgFlag = 0;
+				}
+				- m_position = 1 0 0  ;
+				- m_nIdent = 0;
+				- m_bImplicitSetRectPoints = 0;
+				- m_nOrientationCtrlPt = 7;
+			}
+			- m_arrow = 2 20 237  20 59  ;
+			- m_anglePoint1 = 0 0 ;
+			- m_anglePoint2 = 0 0 ;
+			- m_line_style = 2;
+			- m_SourcePort = 33 397 ;
+			- m_TargetPort = 2 870 ;
+			- m_pInverseModelObject = { IAssociationEndHandle 
+				- _m2Class = "";
+			}
+			- m_pInstance = { IObjectLinkHandle 
+				- _m2Class = "";
+			}
+			- m_pInverseInstance = { IObjectLinkHandle 
+				- _m2Class = "";
+			}
+			- m_bShowSourceMultiplicity = 1;
+			- m_bShowSourceRole = 1;
+			- m_bShowTargetMultiplicity = 1;
+			- m_bShowTargetRole = 1;
+			- m_bShowLinkName = 1;
+			- m_bShowSpecificType = 0;
+			- m_bInstance = 0;
+			- m_bShowQualifier1 = 1;
+			- m_bShowQualifier2 = 1;
+			- m_sourceRole = { CGIText 
+				- m_str = "";
+				- m_style = "Arial" 10 0 0 0 1 ;
+				- m_color = { IColor 
+					- m_fgColor = 0;
+					- m_bgColor = 0;
+					- m_bgFlag = 0;
+				}
+				- m_position = 1 0 0  ;
+				- m_nIdent = 2;
+				- m_bImplicitSetRectPoints = 0;
+				- m_nOrientationCtrlPt = 2;
+			}
+			- m_targetRole = { CGIText 
+				- m_str = "";
+				- m_style = "Arial" 10 0 0 0 1 ;
+				- m_color = { IColor 
+					- m_fgColor = 0;
+					- m_bgColor = 0;
+					- m_bgFlag = 0;
+				}
+				- m_position = 1 0 0  ;
+				- m_nIdent = 3;
+				- m_bImplicitSetRectPoints = 0;
+				- m_nHorizontalSpacing = -7;
+				- m_nOrientationCtrlPt = 2;
+			}
+			- m_sourceMultiplicity = { CGIText 
+				- m_str = "";
+				- m_style = "Arial" 10 0 0 0 1 ;
+				- m_color = { IColor 
+					- m_fgColor = 0;
+					- m_bgColor = 0;
+					- m_bgFlag = 0;
+				}
+				- m_position = 1 0 0  ;
+				- m_nIdent = 4;
+				- m_bImplicitSetRectPoints = 0;
+				- m_nOrientationCtrlPt = 4;
+			}
+			- m_targetMultiplicity = { CGIText 
+				- m_str = "1";
+				- m_style = "Arial" 10 0 0 0 1 ;
+				- m_color = { IColor 
+					- m_fgColor = 0;
+					- m_bgColor = 0;
+					- m_bgFlag = 0;
+				}
+				- m_position = 1 0 0  ;
+				- m_nIdent = 5;
+				- m_bImplicitSetRectPoints = 0;
+				- m_nHorizontalSpacing = -7;
+				- m_nOrientationCtrlPt = 4;
+			}
+			- m_sourceQualifier = { CGIText 
+				- m_str = "";
+				- m_style = "Arial" 10 0 0 0 1 ;
+				- m_color = { IColor 
+					- m_fgColor = 0;
+					- m_bgColor = 0;
+					- m_bgFlag = 0;
+				}
+				- m_position = 1 0 0  ;
+				- m_nIdent = 6;
+				- m_bImplicitSetRectPoints = 0;
+				- m_nOrientationCtrlPt = 8;
+			}
+			- m_targetQualifier = { CGIText 
+				- m_str = "";
+				- m_style = "Arial" 10 0 0 0 1 ;
+				- m_color = { IColor 
+					- m_fgColor = 0;
+					- m_bgColor = 0;
+					- m_bgFlag = 0;
+				}
+				- m_position = 1 0 0  ;
+				- m_nIdent = 7;
+				- m_bImplicitSetRectPoints = 0;
+				- m_nOrientationCtrlPt = 8;
+			}
+			- m_specificType = type_122;
 		}
 		
 		- m_access = 'Z';

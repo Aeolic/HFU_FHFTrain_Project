@@ -4,7 +4,7 @@
 	Component	: Algorithm_Socket 
 	Configuration 	: Algorithm_Socket
 	Model Element	: PiListenerThread
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: Algorithm_Socket/Algorithm_Socket/PiListenerThread.h
 *********************************************************************/
 
@@ -25,7 +25,7 @@
 //## dependency SocketException
 #include "SocketException.h"
 //## dependency string
-#include <string.h>
+#include <string>
 //## dependency unistd
 #include <unistd.h>
 //## auto_generated

@@ -4,7 +4,7 @@
 	Component	: RFID_T 
 	Configuration 	: RFID_T
 	Model Element	: Observer
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: RFID_T/RFID_T/Observer.cpp
 *********************************************************************/
 
@@ -67,7 +67,9 @@ void Observer::notify(char* rfidCode) {
      	printf("Unknown RFID-Code! '%s'\n", rfidCode);
     }         
     
-            executeOrder();
+            executeOrder();     
+            
+            
     //#]
 }
 
@@ -110,10 +112,10 @@ void Observer::executeOrder() {
              float speedAfter;
              itsSHM_Connection->read(TagUntil,tUntil,false);
              itsSHM_Connection->read(LastTag,tLast,false);  
-             itsSHM_Connection->read(SpeedAfter,speedAfter,false);     
+             itsSHM_Connection->read(AfterSpeed,speedAfter,false);     
              if(tUntil==tLast){             
              itsSHM_Connection->save(Speed,speedAfter);
-             }
+               }
              
     //#]
 }

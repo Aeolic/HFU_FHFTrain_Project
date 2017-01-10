@@ -28,7 +28,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		}
 	}
 	- _name = "FHFTrain_Merged";
-	- _modifiedTimeWeak = 12.21.2016::12:37:28;
+	- _modifiedTimeWeak = 1.10.2017::12:6:46;
 	- _lastID = 21;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -428,7 +428,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "LCD";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "12.21.2016::12:29:53";
+			- _lastModifiedTime = "1.10.2017::13:2:2";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID b2ff3ea7-de6b-480d-9058-6b8fb3e36464;
 				- m_type = 0;
@@ -1841,7 +1841,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "Motor";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "12.21.2016::12:29:53";
+			- _lastModifiedTime = "1.10.2017::13:2:2";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 7f6954e5-82ff-403f-a27d-de7220999e4d;
 				- m_type = 0;
@@ -4710,7 +4710,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 								- value = 
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Common.sbs";
+									- _filename = "";
 									- _subsystem = "Common";
 									- _class = "Observer";
 									- _name = "notify(char*)";
@@ -4718,7 +4718,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "Common.sbs";
+									- _filename = "";
 									- _subsystem = "Common";
 									- _class = "Observer";
 									- _name = "executeOrder()";
@@ -4727,7 +4727,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 							}
 							- _itemValueOfFontPropertiesMapCount = 2;
 							- _fontPropValues = " -1 -1 -1 0 0 0";
-							- _fontPropValues = "Tahoma";
+							- _fontPropValues = " -1 -1 -1 0 0 0";
 						}
 					}
 					- Attrs = { IRPYRawContainer 
@@ -6178,7 +6178,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "SensRead";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "12.21.2016::12:29:53";
+			- _lastModifiedTime = "1.10.2017::13:2:2";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 8d74c2b1-5fd0-4d08-80ca-5aefa99b2aa1;
 				- m_type = 0;
@@ -7775,7 +7775,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "LCD_Minimal";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "12.21.2016::12:29:53";
+			- _lastModifiedTime = "1.10.2017::13:2:2";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID bec1f816-9cac-41d4-9729-7a863fb9e189;
 				- m_type = 0;
@@ -9165,7 +9165,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "SensRead_Minimal";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "12.21.2016::12:29:53";
+			- _lastModifiedTime = "1.10.2017::13:2:2";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 8a7bd38c-dbd4-422a-b3a5-4cdc8436289d;
 				- m_type = 0;

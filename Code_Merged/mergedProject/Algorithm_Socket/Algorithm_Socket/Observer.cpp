@@ -122,8 +122,8 @@ void Observer::executeOrder() {
              itsSHM_Connection->read(LastTag,tLast,false);  
              itsSHM_Connection->read(AfterSpeed,speedAfter,false);     
              if(tUntil==tLast){             
-             itsSHM_Connection->save(Speed,speedAfter);
-               }
+             	itsSHM_Connection->save(Speed,speedAfter);
+             }
              
     //#]
 }

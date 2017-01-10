@@ -4,7 +4,7 @@
 	Component	: Algorithm_Socket 
 	Configuration 	: Algorithm_Socket
 	Model Element	: Socket
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: Algorithm_Socket/Algorithm_Socket/Socket.h
 *********************************************************************/
 
@@ -23,6 +23,14 @@
 #endif
 //#]
 
+//## auto_generated
+#include <oxf/oxf.h>
+//## dependency SocketException
+#include "SocketException.h"
+//## auto_generated
+#include <string>
+//## auto_generated
+#include <algorithm>
 //## dependency types
 #include <sys/types.h>
 //## dependency socket
@@ -34,22 +42,38 @@
 //## dependency unistd
 #include <unistd.h>
 //## dependency string
-#include <string.h>
+#include <string>
 //## dependency inet
 #include <arpa/inet.h>
-//## auto_generated
-#include <oxf/oxf.h>
+//## classInstance object_0
+class object_0_C;
+
 //## dependency std
 using namespace std;
 
-//## attribute MAXHOSTNAME
-const int MAXHOSTNAME = 200;
+//## auto_generated
+class ClientSocket;
+
+//## auto_generated
+class ServerSocket;
+
+//## auto_generated
+class Socket;
+
+//## package Socket
+
 
 //## attribute MAXCONNECTIONS
 const int MAXCONNECTIONS = 5;
 
+//## attribute MAXHOSTNAME
+const int MAXHOSTNAME = 200;
+
 //## attribute MAXRECV
 const int MAXRECV = 500;
+
+//## classInstance object_0
+extern object_0_C object_0;
 
 //## package Socket
 
@@ -58,6 +82,8 @@ const int MAXRECV = 500;
 using namespace std;
 
 class Socket {
+    ////    Constructors and destructors    ////
+    
 public :
 
     //## operation Socket()
@@ -66,32 +92,24 @@ public :
     //## operation ~Socket()
     virtual ~Socket();
     
-    // Server initialization
-    //## operation create()
-    bool create();
+    ////    Operations    ////
+    
+    //## operation accept(Socket) const
+    bool accept(Socket& new_socket) const;
     
     //## operation bind(int)
     bool bind(const int port);
     
-    //## operation listen() const
-    bool listen() const;
-    
-    //## operation accept(Socket) const
-    bool accept(Socket& new_socket) const;
+    //## operation close()
+    void close();
     
     // Client initialization
     //## operation connect(const std::string,int)
     bool connect(const std::string host, const int port);
     
-    // Data Transimission
-    //## operation send(const std::string) const
-    bool send(const std::string s) const;
-    
-    //## operation recv(std::string &) const
-    int recv(std::string & s) const;
-    
-    //## operation set_non_blocking(bool)
-    void set_non_blocking(const bool b);
+    // Server initialization
+    //## operation create()
+    bool create();
     
     //## operation is_valid() const
     inline bool is_valid() const {
@@ -99,15 +117,22 @@ public :
         return m_sock != -1;
         //#]
     }
-
-private :
-
-    int m_sock;		//## attribute m_sock
     
-    sockaddr_in m_addr;		//## attribute m_addr
-
-public :
-
+    //## operation listen() const
+    bool listen() const;
+    
+    //## operation recv(std::string &) const
+    int recv(std::string & s) const;
+    
+    // Data Transimission
+    //## operation send(const std::string) const
+    bool send(const std::string s) const;
+    
+    //## operation set_non_blocking(bool)
+    void set_non_blocking(const bool b);
+    
+    ////    Additional operations    ////
+    
     //## auto_generated
     sockaddr_in getM_addr() const;
     
@@ -120,36 +145,14 @@ public :
     //## auto_generated
     void setM_sock(int p_m_sock);
     
-    //## operation close()
-    void close();
+    ////    Attributes    ////
+
+private :
+
+    sockaddr_in m_addr;		//## attribute m_addr
+    
+    int m_sock;		//## attribute m_sock
 };
-
-//## dependency SocketException
-#include "SocketException.h"
-//## auto_generated
-#include <string>
-//## auto_generated
-#include <algorithm>
-//## classInstance object_0
-class object_0_C;
-
-//## auto_generated
-class ClientSocket;
-
-//## auto_generated
-class ServerSocket;
-
-//## auto_generated
-class Socket;
-
-//## auto_generated
-class startUpClass;
-
-//## package Socket
-
-
-//## classInstance object_0
-extern object_0_C object_0;
 
 #endif
 /*********************************************************************

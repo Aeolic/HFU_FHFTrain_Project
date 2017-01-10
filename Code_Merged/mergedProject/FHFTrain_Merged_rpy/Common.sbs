@@ -6454,8 +6454,8 @@ else {
          itsSHM_Connection->read(LastTag,tLast,false);  
          itsSHM_Connection->read(AfterSpeed,speedAfter,false);     
          if(tUntil==tLast){             
-         itsSHM_Connection->save(Speed,speedAfter);
-           }
+         	itsSHM_Connection->save(Speed,speedAfter);
+         }
          ";
 					}
 				}
@@ -6524,14 +6524,11 @@ else {
 					- _id = GUID ee463b36-c771-11e6-8b30-10604b8125e9;
 					- _myState = 139264;
 					- _name = "Observer";
-					- Dependencies = { IRPYRawContainer 
-						- size = 0;
-					}
 					- _modifiedTimeWeak = 12.21.2016::12:21:27;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
-						- size = 3;
+						- size = 7;
 						- value = 
 						{ IFileFragment 
 							- _id = GUID ee463b8b-c771-11e6-8b30-10604b8125e9;
@@ -6545,9 +6542,6 @@ else {
 							- m_endCol_Short = 22;
 							- m_subject = { INObjectHandle 
 								- _m2Class = "";
-							}
-							- Fragments = { IRPYRawContainer 
-								- size = 0;
 							}
 						}
 						{ IFileFragment 
@@ -6563,8 +6557,61 @@ else {
 							- m_subject = { INObjectHandle 
 								- _m2Class = "";
 							}
-							- Fragments = { IRPYRawContainer 
-								- size = 0;
+						}
+						{ IFileFragment 
+							- _id = GUID 61c374b4-d730-11e6-babe-10604b8125e9;
+							- _name = "iostream:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency iostream:spec";
+							- m_startRow = 16;
+							- m_startCol_Short = 1;
+							- m_endRow = 16;
+							- m_endCol_Short = 20;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID 61c374b6-d730-11e6-babe-10604b8125e9;
+							- _name = "string:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency string:spec";
+							- m_startRow = 18;
+							- m_startCol_Short = 1;
+							- m_endRow = 18;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID 61c374b8-d730-11e6-babe-10604b8125e9;
+							- _name = "sstream:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency sstream:spec";
+							- m_startRow = 20;
+							- m_startCol_Short = 1;
+							- m_endRow = 20;
+							- m_endCol_Short = 19;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID 61c374ba-d730-11e6-babe-10604b8125e9;
+							- _name = "vector:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency vector:spec";
+							- m_startRow = 22;
+							- m_startCol_Short = 1;
+							- m_endRow = 22;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
 							}
 						}
 						{ IFileFragment 
@@ -6573,9 +6620,9 @@ else {
 							- _modifiedTimeWeak = 12.21.2016::12:21:27;
 							- m_type = implFragment;
 							- m_text = "";
-							- m_startRow = 18;
+							- m_startRow = 26;
 							- m_startCol_Short = 11;
-							- m_endRow = 18;
+							- m_endRow = 26;
 							- m_endCol_Short = 11;
 							- m_subject = { INObjectHandle 
 								- _m2Class = "IClass";
@@ -6586,6 +6633,7 @@ else {
 								- value = 
 								{ IFileFragment 
 									- _id = GUID ee463b38-c771-11e6-8b30-10604b8125e9;
+									- _name = "Observer";
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- Tags = { IRPYRawContainer 
 										- size = 2;
@@ -6601,7 +6649,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID ee463b3a-c771-11e6-8b30-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "18";
+													- _value = "26";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -6641,16 +6689,13 @@ else {
 									}
 									- m_type = implFragment;
 									- m_text = "";
-									- m_startRow = 18;
+									- m_startRow = 26;
 									- m_startCol_Short = 11;
-									- m_endRow = 23;
+									- m_endRow = 31;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "IConstructor";
 										- _id = GUID 9936d21e-0d35-4c06-9c74-a687fd897552;
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -6671,7 +6716,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID ee463b40-c771-11e6-8b30-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "25";
+													- _value = "33";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -6711,15 +6756,12 @@ else {
 									}
 									- m_type = textFragment;
 									- m_text = "//## auto:operation ~Observer():impl";
-									- m_startRow = 25;
+									- m_startRow = 33;
 									- m_startCol_Short = 12;
-									- m_endRow = 27;
+									- m_endRow = 35;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -6740,7 +6782,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID ee463b49-c771-11e6-8b30-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "29";
+													- _value = "37";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -6780,16 +6822,13 @@ else {
 									}
 									- m_type = implFragment;
 									- m_text = "";
-									- m_startRow = 29;
+									- m_startRow = 37;
 									- m_startCol_Short = 39;
-									- m_endRow = 74;
+									- m_endRow = 82;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "IPrimitiveOperation";
 										- _id = GUID 0cd50451-e330-45a9-a4e2-94bd7a520da3;
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -6810,7 +6849,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID ee463b50-c771-11e6-8b30-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "76";
+													- _value = "84";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -6850,15 +6889,12 @@ else {
 									}
 									- m_type = textFragment;
 									- m_text = "//## auto:operation getPwr() const:impl";
-									- m_startRow = 76;
+									- m_startRow = 84;
 									- m_startCol_Short = 32;
-									- m_endRow = 78;
+									- m_endRow = 86;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -6879,7 +6915,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID ee463b59-c771-11e6-8b30-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "80";
+													- _value = "88";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -6919,15 +6955,12 @@ else {
 									}
 									- m_type = textFragment;
 									- m_text = "//## auto:operation setPwr(float):impl";
-									- m_startRow = 80;
+									- m_startRow = 88;
 									- m_startCol_Short = 36;
-									- m_endRow = 82;
+									- m_endRow = 90;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -6948,7 +6981,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID ee463b62-c771-11e6-8b30-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "84";
+													- _value = "92";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -6988,15 +7021,12 @@ else {
 									}
 									- m_type = textFragment;
 									- m_text = "//## auto:operation getRfidBuf(int) const:impl";
-									- m_startRow = 84;
+									- m_startRow = 92;
 									- m_startCol_Short = 41;
-									- m_endRow = 86;
+									- m_endRow = 94;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7017,7 +7047,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID ee463b6d-c771-11e6-8b30-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "88";
+													- _value = "96";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -7057,15 +7087,12 @@ else {
 									}
 									- m_type = textFragment;
 									- m_text = "//## auto:operation setRfidBuf(int,char):impl";
-									- m_startRow = 88;
+									- m_startRow = 96;
 									- m_startCol_Short = 51;
-									- m_endRow = 90;
+									- m_endRow = 98;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7086,7 +7113,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID ee463b75-c771-11e6-8b30-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "92";
+													- _value = "100";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -7126,15 +7153,12 @@ else {
 									}
 									- m_type = textFragment;
 									- m_text = "//## auto:operation getItsSHM_Connection() const:impl";
-									- m_startRow = 92;
+									- m_startRow = 100;
 									- m_startCol_Short = 56;
-									- m_endRow = 94;
+									- m_endRow = 102;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7155,7 +7179,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID ee463b7f-c771-11e6-8b30-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "96";
+													- _value = "104";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -7195,15 +7219,12 @@ else {
 									}
 									- m_type = textFragment;
 									- m_text = "//## auto:operation setItsSHM_Connection(SHM_Connection *):impl";
-									- m_startRow = 96;
+									- m_startRow = 104;
 									- m_startCol_Short = 71;
-									- m_endRow = 98;
+									- m_endRow = 106;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7224,7 +7245,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID ee463b86-c771-11e6-8b30-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "100";
+													- _value = "108";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -7264,15 +7285,12 @@ else {
 									}
 									- m_type = textFragment;
 									- m_text = "//## auto:operation cleanUpRelations():impl";
-									- m_startRow = 100;
+									- m_startRow = 108;
 									- m_startCol_Short = 35;
-									- m_endRow = 105;
+									- m_endRow = 113;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7293,7 +7311,7 @@ else {
 												{ ILiteralSpecification 
 													- _id = GUID 1ef063cd-c775-11e6-b5bc-10604b8125e9;
 													- _modifiedTimeWeak = 12.21.2016::12:21:27;
-													- _value = "107";
+													- _value = "115";
 												}
 											}
 											- _typeOf = { IHandle 
@@ -7333,9 +7351,9 @@ else {
 									}
 									- m_type = implFragment;
 									- m_text = "";
-									- m_startRow = 107;
+									- m_startRow = 115;
 									- m_startCol_Short = 31;
-									- m_endRow = 121;
+									- m_endRow = 129;
 									- m_endCol_Short = 1;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "IPrimitiveOperation";
@@ -7350,14 +7368,11 @@ else {
 					- _id = GUID ee463af7-c771-11e6-8b30-10604b8125e9;
 					- _myState = 139264;
 					- _name = "Observer";
-					- Dependencies = { IRPYRawContainer 
-						- size = 0;
-					}
 					- _modifiedTimeWeak = 12.21.2016::12:21:27;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
-						- size = 5;
+						- size = 7;
 						- value = 
 						{ IFileFragment 
 							- _id = GUID ee463b9e-c771-11e6-8b30-10604b8125e9;
@@ -7365,15 +7380,12 @@ else {
 							- _modifiedTimeWeak = 12.21.2016::12:21:27;
 							- m_type = textFragment;
 							- m_text = "//## auto:dependency oxf:spec";
-							- m_startRow = 15;
+							- m_startRow = 22;
 							- m_startCol_Short = 1;
-							- m_endRow = 15;
+							- m_endRow = 22;
 							- m_endCol_Short = 21;
 							- m_subject = { INObjectHandle 
 								- _m2Class = "";
-							}
-							- Fragments = { IRPYRawContainer 
-								- size = 0;
 							}
 						}
 						{ IFileFragment 
@@ -7382,15 +7394,12 @@ else {
 							- _modifiedTimeWeak = 12.21.2016::12:21:27;
 							- m_type = textFragment;
 							- m_text = "//## auto:dependency IObserver:spec";
-							- m_startRow = 17;
+							- m_startRow = 24;
 							- m_startCol_Short = 1;
-							- m_endRow = 17;
+							- m_endRow = 24;
 							- m_endCol_Short = 23;
 							- m_subject = { INObjectHandle 
 								- _m2Class = "";
-							}
-							- Fragments = { IRPYRawContainer 
-								- size = 0;
 							}
 						}
 						{ IFileFragment 
@@ -7399,10 +7408,38 @@ else {
 							- _modifiedTimeWeak = 1.2.1990::0:0:0;
 							- m_type = textFragment;
 							- m_text = "//## auto:dependency Common:spec";
-							- m_startRow = 19;
+							- m_startRow = 26;
 							- m_startCol_Short = 1;
-							- m_endRow = 19;
+							- m_endRow = 26;
 							- m_endCol_Short = 20;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID 61c374f8-d730-11e6-babe-10604b8125e9;
+							- _name = "string:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency string:spec";
+							- m_startRow = 28;
+							- m_startCol_Short = 1;
+							- m_endRow = 28;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID 61c374fa-d730-11e6-babe-10604b8125e9;
+							- _name = "algorithm:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency algorithm:spec";
+							- m_startRow = 30;
+							- m_startCol_Short = 1;
+							- m_endRow = 30;
+							- m_endCol_Short = 21;
 							- m_subject = { INObjectHandle 
 								- _m2Class = "";
 							}
@@ -7413,9 +7450,9 @@ else {
 							- _modifiedTimeWeak = 1.2.1990::0:0:0;
 							- m_type = textFragment;
 							- m_text = "//## auto:dependency SHM_Connection:spec";
-							- m_startRow = 21;
+							- m_startRow = 32;
 							- m_startCol_Short = 1;
-							- m_endRow = 21;
+							- m_endRow = 32;
 							- m_endCol_Short = 21;
 							- m_subject = { INObjectHandle 
 								- _m2Class = "";
@@ -7439,7 +7476,7 @@ else {
 										{ ILiteralSpecification 
 											- _id = GUID ee463b31-c771-11e6-8b30-10604b8125e9;
 											- _modifiedTimeWeak = 12.21.2016::12:21:27;
-											- _value = "26";
+											- _value = "40";
 										}
 									}
 									- _typeOf = { IHandle 
@@ -7479,9 +7516,9 @@ else {
 							}
 							- m_type = specFragment;
 							- m_text = "";
-							- m_startRow = 26;
+							- m_startRow = 40;
 							- m_startCol_Short = 1;
-							- m_endRow = 81;
+							- m_endRow = 95;
 							- m_endCol_Short = 1;
 							- m_subject = { INObjectHandle 
 								- _m2Class = "IClass";
@@ -7497,32 +7534,27 @@ else {
 									- m_type = textFragment;
 									- m_text = "////    Constructors and destructors    ////
 ";
-									- m_startRow = 27;
+									- m_startRow = 41;
 									- m_startCol_Short = 5;
-									- m_endRow = 27;
+									- m_endRow = 41;
 									- m_endCol_Short = 49;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
 									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
-									}
 								}
 								{ IFileFragment 
 									- _id = GUID ee463afc-c771-11e6-8b30-10604b8125e9;
+									- _name = "Observer";
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = specFragment;
 									- m_text = "";
-									- m_startRow = 32;
+									- m_startRow = 46;
 									- m_startCol_Short = 5;
-									- m_endRow = 32;
+									- m_endRow = 46;
 									- m_endCol_Short = 15;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "IConstructor";
 										- _id = GUID 9936d21e-0d35-4c06-9c74-a687fd897552;
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7531,15 +7563,12 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = textFragment;
 									- m_text = "//## auto:operation ~Observer():spec";
-									- m_startRow = 35;
+									- m_startRow = 49;
 									- m_startCol_Short = 14;
-									- m_endRow = 35;
+									- m_endRow = 49;
 									- m_endCol_Short = 24;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7549,15 +7578,12 @@ else {
 									- m_type = textFragment;
 									- m_text = "////    Operations    ////
 ";
-									- m_startRow = 37;
+									- m_startRow = 51;
 									- m_startCol_Short = 5;
-									- m_endRow = 37;
+									- m_endRow = 51;
 									- m_endCol_Short = 31;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7566,16 +7592,13 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = specFragment;
 									- m_text = "";
-									- m_startRow = 40;
+									- m_startRow = 54;
 									- m_startCol_Short = 18;
-									- m_endRow = 40;
+									- m_endRow = 54;
 									- m_endCol_Short = 40;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "IPrimitiveOperation";
 										- _id = GUID 0cd50451-e330-45a9-a4e2-94bd7a520da3;
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7585,15 +7608,12 @@ else {
 									- m_type = textFragment;
 									- m_text = "////    Additional operations    ////
 ";
-									- m_startRow = 42;
+									- m_startRow = 56;
 									- m_startCol_Short = 5;
-									- m_endRow = 42;
+									- m_endRow = 56;
 									- m_endCol_Short = 42;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7602,15 +7622,12 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = textFragment;
 									- m_text = "//## auto:operation getPwr() const:spec";
-									- m_startRow = 45;
+									- m_startRow = 59;
 									- m_startCol_Short = 11;
-									- m_endRow = 45;
+									- m_endRow = 59;
 									- m_endCol_Short = 25;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7619,15 +7636,12 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = textFragment;
 									- m_text = "//## auto:operation setPwr(float):spec";
-									- m_startRow = 48;
+									- m_startRow = 62;
 									- m_startCol_Short = 10;
-									- m_endRow = 48;
+									- m_endRow = 62;
 									- m_endCol_Short = 29;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7636,15 +7650,12 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = textFragment;
 									- m_text = "//## auto:operation getRfidBuf(int) const:spec";
-									- m_startRow = 51;
+									- m_startRow = 65;
 									- m_startCol_Short = 10;
-									- m_endRow = 51;
+									- m_endRow = 65;
 									- m_endCol_Short = 34;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7653,15 +7664,12 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = textFragment;
 									- m_text = "//## auto:operation setRfidBuf(int,char):spec";
-									- m_startRow = 54;
+									- m_startRow = 68;
 									- m_startCol_Short = 10;
-									- m_endRow = 54;
+									- m_endRow = 68;
 									- m_endCol_Short = 44;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7670,15 +7678,12 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = textFragment;
 									- m_text = "//## auto:operation getItsSHM_Connection() const:spec";
-									- m_startRow = 57;
+									- m_startRow = 71;
 									- m_startCol_Short = 21;
-									- m_endRow = 57;
+									- m_endRow = 71;
 									- m_endCol_Short = 49;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7687,15 +7692,12 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = textFragment;
 									- m_text = "//## auto:operation setItsSHM_Connection(SHM_Connection *):spec";
-									- m_startRow = 60;
+									- m_startRow = 74;
 									- m_startCol_Short = 10;
-									- m_endRow = 60;
+									- m_endRow = 74;
 									- m_endCol_Short = 64;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7704,15 +7706,12 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = textFragment;
 									- m_text = "//## auto:operation cleanUpRelations():spec";
-									- m_startRow = 65;
+									- m_startRow = 79;
 									- m_startCol_Short = 10;
-									- m_endRow = 65;
+									- m_endRow = 79;
 									- m_endCol_Short = 28;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7722,15 +7721,12 @@ else {
 									- m_type = textFragment;
 									- m_text = "////    Attributes    ////
 ";
-									- m_startRow = 67;
+									- m_startRow = 81;
 									- m_startCol_Short = 5;
-									- m_endRow = 67;
+									- m_endRow = 81;
 									- m_endCol_Short = 31;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7739,16 +7735,13 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = specFragment;
 									- m_text = "";
-									- m_startRow = 69;
+									- m_startRow = 83;
 									- m_startCol_Short = 11;
-									- m_endRow = 69;
+									- m_endRow = 83;
 									- m_endCol_Short = 14;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "IAttribute";
 										- _id = GUID 0bb62aed-9288-468d-833b-ba7858a9ce82;
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7757,16 +7750,13 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = specFragment;
 									- m_text = "";
-									- m_startRow = 71;
+									- m_startRow = 85;
 									- m_startCol_Short = 10;
-									- m_endRow = 71;
+									- m_endRow = 85;
 									- m_endCol_Short = 21;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "IAttribute";
 										- _id = GUID 4e033d72-0e61-49f6-aedb-3e76e12fe591;
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7776,15 +7766,12 @@ else {
 									- m_type = textFragment;
 									- m_text = "////    Relations and components    ////
 ";
-									- m_startRow = 73;
+									- m_startRow = 87;
 									- m_startCol_Short = 5;
-									- m_endRow = 73;
+									- m_endRow = 87;
 									- m_endCol_Short = 45;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "";
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7793,16 +7780,13 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = specFragment;
 									- m_text = "";
-									- m_startRow = 75;
+									- m_startRow = 89;
 									- m_startCol_Short = 21;
-									- m_endRow = 75;
+									- m_endRow = 89;
 									- m_endCol_Short = 38;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "IAssociationEnd";
 										- _id = GUID 61e03ba5-b6d3-4c13-b8be-f4fc74eb9219;
-									}
-									- Fragments = { IRPYRawContainer 
-										- size = 0;
 									}
 								}
 								{ IFileFragment 
@@ -7811,9 +7795,9 @@ else {
 									- _modifiedTimeWeak = 12.21.2016::12:21:27;
 									- m_type = specFragment;
 									- m_text = "";
-									- m_startRow = 80;
+									- m_startRow = 94;
 									- m_startCol_Short = 10;
-									- m_endRow = 80;
+									- m_endRow = 94;
 									- m_endCol_Short = 24;
 									- m_subject = { INObjectHandle 
 										- _m2Class = "IPrimitiveOperation";

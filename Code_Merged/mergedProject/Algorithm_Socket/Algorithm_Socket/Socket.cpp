@@ -4,12 +4,12 @@
 	Component	: Algorithm_Socket 
 	Configuration 	: Algorithm_Socket
 	Model Element	: Socket
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: Algorithm_Socket/Algorithm_Socket/Socket.cpp
 *********************************************************************/
 
 //## dependency string
-#include "string.h"
+#include "string"
 //## dependency errno
 #include <errno.h>
 //## dependency fcntl
@@ -32,8 +32,12 @@
 #include "ClientSocket.h"
 //## auto_generated
 #include "ServerSocket.h"
-//## auto_generated
-#include "startUpClass.h"
+//## package Socket
+
+
+//## classInstance object_0
+object_0_C object_0;
+
 //## package Socket
 
 //## class Socket
@@ -55,24 +59,15 @@ Socket::~Socket() {
     //#]
 }
 
-bool Socket::create() {
-    //#[ operation create()
-    m_sock = socket ( AF_INET,
-    	    SOCK_STREAM,
-    	    0 );
+bool Socket::accept(Socket& new_socket) const {
+    //#[ operation accept(Socket) const
+    int addr_length = sizeof ( m_addr );
+    new_socket.m_sock = ::accept ( m_sock, ( sockaddr * ) &m_addr, ( socklen_t * ) &addr_length );
     
-    if ( ! is_valid() )
+    if ( new_socket.m_sock <= 0 )
       return false;
-    
-    
-    // TIME_WAIT - argh
-    int on = 1;
-    if ( setsockopt ( m_sock, SOL_SOCKET, SO_REUSEADDR, ( const char* ) &on, sizeof ( on ) ) == -1 )
-      return false;
-    
-    
-    return true;
-    
+    else
+      return true;
     //#]
 }
 
@@ -104,6 +99,54 @@ bool Socket::bind(const int port) {
     //#]
 }
 
+void Socket::close() {
+    //#[ operation close()
+    if ( is_valid() )
+    	::close ( m_sock );
+    //#]
+}
+
+bool Socket::connect(const std::string host, const int port) {
+    //#[ operation connect(const std::string,int)
+    if ( ! is_valid() ) return false;
+    
+    m_addr.sin_family = AF_INET;
+    m_addr.sin_port = htons ( port );
+    
+    int status = inet_pton ( AF_INET, host.c_str(), &m_addr.sin_addr );
+    
+    if ( errno == EAFNOSUPPORT ) return false;
+    
+    status = ::connect ( m_sock, ( sockaddr * ) &m_addr, sizeof ( m_addr ) );
+    
+    if ( status == 0 )
+      return true;
+    else
+      return false;
+    //#]
+}
+
+bool Socket::create() {
+    //#[ operation create()
+    m_sock = socket ( AF_INET,
+    	    SOCK_STREAM,
+    	    0 );
+    
+    if ( ! is_valid() )
+      return false;
+    
+    
+    // TIME_WAIT - argh
+    int on = 1;
+    if ( setsockopt ( m_sock, SOL_SOCKET, SO_REUSEADDR, ( const char* ) &on, sizeof ( on ) ) == -1 )
+      return false;
+    
+    
+    return true;
+    
+    //#]
+}
+
 bool Socket::listen() const {
     //#[ operation listen() const
     if ( ! is_valid() )
@@ -120,32 +163,6 @@ bool Socket::listen() const {
       }
     
     return true;
-    //#]
-}
-
-bool Socket::accept(Socket& new_socket) const {
-    //#[ operation accept(Socket) const
-    int addr_length = sizeof ( m_addr );
-    new_socket.m_sock = ::accept ( m_sock, ( sockaddr * ) &m_addr, ( socklen_t * ) &addr_length );
-    
-    if ( new_socket.m_sock <= 0 )
-      return false;
-    else
-      return true;
-    //#]
-}
-
-bool Socket::send(const std::string s) const {
-    //#[ operation send(const std::string) const
-    int status = ::send ( m_sock, s.c_str(), s.size(), MSG_NOSIGNAL );
-    if ( status == -1 )
-      {
-        return false;
-      }
-    else
-      {
-        return true;
-      }
     //#]
 }
 
@@ -176,23 +193,17 @@ int Socket::recv(std::string & s) const {
     //#]
 }
 
-bool Socket::connect(const std::string host, const int port) {
-    //#[ operation connect(const std::string,int)
-    if ( ! is_valid() ) return false;
-    
-    m_addr.sin_family = AF_INET;
-    m_addr.sin_port = htons ( port );
-    
-    int status = inet_pton ( AF_INET, host.c_str(), &m_addr.sin_addr );
-    
-    if ( errno == EAFNOSUPPORT ) return false;
-    
-    status = ::connect ( m_sock, ( sockaddr * ) &m_addr, sizeof ( m_addr ) );
-    
-    if ( status == 0 )
-      return true;
+bool Socket::send(const std::string s) const {
+    //#[ operation send(const std::string) const
+    int status = ::send ( m_sock, s.c_str(), s.size(), MSG_NOSIGNAL );
+    if ( status == -1 )
+      {
+        return false;
+      }
     else
-      return false;
+      {
+        return true;
+      }
     //#]
 }
 
@@ -235,19 +246,6 @@ int Socket::getM_sock() const {
 void Socket::setM_sock(int p_m_sock) {
     m_sock = p_m_sock;
 }
-
-void Socket::close() {
-    //#[ operation close()
-    if ( is_valid() )
-    	::close ( m_sock );
-    //#]
-}
-
-//## package Socket
-
-
-//## classInstance object_0
-object_0_C object_0;
 
 /*********************************************************************
 	File Path	: Algorithm_Socket/Algorithm_Socket/Socket.cpp

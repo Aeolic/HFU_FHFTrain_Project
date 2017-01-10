@@ -1,3 +1,10 @@
 
 Reverse Engineering Done.
 
+Adding Dependency 'std' to Class 'TrainThread'. 
+Source Artifacts have been added to the model to ensure that the generated code reflects details from the original code, such as global comments, preprocessor directives, and the order of elements. See the log file for more details.
+To view the Source Artifacts in the Rhapsody browser, open the View menu and select Browser Display Options > Show Source Artifacts.
+Source Artifacts were added for the following files:
+Adding File 'TrainThread:impl' to Class 'TrainThread'.
+Adding File 'TrainThread:spec' to Class 'TrainThread'.
+

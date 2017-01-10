@@ -4,7 +4,7 @@
 	Component	: Algorithm_Socket 
 	Configuration 	: Algorithm_Socket
 	Model Element	: TrainThread
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: Algorithm_Socket/Algorithm_Socket/TrainThread.h
 *********************************************************************/
 
@@ -33,8 +33,14 @@
 //## attribute client
 class ClientSocket;
 
+//## link itsSHM_Connection
+class SHM_Connection;
+
 //## link itsTrainCommunication
 class TrainCommunication;
+
+//## dependency std
+using namespace std;
 
 //## package TrainCommunicationPackage
 
@@ -68,6 +74,12 @@ private :
 public :
 
     //## auto_generated
+    SHM_Connection* getItsSHM_Connection() const;
+    
+    //## auto_generated
+    void setItsSHM_Connection(SHM_Connection* p_SHM_Connection);
+    
+    //## auto_generated
     TrainCommunication* getItsTrainCommunication() const;
     
     //## auto_generated
@@ -93,6 +105,8 @@ protected :
     ClientSocket* client;		//## attribute client
     
     ////    Relations and components    ////
+    
+    SHM_Connection* itsSHM_Connection;		//## link itsSHM_Connection
     
     TrainCommunication* itsTrainCommunication;		//## link itsTrainCommunication
 };

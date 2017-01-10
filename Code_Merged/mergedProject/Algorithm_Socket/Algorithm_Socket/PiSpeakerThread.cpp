@@ -4,7 +4,7 @@
 	Component	: Algorithm_Socket 
 	Configuration 	: Algorithm_Socket
 	Model Element	: PiSpeakerThread
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: Algorithm_Socket/Algorithm_Socket/PiSpeakerThread.cpp
 *********************************************************************/
 
@@ -15,7 +15,7 @@
 //## dependency ServerSocket
 #include "ServerSocket.h"
 //## dependency string
-#include <string.h>
+#include <string>
 //## auto_generated
 #include <string>
 //## auto_generated
