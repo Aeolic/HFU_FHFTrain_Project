@@ -32,9 +32,9 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _UpLeft = 5 -16 ;
-			- _DownRight = 1138 608 ;
+			- _DownRight = 1138 742 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 7;
+			- m_nDiagramIndex = 2;
 			- m_bIsActiveView = 1;
 		}
 		{ CGEMdiDiagramParams 
@@ -92,7 +92,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 			- _UpLeft = 162 0 ;
 			- _DownRight = 842 295 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 4;
+			- m_nDiagramIndex = 1;
 			- m_bIsActiveView = 0;
 		}
 	}
