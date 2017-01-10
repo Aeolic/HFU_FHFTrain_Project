@@ -4,7 +4,7 @@
 	Component	: LCD_W 
 	Configuration 	: LCD_W
 	Model Element	: Common
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: LCD_W/LCD_W/Common.h
 *********************************************************************/
 
@@ -72,6 +72,10 @@ struct shm_data {
     int distanceTicks;		//## attribute distanceTicks
     float voltageAux;		//## attribute voltageAux
     char rfid[15];		//## attribute rfid
+    float AfterSpeed;		//## attribute AfterSpeed
+    float BeforeSpeed;		//## attribute BeforeSpeed
+    float TagUntil;		//## attribute TagUntil
+    float LastTag;		//## attribute LastTag
 };
 
 //## type Type

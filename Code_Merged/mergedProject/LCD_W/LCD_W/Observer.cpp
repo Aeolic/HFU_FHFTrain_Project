@@ -4,7 +4,7 @@
 	Component	: LCD_W 
 	Configuration 	: LCD_W
 	Model Element	: Observer
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: LCD_W/LCD_W/Observer.cpp
 *********************************************************************/
 
@@ -67,7 +67,9 @@ void Observer::notify(char* rfidCode) {
      	printf("Unknown RFID-Code! '%s'\n", rfidCode);
     }         
     
-            executeOrder();
+            executeOrder();     
+            
+            
     //#]
 }
 
@@ -110,9 +112,9 @@ void Observer::executeOrder() {
              float speedAfter;
              itsSHM_Connection->read(TagUntil,tUntil,false);
              itsSHM_Connection->read(LastTag,tLast,false);  
-             itsSHM_Connection->read(SpeedAfter,speedAfter,false);     
+             itsSHM_Connection->read(AfterSpeed,speedAfter,false);     
              if(tUntil==tLast){             
-             itsSHM_Connection->save(Speed,speedAfter);
+             	itsSHM_Connection->save(Speed,speedAfter);
              }
              
     //#]

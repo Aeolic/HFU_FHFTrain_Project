@@ -4,7 +4,7 @@
 	Component	: LCD_W 
 	Configuration 	: LCD_W
 	Model Element	: SHM_Connection
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: LCD_W/LCD_W/SHM_Connection.h
 *********************************************************************/
 
@@ -21,11 +21,11 @@
 #include <iostream>
 //## auto_generated
 #include "Common.h"
-//## attribute ::Common::TopLevel.SHM_KEY
-#define SHM_KEY 1234
-
 //## dependency std
 using namespace std;
+
+//## attribute ::Common::TopLevel.SHM_KEY
+#define SHM_KEY 1234
 
 //## package Common
 

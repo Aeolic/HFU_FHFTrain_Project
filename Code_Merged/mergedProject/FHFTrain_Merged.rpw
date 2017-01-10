@@ -11,8 +11,8 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 3;
-				- m_showCmd = 3;
+				- m_nFlags = 1;
+				- m_showCmd = 1;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -4;
@@ -31,11 +31,11 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _UpLeft = 5 -16 ;
-			- _DownRight = 1138 742 ;
+			- _UpLeft = 0 164 ;
+			- _DownRight = 1565 765 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 2;
-			- m_bIsActiveView = 1;
+			- m_nDiagramIndex = 4;
+			- m_bIsActiveView = 0;
 		}
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
@@ -63,7 +63,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 			- _UpLeft = 0 20 ;
 			- _DownRight = 738 315 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 0;
+			- m_nDiagramIndex = 2;
 			- m_bIsActiveView = 0;
 		}
 		{ CGEMdiDiagramParams 
@@ -92,7 +92,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 			- _UpLeft = 162 0 ;
 			- _DownRight = 842 295 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 1;
+			- m_nDiagramIndex = 3;
 			- m_bIsActiveView = 0;
 		}
 	}

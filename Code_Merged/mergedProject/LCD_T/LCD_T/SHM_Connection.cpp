@@ -3,8 +3,8 @@
 	Login		: oberhaus
 	Component	: LCD_T 
 	Configuration 	: LCD_T
-	Model Element	: SHM_Connection
-//!	Generated Date	: Wed, 21, Dec 2016  
+	Model Element	: types
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: LCD_T/LCD_T/SHM_Connection.cpp
 *********************************************************************/
 
@@ -146,7 +146,7 @@ void SHM_Connection::read(const Type& type, float& value, bool useSema) {
     	sem_wait(sema);
     switch (type){    
     	case BeforeSpeed:
-    		value = data->beforeSpeed;
+    		value = data->BeforeSpeed;
     		break;
         case AfterSpeed:
     		value = data->AfterSpeed;
@@ -223,7 +223,7 @@ void SHM_Connection::save(const Type& type, float value) {
     switch (type){    
     
         case BeforeSpeed:
-    		data->beforeSpeed = value; 
+    		data->BeforeSpeed = value; 
     		break;
         case AfterSpeed:
     		data->AfterSpeed = value; 

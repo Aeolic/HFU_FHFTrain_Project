@@ -4,7 +4,7 @@
 	Component	: LCD_T 
 	Configuration 	: LCD_T
 	Model Element	: Observer
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: LCD_T/LCD_T/Observer.h
 *********************************************************************/
 
@@ -13,10 +13,10 @@
 
 //## auto_generated
 #include <oxf/oxf.h>
-//## auto_generated
-#include "Common.h"
 //## class Observer
 #include "IObserver.h"
+//## auto_generated
+#include "Common.h"
 //## link itsSHM_Connection
 class SHM_Connection;
 

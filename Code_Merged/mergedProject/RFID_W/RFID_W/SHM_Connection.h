@@ -4,7 +4,7 @@
 	Component	: RFID_W 
 	Configuration 	: RFID_W
 	Model Element	: SHM_Connection
-//!	Generated Date	: Wed, 21, Dec 2016  
+//!	Generated Date	: Tue, 10, Jan 2017  
 	File Path	: RFID_W/RFID_W/SHM_Connection.h
 *********************************************************************/
 
@@ -23,6 +23,9 @@
 #include "Common.h"
 //## dependency std
 using namespace std;
+
+//## attribute ::Common::TopLevel.SHM_KEY
+#define SHM_KEY 1234
 
 //## package Common
 

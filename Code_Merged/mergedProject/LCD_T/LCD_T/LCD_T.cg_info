@@ -5,7 +5,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- value = "LCD_T/LCD_T/Altera.cpp" 12.21.2016::10:34:52
 	"LCD_T/LCD_T/Altera.h" 12.21.2016::10:34:52
 	"LCD_T/LCD_T/Common.cpp" 12.21.2016::10:34:52
-	"LCD_T/LCD_T/Common.h" 12.21.2016::12:19:59
+	"LCD_T/LCD_T/Common.h" 1.10.2017::13:38:41
 	"LCD_T/LCD_T/Console.cpp" 12.21.2016::10:34:51
 	"LCD_T/LCD_T/Console.h" 12.21.2016::10:34:51
 	"LCD_T/LCD_T/ILCD.cpp" 12.21.2016::10:34:51
@@ -26,14 +26,14 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	"LCD_T/LCD_T/Motor.h" 12.21.2016::10:34:52
 	"LCD_T/LCD_T/Motor_Main.cpp" 12.21.2016::10:34:51
 	"LCD_T/LCD_T/Motor_Main.h" 12.21.2016::10:34:51
-	"LCD_T/LCD_T/Observer.cpp" 12.21.2016::12:19:58
-	"LCD_T/LCD_T/Observer.h" 12.21.2016::12:19:58
+	"LCD_T/LCD_T/Observer.cpp" 1.10.2017::13:38:41
+	"LCD_T/LCD_T/Observer.h" 1.10.2017::13:38:41
 	"LCD_T/LCD_T/RfidReader.cpp" 12.21.2016::10:34:51
 	"LCD_T/LCD_T/RfidReader.h" 12.21.2016::10:34:51
 	"LCD_T/LCD_T/Rfid_Main.cpp" 12.21.2016::10:34:52
 	"LCD_T/LCD_T/Rfid_Main.h" 12.21.2016::10:34:51
-	"LCD_T/LCD_T/SHM_Connection.cpp" 12.21.2016::12:19:59
-	"LCD_T/LCD_T/SHM_Connection.h" 12.21.2016::12:19:59
+	"LCD_T/LCD_T/SHM_Connection.cpp" 1.10.2017::13:47:26
+	"LCD_T/LCD_T/SHM_Connection.h" 1.10.2017::13:38:41
 	"LCD_T/LCD_T/SensReader.cpp" 12.21.2016::10:34:51
 	"LCD_T/LCD_T/SensReader.h" 12.21.2016::10:34:51
 	"LCD_T/LCD_T/Sensor.cpp" 12.21.2016::10:34:52
@@ -51,7 +51,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Altera";
 	- _id = GUID 5a8ba0df-d9bb-43f8-b66a-20c5fbea9668;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -60,7 +60,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "SensReader";
 	- _id = GUID f04b4b6f-286c-42e8-9ca7-30de4a5eedff;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -69,7 +69,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Observer";
 	- _id = GUID b846ec36-94cd-4391-a325-b3d1f36aefe7;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "ISubsystem";
 	- _filename = "Common.sbs";
@@ -78,7 +78,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Common";
 	- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "ISubsystem";
 	- _filename = "Train.sbs";
@@ -87,7 +87,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Train";
 	- _id = GUID 16023396-0db4-45f2-a947-df07372aa9a9;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -96,7 +96,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "ISensor";
 	- _id = GUID 3dba3c14-db2e-4d15-bbb4-9e139e1d6b02;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -105,7 +105,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "IMotor";
 	- _id = GUID ce68dfec-dfd7-4f40-a7f8-c9a33cc8850f;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -114,7 +114,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Console";
 	- _id = GUID a6aa507e-f395-46de-83bd-7a853d2b1bd9;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -123,7 +123,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "SHM_Connection";
 	- _id = GUID d795257c-2dbf-4572-89a5-5bd2ee1f6b84;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Train.sbs";
@@ -132,7 +132,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Sensor";
 	- _id = GUID 313ca911-26ad-4806-8b0d-a81a47a7be72;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -141,7 +141,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "IObserver";
 	- _id = GUID bbba5280-c136-4fa3-be40-609aee50bb6b;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -150,7 +150,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "RfidReader";
 	- _id = GUID 1ab67f6f-2ffc-40ae-bfbe-54aaaad04da0;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -159,7 +159,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "ILCD";
 	- _id = GUID 1235bb4a-267c-47fe-b978-8409ff93119e;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -168,7 +168,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "LCD_Main";
 	- _id = GUID 78e634c7-dac5-4663-8d4c-1f3550f1a34f;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "ICodeGenConfigInfo";
 	- _filename = "LCD_T.cmp";
@@ -177,7 +177,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "LCD_T/LCD_T";
 	- _id = GUID 4f7cf13a-6f08-4d12-a087-f11b33b8af27;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:29;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -186,7 +186,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Logger";
 	- _id = GUID f9d7e938-c17c-4cab-9bcf-c52d3828cb49;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -195,7 +195,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Rfid_Main";
 	- _id = GUID 799ad41e-03c0-4572-ab69-a88bd20f5442;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -204,7 +204,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Motor_Main";
 	- _id = GUID b4ce225c-9d0a-449f-8eb5-ef6ccab6fcc7;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Train.sbs";
@@ -213,7 +213,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "LCD";
 	- _id = GUID d275bc07-5c50-436a-8062-ab703ba325b9;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Train.sbs";
@@ -222,5 +222,5 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Motor";
 	- _id = GUID efa7f30c-5f46-4ce2-b0df-8da1af41c0ba;
 }
-- genTime = 12.21.2016::12:19:59;
+- genTime = 1.10.2017::13:47:26;
 
