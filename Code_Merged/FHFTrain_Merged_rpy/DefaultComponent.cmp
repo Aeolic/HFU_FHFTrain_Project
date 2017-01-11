@@ -1,0 +1,179 @@
+I-Logix-RPY-Archive version 8.12.0 C++ 9728113
+{ IComponent 
+	- _id = GUID 2f000edb-d74b-11e6-843a-10604b8125e9;
+	- _myState = 139264;
+	- _name = "DefaultComponent";
+	- _modifiedTimeWeak = 1.2.1990::0:0:0;
+	- m_buildType = Executable;
+	- m_libraries = "";
+	- m_additionalSources = "";
+	- m_standardHeaders = "";
+	- m_includePath = "";
+	- m_initializationCode = "";
+	- m_folder = { IFolder 
+		- _id = GUID 2f000edc-d74b-11e6-843a-10604b8125e9;
+		- _myState = 73728;
+		- _name = "Files";
+		- _modifiedTimeWeak = 1.2.1990::0:0:0;
+		- m_path = "";
+		- Elements = { IRPYRawContainer 
+			- size = 0;
+		}
+		- Files = { IRPYRawContainer 
+			- size = 0;
+		}
+	}
+	- m_configActive = { ICodeGenConfigInfoHandle 
+		- _m2Class = "ICodeGenConfigInfo";
+		- _id = GUID 2f000edd-d74b-11e6-843a-10604b8125e9;
+	}
+	- Configs = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ ICodeGenConfigInfo 
+			- _id = GUID 2f000edd-d74b-11e6-843a-10604b8125e9;
+			- _myState = 8192;
+			- _name = "DefaultConfig";
+			- _modifiedTimeWeak = 1.2.1990::0:0:0;
+			- _scopeType = Explicit;
+			- _libraries = "";
+			- _additionalSources = "";
+			- _standardHeaders = "";
+			- _includePath = "";
+			- _targetMain = "";
+			- _instrumentation = None;
+			- _timeModel = RealTime;
+			- m_generateActors = 1;
+			- _statechartImplementation = Flat;
+			- _initializationCode = "";
+			- _checksList = 0 ;
+			- ScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- InitialInstances = { IRPYRawContainer 
+				- size = 0;
+			}
+			- _root = { IFolder 
+				- _id = GUID 2f000ede-d74b-11e6-843a-10604b8125e9;
+				- _myState = 8192;
+				- _name = "DefaultConfig";
+				- _modifiedTimeWeak = 1.2.1990::0:0:0;
+				- m_path = "";
+				- Elements = { IRPYRawContainer 
+					- size = 0;
+				}
+				- Files = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			- weakCGTime = 1.2.1990::0:0:0;
+			- strongCGTime = 1.2.1990::0:0:0;
+			- AnimScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- m_allInAnimScope = 1;
+			- m_generateUsecases = 0;
+		}
+	}
+	- HandlesInMe = { IRPYRawContainer 
+		- size = 11;
+		- value = 
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "Common.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "Common";
+			- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "Train.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "Train";
+			- _id = GUID 16023396-0db4-45f2-a947-df07372aa9a9;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "Workstation.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "Workstation";
+			- _id = GUID 213f284d-6306-4efe-90bb-406805da80b2;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "Web.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "Web";
+			- _id = GUID 7552c7f9-9da6-415e-819e-3a31b3f7f9cd;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "Pi.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "Pi";
+			- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "Socket.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "Socket";
+			- _id = GUID c5285cb1-ab39-11e6-89be-001999f109b4;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "std.sbs";
+			- _subsystem = "Socket";
+			- _class = "";
+			- _name = "std";
+			- _id = GUID 1605d717-ab3b-11e6-a452-001999f109b4;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "TrainCommunicationPackage.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "TrainCommunicationPackage";
+			- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "TrainTest.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "TrainTest";
+			- _id = GUID 29eae1fc-bc85-11e6-aa7e-10604b8125e9;
+		}
+		{ IHandle 
+			- _m2Class = "IProfile";
+			- _filename = "C:/Users/Tom/IBM/Rational/Rhapsody/8.1.4/Share/NativeLinuxAdaptor/NativeLinux_rpy/NativeLinuxProfile.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "NativeLinuxProfile";
+			- _id = GUID f371caa6-696c-40f5-9b13-4d1078b947c4;
+		}
+		{ IHandle 
+			- _m2Class = "IProfile";
+			- _filename = "CGCompatibilityPre815Cpp.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "CGCompatibilityPre815Cpp";
+			- _id = GUID 9d010694-7844-4cae-a420-3b25ad4f4244;
+		}
+	}
+	- VariationPoints = { IRPYRawContainer 
+		- size = 0;
+	}
+	- SelectedVariants = { IRPYRawContainer 
+		- size = 0;
+	}
+	- weakCGTime = 1.2.1990::0:0:0;
+	- strongCGTime = 1.2.1990::0:0:0;
+}
+
