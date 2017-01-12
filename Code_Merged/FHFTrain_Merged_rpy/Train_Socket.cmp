@@ -1,0 +1,147 @@
+I-Logix-RPY-Archive version 8.12.0 C++ 9728113
+{ IComponent 
+	- _id = GUID 9451f555-d89e-11e6-ad08-10604b8125e9;
+	- _myState = 8192;
+	- _name = "Train_Socket";
+	- _modifiedTimeWeak = 1.12.2017::8:16:49;
+	- m_buildType = Executable;
+	- m_libraries = "";
+	- m_additionalSources = "";
+	- m_standardHeaders = "";
+	- m_includePath = "";
+	- m_initializationCode = "";
+	- m_folder = { IFolder 
+		- _id = GUID 9451f556-d89e-11e6-ad08-10604b8125e9;
+		- _myState = 73728;
+		- _name = "Files";
+		- _modifiedTimeWeak = 1.12.2017::8:16:49;
+		- m_path = "";
+		- Elements = { IRPYRawContainer 
+			- size = 3;
+			- value = 
+			{ IHandle 
+				- _m2Class = "IClass";
+				- _filename = "Common.sbs";
+				- _subsystem = "Common";
+				- _class = "";
+				- _name = "SHM_Connection";
+				- _id = GUID d795257c-2dbf-4572-89a5-5bd2ee1f6b84;
+			}
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "TrainCommunicationPackage.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "TrainCommunicationPackage";
+				- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
+			}
+			{ IHandle 
+				- _m2Class = "ISubsystem";
+				- _filename = "Socket.sbs";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Socket";
+				- _id = GUID c5285cb1-ab39-11e6-89be-001999f109b4;
+			}
+		}
+		- Files = { IRPYRawContainer 
+			- size = 0;
+		}
+	}
+	- m_configActive = { ICodeGenConfigInfoHandle 
+		- _m2Class = "ICodeGenConfigInfo";
+		- _id = GUID 9451f557-d89e-11e6-ad08-10604b8125e9;
+	}
+	- Configs = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ ICodeGenConfigInfo 
+			- _id = GUID 9451f557-d89e-11e6-ad08-10604b8125e9;
+			- _myState = 8192;
+			- _name = "Train_Socket";
+			- _modifiedTimeWeak = 1.12.2017::8:14:45;
+			- HyperLinks = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IMHyperLink 
+					- _id = GUID 9451f750-d89e-11e6-ad08-10604b8125e9;
+					- _modifiedTimeWeak = 1.12.2017::8:14:28;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Makefile";
+					- _linkType = "FREE";
+					- _linkTarget = "/user0/kotzjanm/FHFTrain/Code_Merged/Train_Socket/Train_Socket/Train_Socket.mak";
+					- isConfigurationFileHyperLink = 1;
+				}
+				{ IMHyperLink 
+					- _id = GUID 9451f751-d89e-11e6-ad08-10604b8125e9;
+					- _modifiedTimeWeak = 1.12.2017::8:14:28;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Main File";
+					- _linkType = "FREE";
+					- _linkTarget = "/user0/kotzjanm/FHFTrain/Code_Merged/Train_Socket/Train_Socket/MainTrain_Socket";
+					- isConfigurationFileHyperLink = 1;
+				}
+			}
+			- _scopeType = Explicit;
+			- _libraries = "";
+			- _additionalSources = "";
+			- _standardHeaders = "";
+			- _includePath = "";
+			- _targetMain = "";
+			- _instrumentation = None;
+			- _timeModel = RealTime;
+			- m_generateActors = 1;
+			- _statechartImplementation = Flat;
+			- _initializationCode = "";
+			- _checksList = 0 ;
+			- ScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- InitialInstances = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IClass";
+					- _filename = "TrainCommunicationPackage.sbs";
+					- _subsystem = "TrainCommunicationPackage";
+					- _class = "";
+					- _name = "TrainThread";
+					- _id = GUID 19e801c1-aff2-11e6-9d64-001999f109b4;
+				}
+			}
+			- _root = { IFolder 
+				- _id = GUID 9451f558-d89e-11e6-ad08-10604b8125e9;
+				- _myState = 8192;
+				- _name = "Train_Socket";
+				- _modifiedTimeWeak = 1.12.2017::8:14:28;
+				- m_path = "";
+				- Elements = { IRPYRawContainer 
+					- size = 0;
+				}
+				- Files = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			- weakCGTime = 1.12.2017::8:14:45;
+			- strongCGTime = 1.12.2017::8:14:28;
+			- AnimScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- m_allInAnimScope = 1;
+			- m_generateUsecases = 0;
+		}
+	}
+	- VariationPoints = { IRPYRawContainer 
+		- size = 0;
+	}
+	- SelectedVariants = { IRPYRawContainer 
+		- size = 0;
+	}
+	- weakCGTime = 1.12.2017::8:16:49;
+	- strongCGTime = 1.12.2017::8:16:49;
+}
+

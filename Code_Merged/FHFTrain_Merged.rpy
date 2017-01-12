@@ -28,8 +28,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		}
 	}
 	- _name = "FHFTrain_Merged";
-	- _modifiedTimeWeak = 1.10.2017::15:39:52;
-	- _lastID = 21;
+	- _modifiedTimeWeak = 1.12.2017::8:13:42;
+	- _lastID = 22;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
 		- value = 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 
@@ -44,11 +44,11 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	}
 	- _component = { IHandle 
 		- _m2Class = "IComponent";
-		- _filename = "Algorithm_Socket.cmp";
+		- _filename = "Train_Socket.cmp";
 		- _subsystem = "";
 		- _class = "";
-		- _name = "Algorithm_Socket";
-		- _id = GUID c5285cb7-ab39-11e6-89be-001999f109b4;
+		- _name = "Train_Socket";
+		- _id = GUID 9451f555-d89e-11e6-ad08-10604b8125e9;
 	}
 	- Multiplicities = { IRPYRawContainer 
 		- size = 4;
@@ -10440,7 +10440,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		}
 	}
 	- Components = { IRPYRawContainer 
-		- size = 12;
+		- size = 13;
 		- value = 
 		{ IComponent 
 			- fileName = "LCD_T";
@@ -10489,6 +10489,10 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		{ IComponent 
 			- fileName = "Algorithm_Socket";
 			- _id = GUID c5285cb7-ab39-11e6-89be-001999f109b4;
+		}
+		{ IComponent 
+			- fileName = "Train_Socket";
+			- _id = GUID 9451f555-d89e-11e6-ad08-10604b8125e9;
 		}
 	}
 }
