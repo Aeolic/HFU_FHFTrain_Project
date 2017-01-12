@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cb7-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Algorithm_Socket";
-	- _modifiedTimeWeak = 1.11.2017::14:11:28;
+	- _modifiedTimeWeak = 1.11.2017::14:47:42;
 	- m_buildType = Executable;
 	- m_libraries = "";
 	- m_additionalSources = "";
@@ -14,10 +14,10 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _id = GUID c5285cb8-ab39-11e6-89be-001999f109b4;
 		- _myState = 73728;
 		- _name = "Files";
-		- _modifiedTimeWeak = 1.11.2017::14:11:28;
+		- _modifiedTimeWeak = 1.11.2017::14:47:42;
 		- m_path = "";
 		- Elements = { IRPYRawContainer 
-			- size = 3;
+			- size = 2;
 			- value = 
 			{ IHandle 
 				- _m2Class = "ISubsystem";
@@ -28,20 +28,12 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- _id = GUID c5285cb1-ab39-11e6-89be-001999f109b4;
 			}
 			{ IHandle 
-				- _m2Class = "IClass";
-				- _filename = "Common.sbs";
-				- _subsystem = "Common";
-				- _class = "";
-				- _name = "SHM_Connection";
-				- _id = GUID d795257c-2dbf-4572-89a5-5bd2ee1f6b84;
-			}
-			{ IHandle 
 				- _m2Class = "ISubsystem";
-				- _filename = "TrainCommunicationPackage.sbs";
+				- _filename = "Pi.sbs";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "TrainCommunicationPackage";
-				- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
+				- _name = "Pi";
+				- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 			}
 		}
 		- Files = { IRPYRawContainer 
@@ -838,7 +830,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				}
 			}
 			- _name = "Algorithm_Socket";
-			- _modifiedTimeWeak = 1.11.2017::14:6:9;
+			- _modifiedTimeWeak = 1.11.2017::14:47:59;
 			- HyperLinks = { IRPYRawContainer 
 				- size = 2;
 				- value = 
@@ -885,11 +877,11 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- value = 
 				{ IHandle 
 					- _m2Class = "IClass";
-					- _filename = "TrainCommunicationPackage.sbs";
-					- _subsystem = "TrainCommunicationPackage";
+					- _filename = "Pi.sbs";
+					- _subsystem = "Pi";
 					- _class = "";
-					- _name = "TrainThread";
-					- _id = GUID 19e801c1-aff2-11e6-9d64-001999f109b4;
+					- _name = "PiAlgorithm";
+					- _id = GUID 4a5bf3df-ab3e-11e6-ad2c-001999f109b4;
 				}
 			}
 			- _root = { IFolder 
@@ -905,7 +897,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- size = 0;
 				}
 			}
-			- weakCGTime = 1.11.2017::14:6:9;
+			- weakCGTime = 1.11.2017::14:47:59;
 			- strongCGTime = 1.10.2017::16:30:17;
 			- AnimScopeElements = { IRPYRawContainer 
 				- size = 0;
@@ -920,7 +912,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- SelectedVariants = { IRPYRawContainer 
 		- size = 0;
 	}
-	- weakCGTime = 1.11.2017::14:11:28;
-	- strongCGTime = 1.11.2017::14:11:28;
+	- weakCGTime = 1.11.2017::14:47:42;
+	- strongCGTime = 1.11.2017::14:47:42;
 }
 

@@ -7,8 +7,8 @@ ELEMENTS = Algorithm_Socket/Algorithm_Socket \
 	SensRead_T/SensRead_T \
 	RFID_T/RFID_T
 
-include ../../../../path.inc
-include ../../../../helperMakefiles/Makefile.config
+include ../../../path.inc
+include ../../../helperMakefiles/Makefile.config
 
 .PHONY: $(ELEMENTS) $(addprefix clean_,$(ELEMENTS))
 
