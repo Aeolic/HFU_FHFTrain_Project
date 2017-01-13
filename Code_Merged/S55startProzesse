@@ -1,0 +1,12 @@
+#!/bin/sh
+# Begin /etc/init.d/S55startProzesse
+# This file is copied by the Makefile to its location at <buildroot>/output/target/usr/local/bin
+
+echo "start LCD_T"
+/usr/local/bin/./LCD_T &
+echo "start RFID_T"
+/usr/local/bin/./RFID_T &
+echo "start Motor_T"
+/usr/local/bin/./Motor_T &
+echo "start Train_Socket"
+/usr/local/bin/./Train_Socket &

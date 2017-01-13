@@ -1,0 +1,224 @@
+I-Logix-RPY-Archive version 8.12.0 * 9728113
+
+- m_fileModifyTime = { IRPYRawContainer 
+	- size = 36;
+	- value = "Train_Socket/Train_Socket/ClientSocket.cpp" 1.12.2017::8:45:2
+	"Train_Socket/Train_Socket/ClientSocket.h" 1.12.2017::8:45:2
+	"Train_Socket/Train_Socket/Common.cpp" 1.12.2017::8:37:0
+	"Train_Socket/Train_Socket/Common.h" 1.12.2017::8:37:0
+	"Train_Socket/Train_Socket/SHM_Connection.cpp" 1.12.2017::13:11:11
+	"Train_Socket/Train_Socket/SHM_Connection.h" 1.12.2017::13:11:11
+	"Train_Socket/Train_Socket/ServerSocket.cpp" 1.12.2017::8:45:2
+	"Train_Socket/Train_Socket/ServerSocket.h" 1.12.2017::8:45:2
+	"Train_Socket/Train_Socket/Socket.cpp" 1.12.2017::13:11:11
+	"Train_Socket/Train_Socket/Socket.h" 1.12.2017::13:11:11
+	"Train_Socket/Train_Socket/SocketException.cpp" 1.12.2017::8:36:59
+	"Train_Socket/Train_Socket/SocketException.h" 1.12.2017::8:45:2
+	"Train_Socket/Train_Socket/TrainCommunication.cpp" 1.12.2017::14:6:34
+	"Train_Socket/Train_Socket/TrainCommunication.h" 1.12.2017::8:45:2
+	"Train_Socket/Train_Socket/TrainCommunicationPackage.cpp" 1.12.2017::8:37:0
+	"Train_Socket/Train_Socket/TrainCommunicationPackage.h" 1.12.2017::8:37:0
+	"Train_Socket/Train_Socket/TrainListenerThread.cpp" 1.12.2017::12:36:8
+	"Train_Socket/Train_Socket/TrainListenerThread.h" 1.12.2017::13:11:11
+	"Train_Socket/Train_Socket/TrainSpeakerThread.cpp" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainSpeakerThread.h" 1.12.2017::8:45:3
+	"Train_Socket/Train_Socket/TrainTestCommunication.cpp" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestCommunication.h" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestFailureThread.cpp" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestFailureThread.h" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestListenerThread.cpp" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestListenerThread.h" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestOrder.cpp" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestOrder.h" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestSpeakerThread.cpp" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestSpeakerThread.h" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestThread.cpp" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainTestThread.h" 1.12.2017::14:2:3
+	"Train_Socket/Train_Socket/TrainThread.cpp" 1.12.2017::12:36:8
+	"Train_Socket/Train_Socket/TrainThread.h" 1.12.2017::10:56:22
+	"Train_Socket/Train_Socket/object_0.cpp" 1.12.2017::8:45:3
+	"Train_Socket/Train_Socket/object_0.h" 1.12.2017::8:45:2
+	
+}
+- size = 20;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "TrainCommunicationPackage.sbs";
+	- _subsystem = "TrainCommunicationPackage";
+	- _class = "";
+	- _name = "TrainThread";
+	- _id = GUID 19e801c1-aff2-11e6-9d64-001999f109b4;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "ISubsystem";
+	- _filename = "Socket.sbs";
+	- _subsystem = "";
+	- _class = "";
+	- _name = "Socket";
+	- _id = GUID c5285cb1-ab39-11e6-89be-001999f109b4;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Socket.sbs";
+	- _subsystem = "Socket";
+	- _class = "TopLevel";
+	- _name = "object_0";
+	- _id = GUID c5285cc4-ab39-11e6-89be-001999f109b4;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "ISubsystem";
+	- _filename = "TrainCommunicationPackage.sbs";
+	- _subsystem = "";
+	- _class = "";
+	- _name = "TrainCommunicationPackage";
+	- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Socket.sbs";
+	- _subsystem = "Socket";
+	- _class = "";
+	- _name = "SocketException";
+	- _id = GUID a60dc8a8-afd3-11e6-b0ac-001999f109b4;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "TrainTest.sbs";
+	- _subsystem = "TrainTest";
+	- _class = "";
+	- _name = "TrainTestThread";
+	- _id = GUID 29eae208-bc85-11e6-aa7e-10604b8125e9;
+}
+- genTime = 1.12.2017::14:2:3;
+- hElement = { IHandle 
+	- _m2Class = "ICodeGenConfigInfo";
+	- _filename = "Train_Socket.cmp";
+	- _subsystem = "";
+	- _class = "";
+	- _name = "Train_Socket/Train_Socket";
+	- _id = GUID 308c525b-d89f-11e6-b386-10604b8125e9;
+}
+- genTime = 1.12.2017::14:6:34;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Socket.sbs";
+	- _subsystem = "Socket";
+	- _class = "";
+	- _name = "ClientSocket";
+	- _id = GUID 6c6b7339-ab3b-11e6-94dc-001999f109b4;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Socket.sbs";
+	- _subsystem = "Socket";
+	- _class = "";
+	- _name = "ServerSocket";
+	- _id = GUID 6c6b7340-ab3b-11e6-94dc-001999f109b4;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "ISubsystem";
+	- _filename = "Common.sbs";
+	- _subsystem = "";
+	- _class = "";
+	- _name = "Common";
+	- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "TrainTest.sbs";
+	- _subsystem = "TrainTest";
+	- _class = "";
+	- _name = "TrainTestCommunication";
+	- _id = GUID 29eae32d-bc85-11e6-aa7e-10604b8125e9;
+}
+- genTime = 1.12.2017::14:2:3;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Common.sbs";
+	- _subsystem = "Common";
+	- _class = "";
+	- _name = "SHM_Connection";
+	- _id = GUID d795257c-2dbf-4572-89a5-5bd2ee1f6b84;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "TrainCommunicationPackage.sbs";
+	- _subsystem = "TrainCommunicationPackage";
+	- _class = "";
+	- _name = "TrainCommunication";
+	- _id = GUID b9af70ac-bc65-11e6-81a4-10604b8125e9;
+}
+- genTime = 1.12.2017::14:6:34;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "TrainTest.sbs";
+	- _subsystem = "TrainTest";
+	- _class = "";
+	- _name = "TrainTestFailureThread";
+	- _id = GUID 141ac6de-c137-11e6-8b2e-001999f10960;
+}
+- genTime = 1.12.2017::14:2:3;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "TrainTest.sbs";
+	- _subsystem = "TrainTest";
+	- _class = "";
+	- _name = "TrainTestSpeakerThread";
+	- _id = GUID bb3072d8-bc87-11e6-ae5c-10604b8125e9;
+}
+- genTime = 1.12.2017::14:2:3;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "TrainTest.sbs";
+	- _subsystem = "TrainTest";
+	- _class = "";
+	- _name = "TrainTestOrder";
+	- _id = GUID f639a100-bc91-11e6-aa6a-10604b8125e9;
+}
+- genTime = 1.12.2017::14:2:3;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "TrainCommunicationPackage.sbs";
+	- _subsystem = "TrainCommunicationPackage";
+	- _class = "";
+	- _name = "TrainListenerThread";
+	- _id = GUID 55d87e27-afed-11e6-879e-001999f109b4;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "TrainTest.sbs";
+	- _subsystem = "TrainTest";
+	- _class = "";
+	- _name = "TrainTestListenerThread";
+	- _id = GUID 29eae4e5-bc85-11e6-aa7e-10604b8125e9;
+}
+- genTime = 1.12.2017::14:2:3;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "TrainCommunicationPackage.sbs";
+	- _subsystem = "TrainCommunicationPackage";
+	- _class = "";
+	- _name = "TrainSpeakerThread";
+	- _id = GUID 80d4c29c-b16c-11e6-b280-10604b8125e9;
+}
+- genTime = 1.12.2017::14:4:0;
+- hElement = { IHandle 
+	- _m2Class = "IClass";
+	- _filename = "Socket.sbs";
+	- _subsystem = "Socket";
+	- _class = "";
+	- _name = "Socket";
+	- _id = GUID 99ef2d1c-ab3a-11e6-9cc8-001999f109b4;
+}
+- genTime = 1.12.2017::14:4:0;
+

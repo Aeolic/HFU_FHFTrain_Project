@@ -3,17 +3,17 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 12.21.2016::10:30:40;
+	- _modifiedTimeWeak = 1.12.2017::11:13:26;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
-		- _filename = "FHFTrainModel.omd";
+		- _filename = "Algorithm_Socket_Diagram.omd";
 		- _subsystem = "";
 		- _class = "";
-		- _name = "FHFTrainModel";
+		- _name = "Algorithm_Socket_Diagram";
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 12.21.2016::10:30:40;
+	- weakCGTime = 1.12.2017::11:13:26;
 	- strongCGTime = 12.21.2016::10:28:46;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 12.21.2016::10:28:46;
-			- weakCGTime = 12.21.2016::10:28:46;
+			- _modifiedTimeWeak = 12.21.2016::10:30:40;
+			- weakCGTime = 12.21.2016::10:30:40;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -78,10 +78,10 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- _modifiedTimeWeak = 12.21.2016::10:28:46;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
-				- _filename = "FHFTrainModel.omd";
+				- _filename = "Algorithm_Socket_Diagram.omd";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "FHFTrainModel";
+				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 28;
@@ -3912,10 +3912,10 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 			- _modifiedTimeWeak = 12.21.2016::10:28:46;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
-				- _filename = "FHFTrainModel.omd";
+				- _filename = "Algorithm_Socket_Diagram.omd";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "FHFTrainModel";
+				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 14;
@@ -5199,17 +5199,17 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 12.21.2016::10:28:46;
+			- _modifiedTimeWeak = 1.12.2017::11:13:26;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
-				- _filename = "FHFTrainModel.omd";
+				- _filename = "Algorithm_Socket_Diagram.omd";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "FHFTrainModel";
+				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 10;
-			- weakCGTime = 12.21.2016::10:28:46;
+			- weakCGTime = 1.12.2017::11:13:26;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -5217,7 +5217,7 @@ while (error);";
 				{ IConstructor 
 					- _id = GUID 80d4c65a-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 11.30.2016::12:25:49;
+					- _modifiedTimeWeak = 1.12.2017::11:13:26;
 					- _lastID = 6;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -5264,7 +5264,7 @@ while (error);";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "cout << \"TrainListenerThread wurde gestartet.\" << endl;
+						- _bodyData = "cout << \"PiListenerThread wurde gestartet.\" << endl;
 this->new_sock = new_sock;
 this->itsTrainPos = trainPos;
 start();";
@@ -7002,10 +7002,10 @@ while (!close)
 			- _modifiedTimeWeak = 12.21.2016::10:28:46;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
-				- _filename = "FHFTrainModel.omd";
+				- _filename = "Algorithm_Socket_Diagram.omd";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "FHFTrainModel";
+				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 5;
@@ -7214,10 +7214,10 @@ algCanRead = true;
 			- _modifiedTimeWeak = 12.21.2016::10:28:46;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
-				- _filename = "FHFTrainModel.omd";
+				- _filename = "Algorithm_Socket_Diagram.omd";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "FHFTrainModel";
+				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 3;
@@ -7412,10 +7412,10 @@ afterSpeed = aSp;";
 			- _modifiedTimeWeak = 12.21.2016::10:28:46;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
-				- _filename = "FHFTrainModel.omd";
+				- _filename = "Algorithm_Socket_Diagram.omd";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "FHFTrainModel";
+				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 7;

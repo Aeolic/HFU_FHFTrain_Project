@@ -1,5 +1,5 @@
 # ELEMENTS is a space separated list of component/configurations pairs
-ELEMENTS = Algorithm_Socket/Algorithm_Socket \
+ELEMENTS = Train_Socket/Train_Socket \
 	LCD_T/LCD_T  \
 	Console_T/Console_T\
 	Motor_T/Motor_T \

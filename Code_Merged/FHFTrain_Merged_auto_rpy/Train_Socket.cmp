@@ -1,9 +1,9 @@
 I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 { IComponent 
-	- _id = GUID f43ce5a2-b2b7-4eab-b868-24f5032bae7f;
+	- _id = GUID 308c5259-d89f-11e6-b386-10604b8125e9;
 	- _myState = 8192;
-	- _name = "SM_Read_T";
-	- _modifiedTimeWeak = 1.12.2017::11:19:13;
+	- _name = "Train_Socket";
+	- _modifiedTimeWeak = 1.12.2017::14:3:56;
 	- m_buildType = Executable;
 	- m_libraries = "";
 	- m_additionalSources = "";
@@ -11,37 +11,37 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- m_includePath = "";
 	- m_initializationCode = "";
 	- m_folder = { IFolder 
-		- _id = GUID 6becb020-3c4f-4661-a4ee-a6ce7df06838;
+		- _id = GUID 308c525a-d89f-11e6-b386-10604b8125e9;
 		- _myState = 73728;
 		- _name = "Files";
-		- _modifiedTimeWeak = 4.27.2016::15:54:52;
+		- _modifiedTimeWeak = 1.12.2017::14:3:56;
 		- m_path = "";
 		- Elements = { IRPYRawContainer 
 			- size = 3;
 			- value = 
 			{ IHandle 
-				- _m2Class = "ISubsystem";
+				- _m2Class = "IClass";
 				- _filename = "Common.sbs";
-				- _subsystem = "";
+				- _subsystem = "Common";
 				- _class = "";
-				- _name = "Common";
-				- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
+				- _name = "SHM_Connection";
+				- _id = GUID d795257c-2dbf-4572-89a5-5bd2ee1f6b84;
 			}
 			{ IHandle 
 				- _m2Class = "ISubsystem";
-				- _filename = "Web.sbs";
+				- _filename = "Socket.sbs";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "Web";
-				- _id = GUID 7552c7f9-9da6-415e-819e-3a31b3f7f9cd;
+				- _name = "Socket";
+				- _id = GUID c5285cb1-ab39-11e6-89be-001999f109b4;
 			}
 			{ IHandle 
 				- _m2Class = "ISubsystem";
-				- _filename = "Train.sbs";
+				- _filename = "TrainCommunicationPackage.sbs";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "Train";
-				- _id = GUID 16023396-0db4-45f2-a947-df07372aa9a9;
+				- _name = "TrainCommunicationPackage";
+				- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
 			}
 		}
 		- Files = { IRPYRawContainer 
@@ -50,13 +50,13 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	}
 	- m_configActive = { ICodeGenConfigInfoHandle 
 		- _m2Class = "ICodeGenConfigInfo";
-		- _id = GUID 77858b03-5c20-4c80-86e6-38367dad0a58;
+		- _id = GUID 308c525b-d89f-11e6-b386-10604b8125e9;
 	}
 	- Configs = { IRPYRawContainer 
 		- size = 1;
 		- value = 
 		{ ICodeGenConfigInfo 
-			- _id = GUID 77858b03-5c20-4c80-86e6-38367dad0a58;
+			- _id = GUID 308c525b-d89f-11e6-b386-10604b8125e9;
 			- _myState = 8192;
 			- _properties = { IPropertyContainer 
 				- Subjects = { IRPYRawContainer 
@@ -68,32 +68,32 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 							- size = 2;
 							- value = 
 							{ IPropertyMetaclass 
+								- _Name = "Class";
+								- Properties = { IRPYRawContainer 
+									- size = 2;
+									- value = 
+									{ IProperty 
+										- _Name = "ImpIncludes";
+										- _Value = "<iostream>,<string>,<sstream>,<vector>";
+										- _Type = String;
+									}
+									{ IProperty 
+										- _Name = "SpecificationProlog";
+										- _Value = "using namespace std;";
+										- _Type = MultiLine;
+									}
+								}
+							}
+							{ IPropertyMetaclass 
 								- _Name = "Configuration";
 								- Properties = { IRPYRawContainer 
 									- size = 1;
 									- value = 
 									{ IProperty 
 										- _Name = "Environment";
-										- _Value = "FHFTrain";
+										- _Value = "Linux";
 										- _Type = Enum;
 										- _ExtraTypeInfo = "Linux,RaspberryLinux,FHFTrain";
-									}
-								}
-							}
-							{ IPropertyMetaclass 
-								- _Name = "Linux";
-								- Properties = { IRPYRawContainer 
-									- size = 2;
-									- value = 
-									{ IProperty 
-										- _Name = "BuildServerIP";
-										- _Value = "141.28.57.66";
-										- _Type = String;
-									}
-									{ IProperty 
-										- _Name = "BuildServerSoftwareDir";
-										- _Value = "/home/$BuildServerUsername/FHFTRAIN_IN_SS16/application";
-										- _Type = String;
 									}
 								}
 							}
@@ -101,60 +101,66 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					}
 				}
 			}
-			- _name = "SM_Read_T";
-			- _modifiedTimeWeak = 1.12.2017::11:19:13;
+			- _name = "Train_Socket";
+			- _modifiedTimeWeak = 1.12.2017::14:3:47;
 			- HyperLinks = { IRPYRawContainer 
 				- size = 2;
 				- value = 
 				{ IMHyperLink 
-					- _id = GUID 90013155-2830-4902-9eff-75c265aeb4f1;
-					- _modifiedTimeWeak = 1.12.2017::11:19:13;
+					- _id = GUID 288c8dab-d8a2-11e6-a342-10604b8125e9;
+					- _modifiedTimeWeak = 1.12.2017::8:36:30;
 					- _dependsOn = { INObjectHandle 
 						- _m2Class = "";
 					}
 					- _linkDispName = "Edit Makefile";
 					- _linkType = "FREE";
-					- _linkTarget = "/nfs4cross/fhftrainWs16/mueller_fhftrain_2016/sw/br_lok/application/projects/RhapsodyWS2016/Code_Merged/SM_Read_T/SM_Read_T/SM_Read_T.mak";
+					- _linkTarget = "/nfs4cross/fhftrainWs16/mueller_fhftrain_2016/sw/br_lok/application/projects/RhapsodyWS2016/Code_Merged/Train_Socket/Train_Socket/Train_Socket.mak";
 					- isConfigurationFileHyperLink = 1;
 				}
 				{ IMHyperLink 
-					- _id = GUID 368045a1-7446-4e76-9d67-71ab04bf3f57;
-					- _modifiedTimeWeak = 1.12.2017::11:19:13;
+					- _id = GUID 288c8dac-d8a2-11e6-a342-10604b8125e9;
+					- _modifiedTimeWeak = 1.12.2017::8:36:30;
 					- _dependsOn = { INObjectHandle 
 						- _m2Class = "";
 					}
 					- _linkDispName = "Edit Main File";
 					- _linkType = "FREE";
-					- _linkTarget = "/nfs4cross/fhftrainWs16/mueller_fhftrain_2016/sw/br_lok/application/projects/RhapsodyWS2016/Code_Merged/SM_Read_T/SM_Read_T/MainSM_Read_T";
+					- _linkTarget = "/nfs4cross/fhftrainWs16/mueller_fhftrain_2016/sw/br_lok/application/projects/RhapsodyWS2016/Code_Merged/Train_Socket/Train_Socket/MainTrain_Socket";
 					- isConfigurationFileHyperLink = 1;
 				}
 			}
 			- _scopeType = Explicit;
-			- _libraries = "-lm";
+			- _libraries = "";
 			- _additionalSources = "";
-			- _standardHeaders = "\"SM_Read.h\"";
+			- _standardHeaders = "";
 			- _includePath = "";
 			- _targetMain = "";
 			- _instrumentation = None;
 			- _timeModel = RealTime;
 			- m_generateActors = 1;
 			- _statechartImplementation = Flat;
-			- _initializationCode = "{
-	SM_Read *p_SM_Read;
-	p_SM_Read = new SM_Read(argc, argv);
-}";
+			- _initializationCode = "";
 			- _checksList = 0 ;
 			- ScopeElements = { IRPYRawContainer 
 				- size = 0;
 			}
 			- InitialInstances = { IRPYRawContainer 
-				- size = 0;
+				- size = 1;
+				- value = 
+				{ IHandle 
+					- _m2Class = "IClass";
+					- _filename = "TrainCommunicationPackage.sbs";
+					- _subsystem = "TrainCommunicationPackage";
+					- _class = "";
+					- _name = "TrainThread";
+					- _id = GUID 19e801c1-aff2-11e6-9d64-001999f109b4;
+				}
 			}
 			- _root = { IFolder 
-				- _id = GUID a110bf82-e657-4b5c-a9fc-4eb604f6e593;
-				- _myState = 73728;
-				- _name = "SM_Read_T";
-				- _modifiedTimeWeak = 12.8.2016::14:26:25;
+				- _id = GUID 308c525c-d89f-11e6-b386-10604b8125e9;
+				- _myState = 8192;
+				- _name = "Train_Socket";
+				- _modifiedTimeWeak = 1.12.2017::8:36:30;
 				- m_path = "";
 				- Elements = { IRPYRawContainer 
 					- size = 0;
@@ -163,8 +169,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- size = 0;
 				}
 			}
-			- weakCGTime = 1.12.2017::11:19:13;
-			- strongCGTime = 12.8.2016::14:26:32;
+			- weakCGTime = 1.12.2017::14:3:47;
+			- strongCGTime = 1.12.2017::13:38:38;
 			- AnimScopeElements = { IRPYRawContainer 
 				- size = 0;
 			}
@@ -178,7 +184,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- SelectedVariants = { IRPYRawContainer 
 		- size = 0;
 	}
-	- weakCGTime = 1.12.2017::11:19:13;
-	- strongCGTime = 4.27.2016::15:54:52;
+	- weakCGTime = 1.12.2017::14:3:56;
+	- strongCGTime = 1.12.2017::14:3:56;
 }
 

@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "TrainCommunicationPackage";
-	- _modifiedTimeWeak = 1.12.2017::13:23:34;
+	- _modifiedTimeWeak = 1.12.2017::13:43:41;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "Algorithm_Socket_Diagram.omd";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 1.12.2017::13:23:34;
+	- weakCGTime = 1.12.2017::13:43:41;
 	- strongCGTime = 12.21.2016::11:37:33;
 	- _defaultComposite = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -3602,7 +3602,7 @@ while(true)
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.12.2017::12:58:30;
+			- _modifiedTimeWeak = 1.12.2017::13:44:12;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -3612,7 +3612,7 @@ while(true)
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 12;
-			- weakCGTime = 1.12.2017::12:58:30;
+			- weakCGTime = 1.12.2017::13:44:12;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -3664,7 +3664,7 @@ while(true)
 					- _id = GUID 80d4c2a1-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
 					- _name = "sendPositionToPi";
-					- _modifiedTimeWeak = 1.12.2017::12:58:30;
+					- _modifiedTimeWeak = 1.12.2017::13:44:12;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -3708,6 +3708,7 @@ do
 	try
 	{   
 		std::cout << \"Versuche '\" + order + \"' zu senden.\" << std::endl;
+		cout << \"Adresse client* in Speaker:\" << client << endl;
 		error = false;
 		*client << order;
 		cout << \"Senden erfolgreich.\" << endl;
@@ -4785,7 +4786,7 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.12.2017::13:23:34;
+			- _modifiedTimeWeak = 1.12.2017::14:6:31;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -4795,7 +4796,7 @@ while (error);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 6;
-			- weakCGTime = 1.12.2017::13:23:34;
+			- weakCGTime = 1.12.2017::14:6:31;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 5;
@@ -4803,7 +4804,7 @@ while (error);";
 				{ IConstructor 
 					- _id = GUID b9af7129-bc65-11e6-81a4-10604b8125e9;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 1.12.2017::13:23:34;
+					- _modifiedTimeWeak = 1.12.2017::14:6:31;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -4820,8 +4821,11 @@ while (error);";
 					- _itsBody = { IBody 
 						- _bodyData = "startClient();
 cout << \"Test client in TrainCommunication()\" << endl;
-*client << \"TEST\";
-itsTrainSpeakerThread->sendPositionToPi(\"TEST2\");
+cout << \"Adress client*: \" << client << endl;
+*client << \"Test1\";
+usleep(2000000);
+*client << \"Test2\";
+// itsTrainSpeakerThread->sendPositionToPi(\"TEST2\");
 cout << \"End test client\" << endl;
 itsTrainListenerThread = new TrainListenerThread(client);
 itsTrainSpeakerThread = new TrainSpeakerThread(client);
