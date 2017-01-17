@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 1.17.2017::14:21:55;
+	- _modifiedTimeWeak = 1.17.2017::19:10:31;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "Algorithm_Socket_Diagram.omd";
@@ -12,20 +12,20 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _name = "Algorithm_Socket_Diagram";
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
-	- _lastID = 6;
-	- weakCGTime = 1.17.2017::14:21:55;
+	- _lastID = 7;
+	- weakCGTime = 1.17.2017::19:10:31;
 	- strongCGTime = 12.21.2016::10:28:46;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
 	- Classes = { IRPYRawContainer 
-		- size = 7;
+		- size = 9;
 		- value = 
 		{ IClass 
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 1.12.2017::11:13:26;
-			- weakCGTime = 1.12.2017::11:13:26;
+			- _modifiedTimeWeak = 1.17.2017::14:21:55;
+			- weakCGTime = 1.17.2017::14:21:55;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.17.2017::14:30:19;
+			- _modifiedTimeWeak = 1.17.2017::18:22:17;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 28;
-			- weakCGTime = 1.17.2017::14:30:19;
+			- weakCGTime = 1.17.2017::18:22:17;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 9;
@@ -217,7 +217,7 @@ return (lastOrderTag == currentPos);";
 					- _id = GUID a0107267-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "createOrderlist";
-					- _modifiedTimeWeak = 1.17.2017::14:30:19;
+					- _modifiedTimeWeak = 1.17.2017::18:22:17;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -343,7 +343,10 @@ for (int i=0; i<=finalStation; ++i){ //create 2 orders
 	else                                   
 		orderList.push_back(Order(1,tag2,1)); //train keeps on moving through the station  
 }
-	   	   
+	
+//making the train use higher speed before stations without stop at them
+//DOES NOT WORK yet, problem with iterator
+/*   	   
 for(list<Order>::iterator it = orderList.begin(); it != orderList.end(); it = it+2)
 {
   if(it->getAfterSpeed() != 0)
@@ -356,7 +359,8 @@ for(list<Order>::iterator it = orderList.begin(); it != orderList.end(); it = it
       (it+1)->setBeforeSpeed(2);     
     }
   }
-}	   
+}	
+*/   
 
 //TEST output of stop[] array
 cout << \"stop[]:\" << endl;
@@ -5213,7 +5217,7 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.12.2017::11:13:26;
+			- _modifiedTimeWeak = 1.17.2017::18:58:59;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -5223,7 +5227,7 @@ while (error);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 10;
-			- weakCGTime = 1.12.2017::11:13:26;
+			- weakCGTime = 1.17.2017::18:58:59;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -5289,7 +5293,7 @@ start();";
 					- _id = GUID 80d4c65e-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 12.13.2016::14:4:43;
+					- _modifiedTimeWeak = 1.17.2017::18:58:59;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -5320,8 +5324,6 @@ while (!close)
 				*new_sock >> s_order; 
 				cout << \"   PI: Der Pi empfaengt etwas: \" << endl;
 				cout << \"   PI: Das habe ich empfangen: \" << s_order << endl;   
-				
-				cout << \"PiListenerThread: I am working with TrainPos with id: \" << itsTrainPos->getPid() << endl;
 				itsTrainPos->updatePosition(s_order);
 			
 		}
@@ -7013,7 +7015,82 @@ while (!close)
 			- _id = GUID a832de21-b56c-11e6-bb98-10604b8125e9;
 			- _myState = 8192;
 			- _name = "TrainPos";
-			- _modifiedTimeWeak = 12.21.2016::10:28:46;
+			- Dependencies = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IDependency 
+					- _id = GUID a6a7ed06-dce6-11e6-880e-10604b8125e9;
+					- _myState = 2048;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 2;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "CG";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Dependency";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "UsageType";
+												- _Value = "Specification";
+												- _Type = Enum;
+												- _ExtraTypeInfo = "Specification,Implementation,Existence";
+											}
+										}
+									}
+								}
+							}
+							{ IPropertySubject 
+								- _Name = "CPP_CG";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Dependency";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "UseNameSpace";
+												- _Value = "True";
+												- _Type = Bool;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- _name = "std";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "Usage";
+							- _id = GUID 42aa4325-6112-4e88-87ce-66008878f1db;
+						}
+					}
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "ISubsystem";
+						- _filename = "std.sbs";
+						- _subsystem = "Socket";
+						- _class = "";
+						- _name = "std";
+						- _id = GUID 1605d717-ab3b-11e6-a452-001999f109b4;
+					}
+				}
+			}
+			- _modifiedTimeWeak = 1.17.2017::19:10:31;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -7022,8 +7099,8 @@ while (!close)
 				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _lastID = 5;
-			- weakCGTime = 12.21.2016::10:28:46;
+			- _lastID = 8;
+			- weakCGTime = 1.17.2017::19:10:31;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -7031,7 +7108,7 @@ while (!close)
 				{ IConstructor 
 					- _id = GUID b38a267f-b57e-11e6-904e-10604b8125e9;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 12.13.2016::14:2:25;
+					- _modifiedTimeWeak = 1.17.2017::19:10:31;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -7046,10 +7123,9 @@ while (!close)
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "//position = -1;    
-//algCanRead = false;   
-++id;
-pid = id;";
+						- _bodyData = "//Semaphore::Semaphore s(1,1);
+//Semapho *x = new Semapho();
+//int x = 5;";
 					}
 					- _initializer = "";
 				}
@@ -7109,7 +7185,7 @@ algCanRead = true;
 				}
 			}
 			- Attrs = { IRPYRawContainer 
-				- size = 4;
+				- size = 3;
 				- value = 
 				{ IAttribute 
 					- _id = GUID a832de29-b56c-11e6-bb98-10604b8125e9;
@@ -7168,38 +7244,10 @@ algCanRead = true;
 					- _isConstant = 0;
 				}
 				{ IAttribute 
-					- _id = GUID 480e8b58-c13c-11e6-939e-001999f10960;
+					- _id = GUID a1e5401c-dcdc-11e6-9f80-10604b8125e9;
 					- _myState = 8192;
-					- _name = "id";
-					- _modifiedTimeWeak = 12.13.2016::14:1:50;
-					- ValueSpecifications = { IRPYRawContainer 
-						- size = 1;
-						- value = 
-						{ ILiteralSpecification 
-							- _id = GUID 480e8b5b-c13c-11e6-939e-001999f10960;
-							- _modifiedTimeWeak = 12.13.2016::14:1:50;
-							- _value = "0";
-						}
-					}
-					- _typeOf = { IHandle 
-						- _m2Class = "IType";
-						- _filename = "PredefinedTypesC++.sbs";
-						- _subsystem = "PredefinedTypesCpp";
-						- _class = "";
-						- _name = "int";
-						- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
-					}
-					- _isOrdered = 0;
-					- _protection = iPublic;
-					- _static = 1;
-					- _isReference = 0;
-					- _isConstant = 0;
-				}
-				{ IAttribute 
-					- _id = GUID 480e8b60-c13c-11e6-939e-001999f10960;
-					- _myState = 8192;
-					- _name = "pid";
-					- _modifiedTimeWeak = 12.13.2016::14:2:43;
+					- _name = "s";
+					- _modifiedTimeWeak = 1.17.2017::18:55:54;
 					- _typeOf = { IHandle 
 						- _m2Class = "IType";
 						- _filename = "PredefinedTypesC++.sbs";
@@ -7213,6 +7261,1206 @@ algCanRead = true;
 					- _static = 0;
 					- _isReference = 0;
 					- _isConstant = 0;
+				}
+			}
+			- ComponentFiles = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IFile 
+					- _id = GUID a6a7ec37-dce6-11e6-880e-10604b8125e9;
+					- _myState = 139264;
+					- _name = "TrainPos";
+					- Dependencies = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- m_path = "";
+					- m_type = specFile;
+					- Fragments = { IRPYRawContainer 
+						- size = 6;
+						- value = 
+						{ IFileFragment 
+							- _id = GUID a6a7ecc6-dce6-11e6-880e-10604b8125e9;
+							- _name = "oxf:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency oxf:spec";
+							- m_startRow = 22;
+							- m_startCol_Short = 1;
+							- m_endRow = 22;
+							- m_endCol_Short = 21;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID a6a7ecc8-dce6-11e6-880e-10604b8125e9;
+							- _name = "string:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency string:spec";
+							- m_startRow = 24;
+							- m_startCol_Short = 1;
+							- m_endRow = 24;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID a6a7eccb-dce6-11e6-880e-10604b8125e9;
+							- _name = "algorithm:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency algorithm:spec";
+							- m_startRow = 26;
+							- m_startCol_Short = 1;
+							- m_endRow = 26;
+							- m_endCol_Short = 21;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID a6a7ecce-dce6-11e6-880e-10604b8125e9;
+							- _name = "//## dependency Semaphore
+//#include \"Semaphore.h\"
+//## package Pi";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//#include \"Semaphore.h\"
+";
+							- m_startRow = 27;
+							- m_startCol_Short = 1;
+							- m_endRow = 29;
+							- m_endCol_Short = 16;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID a6a7ec67-dce6-11e6-880e-10604b8125e9;
+							- _name = "std";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = specFragment;
+							- m_text = "";
+							- m_startRow = 33;
+							- m_startCol_Short = 1;
+							- m_endRow = 33;
+							- m_endCol_Short = 1;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IDependency";
+								- _id = GUID a6a7ed06-dce6-11e6-880e-10604b8125e9;
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID a6a7ec3a-dce6-11e6-880e-10604b8125e9;
+							- _name = "TrainPos";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- Tags = { IRPYRawContainer 
+								- size = 2;
+								- value = 
+								{ ITag 
+									- _id = GUID a6a7ec68-dce6-11e6-880e-10604b8125e9;
+									- _myState = 8192;
+									- _name = "BodyStartLine";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- ValueSpecifications = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ ILiteralSpecification 
+											- _id = GUID a6a7ec69-dce6-11e6-880e-10604b8125e9;
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- _value = "35";
+										}
+									}
+									- _typeOf = { IHandle 
+										- _m2Class = "IType";
+										- _filename = "PredefinedTypes.sbs";
+										- _subsystem = "PredefinedTypes";
+										- _class = "";
+										- _name = "RhpString";
+										- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+									}
+									- _isOrdered = 0;
+								}
+								{ ITag 
+									- _id = GUID a6a7ec6a-dce6-11e6-880e-10604b8125e9;
+									- _myState = 8192;
+									- _name = "BodyStartCol";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- ValueSpecifications = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ ILiteralSpecification 
+											- _id = GUID a6a7ec6b-dce6-11e6-880e-10604b8125e9;
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- _value = "16";
+										}
+									}
+									- _typeOf = { IHandle 
+										- _m2Class = "IType";
+										- _filename = "PredefinedTypes.sbs";
+										- _subsystem = "PredefinedTypes";
+										- _class = "";
+										- _name = "RhpString";
+										- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+									}
+									- _isOrdered = 0;
+								}
+							}
+							- m_type = specFragment;
+							- m_text = "";
+							- m_startRow = 35;
+							- m_startCol_Short = 1;
+							- m_endRow = 80;
+							- m_endCol_Short = 1;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IClass";
+								- _id = GUID a832de21-b56c-11e6-bb98-10604b8125e9;
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 16;
+								- value = 
+								{ IFileFragment 
+									- _id = GUID a6a7eccf-dce6-11e6-880e-10604b8125e9;
+									- _name = "////    Constructors and destructors    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Constructors and destructors    ////
+";
+									- m_startRow = 36;
+									- m_startCol_Short = 5;
+									- m_endRow = 36;
+									- m_endCol_Short = 49;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec3e-dce6-11e6-880e-10604b8125e9;
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 41;
+									- m_startCol_Short = 5;
+									- m_endRow = 41;
+									- m_endCol_Short = 15;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IConstructor";
+										- _id = GUID b38a267f-b57e-11e6-904e-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec41-dce6-11e6-880e-10604b8125e9;
+									- _name = "~TrainPos:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation ~TrainPos():spec";
+									- m_startRow = 44;
+									- m_startCol_Short = 6;
+									- m_endRow = 44;
+									- m_endCol_Short = 16;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ecd0-dce6-11e6-880e-10604b8125e9;
+									- _name = "////    Operations    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Operations    ////
+";
+									- m_startRow = 46;
+									- m_startCol_Short = 5;
+									- m_endRow = 46;
+									- m_endCol_Short = 31;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec47-dce6-11e6-880e-10604b8125e9;
+									- _name = "updatePosition";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 49;
+									- m_startCol_Short = 10;
+									- m_endRow = 49;
+									- m_endCol_Short = 41;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IPrimitiveOperation";
+										- _id = GUID 5526aced-c060-11e6-89b4-001999f10960;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ecd1-dce6-11e6-880e-10604b8125e9;
+									- _name = "////    Additional operations    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Additional operations    ////
+";
+									- m_startRow = 51;
+									- m_startCol_Short = 5;
+									- m_endRow = 51;
+									- m_endCol_Short = 42;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec4a-dce6-11e6-880e-10604b8125e9;
+									- _name = "getAlgCanRead:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getAlgCanRead() const:spec";
+									- m_startRow = 54;
+									- m_startCol_Short = 10;
+									- m_endRow = 54;
+									- m_endCol_Short = 31;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec4f-dce6-11e6-880e-10604b8125e9;
+									- _name = "setAlgCanRead:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setAlgCanRead(bool):spec";
+									- m_startRow = 57;
+									- m_startCol_Short = 10;
+									- m_endRow = 57;
+									- m_endCol_Short = 42;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec52-dce6-11e6-880e-10604b8125e9;
+									- _name = "getPosition:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getPosition() const:spec";
+									- m_startRow = 60;
+									- m_startCol_Short = 12;
+									- m_endRow = 60;
+									- m_endCol_Short = 31;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec57-dce6-11e6-880e-10604b8125e9;
+									- _name = "setPosition:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setPosition(double):spec";
+									- m_startRow = 63;
+									- m_startCol_Short = 10;
+									- m_endRow = 63;
+									- m_endCol_Short = 40;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec5a-dce6-11e6-880e-10604b8125e9;
+									- _name = "getS:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getS() const:spec";
+									- m_startRow = 66;
+									- m_startCol_Short = 9;
+									- m_endRow = 66;
+									- m_endCol_Short = 21;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec5f-dce6-11e6-880e-10604b8125e9;
+									- _name = "setS:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setS(int):spec";
+									- m_startRow = 69;
+									- m_startCol_Short = 10;
+									- m_endRow = 69;
+									- m_endCol_Short = 23;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ecd2-dce6-11e6-880e-10604b8125e9;
+									- _name = "////    Attributes    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Attributes    ////
+";
+									- m_startRow = 71;
+									- m_startCol_Short = 5;
+									- m_endRow = 71;
+									- m_endCol_Short = 31;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec61-dce6-11e6-880e-10604b8125e9;
+									- _name = "algCanRead";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 75;
+									- m_startCol_Short = 10;
+									- m_endRow = 75;
+									- m_endCol_Short = 20;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IAttribute";
+										- _id = GUID a832de30-b56c-11e6-bb98-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec63-dce6-11e6-880e-10604b8125e9;
+									- _name = "position";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 77;
+									- m_startCol_Short = 12;
+									- m_endRow = 77;
+									- m_endCol_Short = 20;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IAttribute";
+										- _id = GUID a832de29-b56c-11e6-bb98-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec65-dce6-11e6-880e-10604b8125e9;
+									- _name = "s";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 79;
+									- m_startCol_Short = 9;
+									- m_endRow = 79;
+									- m_endCol_Short = 10;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IAttribute";
+										- _id = GUID a1e5401c-dcdc-11e6-9f80-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+							}
+						}
+					}
+				}
+				{ IFile 
+					- _id = GUID a6a7ec6d-dce6-11e6-880e-10604b8125e9;
+					- _myState = 139264;
+					- _name = "TrainPos";
+					- Dependencies = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- m_path = "";
+					- m_type = implFile;
+					- Fragments = { IRPYRawContainer 
+						- size = 6;
+						- value = 
+						{ IFileFragment 
+							- _id = GUID a6a7ecb6-dce6-11e6-880e-10604b8125e9;
+							- _name = "TrainPos:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency TrainPos:spec";
+							- m_startRow = 12;
+							- m_startCol_Short = 1;
+							- m_endRow = 12;
+							- m_endCol_Short = 22;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID a6a7ecb9-dce6-11e6-880e-10604b8125e9;
+							- _name = "iostream:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency iostream:spec";
+							- m_startRow = 14;
+							- m_startCol_Short = 1;
+							- m_endRow = 14;
+							- m_endCol_Short = 20;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID a6a7ecbc-dce6-11e6-880e-10604b8125e9;
+							- _name = "string:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency string:spec";
+							- m_startRow = 16;
+							- m_startCol_Short = 1;
+							- m_endRow = 16;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID a6a7ecbf-dce6-11e6-880e-10604b8125e9;
+							- _name = "sstream:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency sstream:spec";
+							- m_startRow = 18;
+							- m_startCol_Short = 1;
+							- m_endRow = 18;
+							- m_endCol_Short = 19;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID a6a7ecc2-dce6-11e6-880e-10604b8125e9;
+							- _name = "vector:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency vector:spec";
+							- m_startRow = 20;
+							- m_startCol_Short = 1;
+							- m_endRow = 20;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID a6a7ec6e-dce6-11e6-880e-10604b8125e9;
+							- _name = "TrainPos";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = implFragment;
+							- m_text = "";
+							- m_startRow = 24;
+							- m_startCol_Short = 11;
+							- m_endRow = 24;
+							- m_endCol_Short = 11;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IClass";
+								- _id = GUID a832de21-b56c-11e6-bb98-10604b8125e9;
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 9;
+								- value = 
+								{ IFileFragment 
+									- _id = GUID a6a7ec6f-dce6-11e6-880e-10604b8125e9;
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID a6a7ec70-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec71-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "24";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID a6a7ec72-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec73-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "56";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = implFragment;
+									- m_text = "";
+									- m_startRow = 24;
+									- m_startCol_Short = 11;
+									- m_endRow = 28;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IConstructor";
+										- _id = GUID b38a267f-b57e-11e6-904e-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec75-dce6-11e6-880e-10604b8125e9;
+									- _name = "~TrainPos:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID a6a7ec76-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec77-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "30";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID a6a7ec78-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec79-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "23";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation ~TrainPos():impl";
+									- m_startRow = 30;
+									- m_startCol_Short = 12;
+									- m_endRow = 31;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec7f-dce6-11e6-880e-10604b8125e9;
+									- _name = "updatePosition";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID a6a7ec80-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec81-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "33";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID a6a7ec82-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec83-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "48";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = implFragment;
+									- m_text = "";
+									- m_startRow = 33;
+									- m_startCol_Short = 48;
+									- m_endRow = 47;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IPrimitiveOperation";
+										- _id = GUID 5526aced-c060-11e6-89b4-001999f10960;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec86-dce6-11e6-880e-10604b8125e9;
+									- _name = "getAlgCanRead:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID a6a7ec87-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec88-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "49";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID a6a7ec89-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec8a-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "38";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getAlgCanRead() const:impl";
+									- m_startRow = 49;
+									- m_startCol_Short = 38;
+									- m_endRow = 51;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec8f-dce6-11e6-880e-10604b8125e9;
+									- _name = "setAlgCanRead:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID a6a7ec90-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec91-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "53";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID a6a7ec92-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec93-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "49";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setAlgCanRead(bool):impl";
+									- m_startRow = 53;
+									- m_startCol_Short = 49;
+									- m_endRow = 55;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec96-dce6-11e6-880e-10604b8125e9;
+									- _name = "getPosition:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID a6a7ec97-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec98-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "57";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID a6a7ec99-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ec9a-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "38";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getPosition() const:impl";
+									- m_startRow = 57;
+									- m_startCol_Short = 38;
+									- m_endRow = 59;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ec9f-dce6-11e6-880e-10604b8125e9;
+									- _name = "setPosition:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID a6a7eca0-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7eca1-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "61";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID a6a7eca2-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7eca3-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "47";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setPosition(double):impl";
+									- m_startRow = 61;
+									- m_startCol_Short = 47;
+									- m_endRow = 63;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7eca6-dce6-11e6-880e-10604b8125e9;
+									- _name = "getS:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID a6a7eca7-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7eca8-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "65";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID a6a7eca9-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ecaa-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "28";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getS() const:impl";
+									- m_startRow = 65;
+									- m_startCol_Short = 28;
+									- m_endRow = 67;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID a6a7ecaf-dce6-11e6-880e-10604b8125e9;
+									- _name = "setS:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID a6a7ecb0-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ecb1-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "69";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID a6a7ecb2-dce6-11e6-880e-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID a6a7ecb3-dce6-11e6-880e-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "30";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setS(int):impl";
+									- m_startRow = 69;
+									- m_startCol_Short = 30;
+									- m_endRow = 71;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 			- _multiplicity = "";
@@ -7411,6 +8659,81 @@ afterSpeed = aSp;";
 				}
 			}
 			- _name = "Communication";
+			- Dependencies = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IDependency 
+					- _id = GUID e264feac-dce1-11e6-a1de-10604b8125e9;
+					- _myState = 2048;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 2;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "CG";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Dependency";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "UsageType";
+												- _Value = "Specification";
+												- _Type = Enum;
+												- _ExtraTypeInfo = "Specification,Implementation,Existence";
+											}
+										}
+									}
+								}
+							}
+							{ IPropertySubject 
+								- _Name = "CPP_CG";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Dependency";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "UseNameSpace";
+												- _Value = "True";
+												- _Type = Bool;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- _name = "std";
+					- Stereotypes = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IHandle 
+							- _m2Class = "IStereotype";
+							- _filename = "PredefinedTypes.sbs";
+							- _subsystem = "PredefinedTypes";
+							- _class = "";
+							- _name = "Usage";
+							- _id = GUID 42aa4325-6112-4e88-87ce-66008878f1db;
+						}
+					}
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "ISubsystem";
+						- _filename = "std.sbs";
+						- _subsystem = "Socket";
+						- _class = "";
+						- _name = "std";
+						- _id = GUID 1605d717-ab3b-11e6-a452-001999f109b4;
+					}
+				}
+			}
 			- Stereotypes = { IRPYRawContainer 
 				- size = 1;
 				- value = 
@@ -7438,53 +8761,6 @@ afterSpeed = aSp;";
 			- Operations = { IRPYRawContainer 
 				- size = 3;
 				- value = 
-				{ IPrimitiveOperation 
-					- _id = GUID 16a39bbc-b6e7-11e6-8ba6-10604b8125e9;
-					- _myState = 8192;
-					- _name = "sendOrder";
-					- _modifiedTimeWeak = 12.13.2016::14:20:6;
-					- _lastID = 1;
-					- _virtual = 0;
-					- Args = { IRPYRawContainer 
-						- size = 1;
-						- value = 
-						{ IArgument 
-							- _id = GUID 16a39c14-b6e7-11e6-8ba6-10604b8125e9;
-							- _myState = 8192;
-							- _name = "order";
-							- _modifiedTimeWeak = 11.30.2016::11:3:24;
-							- myTypeOf = { IType 
-								- _id = GUID 16a39c18-b6e7-11e6-8ba6-10604b8125e9;
-								- _myState = 8192;
-								- _modifiedTimeWeak = 1.2.1990::0:0:0;
-								- _declaration = "string";
-								- _kind = Language;
-							}
-							- _isOrdered = 0;
-							- _argumentDirection = In;
-						}
-					}
-					- _returnType = { IHandle 
-						- _m2Class = "IType";
-						- _filename = "PredefinedTypesC++.sbs";
-						- _subsystem = "PredefinedTypesCpp";
-						- _class = "";
-						- _name = "void";
-						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
-					}
-					- _abstract = 0;
-					- _final = 0;
-					- _concurrency = Sequential;
-					- _protection = iPublic;
-					- _static = 0;
-					- _constant = 0;
-					- _itsBody = { IBody 
-						- _bodyData = "cout << \"Client Accepted: \" << client_accepted << endl;
-while (!client_accepted);
-itsPiSpeakerThread->sendOrderToTrain(order); 
-cout << \" Communication sendOrder\" << endl; // can be deleted";
-					}
-				}
 				{ IConstructor 
 					- _id = GUID 16a39bfb-b6e7-11e6-8ba6-10604b8125e9;
 					- _myState = 8192;
@@ -7600,6 +8876,53 @@ start();";
 }";
 					}
 				}
+				{ IPrimitiveOperation 
+					- _id = GUID 16a39bbc-b6e7-11e6-8ba6-10604b8125e9;
+					- _myState = 8192;
+					- _name = "sendOrder";
+					- _modifiedTimeWeak = 12.13.2016::14:20:6;
+					- _lastID = 1;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ IArgument 
+							- _id = GUID 16a39c14-b6e7-11e6-8ba6-10604b8125e9;
+							- _myState = 8192;
+							- _name = "order";
+							- _modifiedTimeWeak = 11.30.2016::11:3:24;
+							- myTypeOf = { IType 
+								- _id = GUID 16a39c18-b6e7-11e6-8ba6-10604b8125e9;
+								- _myState = 8192;
+								- _modifiedTimeWeak = 1.2.1990::0:0:0;
+								- _declaration = "string";
+								- _kind = Language;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "cout << \"Client Accepted: \" << client_accepted << endl;
+while (!client_accepted);
+itsPiSpeakerThread->sendOrderToTrain(order); 
+cout << \" Communication sendOrder\" << endl; // can be deleted";
+					}
+				}
 			}
 			- Attrs = { IRPYRawContainer 
 				- size = 4;
@@ -7687,6 +9010,2051 @@ start();";
 					- _isConstant = 0;
 				}
 			}
+			- ComponentFiles = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IFile 
+					- _id = GUID e264fcd5-dce1-11e6-a1de-10604b8125e9;
+					- _myState = 139264;
+					- _name = "Communication";
+					- Dependencies = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- m_path = "";
+					- m_type = implFile;
+					- Fragments = { IRPYRawContainer 
+						- size = 6;
+						- value = 
+						{ IFileFragment 
+							- _id = GUID e264fd6d-dce1-11e6-a1de-10604b8125e9;
+							- _name = "Communication:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency Communication:spec";
+							- m_startRow = 12;
+							- m_startCol_Short = 1;
+							- m_endRow = 12;
+							- m_endCol_Short = 27;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID e264fd78-dce1-11e6-a1de-10604b8125e9;
+							- _name = "iostream:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency iostream:spec";
+							- m_startRow = 22;
+							- m_startCol_Short = 1;
+							- m_endRow = 22;
+							- m_endCol_Short = 20;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID e264fd7b-dce1-11e6-a1de-10604b8125e9;
+							- _name = "string:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency string:spec";
+							- m_startRow = 24;
+							- m_startCol_Short = 1;
+							- m_endRow = 24;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID e264fd7e-dce1-11e6-a1de-10604b8125e9;
+							- _name = "sstream:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency sstream:spec";
+							- m_startRow = 26;
+							- m_startCol_Short = 1;
+							- m_endRow = 26;
+							- m_endCol_Short = 19;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID e264fd81-dce1-11e6-a1de-10604b8125e9;
+							- _name = "vector:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency vector:spec";
+							- m_startRow = 28;
+							- m_startCol_Short = 1;
+							- m_endRow = 28;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID e264fcd6-dce1-11e6-a1de-10604b8125e9;
+							- _name = "Communication";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = implFragment;
+							- m_text = "";
+							- m_startRow = 32;
+							- m_startCol_Short = 16;
+							- m_endRow = 32;
+							- m_endCol_Short = 16;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IClass";
+								- _id = GUID 16a39ae7-b6e7-11e6-8ba6-10604b8125e9;
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 18;
+								- value = 
+								{ IFileFragment 
+									- _id = GUID e264fcd7-dce1-11e6-a1de-10604b8125e9;
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fcd8-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fcd9-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "32";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fcda-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fcdb-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "78";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = implFragment;
+									- m_text = "";
+									- m_startRow = 32;
+									- m_startCol_Short = 16;
+									- m_endRow = 67;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IConstructor";
+										- _id = GUID 16a39bfb-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fcdd-dce1-11e6-a1de-10604b8125e9;
+									- _name = "Communication:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fcde-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fcdf-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "69";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fce0-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fce1-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "57";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation Communication():impl";
+									- m_startRow = 69;
+									- m_startCol_Short = 16;
+									- m_endRow = 72;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fce3-dce1-11e6-a1de-10604b8125e9;
+									- _name = "~Communication:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fce4-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fce5-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "74";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fce6-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fce7-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "33";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation ~Communication():impl";
+									- m_startRow = 74;
+									- m_startCol_Short = 17;
+									- m_endRow = 76;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fceb-dce1-11e6-a1de-10604b8125e9;
+									- _name = "execute";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fcec-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fced-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "78";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fcee-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fcef-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "38";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = implFragment;
+									- m_text = "";
+									- m_startRow = 78;
+									- m_startCol_Short = 38;
+									- m_endRow = 104;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IPrimitiveOperation";
+										- _id = GUID 16a39c00-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fcf5-dce1-11e6-a1de-10604b8125e9;
+									- _name = "sendOrder";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fcf6-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fcf7-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "106";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fcf8-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fcf9-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "45";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = implFragment;
+									- m_text = "";
+									- m_startRow = 106;
+									- m_startCol_Short = 45;
+									- m_endRow = 113;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IPrimitiveOperation";
+										- _id = GUID 16a39bbc-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fcfc-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getClient_accepted:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fcfd-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fcfe-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "115";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fcff-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd00-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "48";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getClient_accepted() const:impl";
+									- m_startRow = 115;
+									- m_startCol_Short = 48;
+									- m_endRow = 117;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd05-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setClient_accepted:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd06-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd07-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "119";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd08-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd09-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "64";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setClient_accepted(bool):impl";
+									- m_startRow = 119;
+									- m_startCol_Short = 64;
+									- m_endRow = 121;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd0d-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getNew_sock:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd0e-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd0f-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "123";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd10-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd11-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "50";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getNew_sock() const:impl";
+									- m_startRow = 123;
+									- m_startCol_Short = 50;
+									- m_endRow = 125;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd17-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setNew_sock:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd18-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd19-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "127";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd1a-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd1b-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "59";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setNew_sock(ServerSocket *):impl";
+									- m_startRow = 127;
+									- m_startCol_Short = 59;
+									- m_endRow = 129;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd1f-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getServer:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd20-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd21-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "131";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd22-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd23-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "48";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getServer() const:impl";
+									- m_startRow = 131;
+									- m_startCol_Short = 48;
+									- m_endRow = 133;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd29-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setServer:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd2a-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd2b-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "135";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd2c-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd2d-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "55";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setServer(ServerSocket *):impl";
+									- m_startRow = 135;
+									- m_startCol_Short = 55;
+									- m_endRow = 137;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd31-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getTrainPos:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd32-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd33-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "139";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd34-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd35-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "46";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getTrainPos() const:impl";
+									- m_startRow = 139;
+									- m_startCol_Short = 46;
+									- m_endRow = 141;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd3b-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setTrainPos:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd3c-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd3d-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "143";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd3e-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd3f-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "55";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setTrainPos(TrainPos *):impl";
+									- m_startRow = 143;
+									- m_startCol_Short = 55;
+									- m_endRow = 145;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd43-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getItsPiListenerThread:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd44-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd45-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "147";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd46-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd47-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "65";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getItsPiListenerThread() const:impl";
+									- m_startRow = 147;
+									- m_startCol_Short = 65;
+									- m_endRow = 149;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd4d-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setItsPiListenerThread:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd4e-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd4f-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "151";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd50-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd51-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "82";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setItsPiListenerThread(PiListenerThread *):impl";
+									- m_startRow = 151;
+									- m_startCol_Short = 82;
+									- m_endRow = 153;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd55-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getItsPiSpeakerThread:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd56-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd57-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "155";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd58-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd59-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "63";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getItsPiSpeakerThread() const:impl";
+									- m_startRow = 155;
+									- m_startCol_Short = 63;
+									- m_endRow = 157;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd5f-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setItsPiSpeakerThread:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd60-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd61-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "159";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd62-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd63-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "79";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setItsPiSpeakerThread(PiSpeakerThread *):impl";
+									- m_startRow = 159;
+									- m_startCol_Short = 79;
+									- m_endRow = 161;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd66-dce1-11e6-a1de-10604b8125e9;
+									- _name = "cleanUpRelations:impl";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- Tags = { IRPYRawContainer 
+										- size = 2;
+										- value = 
+										{ ITag 
+											- _id = GUID e264fd67-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartLine";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd68-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "163";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+										{ ITag 
+											- _id = GUID e264fd69-dce1-11e6-a1de-10604b8125e9;
+											- _myState = 8192;
+											- _name = "BodyStartCol";
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- ValueSpecifications = { IRPYRawContainer 
+												- size = 1;
+												- value = 
+												{ ILiteralSpecification 
+													- _id = GUID e264fd6a-dce1-11e6-a1de-10604b8125e9;
+													- _modifiedTimeWeak = 1.2.1990::0:0:0;
+													- _value = "40";
+												}
+											}
+											- _typeOf = { IHandle 
+												- _m2Class = "IType";
+												- _filename = "PredefinedTypes.sbs";
+												- _subsystem = "PredefinedTypes";
+												- _class = "";
+												- _name = "RhpString";
+												- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+											}
+											- _isOrdered = 0;
+										}
+									}
+									- m_type = textFragment;
+									- m_text = "//## auto:operation cleanUpRelations():impl";
+									- m_startRow = 163;
+									- m_startCol_Short = 40;
+									- m_endRow = 172;
+									- m_endCol_Short = 1;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+							}
+						}
+					}
+				}
+				{ IFile 
+					- _id = GUID e264fc37-dce1-11e6-a1de-10604b8125e9;
+					- _myState = 139264;
+					- _name = "Communication";
+					- Dependencies = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- m_path = "";
+					- m_type = specFile;
+					- Fragments = { IRPYRawContainer 
+						- size = 6;
+						- value = 
+						{ IFileFragment 
+							- _id = GUID e264fd85-dce1-11e6-a1de-10604b8125e9;
+							- _name = "oxf:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency oxf:spec";
+							- m_startRow = 22;
+							- m_startCol_Short = 1;
+							- m_endRow = 22;
+							- m_endCol_Short = 21;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID e264fd87-dce1-11e6-a1de-10604b8125e9;
+							- _name = "string:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency string:spec";
+							- m_startRow = 24;
+							- m_startCol_Short = 1;
+							- m_endRow = 24;
+							- m_endCol_Short = 18;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID e264fd8a-dce1-11e6-a1de-10604b8125e9;
+							- _name = "algorithm:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency algorithm:spec";
+							- m_startRow = 26;
+							- m_startCol_Short = 1;
+							- m_endRow = 26;
+							- m_endCol_Short = 21;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID e264fd8d-dce1-11e6-a1de-10604b8125e9;
+							- _name = "omthread:spec";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = textFragment;
+							- m_text = "//## auto:dependency omthread:spec";
+							- m_startRow = 28;
+							- m_startCol_Short = 1;
+							- m_endRow = 28;
+							- m_endCol_Short = 26;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "";
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID e264fca6-dce1-11e6-a1de-10604b8125e9;
+							- _name = "std";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- m_type = specFragment;
+							- m_text = "";
+							- m_startRow = 45;
+							- m_startCol_Short = 1;
+							- m_endRow = 45;
+							- m_endCol_Short = 1;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IDependency";
+								- _id = GUID e264feac-dce1-11e6-a1de-10604b8125e9;
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 0;
+							}
+						}
+						{ IFileFragment 
+							- _id = GUID e264fc3e-dce1-11e6-a1de-10604b8125e9;
+							- _name = "Communication";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- Tags = { IRPYRawContainer 
+								- size = 2;
+								- value = 
+								{ ITag 
+									- _id = GUID e264fca7-dce1-11e6-a1de-10604b8125e9;
+									- _myState = 8192;
+									- _name = "BodyStartLine";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- ValueSpecifications = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ ILiteralSpecification 
+											- _id = GUID e264fca8-dce1-11e6-a1de-10604b8125e9;
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- _value = "47";
+										}
+									}
+									- _typeOf = { IHandle 
+										- _m2Class = "IType";
+										- _filename = "PredefinedTypes.sbs";
+										- _subsystem = "PredefinedTypes";
+										- _class = "";
+										- _name = "RhpString";
+										- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+									}
+									- _isOrdered = 0;
+								}
+								{ ITag 
+									- _id = GUID e264fca9-dce1-11e6-a1de-10604b8125e9;
+									- _myState = 8192;
+									- _name = "BodyStartCol";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- ValueSpecifications = { IRPYRawContainer 
+										- size = 1;
+										- value = 
+										{ ILiteralSpecification 
+											- _id = GUID e264fcaa-dce1-11e6-a1de-10604b8125e9;
+											- _modifiedTimeWeak = 1.2.1990::0:0:0;
+											- _value = "39";
+										}
+									}
+									- _typeOf = { IHandle 
+										- _m2Class = "IType";
+										- _filename = "PredefinedTypes.sbs";
+										- _subsystem = "PredefinedTypes";
+										- _class = "";
+										- _name = "RhpString";
+										- _id = GUID ae5e3720-4e3e-40f1-9346-9a8b4e501f35;
+									}
+									- _isOrdered = 0;
+								}
+							}
+							- m_type = specFragment;
+							- m_text = "";
+							- m_startRow = 47;
+							- m_startCol_Short = 1;
+							- m_endRow = 127;
+							- m_endCol_Short = 1;
+							- m_subject = { INObjectHandle 
+								- _m2Class = "IClass";
+								- _id = GUID 16a39ae7-b6e7-11e6-8ba6-10604b8125e9;
+							}
+							- Fragments = { IRPYRawContainer 
+								- size = 29;
+								- value = 
+								{ IFileFragment 
+									- _id = GUID e264fd90-dce1-11e6-a1de-10604b8125e9;
+									- _name = "////    Constructors and destructors    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Constructors and destructors    ////
+";
+									- m_startRow = 48;
+									- m_startCol_Short = 5;
+									- m_endRow = 48;
+									- m_endCol_Short = 49;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc45-dce1-11e6-a1de-10604b8125e9;
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 53;
+									- m_startCol_Short = 5;
+									- m_endRow = 53;
+									- m_endCol_Short = 41;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IConstructor";
+										- _id = GUID 16a39bfb-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc49-dce1-11e6-a1de-10604b8125e9;
+									- _name = "Communication:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation Communication():spec";
+									- m_startRow = 56;
+									- m_startCol_Short = 5;
+									- m_endRow = 56;
+									- m_endCol_Short = 20;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc4c-dce1-11e6-a1de-10604b8125e9;
+									- _name = "~Communication:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation ~Communication():spec";
+									- m_startRow = 59;
+									- m_startCol_Short = 6;
+									- m_endRow = 59;
+									- m_endCol_Short = 21;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd91-dce1-11e6-a1de-10604b8125e9;
+									- _name = "////    Operations    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Operations    ////
+";
+									- m_startRow = 61;
+									- m_startCol_Short = 5;
+									- m_endRow = 61;
+									- m_endCol_Short = 31;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc50-dce1-11e6-a1de-10604b8125e9;
+									- _name = "execute";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 64;
+									- m_startCol_Short = 17;
+									- m_endRow = 64;
+									- m_endCol_Short = 26;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IPrimitiveOperation";
+										- _id = GUID 16a39c00-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc56-dce1-11e6-a1de-10604b8125e9;
+									- _name = "sendOrder";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 67;
+									- m_startCol_Short = 10;
+									- m_endRow = 67;
+									- m_endCol_Short = 33;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IPrimitiveOperation";
+										- _id = GUID 16a39bbc-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd92-dce1-11e6-a1de-10604b8125e9;
+									- _name = "////    Additional operations    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Additional operations    ////
+";
+									- m_startRow = 69;
+									- m_startCol_Short = 5;
+									- m_endRow = 69;
+									- m_endCol_Short = 42;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc59-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getClient_accepted:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getClient_accepted() const:spec";
+									- m_startRow = 72;
+									- m_startCol_Short = 10;
+									- m_endRow = 72;
+									- m_endCol_Short = 36;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc5e-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setClient_accepted:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setClient_accepted(bool):spec";
+									- m_startRow = 75;
+									- m_startCol_Short = 10;
+									- m_endRow = 75;
+									- m_endCol_Short = 52;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc62-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getNew_sock:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getNew_sock() const:spec";
+									- m_startRow = 78;
+									- m_startCol_Short = 19;
+									- m_endRow = 78;
+									- m_endCol_Short = 38;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc68-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setNew_sock:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setNew_sock(ServerSocket *):spec";
+									- m_startRow = 81;
+									- m_startCol_Short = 10;
+									- m_endRow = 81;
+									- m_endCol_Short = 47;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc6c-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getServer:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getServer() const:spec";
+									- m_startRow = 84;
+									- m_startCol_Short = 19;
+									- m_endRow = 84;
+									- m_endCol_Short = 36;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc72-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setServer:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setServer(ServerSocket *):spec";
+									- m_startRow = 87;
+									- m_startCol_Short = 10;
+									- m_endRow = 87;
+									- m_endCol_Short = 43;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc76-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getTrainPos:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getTrainPos() const:spec";
+									- m_startRow = 90;
+									- m_startCol_Short = 15;
+									- m_endRow = 90;
+									- m_endCol_Short = 34;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc7c-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setTrainPos:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setTrainPos(TrainPos *):spec";
+									- m_startRow = 93;
+									- m_startCol_Short = 10;
+									- m_endRow = 93;
+									- m_endCol_Short = 43;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc80-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getItsPiListenerThread:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getItsPiListenerThread() const:spec";
+									- m_startRow = 96;
+									- m_startCol_Short = 23;
+									- m_endRow = 96;
+									- m_endCol_Short = 53;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc86-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setItsPiListenerThread:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setItsPiListenerThread(PiListenerThread *):spec";
+									- m_startRow = 99;
+									- m_startCol_Short = 10;
+									- m_endRow = 99;
+									- m_endCol_Short = 70;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc8a-dce1-11e6-a1de-10604b8125e9;
+									- _name = "getItsPiSpeakerThread:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation getItsPiSpeakerThread() const:spec";
+									- m_startRow = 102;
+									- m_startCol_Short = 22;
+									- m_endRow = 102;
+									- m_endCol_Short = 51;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc90-dce1-11e6-a1de-10604b8125e9;
+									- _name = "setItsPiSpeakerThread:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation setItsPiSpeakerThread(PiSpeakerThread *):spec";
+									- m_startRow = 105;
+									- m_startCol_Short = 10;
+									- m_endRow = 105;
+									- m_endCol_Short = 67;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc93-dce1-11e6-a1de-10604b8125e9;
+									- _name = "cleanUpRelations:spec";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "//## auto:operation cleanUpRelations():spec";
+									- m_startRow = 110;
+									- m_startCol_Short = 10;
+									- m_endRow = 110;
+									- m_endCol_Short = 28;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd93-dce1-11e6-a1de-10604b8125e9;
+									- _name = "////    Attributes    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Attributes    ////
+";
+									- m_startRow = 112;
+									- m_startCol_Short = 5;
+									- m_endRow = 112;
+									- m_endCol_Short = 31;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc95-dce1-11e6-a1de-10604b8125e9;
+									- _name = "client_accepted";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 114;
+									- m_startCol_Short = 10;
+									- m_endRow = 114;
+									- m_endCol_Short = 25;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IAttribute";
+										- _id = GUID 16a39bd7-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc98-dce1-11e6-a1de-10604b8125e9;
+									- _name = "new_sock";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 116;
+									- m_startCol_Short = 19;
+									- m_endRow = 116;
+									- m_endCol_Short = 27;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IAttribute";
+										- _id = GUID 16a39bcb-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc9b-dce1-11e6-a1de-10604b8125e9;
+									- _name = "server";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 118;
+									- m_startCol_Short = 19;
+									- m_endRow = 118;
+									- m_endCol_Short = 25;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IAttribute";
+										- _id = GUID 16a39bc3-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fc9e-dce1-11e6-a1de-10604b8125e9;
+									- _name = "trainPos";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 120;
+									- m_startCol_Short = 15;
+									- m_endRow = 120;
+									- m_endCol_Short = 23;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IAttribute";
+										- _id = GUID 229c2002-b6f8-11e6-a70c-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fd94-dce1-11e6-a1de-10604b8125e9;
+									- _name = "////    Relations and components    ////";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = textFragment;
+									- m_text = "////    Relations and components    ////
+";
+									- m_startRow = 122;
+									- m_startCol_Short = 5;
+									- m_endRow = 122;
+									- m_endCol_Short = 45;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "";
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fca1-dce1-11e6-a1de-10604b8125e9;
+									- _name = "itsPiListenerThread";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 124;
+									- m_startCol_Short = 23;
+									- m_endRow = 124;
+									- m_endCol_Short = 42;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IAssociationEnd";
+										- _id = GUID 16a39bb0-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+								{ IFileFragment 
+									- _id = GUID e264fca4-dce1-11e6-a1de-10604b8125e9;
+									- _name = "itsPiSpeakerThread";
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- m_type = specFragment;
+									- m_text = "";
+									- m_startRow = 126;
+									- m_startCol_Short = 22;
+									- m_endRow = 126;
+									- m_endCol_Short = 40;
+									- m_subject = { INObjectHandle 
+										- _m2Class = "IAssociationEnd";
+										- _id = GUID 16a39b86-b6e7-11e6-8ba6-10604b8125e9;
+									}
+									- Fragments = { IRPYRawContainer 
+										- size = 0;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
@@ -7728,6 +11096,265 @@ start();";
 					- _linkType = Assoc;
 					- _navigability = Navigable;
 				}
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID 04981142-dca4-11e6-8d7a-10604b8125e9;
+			- _myState = 8192;
+			- _name = "Semaphore";
+			- _modifiedTimeWeak = 1.17.2017::19:1:21;
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "Algorithm_Socket_Diagram.omd";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Algorithm_Socket_Diagram";
+				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
+			}
+			- _lastID = 3;
+			- weakCGTime = 1.17.2017::19:1:21;
+			- strongCGTime = 1.17.2017::19:1:21;
+			- Operations = { IRPYRawContainer 
+				- size = 3;
+				- value = 
+				{ IConstructor 
+					- _id = GUID 04981150-dca4-11e6-8d7a-10604b8125e9;
+					- _myState = 8192;
+					- _modifiedTimeWeak = 1.17.2017::17:57:11;
+					- _lastID = 1;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 2;
+						- value = 
+						{ IArgument 
+							- _id = GUID 0498114b-dca4-11e6-8d7a-10604b8125e9;
+							- _myState = 8192;
+							- _name = "startValue";
+							- _modifiedTimeWeak = 1.2.1990::0:0:0;
+							- ValueSpecifications = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ ILiteralSpecification 
+									- _id = GUID 0498114c-dca4-11e6-8d7a-10604b8125e9;
+									- _modifiedTimeWeak = 1.2.1990::0:0:0;
+									- _value = "1";
+								}
+							}
+							- _typeOf = { IHandle 
+								- _m2Class = "IType";
+								- _filename = "PredefinedTypesC++.sbs";
+								- _subsystem = "PredefinedTypesCpp";
+								- _class = "";
+								- _name = "int";
+								- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
+						{ IArgument 
+							- _id = GUID a8ed3946-dcad-11e6-b684-10604b8125e9;
+							- _myState = 8192;
+							- _name = "maxValue";
+							- _modifiedTimeWeak = 1.17.2017::12:38:1;
+							- ValueSpecifications = { IRPYRawContainer 
+								- size = 1;
+								- value = 
+								{ ILiteralSpecification 
+									- _id = GUID a8ed394c-dcad-11e6-b684-10604b8125e9;
+									- _modifiedTimeWeak = 1.17.2017::12:38:1;
+									- _value = "1";
+								}
+							}
+							- _typeOf = { IHandle 
+								- _m2Class = "IType";
+								- _filename = "PredefinedTypesC++.sbs";
+								- _subsystem = "PredefinedTypesCpp";
+								- _class = "";
+								- _name = "int";
+								- _id = GUID 6024c6ab-fe9e-402e-954f-27aca6d3b5e4;
+							}
+							- _isOrdered = 0;
+							- _argumentDirection = In;
+						}
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "";
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "//OMOSFactory * f = OMOSFactory::instance();
+s = OMOSFactory::instance()->createOMOSSemaphore(0, startValue, maxValue); 
+cout << \"Semaphore created\" << endl;";
+					}
+					- _initializer = "";
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID 03d3e23b-dca5-11e6-89f6-10604b8125e9;
+					- _myState = 8192;
+					- _name = "request";
+					- _modifiedTimeWeak = 1.17.2017::11:18:50;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "cout << \"Requesting resource\" << endl;
+s->wait(-1);
+cout << \"Resource received\" << endl;";
+					}
+				}
+				{ IPrimitiveOperation 
+					- _id = GUID 03d3e242-dca5-11e6-89f6-10604b8125e9;
+					- _myState = 8192;
+					- _name = "release";
+					- _modifiedTimeWeak = 1.17.2017::11:18:38;
+					- _virtual = 0;
+					- Args = { IRPYRawContainer 
+						- size = 0;
+					}
+					- _returnType = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "void";
+						- _id = GUID c6b70728-b655-45a0-abb7-8ea5d3da94be;
+					}
+					- _abstract = 0;
+					- _final = 0;
+					- _concurrency = Sequential;
+					- _protection = iPublic;
+					- _static = 0;
+					- _constant = 0;
+					- _itsBody = { IBody 
+						- _bodyData = "cout << \"Releasing resource\" << endl;
+s->signal();
+cout << \"Resource released\" << endl;";
+					}
+				}
+			}
+			- Attrs = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAttribute 
+					- _id = GUID 04981155-dca4-11e6-8d7a-10604b8125e9;
+					- _myState = 8192;
+					- _name = "s";
+					- _modifiedTimeWeak = 1.17.2017::11:3:36;
+					- myTypeOf = { IType 
+						- _id = GUID 04981158-dca4-11e6-8d7a-10604b8125e9;
+						- _myState = 8192;
+						- _modifiedTimeWeak = 1.2.1990::0:0:0;
+						- _declaration = "OMOSSemaphore *";
+						- _kind = Language;
+					}
+					- _isOrdered = 0;
+					- _protection = iPublic;
+					- _static = 0;
+					- _isReference = 0;
+					- _isConstant = 0;
+				}
+			}
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID a8ed38d4-dcad-11e6-b684-10604b8125e9;
+					- _myState = 10240;
+					- _name = "itsBuffer";
+					- _modifiedTimeWeak = 1.17.2017::12:39:25;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _filename = "Semaphore.sbs";
+						- _subsystem = "Semaphore";
+						- _class = "";
+						- _name = "Buffer";
+						- _id = GUID a8ed3851-dcad-11e6-b684-10604b8125e9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _filename = "Semaphore.sbs";
+						- _subsystem = "Semaphore";
+						- _class = "Buffer";
+						- _name = "itsFree";
+						- _id = GUID a8ed38d3-dcad-11e6-b684-10604b8125e9;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = NonNavigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID a8ed3920-dcad-11e6-b684-10604b8125e9;
+					- _myState = 10240;
+					- _name = "itsBuffer_1";
+					- _modifiedTimeWeak = 1.17.2017::12:39:25;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _filename = "Semaphore.sbs";
+						- _subsystem = "Semaphore";
+						- _class = "";
+						- _name = "Buffer";
+						- _id = GUID a8ed3851-dcad-11e6-b684-10604b8125e9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _filename = "Semaphore.sbs";
+						- _subsystem = "Semaphore";
+						- _class = "Buffer";
+						- _name = "itsUsed";
+						- _id = GUID a8ed391f-dcad-11e6-b684-10604b8125e9;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = NonNavigable;
+				}
+			}
+			- _classModifier = Unspecified;
+		}
+		{ IClass 
+			- _id = GUID a525e94e-dce7-11e6-b4c6-10604b8125e9;
+			- _myState = 8192;
+			- _name = "Semapho";
+			- _modifiedTimeWeak = 1.17.2017::19:9:19;
+			- _theMainDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "Algorithm_Socket_Diagram.omd";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Algorithm_Socket_Diagram";
+				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
+			}
+			- weakCGTime = 1.17.2017::19:9:19;
+			- strongCGTime = 1.17.2017::19:9:19;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
 			}
 			- _classModifier = Unspecified;
 		}

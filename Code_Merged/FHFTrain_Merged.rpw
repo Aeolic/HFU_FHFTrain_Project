@@ -6,7 +6,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	}
 	- isLoadOnDemand = 0;
 	- myViewsWithID = { IRPYRawContainer 
-		- size = 3;
+		- size = 5;
 		- value = 
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
@@ -31,10 +31,10 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _UpLeft = 1531 139 ;
-			- _DownRight = 2163 576 ;
+			- _UpLeft = 871 187 ;
+			- _DownRight = 1677 833 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 2;
+			- m_nDiagramIndex = 8;
 			- m_bIsActiveView = 1;
 		}
 		{ CGEMdiDiagramParams 
@@ -46,24 +46,24 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -4;
 				- m_ptMaxPositionY = -23;
-				- m_nLeft = 120;
-				- m_nTop = 132;
-				- m_nRight = 886;
-				- m_nBottom = 474;
+				- m_nLeft = 160;
+				- m_nTop = 176;
+				- m_nRight = 709;
+				- m_nBottom = 558;
 			}
 			- _wasOpenedOnCloseProject = 1;
 			- _theDiagram = { IHandle 
-				- _m2Class = "IDiagram";
-				- _filename = "";
-				- _subsystem = "";
-				- _class = "";
-				- _name = "Motor";
-				- _id = GUID 7017ac70-2606-45ac-8662-d24a7d2a846a;
+				- _m2Class = "IStateChartDiagram";
+				- _filename = "Default.sbs";
+				- _subsystem = "Default";
+				- _class = "Consumer";
+				- _name = "StatechartDiagram";
+				- _id = GUID d94e67e1-dcba-11e6-9f6a-10604b8125e9;
 			}
-			- _UpLeft = 0 20 ;
-			- _DownRight = 738 315 ;
+			- _UpLeft = 0 0 ;
+			- _DownRight = 521 335 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 0;
+			- m_nDiagramIndex = 3;
 			- m_bIsActiveView = 0;
 		}
 		{ CGEMdiDiagramParams 
@@ -75,10 +75,39 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -4;
 				- m_ptMaxPositionY = -23;
-				- m_nLeft = 80;
-				- m_nTop = 88;
-				- m_nRight = 788;
-				- m_nBottom = 430;
+				- m_nLeft = 140;
+				- m_nTop = 154;
+				- m_nRight = 689;
+				- m_nBottom = 536;
+			}
+			- _wasOpenedOnCloseProject = 1;
+			- _theDiagram = { IHandle 
+				- _m2Class = "IStateChartDiagram";
+				- _filename = "Default.sbs";
+				- _subsystem = "Default";
+				- _class = "Producer";
+				- _name = "StatechartDiagram";
+				- _id = GUID 63743fb6-dcb6-11e6-8376-10604b8125e9;
+			}
+			- _UpLeft = 0 0 ;
+			- _DownRight = 521 335 ;
+			- _instanceName = "";
+			- m_nDiagramIndex = 4;
+			- m_bIsActiveView = 0;
+		}
+		{ CGEMdiDiagramParams 
+			- _placement = { CCommon_WINDOWPLACEMENT 
+				- m_nLength = 44;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
+				- m_ptMinPositionX = -1;
+				- m_ptMinPositionY = -1;
+				- m_ptMaxPositionX = -4;
+				- m_ptMaxPositionY = -23;
+				- m_nLeft = 40;
+				- m_nTop = 44;
+				- m_nRight = 589;
+				- m_nBottom = 426;
 			}
 			- _wasOpenedOnCloseProject = 1;
 			- _theDiagram = { IHandle 
@@ -86,17 +115,46 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _filename = "";
 				- _subsystem = "";
 				- _class = "";
-				- _name = "RFID";
-				- _id = GUID 2163e7b9-04da-457e-9e32-a8990cfb42a9;
+				- _name = "ProducerConsumer1";
+				- _id = GUID 04980ebc-dca4-11e6-8d7a-10604b8125e9;
 			}
-			- _UpLeft = 162 0 ;
-			- _DownRight = 842 295 ;
+			- _UpLeft = 280 110 ;
+			- _DownRight = 801 445 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 1;
+			- m_nDiagramIndex = 5;
+			- m_bIsActiveView = 0;
+		}
+		{ CGEMdiDiagramParams 
+			- _placement = { CCommon_WINDOWPLACEMENT 
+				- m_nLength = 44;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
+				- m_ptMinPositionX = -1;
+				- m_ptMinPositionY = -1;
+				- m_ptMaxPositionX = -4;
+				- m_ptMaxPositionY = -23;
+				- m_nLeft = 20;
+				- m_nTop = 22;
+				- m_nRight = 569;
+				- m_nBottom = 404;
+			}
+			- _wasOpenedOnCloseProject = 1;
+			- _theDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "ProducerConsumer2";
+				- _id = GUID eb110ae4-dccc-11e6-ad9e-10604b8125e9;
+			}
+			- _UpLeft = 103 0 ;
+			- _DownRight = 624 335 ;
+			- _instanceName = "";
+			- m_nDiagramIndex = 6;
 			- m_bIsActiveView = 0;
 		}
 	}
-	- _fullName = "/user0/langmaxm/HFU_FHFTrain_Project/Code_Merged/FHFTrain_Merged";
+	- _fullName = "/user0/grituceu/FHFTrain/Github/HFU_FHFTrain_Project/Code_Merged/FHFTrain_Merged";
 	- m_SearchScopeList = { IRPYRawContainer 
 		- size = 0;
 	}

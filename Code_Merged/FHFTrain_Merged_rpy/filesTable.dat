@@ -1,7 +1,7 @@
 I-Logix-RPY-Archive version 8.12.0 * 9728113
 
 - filesTable = { IRPYRawContainer 
-	- size = 25;
+	- size = 26;
 	- value = "FHFTrain_Merged.rpy" ""
 	"FHFTrain_Merged_rpy/Algorithm_Socket.cmp" "Algorithm_Socket"
 	"FHFTrain_Merged_rpy/Algorithm_Socket_Diagram.omd" "Algorithm_Socket_Diagram"
@@ -17,6 +17,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	"FHFTrain_Merged_rpy/RFID_W.cmp" "RFID_W"
 	"FHFTrain_Merged_rpy/SM_Read_T.cmp" "SM_Read_T"
 	"FHFTrain_Merged_rpy/SM_Read_W.cmp" "SM_Read_W"
+	"FHFTrain_Merged_rpy/Semaphore.sbs" "Semaphore"
 	"FHFTrain_Merged_rpy/SensRead_T.cmp" "SensRead_T"
 	"FHFTrain_Merged_rpy/SensRead_W.cmp" "SensRead_W"
 	"FHFTrain_Merged_rpy/Socket.sbs" "Socket"
