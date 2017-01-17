@@ -212,7 +212,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	}
 	- _name = "Algorithm_Socket_Diagram";
 	- _modifiedTimeWeak = 1.2.1990::0:0:0;
-	- _lastModifiedTime = "1.12.2017::13:21:10";
+	- _lastModifiedTime = "1.17.2017::8:28:53";
 	- _graphicChart = { CGIClassChart 
 		- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 		- m_type = 0;
@@ -1746,7 +1746,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- m_bShowInherited = 0;
 					- m_bOrdered = 0;
 					- Items = { IRPYRawContainer 
-						- size = 3;
+						- size = 2;
 						- value = 
 						{ IHandle 
 							- _m2Class = "IConstructor";
@@ -1763,14 +1763,6 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 							- _class = "TrainThread";
 							- _name = "execute()";
 							- _id = GUID 19e80332-aff2-11e6-9d64-001999f109b4;
-						}
-						{ IHandle 
-							- _m2Class = "IPrimitiveOperation";
-							- _filename = "";
-							- _subsystem = "TrainCommunicationPackage";
-							- _class = "TrainThread";
-							- _name = "startClient()";
-							- _id = GUID 410ec4b6-b53c-11e6-96ec-10604b8125e9;
 						}
 					}
 					- _itemValueOfFontPropertiesMapCount = 2;
@@ -1859,7 +1851,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- m_anglePoint1 = 0 0 ;
 			- m_anglePoint2 = 0 0 ;
 			- m_line_style = 2;
-			- m_SourcePort = 864 500 ;
+			- m_SourcePort = 864 506 ;
 			- m_TargetPort = 515 888 ;
 			- m_pInverseModelObject = { IAssociationEndHandle 
 				- _m2Class = "";
@@ -2281,7 +2273,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- m_anglePoint1 = 0 0 ;
 			- m_anglePoint2 = 0 0 ;
 			- m_line_style = 2;
-			- m_SourcePort = 945 718 ;
+			- m_SourcePort = 945 724 ;
 			- m_TargetPort = 62 466 ;
 			- m_pInverseModelObject = { IAssociationEndHandle 
 				- _m2Class = "";
@@ -3826,7 +3818,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- m_nOrientationCtrlPt = 5;
 			}
 			- m_drawBehavior = 2088;
-			- m_transform = 0.282259 0 0 0.495501 433.176 332.464 ;
+			- m_transform = 0.282259 0 0 0.495501 436.432 329.622 ;
 			- m_bIsPreferencesInitialized = 1;
 			- m_AdditionalLabel = { CGIText 
 				- m_str = "";
@@ -4219,7 +4211,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- m_nOrientationCtrlPt = 5;
 			}
 			- m_drawBehavior = 2152;
-			- m_transform = 0.202561 0 0 0.294891 459.633 109.738 ;
+			- m_transform = 0.202561 0 0 0.354497 459.633 23.4208 ;
 			- m_bIsPreferencesInitialized = 1;
 			- m_AdditionalLabel = { CGIText 
 				- m_str = "";
@@ -4469,7 +4461,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- m_anglePoint2 = 0 0 ;
 			- m_line_style = 2;
 			- m_SourcePort = 528 1436 ;
-			- m_TargetPort = 531 1020 ;
+			- m_TargetPort = 531 1092 ;
 			- m_pInverseModelObject = { IAssociationEndHandle 
 				- _m2Class = "";
 			}
@@ -4888,7 +4880,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- m_anglePoint1 = 0 0 ;
 			- m_anglePoint2 = 0 0 ;
 			- m_line_style = 2;
-			- m_SourcePort = 595 889 ;
+			- m_SourcePort = 595 983 ;
 			- m_TargetPort = 598 1134 ;
 			- m_pInverseModelObject = { IAssociationEndHandle 
 				- _m2Class = "";
@@ -5185,7 +5177,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- m_anglePoint1 = 0 0 ;
 			- m_anglePoint2 = 0 0 ;
 			- m_line_style = 2;
-			- m_SourcePort = 359 1169 ;
+			- m_SourcePort = 359 1216 ;
 			- m_TargetPort = 357 985 ;
 			- m_pInverseModelObject = { IAssociationEndHandle 
 				- _m2Class = "";
@@ -5805,7 +5797,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- m_anglePoint2 = 0 0 ;
 			- m_line_style = 2;
 			- m_SourcePort = 549 890 ;
-			- m_TargetPort = 531 1301 ;
+			- m_TargetPort = 531 1325 ;
 			- m_pInverseModelObject = { IAssociationEndHandle 
 				- _m2Class = "";
 			}
@@ -6172,7 +6164,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						- value = 
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Common.sbs";
+							- _filename = "";
 							- _subsystem = "Common";
 							- _class = "SHM_Connection";
 							- _name = "instance()";
@@ -6180,7 +6172,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Common.sbs";
+							- _filename = "";
 							- _subsystem = "Common";
 							- _class = "SHM_Connection";
 							- _name = "read(Type,float,bool)";
@@ -6188,7 +6180,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Common.sbs";
+							- _filename = "";
 							- _subsystem = "Common";
 							- _class = "SHM_Connection";
 							- _name = "read(Type,char*,bool)";
@@ -6196,7 +6188,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Common.sbs";
+							- _filename = "";
 							- _subsystem = "Common";
 							- _class = "SHM_Connection";
 							- _name = "save(Type,float)";
@@ -6204,7 +6196,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IPrimitiveOperation";
-							- _filename = "Common.sbs";
+							- _filename = "";
 							- _subsystem = "Common";
 							- _class = "SHM_Connection";
 							- _name = "save(Type,char*)";
@@ -6212,11 +6204,11 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 					}
 					- _itemValueOfFontPropertiesMapCount = 5;
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
 				}
 			}
 			- Attrs = { IRPYRawContainer 

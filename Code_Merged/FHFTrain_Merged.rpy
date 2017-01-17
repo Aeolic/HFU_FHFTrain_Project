@@ -28,7 +28,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		}
 	}
 	- _name = "FHFTrain_Merged";
-	- _modifiedTimeWeak = 1.12.2017::9:11:36;
+	- _modifiedTimeWeak = 1.17.2017::7:59:57;
 	- _lastID = 22;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -44,11 +44,11 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	}
 	- _component = { IHandle 
 		- _m2Class = "IComponent";
-		- _filename = "Algorithm_Socket.cmp";
+		- _filename = "Train_Socket.cmp";
 		- _subsystem = "";
 		- _class = "";
-		- _name = "Algorithm_Socket";
-		- _id = GUID c5285cb7-ab39-11e6-89be-001999f109b4;
+		- _name = "Train_Socket";
+		- _id = GUID 308c5259-d89f-11e6-b386-10604b8125e9;
 	}
 	- Multiplicities = { IRPYRawContainer 
 		- size = 4;
@@ -428,7 +428,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "LCD";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.12.2017::8:36:43";
+			- _lastModifiedTime = "1.17.2017::8:28:53";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID b2ff3ea7-de6b-480d-9058-6b8fb3e36464;
 				- m_type = 0;
@@ -1841,7 +1841,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "Motor";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.12.2017::8:36:43";
+			- _lastModifiedTime = "1.17.2017::8:28:53";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 7f6954e5-82ff-403f-a27d-de7220999e4d;
 				- m_type = 0;
@@ -6178,7 +6178,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "SensRead";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.12.2017::8:36:43";
+			- _lastModifiedTime = "1.17.2017::8:28:53";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 8d74c2b1-5fd0-4d08-80ca-5aefa99b2aa1;
 				- m_type = 0;
@@ -7775,7 +7775,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "LCD_Minimal";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.12.2017::8:36:43";
+			- _lastModifiedTime = "1.17.2017::8:28:53";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID bec1f816-9cac-41d4-9729-7a863fb9e189;
 				- m_type = 0;
@@ -9165,7 +9165,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "SensRead_Minimal";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.12.2017::8:36:43";
+			- _lastModifiedTime = "1.17.2017::8:28:53";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 8a7bd38c-dbd4-422a-b3a5-4cdc8436289d;
 				- m_type = 0;
