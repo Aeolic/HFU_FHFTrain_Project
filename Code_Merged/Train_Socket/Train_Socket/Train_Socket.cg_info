@@ -2,26 +2,26 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 
 - m_fileModifyTime = { IRPYRawContainer 
 	- size = 36;
-	- value = "Train_Socket/Train_Socket/ClientSocket.cpp" 1.12.2017::8:45:2
-	"Train_Socket/Train_Socket/ClientSocket.h" 1.12.2017::8:45:2
-	"Train_Socket/Train_Socket/Common.cpp" 1.12.2017::8:37:0
-	"Train_Socket/Train_Socket/Common.h" 1.12.2017::8:37:0
-	"Train_Socket/Train_Socket/SHM_Connection.cpp" 1.17.2017::13:9:11
-	"Train_Socket/Train_Socket/SHM_Connection.h" 1.17.2017::13:9:11
-	"Train_Socket/Train_Socket/ServerSocket.cpp" 1.12.2017::8:45:2
-	"Train_Socket/Train_Socket/ServerSocket.h" 1.12.2017::8:45:2
-	"Train_Socket/Train_Socket/Socket.cpp" 1.17.2017::13:9:11
-	"Train_Socket/Train_Socket/Socket.h" 1.17.2017::13:9:11
-	"Train_Socket/Train_Socket/SocketException.cpp" 1.12.2017::8:36:59
-	"Train_Socket/Train_Socket/SocketException.h" 1.12.2017::8:45:2
-	"Train_Socket/Train_Socket/TrainCommunication.cpp" 1.17.2017::8:37:37
-	"Train_Socket/Train_Socket/TrainCommunication.h" 1.12.2017::8:45:2
-	"Train_Socket/Train_Socket/TrainCommunicationPackage.cpp" 1.12.2017::8:37:0
-	"Train_Socket/Train_Socket/TrainCommunicationPackage.h" 1.12.2017::8:37:0
-	"Train_Socket/Train_Socket/TrainListenerThread.cpp" 1.17.2017::13:31:34
-	"Train_Socket/Train_Socket/TrainListenerThread.h" 1.17.2017::13:9:11
-	"Train_Socket/Train_Socket/TrainSpeakerThread.cpp" 1.17.2017::13:31:34
-	"Train_Socket/Train_Socket/TrainSpeakerThread.h" 1.17.2017::9:14:43
+	- value = "Train_Socket/Train_Socket/ClientSocket.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/ClientSocket.h" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/Common.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/Common.h" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/SHM_Connection.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/SHM_Connection.h" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/ServerSocket.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/ServerSocket.h" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/Socket.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/Socket.h" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/SocketException.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/SocketException.h" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/TrainCommunication.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/TrainCommunication.h" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/TrainCommunicationPackage.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/TrainCommunicationPackage.h" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/TrainListenerThread.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/TrainListenerThread.h" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/TrainSpeakerThread.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/TrainSpeakerThread.h" 1.17.2017::14:30:32
 	"Train_Socket/Train_Socket/TrainTestCommunication.cpp" 1.12.2017::14:2:3
 	"Train_Socket/Train_Socket/TrainTestCommunication.h" 1.12.2017::14:2:3
 	"Train_Socket/Train_Socket/TrainTestFailureThread.cpp" 1.12.2017::14:2:3
@@ -34,10 +34,10 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	"Train_Socket/Train_Socket/TrainTestSpeakerThread.h" 1.12.2017::14:2:3
 	"Train_Socket/Train_Socket/TrainTestThread.cpp" 1.12.2017::14:2:3
 	"Train_Socket/Train_Socket/TrainTestThread.h" 1.12.2017::14:2:3
-	"Train_Socket/Train_Socket/TrainThread.cpp" 1.17.2017::8:37:38
-	"Train_Socket/Train_Socket/TrainThread.h" 1.12.2017::10:56:22
-	"Train_Socket/Train_Socket/object_0.cpp" 1.12.2017::8:45:3
-	"Train_Socket/Train_Socket/object_0.h" 1.12.2017::8:45:2
+	"Train_Socket/Train_Socket/TrainThread.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/TrainThread.h" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/object_0.cpp" 1.17.2017::14:30:32
+	"Train_Socket/Train_Socket/object_0.h" 1.17.2017::14:30:32
 	
 }
 - size = 14;
@@ -49,7 +49,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "TrainThread";
 	- _id = GUID 19e801c1-aff2-11e6-9d64-001999f109b4;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "ISubsystem";
 	- _filename = "Socket.sbs";
@@ -58,7 +58,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Socket";
 	- _id = GUID c5285cb1-ab39-11e6-89be-001999f109b4;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Socket.sbs";
@@ -67,7 +67,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "object_0";
 	- _id = GUID c5285cc4-ab39-11e6-89be-001999f109b4;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "ISubsystem";
 	- _filename = "TrainCommunicationPackage.sbs";
@@ -76,7 +76,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "TrainCommunicationPackage";
 	- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Socket.sbs";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "SocketException";
 	- _id = GUID a60dc8a8-afd3-11e6-b0ac-001999f109b4;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "ICodeGenConfigInfo";
 	- _filename = "Train_Socket.cmp";
@@ -94,7 +94,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Train_Socket/Train_Socket";
 	- _id = GUID 308c525b-d89f-11e6-b386-10604b8125e9;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Socket.sbs";
@@ -103,7 +103,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "ClientSocket";
 	- _id = GUID 6c6b7339-ab3b-11e6-94dc-001999f109b4;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Socket.sbs";
@@ -112,7 +112,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "ServerSocket";
 	- _id = GUID 6c6b7340-ab3b-11e6-94dc-001999f109b4;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "ISubsystem";
 	- _filename = "Common.sbs";
@@ -121,7 +121,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Common";
 	- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Common.sbs";
@@ -130,7 +130,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "SHM_Connection";
 	- _id = GUID d795257c-2dbf-4572-89a5-5bd2ee1f6b84;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "TrainCommunicationPackage.sbs";
@@ -139,7 +139,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "TrainCommunication";
 	- _id = GUID b9af70ac-bc65-11e6-81a4-10604b8125e9;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "TrainCommunicationPackage.sbs";
@@ -148,7 +148,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "TrainListenerThread";
 	- _id = GUID 55d87e27-afed-11e6-879e-001999f109b4;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "TrainCommunicationPackage.sbs";
@@ -157,7 +157,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "TrainSpeakerThread";
 	- _id = GUID 80d4c29c-b16c-11e6-b280-10604b8125e9;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 - hElement = { IHandle 
 	- _m2Class = "IClass";
 	- _filename = "Socket.sbs";
@@ -166,5 +166,5 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- _name = "Socket";
 	- _id = GUID 99ef2d1c-ab3a-11e6-9cc8-001999f109b4;
 }
-- genTime = 1.17.2017::13:31:34;
+- genTime = 1.17.2017::14:30:32;
 
