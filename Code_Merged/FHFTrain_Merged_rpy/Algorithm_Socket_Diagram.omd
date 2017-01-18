@@ -212,7 +212,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	}
 	- _name = "Algorithm_Socket_Diagram";
 	- _modifiedTimeWeak = 1.2.1990::0:0:0;
-	- _lastModifiedTime = "1.18.2017::10:32:41";
+	- _lastModifiedTime = "1.18.2017::12:9:8";
 	- _graphicChart = { CGIClassChart 
 		- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 		- m_type = 0;
@@ -236,7 +236,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		}
 		- m_drawBehavior = 0;
 		- m_bIsPreferencesInitialized = 0;
-		- elementList = 44;
+		- elementList = 43;
 		{ CGIClass 
 			- _id = GUID c5285cbf-ab39-11e6-89be-001999f109b4;
 			- m_type = 78;
@@ -6663,7 +6663,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- m_bShowInherited = 0;
 					- m_bOrdered = 0;
 					- _itemValueOfFontPropertiesMapCount = 1;
-					- _fontPropValues = "Tahoma";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
 				}
 				{ CGICompartment 
 					- _id = GUID a1e53e98-dcdc-11e6-9f80-10604b8125e9;
@@ -6672,112 +6672,9 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- m_bShowInherited = 0;
 					- m_bOrdered = 0;
 					- _itemValueOfFontPropertiesMapCount = 3;
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-				}
-			}
-			- Attrs = { IRPYRawContainer 
-				- size = 0;
-			}
-			- Operations = { IRPYRawContainer 
-				- size = 0;
-			}
-		}
-		{ CGIClass 
-			- _id = GUID a525e94b-dce7-11e6-b4c6-10604b8125e9;
-			- _properties = { IPropertyContainer 
-				- Subjects = { IRPYRawContainer 
-					- size = 1;
-					- value = 
-					{ IPropertySubject 
-						- _Name = "ObjectModelGe";
-						- Metaclasses = { IRPYRawContainer 
-							- size = 1;
-							- value = 
-							{ IPropertyMetaclass 
-								- _Name = "Class";
-								- Properties = { IRPYRawContainer 
-									- size = 1;
-									- value = 
-									{ IProperty 
-										- _Name = "Compartments";
-										- _Value = "";
-										- _Type = MultiLine;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			- m_type = 87;
-			- m_pModelObject = { IHandle 
-				- _m2Class = "IClass";
-				- _filename = "Pi.sbs";
-				- _subsystem = "Pi";
-				- _class = "";
-				- _name = "Semapho";
-				- _id = GUID a525e94e-dce7-11e6-b4c6-10604b8125e9;
-			}
-			- m_pParent = GUID c5285cd3-ab39-11e6-89be-001999f109b4;
-			- m_name = { CGIText 
-				- m_str = "Semapho";
-				- m_style = "Arial" 10 0 0 0 1 ;
-				- m_color = { IColor 
-					- m_fgColor = 0;
-					- m_bgColor = 0;
-					- m_bgFlag = 0;
-				}
-				- m_position = 1 0 0  ;
-				- m_nIdent = 0;
-				- m_bImplicitSetRectPoints = 0;
-				- m_nOrientationCtrlPt = 5;
-			}
-			- m_drawBehavior = 2056;
-			- m_transform = 0.083365 0 0 0.19362 372.936 322.022 ;
-			- m_bIsPreferencesInitialized = 1;
-			- m_AdditionalLabel = { CGIText 
-				- m_str = "";
-				- m_style = "Arial" 10 0 0 0 1 ;
-				- m_color = { IColor 
-					- m_fgColor = 0;
-					- m_bgColor = 0;
-					- m_bgFlag = 0;
-				}
-				- m_position = 1 0 0  ;
-				- m_nIdent = 0;
-				- m_bImplicitSetRectPoints = 0;
-				- m_nOrientationCtrlPt = 1;
-			}
-			- m_polygon = 4 2 329  2 1451  1061 1451  1061 329  ;
-			- m_nNameFormat = 0;
-			- m_nIsNameFormat = 0;
-			- frameset = "<frameset rows=50%,50%>
-<frame name=AttributeListCompartment>
-<frame name=OperationListCompartment>";
-			- Compartments = { IRPYRawContainer 
-				- size = 2;
-				- value = 
-				{ CGICompartment 
-					- _id = GUID a525e94c-dce7-11e6-b4c6-10604b8125e9;
-					- m_name = "Attribute";
-					- m_displayOption = Explicit;
-					- m_bShowInherited = 0;
-					- m_bOrdered = 0;
-					- Items = { IRPYRawContainer 
-						- size = 0;
-					}
-				}
-				{ CGICompartment 
-					- _id = GUID a525e94d-dce7-11e6-b4c6-10604b8125e9;
-					- m_name = "Operation";
-					- m_displayOption = Explicit;
-					- m_bShowInherited = 0;
-					- m_bOrdered = 0;
-					- Items = { IRPYRawContainer 
-						- size = 0;
-					}
+					- _fontPropValues = " -1 -1 -1 0 0 0";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
 				}
 			}
 			- Attrs = { IRPYRawContainer 
