@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 1.18.2017::12:10:39;
+	- _modifiedTimeWeak = 1.18.2017::14:30:48;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "Algorithm_Socket_Diagram.omd";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 7;
-	- weakCGTime = 1.18.2017::12:10:39;
+	- weakCGTime = 1.18.2017::14:30:48;
 	- strongCGTime = 12.21.2016::10:28:46;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 1.17.2017::19:10:31;
-			- weakCGTime = 1.17.2017::19:10:31;
+			- _modifiedTimeWeak = 1.18.2017::12:10:39;
+			- weakCGTime = 1.18.2017::12:10:39;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.18.2017::12:43:21;
+			- _modifiedTimeWeak = 1.18.2017::14:35:19;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -84,8 +84,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _lastID = 28;
-			- weakCGTime = 1.18.2017::12:43:21;
+			- _lastID = 29;
+			- weakCGTime = 1.18.2017::14:35:19;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 9;
@@ -217,7 +217,7 @@ return (lastOrderTag == currentPos);";
 					- _id = GUID a0107267-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "createOrderlist";
-					- _modifiedTimeWeak = 1.18.2017::12:40:1;
+					- _modifiedTimeWeak = 1.18.2017::13:26:35;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -346,8 +346,6 @@ for (int i=0; i<=finalStation; ++i){ //create 2 orders
 	   
 	   
 //for(list<Order>::iterator it = orderList.end(); it != orderList.begin(); --it) ;  
-
-/*	   
 //making the train use higher speed before stations without stop at them
 //DOES NOT WORK yet, problem with iterator
 for(list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
@@ -370,8 +368,7 @@ for(list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
   {
   	--it;
   }  
-}	 
-*/  
+}	   
 
 //TEST output of stop[] array
 cout << \"stop[]:\" << endl;
@@ -423,7 +420,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _id = GUID d19a9956-b571-11e6-abce-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 1.18.2017::12:43:21;
+					- _modifiedTimeWeak = 1.18.2017::14:35:19;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -468,7 +465,7 @@ trip[3][2] = 7;
 //---------------------  	  
 
 // Save the converted order in this string
-string orderString;  
+string orderString;        //TO DELETE?
 
 
 /*
@@ -495,8 +492,9 @@ int pos = 0;
 while(true)
 {                     
 	static int counter=0;   // to see how often pi generates orderlist
-	++counter;
-	cout << \"PI: Ich berechne etwas das \" << counter << \". Mal\" << endl;  
+	++counter;  
+	cout << endl << \"------------------------------------------------------\" << endl;
+	cout << \"PI execute(): loop number \" << counter << endl;  
 		
     
     while (!canReadTrainPosition())
@@ -505,7 +503,7 @@ while(true)
                    
     cout << \"reading the position from aldCanRead\" << endl;               
     currentPos = itsTrainPos->getPosition(); // now we know the position of the train
-    itsTrainPos->setAlgCanRead(false);
+    itsTrainPos->setAlgCanRead(false); //so that we only read it once
                                         
                                         
 
@@ -517,7 +515,7 @@ while(true)
 	}    
 	
 	// We have to load the people int the train and delete them in the matrix 
-	
+	// we know which passengers are currently in the train and which are still at stations
 	pos = currentPos;
 	if(firstRun)
 	{ 
@@ -536,7 +534,7 @@ while(true)
 	  if(lastOrder.getAfterSpeed() == 0 && canSendOrder())
 	  {       
 	    tempTag = lastOrder.getTag(); 
-	    passengerInTrain[tempTag] = 0;
+	    passengerInTrain[tempTag] = 0;  //passengers left the train at this station
 	    
 	    for( int i = 0; i < dim; ++i)
 	    {
@@ -544,7 +542,7 @@ while(true)
 	      {
 	        passengerInTrain[i] += trip[pos][i];
 	      }
-	      trip[pos][i] = 0; 
+	      trip[pos][i] = 0;  //passengers entered the train at this station (left the station)
 	    }
 	  }
 	
@@ -557,18 +555,26 @@ while(true)
 		cout << \" --- REPAIR ---\" << endl;
 		repairOrderlist(); //if smth unexpected happened (RFID-Tag not read prorerly, etc.), adjusting the orderlist
 	}
-		                    
+	
+	//TO DELETE	                    
 	//cout << \"TEST: execute in PI. 0-te Tag from orderlist: \" << orderlist[0].getTag() << endl;	
 	//cout << \"TEST: execute in PI. size of orderlist: \" << orderlist.getSize() << endl;	                    
 	//for (iterator it = orderlist.begin(); it != orderlist.end(); ++it)
 	//	cout << \"TESTING orderlist: \" << it->getTag() << endl;
 	
-	// Here we send the order to the Communication;	                    
+	// Here we send the order to the Communication;	 
+	if (waitAtStation == true)
+	{      
+		cout << \"\\t\\t\\t Algorithm is sleeping for 7 seconds\" << endl;
+		sleep(7);
+		waitAtStation == false;
+	}
+		                   
 	sendOrderToCommunication();  
 	       
     //itsPiSpeakerThread->sendOrderToTrain(\"Fahre an Bahnhof \" + ss.str());
     firstRun = false;   
-	sleep(1);
+	sleep(1);     //TO DELETE after semaphors are there
 }";
 					}
 				}
@@ -576,7 +582,7 @@ while(true)
 					- _id = GUID a01072bc-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "sendOrderToCommunication";
-					- _modifiedTimeWeak = 1.18.2017::12:26:54;
+					- _modifiedTimeWeak = 1.18.2017::14:34:47;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -596,7 +602,7 @@ while(true)
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "Order tempOrder = orderList.front();
+						- _bodyData = "Order tempOrder = orderList.front();  //Order to be sent
 stringstream order;
 
 order << \"[\";
@@ -614,7 +620,12 @@ lastOrder = tempOrder;
 orderList.pop_front(); 
 
 cout << \"I am in sendOrderToCommunication (PiAlgorithmThread) \" << endl;
-
+if (tempOrder.getAfterSpeed() == 0)
+{    
+	cout << \"\\t\\t\\t\\t Setting waitAtStation at true\" << endl;
+	waitAtStation = true;
+}
+	
 itsCommunication->sendOrder(order.str());
 
 // Save the Tag we will send to the Train so we can check the position 
@@ -790,7 +801,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 				}
 			}
 			- Attrs = { IRPYRawContainer 
-				- size = 9;
+				- size = 10;
 				- value = 
 				{ IAttribute 
 					- _id = GUID aadd0f60-b57a-11e6-8714-10604b8125e9;
@@ -992,6 +1003,34 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _isReference = 0;
 					- _isConstant = 0;
 				}
+				{ IAttribute 
+					- _id = GUID c3dde678-dd80-11e6-aee6-10604b8125e9;
+					- _myState = 8192;
+					- _name = "waitAtStation";
+					- _modifiedTimeWeak = 1.18.2017::13:30:8;
+					- ValueSpecifications = { IRPYRawContainer 
+						- size = 1;
+						- value = 
+						{ ILiteralSpecification 
+							- _id = GUID c3dde67b-dd80-11e6-aee6-10604b8125e9;
+							- _modifiedTimeWeak = 1.18.2017::13:30:8;
+							- _value = "0";
+						}
+					}
+					- _typeOf = { IHandle 
+						- _m2Class = "IType";
+						- _filename = "PredefinedTypesC++.sbs";
+						- _subsystem = "PredefinedTypesCpp";
+						- _class = "";
+						- _name = "bool";
+						- _id = GUID e6c263cc-4bc5-4a11-b32d-02148c93add0;
+					}
+					- _isOrdered = 0;
+					- _protection = iPublic;
+					- _static = 0;
+					- _isReference = 0;
+					- _isConstant = 0;
+				}
 			}
 			- ComponentFiles = { IRPYRawContainer 
 				- size = 2;
@@ -1000,7 +1039,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _id = GUID 553a532b-b0b6-11e6-96a6-10604b8125e9;
 					- _myState = 139264;
 					- _name = "PiAlgorithm";
-					- _modifiedTimeWeak = 12.13.2016::13:11:55;
+					- _modifiedTimeWeak = 1.18.2017::13:30:2;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -1107,7 +1146,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 						{ IFileFragment 
 							- _id = GUID 553a532c-b0b6-11e6-96a6-10604b8125e9;
 							- _name = "PiAlgorithm";
-							- _modifiedTimeWeak = 12.13.2016::13:11:55;
+							- _modifiedTimeWeak = 1.18.2017::13:30:2;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 28;
@@ -2995,7 +3034,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 							}
 						}
 					}
-					- _modifiedTimeWeak = 12.13.2016::13:11:55;
+					- _modifiedTimeWeak = 1.18.2017::13:30:2;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -3145,7 +3184,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 						{ IFileFragment 
 							- _id = GUID 553a52f0-b0b6-11e6-96a6-10604b8125e9;
 							- _name = "PiAlgorithm";
-							- _modifiedTimeWeak = 12.13.2016::13:11:55;
+							- _modifiedTimeWeak = 1.18.2017::13:30:2;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 
@@ -11006,9 +11045,6 @@ cout << \"Resource released\" << endl;";
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
-			}
-			- Associations = { IRPYRawContainer 
-				- size = 0;
 			}
 			- _classModifier = Unspecified;
 		}

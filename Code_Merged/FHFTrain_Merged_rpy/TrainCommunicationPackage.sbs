@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "TrainCommunicationPackage";
-	- _modifiedTimeWeak = 1.18.2017::12:26:32;
+	- _modifiedTimeWeak = 1.18.2017::13:8:42;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "Algorithm_Socket_Diagram.omd";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 1.18.2017::12:26:32;
+	- weakCGTime = 1.18.2017::13:8:42;
 	- strongCGTime = 12.21.2016::11:37:33;
 	- _defaultComposite = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- _id = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 1.18.2017::10:34:33;
-			- weakCGTime = 1.18.2017::10:34:33;
+			- _modifiedTimeWeak = 1.18.2017::12:58:13;
+			- weakCGTime = 1.18.2017::12:58:13;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -183,7 +183,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.18.2017::12:34:56;
+			- _modifiedTimeWeak = 1.18.2017::13:8:42;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -193,7 +193,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 7;
-			- weakCGTime = 1.18.2017::12:34:56;
+			- weakCGTime = 1.18.2017::13:8:42;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -319,7 +319,7 @@ return 0;";
 					- _id = GUID 0fb886e7-c76e-11e6-8b72-10604b8125e9;
 					- _myState = 8192;
 					- _name = "newOrder";
-					- _modifiedTimeWeak = 1.18.2017::12:34:56;
+					- _modifiedTimeWeak = 1.18.2017::13:8:42;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -356,8 +356,7 @@ return 0;";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "
-string subOrder = order.substr(1, order.length() - 2);
+						- _bodyData = "string subOrder = order.substr(1, order.length() - 2);
 int beforeSpeed = atoi(subOrder.substr(0, subOrder.find(\",\")).c_str());   
 
 // Set beforeSpeed
@@ -381,10 +380,10 @@ subOrder.erase(0, subOrder.find(\",\") + 1);
 int afterSpeed = atoi(subOrder.c_str());  
 
 // Set afterSpeed
-if(beforeSpeed==1){
+if(afterSpeed==1){
 itsSHM_Connection->save(AfterSpeed,35.0);    
 }
-else if(beforeSpeed==2){
+else if(afterSpeed==2){
 itsSHM_Connection->save(AfterSpeed,50.0);    
 }
 else{
@@ -4808,7 +4807,7 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.18.2017::12:32:47;
+			- _modifiedTimeWeak = 1.18.2017::12:58:13;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -4818,7 +4817,7 @@ while (error);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 6;
-			- weakCGTime = 1.18.2017::12:32:47;
+			- weakCGTime = 1.18.2017::12:58:13;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 5;
@@ -4935,7 +4934,7 @@ do
 					- _id = GUID b9af7136-bc65-11e6-81a4-10604b8125e9;
 					- _myState = 8192;
 					- _name = "restartClient";
-					- _modifiedTimeWeak = 1.18.2017::12:32:47;
+					- _modifiedTimeWeak = 1.18.2017::12:58:13;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -4966,7 +4965,7 @@ connected = true;
 
 // Send last position to Pi
 // This is needed to tell the Pi where we are after a restart of the connection
-double lTag = 0.0;
+float lTag = 0.0;
 itsSHM_Connection->read(LastTag, lTag, true);
 ostringstream ss;                                      
 ss << \"[\" << lTag << \"]\";
