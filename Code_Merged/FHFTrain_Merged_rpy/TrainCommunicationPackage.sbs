@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "TrainCommunicationPackage";
-	- _modifiedTimeWeak = 1.18.2017::10:34:33;
+	- _modifiedTimeWeak = 1.18.2017::12:26:32;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "Algorithm_Socket_Diagram.omd";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 1.18.2017::10:34:33;
+	- weakCGTime = 1.18.2017::12:26:32;
 	- strongCGTime = 12.21.2016::11:37:33;
 	- _defaultComposite = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- _id = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 1.17.2017::13:29:57;
-			- weakCGTime = 1.17.2017::13:29:57;
+			- _modifiedTimeWeak = 1.18.2017::10:34:33;
+			- weakCGTime = 1.18.2017::10:34:33;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -183,7 +183,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.18.2017::10:36:45;
+			- _modifiedTimeWeak = 1.18.2017::12:34:56;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -193,7 +193,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 7;
-			- weakCGTime = 1.18.2017::10:36:45;
+			- weakCGTime = 1.18.2017::12:34:56;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -319,7 +319,7 @@ return 0;";
 					- _id = GUID 0fb886e7-c76e-11e6-8b72-10604b8125e9;
 					- _myState = 8192;
 					- _name = "newOrder";
-					- _modifiedTimeWeak = 1.18.2017::10:36:45;
+					- _modifiedTimeWeak = 1.18.2017::12:34:56;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -359,6 +359,8 @@ return 0;";
 						- _bodyData = "
 string subOrder = order.substr(1, order.length() - 2);
 int beforeSpeed = atoi(subOrder.substr(0, subOrder.find(\",\")).c_str());   
+
+// Set beforeSpeed
 if(beforeSpeed==1){
 itsSHM_Connection->save(BeforeSpeed,35.0); 
 itsSHM_Connection->save(Speed,35.0);   
@@ -376,10 +378,18 @@ subOrder.erase(0, subOrder.find(\",\") + 1);
 float tag = atof(subOrder.substr(0, subOrder.find(\",\")).c_str());
 itsSHM_Connection->save(TagUntil,tag);  
 subOrder.erase(0, subOrder.find(\",\") + 1);
-float afterSpeed = atoi(subOrder.c_str());
-itsSHM_Connection->save(AfterSpeed,45*afterSpeed);  
+int afterSpeed = atoi(subOrder.c_str());  
 
-
+// Set afterSpeed
+if(beforeSpeed==1){
+itsSHM_Connection->save(AfterSpeed,35.0);    
+}
+else if(beforeSpeed==2){
+itsSHM_Connection->save(AfterSpeed,50.0);    
+}
+else{
+itsSHM_Connection->save(AfterSpeed,0.0);  
+}
 ";
 					}
 				}
@@ -2122,7 +2132,7 @@ itsSHM_Connection->save(AfterSpeed,45*afterSpeed);
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.18.2017::10:34:33;
+			- _modifiedTimeWeak = 1.18.2017::12:32:3;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -2132,7 +2142,7 @@ itsSHM_Connection->save(AfterSpeed,45*afterSpeed);
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 8;
-			- weakCGTime = 1.18.2017::10:34:33;
+			- weakCGTime = 1.18.2017::12:32:3;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -2167,7 +2177,7 @@ start();";
 					- _id = GUID 19e80332-aff2-11e6-9d64-001999f109b4;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 1.18.2017::10:34:33;
+					- _modifiedTimeWeak = 1.18.2017::12:32:3;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -2202,7 +2212,6 @@ cout << \"Saved Speed\" << endl;
 // Drive forward until next trainstation
 while(init)
 {   
-	cout << \"TrainThread execute(): INIT LOOP\" << endl;
 	itsSHM_Connection->read(LastTag, lTag, true);
 	if (lTag == 0.0 || lTag == 1.0 || lTag == 2.0 || lTag == 3.0)
 	{
@@ -3614,7 +3623,7 @@ while(true)
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.17.2017::13:30:33;
+			- _modifiedTimeWeak = 1.18.2017::12:26:32;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -3624,7 +3633,7 @@ while(true)
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 12;
-			- weakCGTime = 1.17.2017::13:30:33;
+			- weakCGTime = 1.18.2017::12:26:32;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -3632,7 +3641,7 @@ while(true)
 				{ IConstructor 
 					- _id = GUID 80d4c29e-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 1.17.2017::8:50:51;
+					- _modifiedTimeWeak = 1.18.2017::12:26:32;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -3665,11 +3674,7 @@ while(true)
 					- _constant = 0;
 					- _itsBody = { IBody 
 						- _bodyData = "cout << \"TrainSpeakerThread wurde aufgerufen.\" << endl;
-cout << \"TEST TrainSpeakerThread\" << endl;
-cout << \"Client Adresse: \" << client << endl;   
 this->client = client;
-cout << \"Client Adresse 2: \" << this->client << endl;
-// sendPositionToPi(\"[2]\");
 start();
                   	
                   	";
@@ -4803,7 +4808,7 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.17.2017::7:59:52;
+			- _modifiedTimeWeak = 1.18.2017::12:32:47;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -4813,7 +4818,7 @@ while (error);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 6;
-			- weakCGTime = 1.17.2017::7:59:52;
+			- weakCGTime = 1.18.2017::12:32:47;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 5;
@@ -4821,7 +4826,7 @@ while (error);";
 				{ IConstructor 
 					- _id = GUID b9af7129-bc65-11e6-81a4-10604b8125e9;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 1.17.2017::7:59:52;
+					- _modifiedTimeWeak = 1.18.2017::12:27:51;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -4836,10 +4841,8 @@ while (error);";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "startClient();
-cout << \"Test client in TrainCommunication()\" << endl;
-cout << \"Adress client*: \" << client << endl;
-cout << \"End test client\" << endl;
+						- _bodyData = "itsSHM_Connection->instance();
+startClient();
 itsTrainListenerThread = new TrainListenerThread(client);
 usleep(2000000);
 itsTrainSpeakerThread = new TrainSpeakerThread(client);
@@ -4932,7 +4935,7 @@ do
 					- _id = GUID b9af7136-bc65-11e6-81a4-10604b8125e9;
 					- _myState = 8192;
 					- _name = "restartClient";
-					- _modifiedTimeWeak = 12.7.2016::10:43:4;
+					- _modifiedTimeWeak = 1.18.2017::12:32:47;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -4959,7 +4962,15 @@ delete client;
 startClient();
 itsTrainListenerThread = new TrainListenerThread(client);
 itsTrainSpeakerThread = new TrainSpeakerThread(client);
-connected = true;";
+connected = true;
+
+// Send last position to Pi
+// This is needed to tell the Pi where we are after a restart of the connection
+double lTag = 0.0;
+itsSHM_Connection->read(LastTag, lTag, true);
+ostringstream ss;                                      
+ss << \"[\" << lTag << \"]\";
+itsTrainSpeakerThread->sendPositionToPi(ss.str());";
 					}
 				}
 				{ IPrimitiveOperation 
@@ -5063,7 +5074,7 @@ itsTrainSpeakerThread->sendPositionToPi(position);";
 				- _m2Class = "";
 			}
 			- Associations = { IRPYRawContainer 
-				- size = 2;
+				- size = 3;
 				- value = 
 				{ IAssociationEnd 
 					- _id = GUID eb1b0851-b16c-11e6-a330-10604b8125e9;
@@ -5091,6 +5102,27 @@ itsTrainSpeakerThread->sendPositionToPi(position);";
 					- _otherClass = { IClassifierHandle 
 						- _m2Class = "IClass";
 						- _id = GUID 55d87e27-afed-11e6-879e-001999f109b4;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID e3986e03-dd78-11e6-ac5c-10604b8125e9;
+					- _myState = 10240;
+					- _name = "itsSHM_Connection";
+					- _modifiedTimeWeak = 1.18.2017::12:27:3;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _filename = "Common.sbs";
+						- _subsystem = "Common";
+						- _class = "";
+						- _name = "SHM_Connection";
+						- _id = GUID d795257c-2dbf-4572-89a5-5bd2ee1f6b84;
 					}
 					- _inverse = { IHandle 
 						- _m2Class = "";
