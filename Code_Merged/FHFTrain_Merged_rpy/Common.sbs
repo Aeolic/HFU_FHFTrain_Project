@@ -3,9 +3,9 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
 	- _myState = 8192;
 	- _name = "Common";
-	- _modifiedTimeWeak = 12.21.2016::12:37:33;
+	- _modifiedTimeWeak = 1.18.2017::14:52:24;
 	- _lastID = 11;
-	- weakCGTime = 12.21.2016::12:37:33;
+	- weakCGTime = 1.18.2017::14:52:24;
 	- strongCGTime = 12.21.2016::11:37:33;
 	- ComponentFiles = { IRPYRawContainer 
 		- size = 1;
@@ -6273,7 +6273,7 @@ itsSHM_Connection ->save(Speed,x);
 			- _id = GUID b846ec36-94cd-4391-a325-b3d1f36aefe7;
 			- _myState = 8192;
 			- _name = "Observer";
-			- _modifiedTimeWeak = 12.21.2016::12:35:46;
+			- _modifiedTimeWeak = 1.18.2017::14:57:14;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -6283,7 +6283,7 @@ itsSHM_Connection ->save(Speed,x);
 				- _id = GUID 2163e7b9-04da-457e-9e32-a8990cfb42a9;
 			}
 			- _lastID = 3;
-			- weakCGTime = 12.21.2016::12:35:46;
+			- weakCGTime = 1.18.2017::14:57:14;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -6340,7 +6340,7 @@ itsSHM_Connection ->save(Speed,x);
 						}
 					}
 					- _name = "notify";
-					- _modifiedTimeWeak = 12.21.2016::12:33:3;
+					- _modifiedTimeWeak = 1.18.2017::14:52:24;
 					- _lastID = 1;
 					- _virtual = 1;
 					- Args = { IRPYRawContainer 
@@ -6417,7 +6417,7 @@ else {
  	printf(\"Unknown RFID-Code! '%s'\\n\", rfidCode);
 }         
 
-        executeOrder();     
+executeOrder();     
         
         ";
 					}
@@ -6426,7 +6426,7 @@ else {
 					- _id = GUID 6a649b36-c774-11e6-b7d4-10604b8125e9;
 					- _myState = 8192;
 					- _name = "executeOrder";
-					- _modifiedTimeWeak = 12.21.2016::12:35:46;
+					- _modifiedTimeWeak = 1.18.2017::14:57:14;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -6453,7 +6453,8 @@ else {
          itsSHM_Connection->read(TagUntil,tUntil,false);
          itsSHM_Connection->read(LastTag,tLast,false);  
          itsSHM_Connection->read(AfterSpeed,speedAfter,false);     
-         if(tUntil==tLast){             
+         if(tUntil==tLast){   
+         	cout << \" Tags stimmen ueberein, SpeedAfter: \" << speedAfter << endl;          
          	itsSHM_Connection->save(Speed,speedAfter);
          }
          ";
