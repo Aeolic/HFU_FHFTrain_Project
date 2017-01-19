@@ -3,9 +3,9 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
 	- _myState = 8192;
 	- _name = "Common";
-	- _modifiedTimeWeak = 1.18.2017::14:52:24;
+	- _modifiedTimeWeak = 1.19.2017::14:7:11;
 	- _lastID = 11;
-	- weakCGTime = 1.18.2017::14:52:24;
+	- weakCGTime = 1.19.2017::14:7:11;
 	- strongCGTime = 12.21.2016::11:37:33;
 	- ComponentFiles = { IRPYRawContainer 
 		- size = 1;
@@ -228,8 +228,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- _id = GUID 1f5c15d8-5601-4365-9a0e-478246cf22d5;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 12.21.2016::12:37:33;
-			- weakCGTime = 12.21.2016::12:37:33;
+			- _modifiedTimeWeak = 1.19.2017::13:44:59;
+			- weakCGTime = 1.19.2017::13:44:59;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Attrs = { IRPYRawContainer 
 				- size = 1;
@@ -333,7 +333,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 									- value = 
 									{ IProperty 
 										- _Name = "ImpIncludes";
-										- _Value = "<unistd.h>,<stdio.h>,<iostream>";
+										- _Value = "<unistd.h>,<stdio.h>,<iostream>,<sstream>";
 										- _Type = String;
 									}
 								}
@@ -343,7 +343,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				}
 			}
 			- _name = "LCD_Main";
-			- _modifiedTimeWeak = 12.21.2016::11:37:33;
+			- _modifiedTimeWeak = 1.19.2017::14:7:11;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -353,15 +353,15 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- _id = GUID 6a631c93-226d-4cc1-a7d2-bb4efc740dd1;
 			}
 			- _lastID = 9;
-			- weakCGTime = 12.21.2016::11:37:33;
-			- strongCGTime = 12.21.2016::11:37:33;
+			- weakCGTime = 1.19.2017::14:7:11;
+			- strongCGTime = 1.19.2017::13:46:9;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
 				- value = 
 				{ IConstructor 
 					- _id = GUID 0dffc9f3-2938-4dda-b033-c03ef4de6dbf;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 6.1.2016::17:5:21;
+					- _modifiedTimeWeak = 1.19.2017::13:17:43;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -380,13 +380,13 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 itsLcd = new LCD();
 
 //Constants
-itsLcd->write_to_position(1,1,\"-- FHF-Train SS16 --\");  
+itsLcd->write_to_position(1,1,\"-- FHF-Train WS16 --\");  
 itsLcd->write_to_position(2,1,\"Power:\");   
-itsLcd->write_to_position(3,1,\"Sys-Current:\");            
-itsLcd->write_to_position(4,1,\"IP: \"); 
+itsLcd->write_to_position(3,1,\"LastTag:\");            
+itsLcd->write_to_position(4,1,\"Next:\"); 
 
-sleep(2); 
-itsLcd->write_to_position(1,1,\"                    \"); ";
+// sleep(2); 
+// itsLcd->write_to_position(1,1,\"                    \"); ";
 					}
 					- _initializer = "";
 				}
@@ -420,7 +420,7 @@ itsLcd->write_to_position(1,1,\"                    \"); ";
 					- _id = GUID c9319e41-6f83-4ed8-8baa-6c491b4121da;
 					- _myState = 8192;
 					- _name = "write";
-					- _modifiedTimeWeak = 6.1.2016::17:15:51;
+					- _modifiedTimeWeak = 1.19.2017::14:7:11;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -443,22 +443,37 @@ itsLcd->write_to_position(1,1,\"                    \"); ";
 						- _bodyData = "
 Shm->read(Speed, power);
 sprintf (buff, \"%3d\", ((int)power));
-itsLcd->write_to_position(2,7, buff);   
-                          
-float temp;                         
-Shm->read(VoltageAux, power);
-Shm->read(Temperature, temp);
-sprintf (buff, \"Sys:%2.2fV Temp:%2.1fC\", power, temp);
-itsLcd->write_to_position(3,1, buff);   
+itsLcd->write_to_position(2, 7, buff);   
 
-//Distance to line 1               
-Shm->read(Distance, temp);
-sprintf (buff, \"Dist:%6.2fcm\", temp);
-itsLcd->write_to_position(1,1, buff);  
+Shm->read(LastTag, power, true);
+sprintf (buff, \"%.1f\", power);
+itsLcd->write_to_position(3, 10, buff);
+
+// clear line
+itsLcd->write_to_position(4, 7, \"              \");
+stringstream ss;
+Shm->read(BeforeSpeed, power, true);
+ss << \"[\" << ((int)power) << \", \";
+Shm->read(TagUntil, power, true);
+ss << power << \", \";
+Shm->read(AfterSpeed, power, true);
+ss << power << \"]\";
+itsLcd->write_to_position(4, 7, ss.str());
+                          
+// float temp;                         
+// Shm->read(VoltageAux, power);
+// Shm->read(Temperature, temp);
+// sprintf (buff, \"Sys:%2.2fV Temp:%2.1fC\", power, temp);
+// itsLcd->write_to_position(3,1, buff);   
+
+// Distance to line 1               
+// Shm->read(Distance, temp);
+// sprintf (buff, \"Dist:%6.2fcm\", temp);
+// itsLcd->write_to_position(1,1, buff);  
 
                    
-Shm->read(IP, ipBuff);   
-itsLcd->write_to_position(4,4, ipBuff);";
+// Shm->read(IP, ipBuff);   
+// itsLcd->write_to_position(4,4, ipBuff);";
 					}
 				}
 			}

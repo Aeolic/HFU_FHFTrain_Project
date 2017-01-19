@@ -6,13 +6,13 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	}
 	- isLoadOnDemand = 0;
 	- myViewsWithID = { IRPYRawContainer 
-		- size = 1;
+		- size = 2;
 		- value = 
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 3;
-				- m_showCmd = 3;
+				- m_nFlags = 1;
+				- m_showCmd = 1;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -4;
@@ -32,7 +32,36 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _UpLeft = 0 8 ;
-			- _DownRight = 1023 791 ;
+			- _DownRight = 1583 616 ;
+			- _instanceName = "";
+			- m_nDiagramIndex = 1;
+			- m_bIsActiveView = 0;
+		}
+		{ CGEMdiDiagramParams 
+			- _placement = { CCommon_WINDOWPLACEMENT 
+				- m_nLength = 44;
+				- m_nFlags = 2;
+				- m_showCmd = 3;
+				- m_ptMinPositionX = -1;
+				- m_ptMinPositionY = -1;
+				- m_ptMaxPositionX = -4;
+				- m_ptMaxPositionY = -23;
+				- m_nLeft = 80;
+				- m_nTop = 88;
+				- m_nRight = 729;
+				- m_nBottom = 529;
+			}
+			- _wasOpenedOnCloseProject = 1;
+			- _theDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "LCD";
+				- _id = GUID 6a631c93-226d-4cc1-a7d2-bb4efc740dd1;
+			}
+			- _UpLeft = 0 0 ;
+			- _DownRight = 809 619 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 0;
 			- m_bIsActiveView = 1;
