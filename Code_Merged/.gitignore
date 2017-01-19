@@ -47,6 +47,7 @@ SensRead_T/
 SensRead_W/
 SM_Read_T/
 SM_Read_W/
+Train_Socket/
 *.cpp
 *.h
 *.mak
