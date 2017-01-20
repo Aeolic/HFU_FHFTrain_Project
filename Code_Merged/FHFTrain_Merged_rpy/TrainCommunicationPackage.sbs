@@ -2208,8 +2208,8 @@ float tagUntil = -5.0;
 float afterSpeed = 0.0;  
 itsSHM_Connection->save(LastTag, 0.5);
 bool init = true;
-cout << \"Set Speed to 30\" << endl;
-itsSHM_Connection->save(Speed, 30);
+cout << \"Set Speed to 35\" << endl;
+itsSHM_Connection->save(Speed, 35);
 cout << \"Saved Speed\" << endl;
 // Initialize
 // Drive forward until next trainstation
