@@ -1,7 +1,7 @@
 I-Logix-RPY-Archive version 8.12.0 * 9728113
 
 - filesTable = { IRPYRawContainer 
-	- size = 26;
+	- size = 27;
 	- value = "FHFTrain_Merged.rpy" ""
 	"FHFTrain_Merged_rpy/Algorithm_Socket.cmp" "Algorithm_Socket"
 	"FHFTrain_Merged_rpy/Algorithm_Socket_Diagram.omd" "Algorithm_Socket_Diagram"
@@ -23,6 +23,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	"FHFTrain_Merged_rpy/Socket.sbs" "Socket"
 	"FHFTrain_Merged_rpy/Train.sbs" "Train"
 	"FHFTrain_Merged_rpy/TrainCommunicationPackage.sbs" "TrainCommunicationPackage"
+	"FHFTrain_Merged_rpy/TrainTest.cmp" "TrainTest"
 	"FHFTrain_Merged_rpy/TrainTest.sbs" "TrainTest"
 	"FHFTrain_Merged_rpy/Train_Socket.cmp" "Train_Socket"
 	"FHFTrain_Merged_rpy/Web.sbs" "Web"

@@ -28,8 +28,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		}
 	}
 	- _name = "FHFTrain_Merged";
-	- _modifiedTimeWeak = 1.17.2017::17:55:35;
-	- _lastID = 22;
+	- _modifiedTimeWeak = 1.22.2017::20:2:46;
+	- _lastID = 23;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
 		- value = 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 16777215; 
@@ -432,7 +432,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "LCD";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.17.2017::17:49:9";
+			- _lastModifiedTime = "1.22.2017::19:54:31";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID b2ff3ea7-de6b-480d-9058-6b8fb3e36464;
 				- m_type = 0;
@@ -1845,7 +1845,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "Motor";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.17.2017::17:49:10";
+			- _lastModifiedTime = "1.22.2017::19:54:31";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 7f6954e5-82ff-403f-a27d-de7220999e4d;
 				- m_type = 0;
@@ -6182,7 +6182,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "SensRead";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.17.2017::17:49:10";
+			- _lastModifiedTime = "1.22.2017::19:54:31";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 8d74c2b1-5fd0-4d08-80ca-5aefa99b2aa1;
 				- m_type = 0;
@@ -7779,7 +7779,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "LCD_Minimal";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.17.2017::17:49:10";
+			- _lastModifiedTime = "1.22.2017::19:54:31";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID bec1f816-9cac-41d4-9729-7a863fb9e189;
 				- m_type = 0;
@@ -9169,7 +9169,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "SensRead_Minimal";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.17.2017::17:49:10";
+			- _lastModifiedTime = "1.22.2017::19:54:31";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 8a7bd38c-dbd4-422a-b3a5-4cdc8436289d;
 				- m_type = 0;
@@ -10444,7 +10444,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		}
 	}
 	- Components = { IRPYRawContainer 
-		- size = 13;
+		- size = 14;
 		- value = 
 		{ IComponent 
 			- fileName = "LCD_T";
@@ -10497,6 +10497,10 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		{ IComponent 
 			- fileName = "Train_Socket";
 			- _id = GUID 308c5259-d89f-11e6-b386-10604b8125e9;
+		}
+		{ IComponent 
+			- fileName = "TrainTest";
+			- _id = GUID 9ebdb174-e0db-11e6-8a28-10604b8125e9;
 		}
 	}
 }

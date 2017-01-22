@@ -9,7 +9,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			{ IPropertySubject 
 				- _Name = "Format";
 				- Metaclasses = { IRPYRawContainer 
-					- size = 5;
+					- size = 6;
 					- value = 
 					{ IPropertyMetaclass 
 						- _Name = "Association";
@@ -165,6 +165,48 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 					}
 					{ IPropertyMetaclass 
+						- _Name = "Operation";
+						- Properties = { IRPYRawContainer 
+							- size = 7;
+							- value = 
+							{ IProperty 
+								- _Name = "DefaultSize";
+								- _Value = "0,0,108,73";
+								- _Type = String;
+							}
+							{ IProperty 
+								- _Name = "Fill.FillColor";
+								- _Value = "255,255,255";
+								- _Type = Color;
+							}
+							{ IProperty 
+								- _Name = "Font.Font";
+								- _Value = "Tahoma";
+								- _Type = String;
+							}
+							{ IProperty 
+								- _Name = "Font.Size";
+								- _Value = "8";
+								- _Type = Int;
+							}
+							{ IProperty 
+								- _Name = "Font.Weight@Child.NameCompartment@Name";
+								- _Value = "700";
+								- _Type = Int;
+							}
+							{ IProperty 
+								- _Name = "Line.LineColor";
+								- _Value = "109,163,217";
+								- _Type = Color;
+							}
+							{ IProperty 
+								- _Name = "Line.LineWidth";
+								- _Value = "1";
+								- _Type = Int;
+							}
+						}
+					}
+					{ IPropertyMetaclass 
 						- _Name = "Package";
 						- Properties = { IRPYRawContainer 
 							- size = 7;
@@ -212,7 +254,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	}
 	- _name = "Algorithm_Socket_Diagram";
 	- _modifiedTimeWeak = 1.2.1990::0:0:0;
-	- _lastModifiedTime = "1.18.2017::13:45:16";
+	- _lastModifiedTime = "1.22.2017::19:20:11";
 	- _graphicChart = { CGIClassChart 
 		- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 		- m_type = 0;
@@ -1196,16 +1238,16 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- m_bShowInherited = 0;
 					- m_bOrdered = 0;
 					- _itemValueOfFontPropertiesMapCount = 10;
-					- _fontPropValues = "";
-					- _fontPropValues = "";
-					- _fontPropValues = "";
 					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "";
-					- _fontPropValues = "";
+					- _fontPropValues = "Tahoma";
+					- _fontPropValues = "Tahoma";
 					- _fontPropValues = " -1 -1 -1 0 0 0";
 					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "";
 					- _fontPropValues = "Tahoma";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
+					- _fontPropValues = "Tahoma";
+					- _fontPropValues = " -1 -1 -1 0 0 0";
 				}
 				{ CGICompartment 
 					- _id = GUID 4a5bf3de-ab3e-11e6-ad2c-001999f109b4;
@@ -1213,16 +1255,14 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- m_displayOption = All;
 					- m_bShowInherited = 0;
 					- m_bOrdered = 0;
-					- _itemValueOfFontPropertiesMapCount = 9;
-					- _fontPropValues = "";
-					- _fontPropValues = "";
-					- _fontPropValues = "";
-					- _fontPropValues = "";
-					- _fontPropValues = "";
-					- _fontPropValues = "";
-					- _fontPropValues = "";
-					- _fontPropValues = "";
-					- _fontPropValues = "";
+					- _itemValueOfFontPropertiesMapCount = 7;
+					- _fontPropValues = "Tahoma";
+					- _fontPropValues = "Tahoma";
+					- _fontPropValues = "Tahoma";
+					- _fontPropValues = "Tahoma";
+					- _fontPropValues = "Tahoma";
+					- _fontPropValues = "Tahoma";
+					- _fontPropValues = "Tahoma";
 				}
 			}
 			- Attrs = { IRPYRawContainer 
