@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 1.23.2017::0:43:54;
+	- _modifiedTimeWeak = 1.23.2017::0:58:38;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "Algorithm_Socket_Diagram.omd";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 7;
-	- weakCGTime = 1.23.2017::0:43:54;
+	- weakCGTime = 1.23.2017::0:58:38;
 	- strongCGTime = 12.21.2016::10:28:46;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.23.2017::0:41:52;
+			- _modifiedTimeWeak = 1.23.2017::0:58:38;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 35;
-			- weakCGTime = 1.23.2017::0:41:52;
+			- weakCGTime = 1.23.2017::0:58:38;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 10;
@@ -679,7 +679,7 @@ else
 					- _id = GUID ecc7ef2c-e0e0-11e6-9a70-10604b8125e9;
 					- _myState = 8192;
 					- _name = "setPassengers";
-					- _modifiedTimeWeak = 1.22.2017::23:44:0;
+					- _modifiedTimeWeak = 1.23.2017::0:58:38;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -727,8 +727,8 @@ switch (i){
 		szenario('3');
 		break; 
 	case '4': 
-		trip[0][1] = 7; 
-		trip[0][3] = 2; 
+		trip[1][3] = 7; 
+		trip[3][1] = 2; 
 		szenario('4');
 		break; 
 	case '5': 
