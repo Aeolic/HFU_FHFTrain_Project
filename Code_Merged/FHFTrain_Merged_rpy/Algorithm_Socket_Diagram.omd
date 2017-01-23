@@ -254,7 +254,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	}
 	- _name = "Algorithm_Socket_Diagram";
 	- _modifiedTimeWeak = 1.2.1990::0:0:0;
-	- _lastModifiedTime = "1.22.2017::19:20:11";
+	- _lastModifiedTime = "1.23.2017::0:27:7";
 	- _graphicChart = { CGIClassChart 
 		- _id = GUID c5285cbe-ab39-11e6-89be-001999f109b4;
 		- m_type = 0;
@@ -1237,17 +1237,6 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- m_displayOption = All;
 					- m_bShowInherited = 0;
 					- m_bOrdered = 0;
-					- _itemValueOfFontPropertiesMapCount = 10;
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = " -1 -1 -1 0 0 0";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = " -1 -1 -1 0 0 0";
-					- _fontPropValues = " -1 -1 -1 0 0 0";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = " -1 -1 -1 0 0 0";
 				}
 				{ CGICompartment 
 					- _id = GUID 4a5bf3de-ab3e-11e6-ad2c-001999f109b4;
@@ -1255,14 +1244,6 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- m_displayOption = All;
 					- m_bShowInherited = 0;
 					- m_bOrdered = 0;
-					- _itemValueOfFontPropertiesMapCount = 7;
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
-					- _fontPropValues = "Tahoma";
 				}
 			}
 			- Attrs = { IRPYRawContainer 
@@ -2351,7 +2332,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- m_nOrientationCtrlPt = 5;
 			}
 			- m_drawBehavior = 2056;
-			- m_transform = 0.18524 0 0 0.29059 433.629 667.745 ;
+			- m_transform = 0.200099 0 0 0.324577 417.829 656.692 ;
 			- m_bIsPreferencesInitialized = 1;
 			- m_AdditionalLabel = { CGIText 
 				- m_str = "";
@@ -2383,11 +2364,11 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- m_bShowInherited = 0;
 					- m_bOrdered = 0;
 					- Items = { IRPYRawContainer 
-						- size = 3;
+						- size = 4;
 						- value = 
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "";
+							- _filename = "Pi.sbs";
 							- _subsystem = "Pi";
 							- _class = "TrainPos";
 							- _name = "position";
@@ -2395,7 +2376,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "";
+							- _filename = "Pi.sbs";
 							- _subsystem = "Pi";
 							- _class = "TrainPos";
 							- _name = "algCanRead";
@@ -2403,17 +2384,26 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 						}
 						{ IHandle 
 							- _m2Class = "IAttribute";
-							- _filename = "";
+							- _filename = "Pi.sbs";
 							- _subsystem = "Pi";
 							- _class = "TrainPos";
-							- _name = "s";
+							- _name = "canWritePos";
 							- _id = GUID a1e5401c-dcdc-11e6-9f80-10604b8125e9;
 						}
+						{ IHandle 
+							- _m2Class = "IAttribute";
+							- _filename = "Pi.sbs";
+							- _subsystem = "Pi";
+							- _class = "TrainPos";
+							- _name = "canReadPos";
+							- _id = GUID 447b58a8-e0fd-11e6-8f68-10604b8125e9;
+						}
 					}
-					- _itemValueOfFontPropertiesMapCount = 3;
+					- _itemValueOfFontPropertiesMapCount = 4;
 					- _fontPropValues = "";
-					- _fontPropValues = "";
+					- _fontPropValues = "Tahoma";
 					- _fontPropValues = " -1 -1 -1 0 0 0";
+					- _fontPropValues = "";
 				}
 				{ CGICompartment 
 					- _id = GUID a832de20-b56c-11e6-bb98-10604b8125e9;
@@ -2528,7 +2518,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- m_anglePoint2 = 0 0 ;
 			- m_line_style = 2;
 			- m_SourcePort = 433 1108 ;
-			- m_TargetPort = 956 334 ;
+			- m_TargetPort = 964 334 ;
 			- m_pInverseModelObject = { IAssociationEndHandle 
 				- _m2Class = "";
 			}
@@ -2700,7 +2690,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- m_anglePoint2 = 0 0 ;
 			- m_line_style = 2;
 			- m_SourcePort = 1028 1205 ;
-			- m_TargetPort = 178 1076 ;
+			- m_TargetPort = 176 997 ;
 			- m_pInverseModelObject = { IAssociationEndHandle 
 				- _m2Class = "";
 			}
@@ -6539,7 +6529,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- m_nOrientationCtrlPt = 5;
 			}
 			- m_drawBehavior = 2152;
-			- m_transform = 0.192635 0 0 0.129234 1067.61 783.482 ;
+			- m_transform = 0.192635 0 0 0.141712 1078.61 765.377 ;
 			- m_bIsPreferencesInitialized = 1;
 			- m_AdditionalLabel = { CGIText 
 				- m_str = "";
