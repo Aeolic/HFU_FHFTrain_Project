@@ -3,9 +3,9 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID 6c0c7e73-d1c9-42e7-8eb3-d6110902de07;
 	- _myState = 8192;
 	- _name = "Common";
-	- _modifiedTimeWeak = 1.23.2017::0:25:18;
+	- _modifiedTimeWeak = 1.24.2017::14:23:22;
 	- _lastID = 11;
-	- weakCGTime = 1.23.2017::0:25:18;
+	- weakCGTime = 1.24.2017::14:23:22;
 	- strongCGTime = 12.21.2016::11:37:33;
 	- ComponentFiles = { IRPYRawContainer 
 		- size = 1;
@@ -228,8 +228,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- _id = GUID 1f5c15d8-5601-4365-9a0e-478246cf22d5;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 1.19.2017::14:7:11;
-			- weakCGTime = 1.19.2017::14:7:11;
+			- _modifiedTimeWeak = 1.23.2017::0:25:18;
+			- weakCGTime = 1.23.2017::0:25:18;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Attrs = { IRPYRawContainer 
 				- size = 1;
@@ -7987,7 +7987,7 @@ executeOrder();
 				}
 			}
 			- _name = "RfidReader";
-			- _modifiedTimeWeak = 12.21.2016::11:37:33;
+			- _modifiedTimeWeak = 1.24.2017::14:32:40;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -7997,7 +7997,7 @@ executeOrder();
 				- _id = GUID 2163e7b9-04da-457e-9e32-a8990cfb42a9;
 			}
 			- _lastID = 9;
-			- weakCGTime = 12.21.2016::11:37:33;
+			- weakCGTime = 1.24.2017::14:32:40;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 5;
@@ -8221,7 +8221,7 @@ Listener->notify(rfidCode);";
 					- _id = GUID d9b38cd5-49f1-4eb7-aee5-78bf7d71874c;
 					- _myState = 8192;
 					- _name = "openPort";
-					- _modifiedTimeWeak = 6.13.2016::11:44:0;
+					- _modifiedTimeWeak = 1.24.2017::14:32:40;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -8296,7 +8296,37 @@ Listener->notify(rfidCode);";
 	tcflush( *fd, TCIFLUSH );
 	if ( tcsetattr ( *fd, TCSANOW, &tty ) != 0) {
 		perror(\"tcsetattr\");
-	} ";
+	}   
+	
+	char data[41];
+	
+	do {
+	   int status, received;
+	   char input;
+	   receive=0;
+	write(*fd,\"x\",1);       
+
+	
+	  while((status = read(fd, &input, 1)) != 0 ) {
+		if(receive >=  40) receive=0;
+		if(status == -1) goto errordone;
+		if(input == 0x0d) break;  
+		if(input >= '0' && input <= 'Z')  {
+			data[receive++] = input;
+			data[receive] = 0;
+		//	printf(\"Char 0x%x \\n\", input); 
+		}
+	}                   
+	printf(\"    response to x: >%s<\\n\", data);
+	
+	
+	
+}	  while data[0] != 'M');    
+return;
+errordone:
+  printf(\"recive error on /dev/ttyS1\\n\");
+  exit(1);
+	";
 					}
 				}
 			}

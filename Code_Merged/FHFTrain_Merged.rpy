@@ -28,7 +28,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		}
 	}
 	- _name = "FHFTrain_Merged";
-	- _modifiedTimeWeak = 1.22.2017::20:2:46;
+	- _modifiedTimeWeak = 1.24.2017::14:21:27;
 	- _lastID = 23;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -432,7 +432,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "LCD";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.22.2017::19:54:31";
+			- _lastModifiedTime = "1.24.2017::14:30:12";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID b2ff3ea7-de6b-480d-9058-6b8fb3e36464;
 				- m_type = 0;
@@ -1845,7 +1845,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "Motor";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.22.2017::19:54:31";
+			- _lastModifiedTime = "1.24.2017::14:30:12";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 7f6954e5-82ff-403f-a27d-de7220999e4d;
 				- m_type = 0;
@@ -4500,7 +4500,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "RFID";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.17.2017::17:44:23";
+			- _lastModifiedTime = "1.24.2017::14:22:14";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 67a37a2a-4255-4fb4-8be2-549b99dae9dd;
 				- m_type = 0;
@@ -4714,7 +4714,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 								- value = 
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Common.sbs";
 									- _subsystem = "Common";
 									- _class = "Observer";
 									- _name = "notify(char*)";
@@ -4722,7 +4722,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Common.sbs";
 									- _subsystem = "Common";
 									- _class = "Observer";
 									- _name = "executeOrder()";
@@ -4849,7 +4849,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 								- value = 
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Common.sbs";
 									- _subsystem = "Common";
 									- _class = "IObserver";
 									- _name = "notify(char*)";
@@ -5035,13 +5035,13 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 							- m_name = "Operation";
 							- m_displayOption = Explicit;
 							- m_bShowInherited = 0;
-							- m_bOrdered = 0;
+							- m_bOrdered = 1;
 							- Items = { IRPYRawContainer 
-								- size = 2;
+								- size = 4;
 								- value = 
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Common.sbs";
 									- _subsystem = "Common";
 									- _class = "RfidReader";
 									- _name = "notifyObservers(char*)";
@@ -5049,16 +5049,34 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Common.sbs";
 									- _subsystem = "Common";
 									- _class = "RfidReader";
 									- _name = "readCard(int,char*)";
 									- _id = GUID 3b2314f4-e4c4-4e00-809a-602b080afab7;
 								}
+								{ IHandle 
+									- _m2Class = "IConstructor";
+									- _filename = "Common.sbs";
+									- _subsystem = "Common";
+									- _class = "RfidReader";
+									- _name = "RfidReader()";
+									- _id = GUID a0d8f39b-b5bd-4918-a93b-060b888fb61b;
+								}
+								{ IHandle 
+									- _m2Class = "IPrimitiveOperation";
+									- _filename = "Common.sbs";
+									- _subsystem = "Common";
+									- _class = "RfidReader";
+									- _name = "openPort(int*)";
+									- _id = GUID d9b38cd5-49f1-4eb7-aee5-78bf7d71874c;
+								}
 							}
-							- _itemValueOfFontPropertiesMapCount = 2;
+							- _itemValueOfFontPropertiesMapCount = 4;
 							- _fontPropValues = " -1 -1 -1 0 0 0";
 							- _fontPropValues = " -1 -1 -1 0 0 0";
+							- _fontPropValues = "Tahoma";
+							- _fontPropValues = "Tahoma";
 						}
 					}
 					- Attrs = { IRPYRawContainer 
@@ -5164,7 +5182,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 								- value = 
 								{ IHandle 
 									- _m2Class = "IConstructor";
-									- _filename = "";
+									- _filename = "Common.sbs";
 									- _subsystem = "Common";
 									- _class = "Rfid_Main";
 									- _name = "Rfid_Main()";
@@ -5629,7 +5647,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 								- value = 
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Common.sbs";
 									- _subsystem = "Common";
 									- _class = "SHM_Connection";
 									- _name = "instance()";
@@ -5637,7 +5655,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 								}
 								{ IHandle 
 									- _m2Class = "IPrimitiveOperation";
-									- _filename = "";
+									- _filename = "Common.sbs";
 									- _subsystem = "Common";
 									- _class = "SHM_Connection";
 									- _name = "save(Type,char*)";
@@ -6182,7 +6200,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "SensRead";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.22.2017::19:54:31";
+			- _lastModifiedTime = "1.24.2017::14:30:12";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 8d74c2b1-5fd0-4d08-80ca-5aefa99b2aa1;
 				- m_type = 0;
@@ -7779,7 +7797,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "LCD_Minimal";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.22.2017::19:54:31";
+			- _lastModifiedTime = "1.24.2017::14:30:12";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID bec1f816-9cac-41d4-9729-7a863fb9e189;
 				- m_type = 0;
@@ -9169,7 +9187,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			}
 			- _name = "SensRead_Minimal";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "1.22.2017::19:54:31";
+			- _lastModifiedTime = "1.24.2017::14:30:12";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 8a7bd38c-dbd4-422a-b3a5-4cdc8436289d;
 				- m_type = 0;
