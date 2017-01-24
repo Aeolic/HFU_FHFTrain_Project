@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd0-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "TrainCommunicationPackage";
-	- _modifiedTimeWeak = 1.19.2017::13:6:53;
+	- _modifiedTimeWeak = 1.24.2017::16:56:42;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "Algorithm_Socket_Diagram.omd";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 6;
-	- weakCGTime = 1.19.2017::13:6:53;
+	- weakCGTime = 1.24.2017::16:56:42;
 	- strongCGTime = 12.21.2016::11:37:33;
 	- _defaultComposite = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- _id = GUID c5285cd1-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 1.18.2017::15:31:42;
-			- weakCGTime = 1.18.2017::15:31:42;
+			- _modifiedTimeWeak = 1.19.2017::13:6:53;
+			- weakCGTime = 1.19.2017::13:6:53;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -4819,7 +4819,7 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.18.2017::12:58:13;
+			- _modifiedTimeWeak = 1.24.2017::16:56:42;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -4829,7 +4829,7 @@ while (error);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 6;
-			- weakCGTime = 1.18.2017::12:58:13;
+			- weakCGTime = 1.24.2017::16:56:42;
 			- strongCGTime = 12.21.2016::11:37:33;
 			- Operations = { IRPYRawContainer 
 				- size = 5;
@@ -4899,7 +4899,7 @@ start();";
 					- _id = GUID b9af7132-bc65-11e6-81a4-10604b8125e9;
 					- _myState = 8192;
 					- _name = "startClient";
-					- _modifiedTimeWeak = 1.12.2017::10:56:0;
+					- _modifiedTimeWeak = 1.24.2017::16:56:42;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -4925,7 +4925,7 @@ do
 	try
 	{
 		error = false;
-		client = new ClientSocket(\"141.28.57.94\", 35035);
+		client = new ClientSocket(\"141.28.57.53\", 35035);
 	}
 	catch (SocketException& e)
 	{   

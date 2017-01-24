@@ -2,8 +2,33 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 { IComponent 
 	- _id = GUID c5285cb7-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
+	- _properties = { IPropertyContainer 
+		- Subjects = { IRPYRawContainer 
+			- size = 1;
+			- value = 
+			{ IPropertySubject 
+				- _Name = "CPP_CG";
+				- Metaclasses = { IRPYRawContainer 
+					- size = 1;
+					- value = 
+					{ IPropertyMetaclass 
+						- _Name = "RaspberryLinux";
+						- Properties = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IProperty 
+								- _Name = "BuildIP";
+								- _Value = "141.28.57.53";
+								- _Type = String;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	- _name = "Algorithm_Socket";
-	- _modifiedTimeWeak = 1.19.2017::13:44:11;
+	- _modifiedTimeWeak = 1.24.2017::16:44:19;
 	- m_buildType = Executable;
 	- m_libraries = "";
 	- m_additionalSources = "";
@@ -819,7 +844,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 									}
 									{ IProperty 
 										- _Name = "Environment";
-										- _Value = "Linux";
+										- _Value = "RaspberryLinux";
 										- _Type = Enum;
 										- _ExtraTypeInfo = "Linux,RaspberryLinux,FHFTrain";
 									}
@@ -830,7 +855,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				}
 			}
 			- _name = "Algorithm_Socket";
-			- _modifiedTimeWeak = 1.19.2017::13:44:11;
+			- _modifiedTimeWeak = 1.24.2017::16:44:30;
 			- HyperLinks = { IRPYRawContainer 
 				- size = 2;
 				- value = 
@@ -897,8 +922,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- size = 0;
 				}
 			}
-			- weakCGTime = 1.19.2017::13:44:11;
-			- strongCGTime = 1.12.2017::9:21:23;
+			- weakCGTime = 1.24.2017::16:44:30;
+			- strongCGTime = 1.24.2017::16:44:30;
 			- AnimScopeElements = { IRPYRawContainer 
 				- size = 0;
 			}
@@ -912,7 +937,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- SelectedVariants = { IRPYRawContainer 
 		- size = 0;
 	}
-	- weakCGTime = 1.19.2017::13:44:11;
-	- strongCGTime = 1.11.2017::14:47:42;
+	- weakCGTime = 1.24.2017::16:44:19;
+	- strongCGTime = 1.24.2017::16:44:19;
 }
 
