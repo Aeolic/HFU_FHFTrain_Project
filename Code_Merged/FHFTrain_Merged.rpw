@@ -11,8 +11,8 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 1;
-				- m_showCmd = 1;
+				- m_nFlags = 3;
+				- m_showCmd = 3;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -4;
@@ -31,17 +31,17 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _UpLeft = 0 224 ;
-			- _DownRight = 1605 841 ;
+			- _UpLeft = 1244 13 ;
+			- _DownRight = 2163 712 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 1;
-			- m_bIsActiveView = 0;
+			- m_bIsActiveView = 1;
 		}
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 2;
-				- m_showCmd = 3;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -4;
@@ -60,14 +60,14 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _name = "RFID";
 				- _id = GUID 2163e7b9-04da-457e-9e32-a8990cfb42a9;
 			}
-			- _UpLeft = 339 0 ;
-			- _DownRight = 1056 545 ;
+			- _UpLeft = 314 0 ;
+			- _DownRight = 836 282 ;
 			- _instanceName = "";
 			- m_nDiagramIndex = 0;
-			- m_bIsActiveView = 1;
+			- m_bIsActiveView = 0;
 		}
 	}
-	- _fullName = "/user0/langmaxm/HFU_FHFTrain_Project/Code_Merged/FHFTrain_Merged";
+	- _fullName = "/nfs4cross/fhftrainWs16/mueller_fhftrain_2016/sw/br_lok/application/projects/RhapsodyWS2016/Code_Merged/FHFTrain_Merged";
 	- m_SearchScopeList = { IRPYRawContainer 
 		- size = 0;
 	}
