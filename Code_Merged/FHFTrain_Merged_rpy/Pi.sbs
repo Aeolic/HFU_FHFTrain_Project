@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 1.24.2017::16:52:0;
+	- _modifiedTimeWeak = 1.25.2017::12:44:36;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "Algorithm_Socket_Diagram.omd";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 7;
-	- weakCGTime = 1.24.2017::16:52:0;
+	- weakCGTime = 1.25.2017::12:44:36;
 	- strongCGTime = 12.21.2016::10:28:46;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 1.24.2017::15:33:56;
-			- weakCGTime = 1.24.2017::15:33:56;
+			- _modifiedTimeWeak = 1.24.2017::16:52:0;
+			- weakCGTime = 1.24.2017::16:52:0;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.24.2017::15:37:58;
+			- _modifiedTimeWeak = 1.25.2017::13:1:40;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 36;
-			- weakCGTime = 1.24.2017::15:37:58;
+			- weakCGTime = 1.25.2017::13:1:40;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 10;
@@ -157,7 +157,7 @@ return (lastOrderTag == currentPos);";
 					- _id = GUID a0107267-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "createOrderlist";
-					- _modifiedTimeWeak = 1.22.2017::22:5:30;
+					- _modifiedTimeWeak = 1.25.2017::13:1:40;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -305,12 +305,13 @@ for(list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
   }  
 }	   
 
-//TEST output of stop[] array
+//TEST output of stop[] array 
+/*
 cout << \"stop[]: \" ;
 for (int i=0; i<2*dim-2; ++i)
 	cout << \"   \" << stop[i];
 cout << endl;
-
+*/
 
 
 
@@ -340,7 +341,7 @@ cout << endl;
 					- _id = GUID d19a9956-b571-11e6-abce-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 1.24.2017::15:37:58;
+					- _modifiedTimeWeak = 1.25.2017::12:49:18;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -397,8 +398,8 @@ while(true)
 {                     
 	static int counter=0;   // to see how often Pi generates orderlist
 	++counter;  
-	cout << endl << \"------------------------------------------------------\" << endl;
-	cout << \"PI execute(): loop number \" << counter << endl;  
+	//cout << endl << \"------------------------------------------------------\" << endl;
+	//cout << \"PI execute(): loop number \" << counter << endl;  
 	
 	//---------------------------------
 	if ( (currentPos != -2.0) && firstRun ){ //this means the Algorithm is not doing its first task
@@ -414,7 +415,7 @@ while(true)
 		itsTrainPos->getCanWritePos()->release(); 
 	}
 	                 
-    cout << \"Pi-Algorithm is reading the position from itsTrainPos. current position is station \" << currentPos << endl;               
+    //cout << \"Pi-Algorithm is reading the position from itsTrainPos. current position is station \" << currentPos << endl;               
                                                                             
 	if (!orderListUpToDate){  
 	//we create the orderlist from every new matrix only once
@@ -634,7 +635,7 @@ else
 					- _id = GUID ecc7ef2c-e0e0-11e6-9a70-10604b8125e9;
 					- _myState = 8192;
 					- _name = "setPassengers";
-					- _modifiedTimeWeak = 1.24.2017::15:32:5;
+					- _modifiedTimeWeak = 1.25.2017::12:48:33;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -663,7 +664,8 @@ sleep(1); //So that the menu is output after all the test outputs from other thr
 cout << \"\\t\\t\\t\\tMenu. Input: \" << endl 
 	<< \"\\t\\t\\t\\t1-5 - for Szenarios 1 to 5\" << endl
 	<< \"\\t\\t\\t\\tm - for initializing the matrix manually\" << endl << \"-----------------------\" << endl;
-char i;
+char i;    
+cout << \"Your choice: \";
 cin >> i; 
 switch (i){
 	case '1': 
@@ -3914,7 +3916,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.22.2017::23:34:16;
+			- _modifiedTimeWeak = 1.25.2017::13:31:43;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -3924,7 +3926,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 14;
-			- weakCGTime = 1.22.2017::23:34:16;
+			- weakCGTime = 1.25.2017::13:31:43;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -3976,7 +3978,7 @@ start();
 					- _id = GUID 9f5d45bc-afda-11e6-a2e0-001999f109b4;
 					- _myState = 8192;
 					- _name = "sendOrderToTrain";
-					- _modifiedTimeWeak = 1.22.2017::23:34:16;
+					- _modifiedTimeWeak = 1.25.2017::13:31:43;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -4027,8 +4029,10 @@ do
 	{
 		error = true;
 		std::cout << e.description() << std::endl;
-		exit(0);
-		sleep(1);
+		//exit(0);   // TO DELETE
+		
+		//sleep(1);
+		break; // new
 	}
 	catch (...)
 	{
@@ -8770,7 +8774,7 @@ afterSpeed = aSp;";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.22.2017::22:9:5;
+			- _modifiedTimeWeak = 1.25.2017::13:12:15;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -8780,7 +8784,7 @@ afterSpeed = aSp;";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 7;
-			- weakCGTime = 1.22.2017::22:9:5;
+			- weakCGTime = 1.25.2017::13:12:15;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -8904,7 +8908,7 @@ start();";
 					- _id = GUID 16a39bbc-b6e7-11e6-8ba6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "sendOrder";
-					- _modifiedTimeWeak = 1.22.2017::22:9:5;
+					- _modifiedTimeWeak = 1.25.2017::13:12:15;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -8941,8 +8945,7 @@ start();";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "cout << \"Client Accepted: \" << client_accepted << endl;
-while (!client_accepted);
+						- _bodyData = "while (!client_accepted);
 itsPiSpeakerThread->sendOrderToTrain(order); ";
 					}
 				}
@@ -10951,7 +10954,7 @@ itsPiSpeakerThread->sendOrderToTrain(order); ";
 			- _id = GUID 04981142-dca4-11e6-8d7a-10604b8125e9;
 			- _myState = 8192;
 			- _name = "Semaphore";
-			- _modifiedTimeWeak = 1.23.2017::0:47:44;
+			- _modifiedTimeWeak = 1.25.2017::12:44:36;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -10961,7 +10964,7 @@ itsPiSpeakerThread->sendOrderToTrain(order); ";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 4;
-			- weakCGTime = 1.23.2017::0:47:44;
+			- weakCGTime = 1.25.2017::12:44:36;
 			- strongCGTime = 1.23.2017::0:25:18;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -10969,7 +10972,7 @@ itsPiSpeakerThread->sendOrderToTrain(order); ";
 				{ IConstructor 
 					- _id = GUID 04981150-dca4-11e6-8d7a-10604b8125e9;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 1.23.2017::0:47:44;
+					- _modifiedTimeWeak = 1.25.2017::12:44:36;
 					- _lastID = 2;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -11060,7 +11063,7 @@ itsPiSpeakerThread->sendOrderToTrain(order); ";
 						- _bodyData = "//OMOSFactory * f = OMOSFactory::instance();
 s = OMOSFactory::instance()->createOMOSSemaphore(0, startValue, maxValue);  
 this->name = name;
-cout << \"Semaphore created\" << endl;";
+//cout << \"Semaphore created\" << endl;";
 					}
 					- _initializer = "";
 				}
