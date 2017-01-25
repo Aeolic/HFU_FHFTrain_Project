@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 1.25.2017::13:58:44;
+	- _modifiedTimeWeak = 1.25.2017::16:57:38;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "Algorithm_Socket_Diagram.omd";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 7;
-	- weakCGTime = 1.25.2017::13:58:44;
+	- weakCGTime = 1.25.2017::16:57:38;
 	- strongCGTime = 12.21.2016::10:28:46;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -75,7 +75,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.25.2017::13:1:40;
+			- _modifiedTimeWeak = 1.25.2017::16:58:50;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -85,7 +85,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 36;
-			- weakCGTime = 1.25.2017::13:1:40;
+			- weakCGTime = 1.25.2017::16:58:50;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 10;
@@ -93,7 +93,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				{ IConstructor 
 					- _id = GUID 4a5bf3f6-ab3e-11e6-ad2c-001999f109b4;
 					- _myState = 8192;
-					- _modifiedTimeWeak = 1.22.2017::22:41:51;
+					- _modifiedTimeWeak = 1.25.2017::16:36:23;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -108,13 +108,11 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "cout << \"PI ERSTELLT.\" << endl;    
+						- _bodyData = "cout << \"PiAlgorithmThread has been created.\" << endl;    
 itsTrainPos = new TrainPos();  
 //trip[dim][dim];
 //train position must be given to PiListener, so that they work with the same object
-itsCommunication = new Communication(itsTrainPos);  
-
-cout << \"PiAlgorithm Constructor\" << endl;   
+itsCommunication = new Communication(itsTrainPos);    
 start();       
                         
                         
@@ -126,7 +124,7 @@ start();
 					- _id = GUID a01072c7-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "canSendOrder";
-					- _modifiedTimeWeak = 12.14.2016::13:14:30;
+					- _modifiedTimeWeak = 1.25.2017::16:10:38;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -149,7 +147,8 @@ start();
 						- _bodyData = "//checks whether Algorithm can send next order to Train
 //it means the position of the train (currentPos) is the one that is expected by Pi (lastOrderTag), so the one sent by Pi.
 //So we compare the last order we sent to Train with its current position we receive from it  
-cout << \" In canSendOrder()  lastOrderTag == \" << lastOrderTag << \" currentPos == \" << currentPos << endl;
+
+//cout << \" In canSendOrder()  lastOrderTag == \" << lastOrderTag << \" currentPos == \" << currentPos << endl;
 return (lastOrderTag == currentPos);";
 					}
 				}
@@ -157,7 +156,7 @@ return (lastOrderTag == currentPos);";
 					- _id = GUID a0107267-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "createOrderlist";
-					- _modifiedTimeWeak = 1.25.2017::13:1:40;
+					- _modifiedTimeWeak = 1.25.2017::15:54:3;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -222,7 +221,7 @@ for (int i=1; i < dim; ++i){  //i=1, because the currentPos-line is ignored in P
   for (int j=0; j < dim; ++j)
     if (trip[line][j] != 0){ //means there is someone going FROM this station   
     	stop[i-1] = true;  //the 1st station after the startStation corresponds the position [0] in 'stop'-array
-    	cout << \"stop[\" << i-1 << \"] wurde auf true gesetzt (i-1)\" << endl;  
+    	//cout << \"stop[\" << i-1 << \"] wurde auf true gesetzt (i-1)\" << endl;  
     	break;
     }
 } //Part1) ready ---------------------------------       
@@ -238,7 +237,7 @@ for (int i=0; i < dim; ++i){
       if(trip[line][column] != 0){ //means there is someone going TO the station column        
      	 index = (dim + column - startStation - 1) % dim; //worked for TEST1 and TEST3
     	 stop[index] = true; //Part-2)             
-    	 cout << \"stop[\" << index << \"] wurde auf true gesetzt (column). Line: \" << line << endl;
+    	 //cout << \"stop[\" << index << \"] wurde auf true gesetzt (column). Line: \" << line << endl;
       }
  
   }	
@@ -255,7 +254,7 @@ for (int i=0; i < dim; ++i){
       if(trip[line][column] != 0){ //means there is someone going TO the station column, AFTER completing a full circle        
      	 index = ( (dim + column - startStation) % dim) + dim - 1; //TO CHANGE
     	 stop[index] = true; //Part-3) //TO CHANGE             
-    	 cout << \"stop[\" << index << \"] wurde auf true gesetzt (column). Line: \" << line << endl;
+    	 //cout << \"stop[\" << index << \"] wurde auf true gesetzt (column). Line: \" << line << endl;
       }
  
   }	
@@ -311,13 +310,7 @@ cout << \"stop[]: \" ;
 for (int i=0; i<2*dim-2; ++i)
 	cout << \"   \" << stop[i];
 cout << endl;
-*/
-
-
-
-//now add the orders between the startStation and the initial station of the train (currentPos).
-  
-              
+*/            
                                       
                                       
                                       
@@ -341,7 +334,7 @@ cout << endl;
 					- _id = GUID d19a9956-b571-11e6-abce-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 1.25.2017::12:49:18;
+					- _modifiedTimeWeak = 1.25.2017::16:50:17;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -360,15 +353,11 @@ cout << endl;
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "startAgain = true;
-while(true){
+						- _bodyData = "while(true){
 //execute() - like run()-method in Java. Thread will perform this method after it has been started.
 //will be executed after start() of the thread. 
 //Thread starts itself in its constructor      
-if (!startAgain){   //!startAgain
-	cout << endl << \"------------------------------\" << endl << \"End of Algorithm's work\" << endl;
-	return NULL;                              
-}
+
 
 //bool setPassengersOk = false;
 while(true){ 
@@ -468,7 +457,7 @@ while(true)
 	
 	if ((!canSendOrder()) && (!firstRun))
 	{
-		cout << \" --- REPAIR ---\" << endl;
+		cout << \" --- Repairing the list of orders ---\" << endl;
 		repairOrderlist(); //if smth unexpected happened (RFID-Tag not read prorerly, etc.), repairing the orderlist
 	}
 	
@@ -481,7 +470,8 @@ while(true)
 	// Here we send the order to the Communication;	 
 	if (waitAtStation)
 	{      
-		cout << \"\\t\\t\\t Algorithm is sleeping for 3 seconds\" << endl;
+		cout << \"Train has stopped at a station.\" << endl
+		<< \"PiAlgorithmThread is sleeping for 3 seconds...\" << endl << endl;
 		waitAtStation = false;
 		sleep(3);	
 	}
@@ -490,9 +480,10 @@ while(true)
 		sendOrderToCommunication();   
 	else{  //all the orders have been executed by train, no more passengers. Start the task again?
 		cout << endl << \"-----------------------\" << endl 
-			 << \"Train has completed its task. Input 1 if you want to start again: \";  
-		sleep(4);
-		cin >> startAgain; 
+			 << \"Train has completed its task. It needs a while (4 seconds) for maintenance\" << endl
+			 << \"You can then start again\" << endl
+			 << \"-----------------------\" << endl;  
+		sleep(4); 
 		break;                                                          
 	}
 
@@ -510,7 +501,7 @@ while(true)
 					- _id = GUID a01072bc-b572-11e6-8bd6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "sendOrderToCommunication";
-					- _modifiedTimeWeak = 1.22.2017::22:48:54;
+					- _modifiedTimeWeak = 1.25.2017::16:39:25;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -551,7 +542,7 @@ if (tempOrder.getAfterSpeed() == 0)
 	waitAtStation = true;
 }
 
-cout << \"\\t\\t Pi-Algorithm, sendOrderToCommunication(). Sending: \" << order.str() << \".\" << endl;	
+	
 itsCommunication->sendOrder(order.str());
 
 // Save the Tag we will send to the Train so we can check the position 
@@ -635,7 +626,7 @@ else
 					- _id = GUID ecc7ef2c-e0e0-11e6-9a70-10604b8125e9;
 					- _myState = 8192;
 					- _name = "setPassengers";
-					- _modifiedTimeWeak = 1.25.2017::12:48:33;
+					- _modifiedTimeWeak = 1.25.2017::16:58:17;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -661,42 +652,45 @@ for (int i = 0; i<dim; ++i)
   	trip[i][j] = 0;   
 
 sleep(1); //So that the menu is output after all the test outputs from other threads	
-cout << \"\\t\\t\\t\\tMenu. Input: \" << endl 
-	<< \"\\t\\t\\t\\t1-5 - for Szenarios 1 to 5\" << endl
+cout << \"\\t\\t\\t\\tMenu. Please input: \" << endl 
+	<< \"\\t\\t\\t\\t1-5 - for scenarios 1 to 5\" << endl
 	<< \"\\t\\t\\t\\tm - for initializing the matrix manually\" << endl << \"-----------------------\" << endl;
 char i;    
-cout << \"Your choice: \";
-cin >> i; 
+cin >> i;
+//In case 21 is input, scenario 2 and then scenario 1 will be executed
+//to avoid this:
+cin.clear();
+cin.ignore(INT_MAX, '\\n'); 
 switch (i){
 	case '1': 
 		trip[0][1] = 7; 
 		trip[1][2] = 2;
 		trip[2][3] = 3; 
 		trip[3][0] = 8; 
-		szenario('1');
+		scenario('1');
 		break; 
 	case '2': 
 		trip[2][3] = 7;  
-		szenario('2');
+		scenario('2');
 		break; 
 	case '3': 
 		trip[2][0] = 7; 
 		//trip[1][3] = 2;
-		szenario('3');
+		scenario('3');
 		break; 
 	case '4': 
 		trip[1][3] = 7; 
 		trip[3][1] = 2; 
-		szenario('4');
+		scenario('4');
 		break; 
 	case '5': 
 		trip[0][2] = 7; 
 		trip[2][0] = 2;  
-		szenario('5');
+		scenario('5');
 		break; 
 	case 'm': 
 		manualInput(); 
-		szenario('m');
+		scenario('m');
 		break; 
 	default:
 		throw \"ERROR. Wrong data input. Check the instructions. \";
@@ -713,7 +707,7 @@ switch (i){
 					- _id = GUID 4057fed2-e0e5-11e6-b59a-10604b8125e9;
 					- _myState = 8192;
 					- _name = "manualInput";
-					- _modifiedTimeWeak = 1.22.2017::20:57:28;
+					- _modifiedTimeWeak = 1.25.2017::15:32:51;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -740,7 +734,13 @@ for (int i=0; i<dim; ++i)
 	  		continue; //people travelling from station 1 to station 1 do not make sense
 	  	}
 		cout << \"Number of passengers from Station \" << i << \" to Station \" << j << \" : \";
-		cin >> trip[i][j];	
+		cin >> trip[i][j];
+		if (cin.fail()){
+			cout << endl << \"Input cin failed, substituting input with 0\" << endl; 
+			trip[i][j] = 0;
+		}
+		cin.clear();
+		cin.ignore(INT_MAX, '\\n');	
  }
 ";
 					}
@@ -748,15 +748,15 @@ for (int i=0; i<dim; ++i)
 				{ IPrimitiveOperation 
 					- _id = GUID 4058022d-e0e5-11e6-b59a-10604b8125e9;
 					- _myState = 8192;
-					- _name = "szenario";
-					- _modifiedTimeWeak = 1.24.2017::15:30:47;
+					- _name = "scenario";
+					- _modifiedTimeWeak = 1.25.2017::16:58:38;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 1;
 						- value = 
 						{ IArgument 
-							- _id = GUID 40580232-e0e5-11e6-b59a-10604b8125e9;
+							- _id = GUID 3c6f6bda-e31d-11e6-a92e-10604b8125e9;
 							- _myState = 8192;
 							- _name = "s";
 							- _modifiedTimeWeak = 1.22.2017::21:41:1;
@@ -787,7 +787,7 @@ for (int i=0; i<dim; ++i)
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "cout << \"\\t\\t\\t\\tYou have chosen Szenario \" << s << endl; 
+						- _bodyData = "cout << \"You have chosen scenario \" << s << endl; 
 //Matrix output:
 cout << \"\\tMatrix with passenger data:\" << endl;
 for (int i=0; i<dim; ++i){
@@ -838,7 +838,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 				}
 			}
 			- Attrs = { IRPYRawContainer 
-				- size = 12;
+				- size = 11;
 				- value = 
 				{ IAttribute 
 					- _id = GUID aadd0f60-b57a-11e6-8714-10604b8125e9;
@@ -1078,34 +1078,6 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _isConstant = 0;
 				}
 				{ IAttribute 
-					- _id = GUID 58245e4d-e0ec-11e6-a2a6-10604b8125e9;
-					- _myState = 8192;
-					- _name = "startAgain";
-					- _modifiedTimeWeak = 1.22.2017::22:27:50;
-					- ValueSpecifications = { IRPYRawContainer 
-						- size = 1;
-						- value = 
-						{ ILiteralSpecification 
-							- _id = GUID 7423c77f-e0f1-11e6-9d62-10604b8125e9;
-							- _modifiedTimeWeak = 1.22.2017::22:27:50;
-							- _value = "true";
-						}
-					}
-					- _typeOf = { IHandle 
-						- _m2Class = "IType";
-						- _filename = "PredefinedTypesC++.sbs";
-						- _subsystem = "PredefinedTypesCpp";
-						- _class = "";
-						- _name = "bool";
-						- _id = GUID e6c263cc-4bc5-4a11-b32d-02148c93add0;
-					}
-					- _isOrdered = 0;
-					- _protection = iPublic;
-					- _static = 0;
-					- _isReference = 0;
-					- _isConstant = 0;
-				}
-				{ IAttribute 
 					- _id = GUID 4271850c-e0ef-11e6-afec-10604b8125e9;
 					- _myState = 8192;
 					- _name = "endAlg";
@@ -1141,7 +1113,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _id = GUID 553a532b-b0b6-11e6-96a6-10604b8125e9;
 					- _myState = 139264;
 					- _name = "PiAlgorithm";
-					- _modifiedTimeWeak = 1.24.2017::15:36:43;
+					- _modifiedTimeWeak = 1.25.2017::16:58:25;
 					- m_path = "";
 					- m_type = implFile;
 					- Fragments = { IRPYRawContainer 
@@ -1248,7 +1220,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 						{ IFileFragment 
 							- _id = GUID 553a532c-b0b6-11e6-96a6-10604b8125e9;
 							- _name = "PiAlgorithm";
-							- _modifiedTimeWeak = 1.24.2017::15:36:43;
+							- _modifiedTimeWeak = 1.25.2017::16:58:25;
 							- m_type = implFragment;
 							- m_text = "";
 							- m_startRow = 28;
@@ -3002,7 +2974,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 							}
 						}
 					}
-					- _modifiedTimeWeak = 1.24.2017::15:36:43;
+					- _modifiedTimeWeak = 1.25.2017::16:58:25;
 					- m_path = "";
 					- m_type = specFile;
 					- Fragments = { IRPYRawContainer 
@@ -3152,7 +3124,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 						{ IFileFragment 
 							- _id = GUID 553a52f0-b0b6-11e6-96a6-10604b8125e9;
 							- _name = "PiAlgorithm";
-							- _modifiedTimeWeak = 1.24.2017::15:36:43;
+							- _modifiedTimeWeak = 1.25.2017::16:58:25;
 							- Tags = { IRPYRawContainer 
 								- size = 2;
 								- value = 
@@ -3916,7 +3888,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.25.2017::13:58:44;
+			- _modifiedTimeWeak = 1.25.2017::16:58:50;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -3926,7 +3898,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 14;
-			- weakCGTime = 1.25.2017::13:58:44;
+			- weakCGTime = 1.25.2017::16:58:50;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -3978,7 +3950,7 @@ start();
 					- _id = GUID 9f5d45bc-afda-11e6-a2e0-001999f109b4;
 					- _myState = 8192;
 					- _name = "sendOrderToTrain";
-					- _modifiedTimeWeak = 1.25.2017::13:31:43;
+					- _modifiedTimeWeak = 1.25.2017::16:39:58;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -4022,7 +3994,8 @@ do
 	try
 	{  
 		//cout << \"Sending order '\" + order + \"' .\" << endl;
-		error = false;
+		error = false;  
+		cout << \"PiSpeakerThread is sending order: \" << order << \" to train.\" << endl;
 		*new_sock << order;
 	}
 	catch (SocketException& e)
@@ -5210,7 +5183,7 @@ while (error);";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.23.2017::0:36:32;
+			- _modifiedTimeWeak = 1.25.2017::16:58:50;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -5220,7 +5193,7 @@ while (error);";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 10;
-			- weakCGTime = 1.23.2017::0:36:32;
+			- weakCGTime = 1.25.2017::16:58:50;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -5286,7 +5259,7 @@ start();";
 					- _id = GUID 80d4c65e-b16c-11e6-b280-10604b8125e9;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 1.23.2017::0:36:32;
+					- _modifiedTimeWeak = 1.25.2017::16:49:25;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -5315,7 +5288,7 @@ while (!close)
 		{
 				string s_order;
 				*new_sock >> s_order; 
-				cout << \"   Pi-Listener:  receiving position: \" << s_order << endl; 
+				cout << \"PiListenerThread is receiving position: \" << s_order << endl << endl; 
 				
 				itsTrainPos->getCanWritePos()->request(); 
 				itsTrainPos->updatePosition(s_order);
@@ -7067,7 +7040,7 @@ while (!close)
 					}
 				}
 			}
-			- _modifiedTimeWeak = 1.24.2017::16:52:0;
+			- _modifiedTimeWeak = 1.25.2017::16:29:51;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -7077,7 +7050,7 @@ while (!close)
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 9;
-			- weakCGTime = 1.24.2017::16:52:0;
+			- weakCGTime = 1.25.2017::16:29:51;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 2;
@@ -7111,7 +7084,7 @@ canWritePos = new Semaphore(1, 1, \"canWritePos\");
 					- _id = GUID 5526aced-c060-11e6-89b4-001999f10960;
 					- _myState = 8192;
 					- _name = "updatePosition";
-					- _modifiedTimeWeak = 1.24.2017::16:52:0;
+					- _modifiedTimeWeak = 1.25.2017::16:16:48;
 					- _lastID = 1;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
@@ -7153,7 +7126,7 @@ double tag = -2; //station -2 does not exist. If -2 Received, smth went wrong.
 ss << position.substr(1,position.length() - 2);
 ss >> tag;
 this->position = tag; 
-cout << \" setting the new position in TrainPos: \" << tag << endl;   
+//cout << \" setting the new position in TrainPos: \" << tag << endl;   
 
 
 ";
@@ -8503,7 +8476,7 @@ cout << \" setting the new position in TrainPos: \" << tag << endl;
 			- _id = GUID a0107276-b572-11e6-8bd6-10604b8125e9;
 			- _myState = 8192;
 			- _name = "Order";
-			- _modifiedTimeWeak = 12.21.2016::10:28:46;
+			- _modifiedTimeWeak = 1.25.2017::15:37:54;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -8513,7 +8486,7 @@ cout << \" setting the new position in TrainPos: \" << tag << endl;
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 3;
-			- weakCGTime = 12.21.2016::10:28:46;
+			- weakCGTime = 1.25.2017::15:37:54;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 1;
@@ -8776,7 +8749,7 @@ afterSpeed = aSp;";
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.25.2017::13:12:15;
+			- _modifiedTimeWeak = 1.25.2017::15:37:54;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -8786,7 +8759,7 @@ afterSpeed = aSp;";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 7;
-			- weakCGTime = 1.25.2017::13:12:15;
+			- weakCGTime = 1.25.2017::15:37:54;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -10956,7 +10929,7 @@ itsPiSpeakerThread->sendOrderToTrain(order); ";
 			- _id = GUID 04981142-dca4-11e6-8d7a-10604b8125e9;
 			- _myState = 8192;
 			- _name = "Semaphore";
-			- _modifiedTimeWeak = 1.25.2017::12:44:36;
+			- _modifiedTimeWeak = 1.25.2017::16:3:42;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -10966,7 +10939,7 @@ itsPiSpeakerThread->sendOrderToTrain(order); ";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 4;
-			- weakCGTime = 1.25.2017::12:44:36;
+			- weakCGTime = 1.25.2017::16:3:42;
 			- strongCGTime = 1.23.2017::0:25:18;
 			- Operations = { IRPYRawContainer 
 				- size = 3;
@@ -11073,7 +11046,7 @@ this->name = name;
 					- _id = GUID 03d3e23b-dca5-11e6-89f6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "request";
-					- _modifiedTimeWeak = 1.23.2017::0:46:17;
+					- _modifiedTimeWeak = 1.25.2017::15:49:59;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -11093,16 +11066,16 @@ this->name = name;
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "cout << name << \": Requesting resource\" << endl;
+						- _bodyData = "//cout << name << \": Requesting resource\" << endl;
 s->wait(-1);
-cout << name << \": Resource received\" << endl;";
+//cout << name << \": Resource received\" << endl;";
 					}
 				}
 				{ IPrimitiveOperation 
 					- _id = GUID 03d3e242-dca5-11e6-89f6-10604b8125e9;
 					- _myState = 8192;
 					- _name = "release";
-					- _modifiedTimeWeak = 1.23.2017::0:45:54;
+					- _modifiedTimeWeak = 1.25.2017::15:49:49;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -11122,9 +11095,9 @@ cout << name << \": Resource received\" << endl;";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = "cout << name << \": Releasing resource\" << endl;
+						- _bodyData = "//cout << name << \": Releasing resource\" << endl;
 s->signal();
-cout << name << \": Resource released\" << endl;";
+//cout << name << \": Resource released\" << endl;";
 					}
 				}
 			}

@@ -31,10 +31,10 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _name = "Algorithm_Socket_Diagram";
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
-			- _UpLeft = 1251 -16 ;
-			- _DownRight = 2163 708 ;
+			- _UpLeft = 1251 20 ;
+			- _DownRight = 2163 744 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 1;
+			- m_nDiagramIndex = 3;
 			- m_bIsActiveView = 1;
 		}
 		{ CGEMdiDiagramParams 
@@ -63,7 +63,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 			- _UpLeft = 314 0 ;
 			- _DownRight = 836 282 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 0;
+			- m_nDiagramIndex = 2;
 			- m_bIsActiveView = 0;
 		}
 	}

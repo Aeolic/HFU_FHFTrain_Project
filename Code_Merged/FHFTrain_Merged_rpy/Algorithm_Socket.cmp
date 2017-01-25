@@ -28,7 +28,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		}
 	}
 	- _name = "Algorithm_Socket";
-	- _modifiedTimeWeak = 1.24.2017::16:44:19;
+	- _modifiedTimeWeak = 1.25.2017::15:36:46;
 	- m_buildType = Executable;
 	- m_libraries = "";
 	- m_additionalSources = "";
@@ -821,7 +821,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 									- value = 
 									{ IProperty 
 										- _Name = "ImpIncludes";
-										- _Value = "<iostream>,<string>,<sstream>,<vector>";
+										- _Value = "<iostream>,<string>,<sstream>,<vector>,<climits>";
 										- _Type = String;
 									}
 									{ IProperty 
@@ -855,7 +855,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 				}
 			}
 			- _name = "Algorithm_Socket";
-			- _modifiedTimeWeak = 1.24.2017::16:44:30;
+			- _modifiedTimeWeak = 1.25.2017::15:36:46;
 			- HyperLinks = { IRPYRawContainer 
 				- size = 2;
 				- value = 
@@ -922,8 +922,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 					- size = 0;
 				}
 			}
-			- weakCGTime = 1.24.2017::16:44:30;
-			- strongCGTime = 1.24.2017::16:44:30;
+			- weakCGTime = 1.25.2017::15:36:46;
+			- strongCGTime = 1.25.2017::15:36:46;
 			- AnimScopeElements = { IRPYRawContainer 
 				- size = 0;
 			}
@@ -937,7 +937,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- SelectedVariants = { IRPYRawContainer 
 		- size = 0;
 	}
-	- weakCGTime = 1.24.2017::16:44:19;
+	- weakCGTime = 1.25.2017::15:36:46;
 	- strongCGTime = 1.24.2017::16:44:19;
 }
 
