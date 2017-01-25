@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 	- _id = GUID c5285cd6-ab39-11e6-89be-001999f109b4;
 	- _myState = 8192;
 	- _name = "Pi";
-	- _modifiedTimeWeak = 1.25.2017::12:44:36;
+	- _modifiedTimeWeak = 1.25.2017::13:58:44;
 	- _theMainDiagram = { IHandle 
 		- _m2Class = "IDiagram";
 		- _filename = "Algorithm_Socket_Diagram.omd";
@@ -13,7 +13,7 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 		- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 	}
 	- _lastID = 7;
-	- weakCGTime = 1.25.2017::12:44:36;
+	- weakCGTime = 1.25.2017::13:58:44;
 	- strongCGTime = 12.21.2016::10:28:46;
 	- _defaultComposite = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 	- _eventsBaseID = -1;
@@ -24,8 +24,8 @@ I-Logix-RPY-Archive version 8.12.0 C++ 9728113
 			- _id = GUID c5285cd7-ab39-11e6-89be-001999f109b4;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 1.24.2017::16:52:0;
-			- weakCGTime = 1.24.2017::16:52:0;
+			- _modifiedTimeWeak = 1.25.2017::12:44:36;
+			- weakCGTime = 1.25.2017::12:44:36;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -3916,7 +3916,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 					- _id = GUID 1240bd69-8e8e-4180-a986-e2e200d327de;
 				}
 			}
-			- _modifiedTimeWeak = 1.25.2017::13:31:43;
+			- _modifiedTimeWeak = 1.25.2017::13:58:44;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "Algorithm_Socket_Diagram.omd";
@@ -3926,7 +3926,7 @@ for (list<Order>::iterator it = orderList.begin(); it != orderList.end(); ++it)
 				- _id = GUID c5285cbd-ab39-11e6-89be-001999f109b4;
 			}
 			- _lastID = 14;
-			- weakCGTime = 1.25.2017::13:31:43;
+			- weakCGTime = 1.25.2017::13:58:44;
 			- strongCGTime = 12.21.2016::10:28:46;
 			- Operations = { IRPYRawContainer 
 				- size = 4;
@@ -4046,7 +4046,7 @@ while (error);";
 					- _id = GUID 7c87a80a-afee-11e6-86f0-001999f109b4;
 					- _myState = 8192;
 					- _name = "execute";
-					- _modifiedTimeWeak = 1.22.2017::23:29:44;
+					- _modifiedTimeWeak = 1.25.2017::13:58:44;
 					- _virtual = 0;
 					- Args = { IRPYRawContainer 
 						- size = 0;
@@ -4065,7 +4065,9 @@ while (error);";
 					- _static = 0;
 					- _constant = 0;
 					- _itsBody = { IBody 
-						- _bodyData = " cout << \"PiSpeakerThread has been started\" << endl;";
+						- _bodyData = " cout << \"PiSpeakerThread has been started\" << endl;
+ while(true)
+ 	sleep(1);";
 					}
 				}
 				{ IPrimitiveOperation 
