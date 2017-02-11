@@ -47,7 +47,10 @@ Da es zu keiner Zeit zu einem Verbindungsabbruch kommen darf wird bei jedem neue
 Die beiden Operatoren  „<<“ und „>>“ werden für Client- und Socket-Verbindungen überladen um Daten in Form von Strings zu übertragen. Der „Speaker“ bietet hierzu eine Schnittstelle (Auf Pi-Seite „sendOrderToTrain(std::string)“). Der „Listener“ schreibt die gelesenen Daten direkt in einen gemeinsam genutzten Speicherbereich, damit diese auch anderen Threads zur Verfügung stehen.\\
 Alle möglichen Fehler innerhalb der Socketklassen werden als Ausnahme der Klasse „SocketException“ geworfen. Diese enthält den Fehlertext und ermöglicht eine Ausgabe des solchen. Die Ausgabe erfolgt in den Kommunikationsklassen von Zug und Pi und wird auf die Konsole geschrieben.
 
+\section{Probleme auf Target}
 
-
-
-
+Bei der Entwicklung der Kommunikation hat sich ein Designfehler eingeschlichen. Die Klasse SpeakerThread, in Abbildung \ref{pic:pi_communication} als PiSpeakerThread bezeichnet, ist als Thread implementiert obwohl das nicht nötig ist.\\
+Jede als "Task" in Rhapsody markierte Klasse muss eine Methode "execute()" besitzen. In dieser befindet sich die vom Thread auszuführende Implementierung. Ist der Ablauf dieser Methode beendet bedeutet dies auch das Ende des Threads.\\
+Doe "Speaker" Klasse benötigt keinerlei dauerhaft ausgeführten Code und muss somit nicht als Thread implementiert werden. Da nur eine Methode dieser Klasse (Auf Pi Seite "sendOrderToTrain(string order)") aufrufen wird, ist hier auch keine Klasse nötig. Es hätte ein direkter Zugriff auf den Socket aus der Klasse "Communication" gereicht.\\
+Die leere "execute()" Methode der "Speaker" Klasse führte auf dem Entwicklungsrechner zu keinerlei Problemen beim Testen der Kommunikation, die eigentlich beendeten Threads existierten weiter. Auf der wesentlich schwächeren Zielhardware verhielten sich die Threads jedoch anders, sie waren nicht mehr vorhanden und ein Zugriff darauf führte zu einem Speicherzugriffsfehler.\\
+Um das Problem zu Lösen hätte ein Umbau der Kommunikation erfolgen müssen. Aufgrund des bereits weit fortgeschrittenen Projekts war das Einfügen einer dauerhaft laufenden Schleife in die "execute()" Methode die zeitsparendste Lösung, auch wenn es keine perfekte darstellt.
