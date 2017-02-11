@@ -48,6 +48,7 @@ Die beiden Operatoren  „<<“ und „>>“ werden für Client- und Socket-Verb
 Alle möglichen Fehler innerhalb der Socketklassen werden als Ausnahme der Klasse „SocketException“ geworfen. Diese enthält den Fehlertext und ermöglicht eine Ausgabe des solchen. Die Ausgabe erfolgt in den Kommunikationsklassen von Zug und Pi und wird auf die Konsole geschrieben.
 
 \section{Probleme auf Target}
+\label{sec:problems_target}
 
 Bei der Entwicklung der Kommunikation hat sich ein Designfehler eingeschlichen. Die Klasse SpeakerThread, in Abbildung \ref{pic:pi_communication} als PiSpeakerThread bezeichnet, ist als Thread implementiert obwohl das nicht nötig ist.\\
 Jede als "Task" in Rhapsody markierte Klasse muss eine Methode "execute()" besitzen. In dieser befindet sich die vom Thread auszuführende Implementierung. Ist der Ablauf dieser Methode beendet bedeutet dies auch das Ende des Threads.\\

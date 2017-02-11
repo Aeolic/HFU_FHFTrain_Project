@@ -1,5 +1,11 @@
 \chapter{Tests}
 
+\section{Socket}
+
+Zum Testen der Socketverbindung wurde auf der Pi Seite eine einfache Implementierung eingefügt, welche in regelmäßigen Abständen eine Zeichenkette an die Zugseite sendete. Dort wurde dieser empfangen, auf der Konsole ausgegeben und an die Pi Seite zurückgesendet. Auch auf der Pi Seite wurden ankommende Zeichenketten auf der Konsole ausgegeben.\\
+Nach einigen Tests auf nur einem Rechner wurden zum Test auf verteilten Rechnern von beiden Seiten jeweils eine ausführbare Datei erzeugt. Davor musste noch auf der Client Seite die IP-Adresse des Servers eingetragen werden.\\
+Ein Testen auf der Zielhardware war zu beginn nicht möglich, weswegen ein schwerwiegender Fehler durch das Testen nicht entdeckt werden konnte (siehe Kapitel \ref{sec:problems_target}).
+
 \section{TrainTest}
 
 Um den Code für den Raspberry Pi testen zu können wurde die Klasse TrainTest (Abbildung \ref{pic:train_test}) entworfen. Genau wie die eigentliche Implementierung beinhaltet die Testklasse unsere Socketimplementierung zur Kommunikation mit dem Server. Um eine möglichst große Testabdeckung zu erreichen besitzt die Klasse zwei Startthreads, TrainTestThread und TrainTestFailureThread. Zwischen diesen kann durch die Auswahl einer "Initial instance" in den Features einer Component unterschieden werden.
@@ -28,7 +34,3 @@ Um auch einen fehlerhaften Ablauf simulieren zu können wurde die Klasse TrainTe
 
 Die Testdurchführung erfolgte gegen Ende des Projektes um die korrekte Ausführung des Algorithmus auch ohne Hilfe der Zughardware zu gewährleisten. Dazu wurden Algorithmus und TrainTest auf zwei unterschiedlichen Rechnern gestartet und der Ablauf anhand von Ausgaben auf der Konsole verfolgt.\\
 Auch konnte die Testklasse bei Ausfällen des Zuges benutzt werden um eine Weiterentwicklung zu ermöglichen.
-
-\section{Socket}
-
-Zum Testen der 
