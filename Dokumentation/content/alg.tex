@@ -18,22 +18,20 @@
 
 \chapter{Algorithmus}
 \section{Was macht der Algorithmus?}
-Der Algorithmus läuft auf dem Raspberry Pi in einem eigenen Thread. Seine Aufgabe ist es, die Route des Zuges anhand der Eingabe zu berechnen, eine Folge von Anweisungen für den Zug zu erstellen und diese eine nach der anderen dem Zug über Socket-Kanal mithilfe vom Speaker Thread mitzuteilen. Eine weitere Aufgabe des Algorithmus ist es, die aktuelle Position des Zuges nach jeder Änderung während der Fahrt zu ermitteln und danach zu überprüfen, ob es Abweichungen von der geplannten Strecke gibt. Solche Anweisungen muss der Algorithmus berücksichtigen und entsprechend handeln, in dem er die Strecke anpasst, falls notwendig, und eine neue Folge von Anweisungen erstellt.
-
+Der Algorithmus läuft auf dem Raspberry Pi in einem eigenen Thread. Seine Aufgabe ist es, die Route des Zuges anhand der Eingabe zu berechnen, eine Folge von Anweisungen für den Zug zu erstellen und diese eine nach der anderen dem Zug über Socket-Kanal mithilfe vom Speaker Thread mitzuteilen. Eine weitere Aufgabe des Algorithmus ist es, die aktuelle Position des Zuges nach jeder Änderung während der Fahrt zu ermitteln und danach zu überprüfen, ob es Abweichungen von der geplannten Strecke gibt. Solche Anweisungen muss der Algorithmus berücksichtigen und entsprechend handeln, in dem er die Strecke anpasst, falls notwendig, und eine neue Folge von Anweisungen erstellt.\\
 \section{Definitionen der Schlüsselwörter}
-
+\label{chap:alg_keywords}
 \textit{\textbf{Bahnhof, Zwischenhaltestelle, Position des Zuges}}: Sowohl ein Bahnhof, als auch eine Zwischenhaltestelle entsprechen einem (aus 8 im Projekt vorhandenen) RFID-Tag, den der Zug erkennen kann und wessen "Name" (und somit seine Position) der Zug dem Pi mitteilt. Ein Bahnhof wird von einer Zwischenhaltestelle dadurch unterschieden, dass auf einem Bahnhof ein sinnvolles Anhalten stattfinden kann: Damit der Zug Reisende aufnimmt bzw. ihnen die Möglichkeit gibt, auszusteigen. Aus Bequemlichkeit sind die Bahnhöfe im Bereich [0, 3] mit natürlichen Zahlen durchnummeriert (dadurch kann man die entsprechende Zeile bzw. Spalte in der Matrix ansprechen), während die Zwischenhaltestellen 0.5, 1.5 usw. heißen. Die Zwischenhaltestellen sind lediglich für die Anweisungen, die der Pi erstellt, notwendig: Der Zug wird seine Geschwindigkeit bei einer Zwischenhaltestelle runtersetzen, falls er bei dem folgenden Bahnhof anhalten muss. Außerdem könnte man diese Zwischenhaltestelle für eine niedrigere Geschwindigkeit bei gefährlichen Kurwen verwenden: Bei manchen Zwischenhaltestellen festlegen, dass der Zug dort immer langsam fahren muss.\\
 \\
 Dabei ist es zu beachten, dass die Zahlen 0.5, 1.5 usw. vom Typ double sind. Zwei double Werte soll man aufgrund der Rundungsfehler und der eingeschränkten Genauigkeit nie vergleichen: Die Gleitkommazahlen, die auf dem Papier gleich sind, werden auf verschiedenen Geräten unterschiedlich dargestellt. So könnte eine Zahl 0.125 auf dem Gerät-1 binär anders aussehen, als dieselbe Zahl auf dem Gerät-2. Das Problem läßt sich allerdings durch Mapping lösen (man kann zum Beispiel mit integer Werten arbeiten und 0, 5, 10, 15, usw. anstatt 0, 0.5, 1, 1.5, usw. verwenden). In dieser Dokumentation werden die Stationen deshalb aus Bequemlichkeit weiter als 0, 0.5, 1, 1.5 usw. bezeichnet. Dies erleichtet auch die Arithmetik bei der Hauptaufgabe des Algorithmus, nämlich bei der Erstellung der Anweisungen. Weitere Information darüber findet man in der Beschreibung der \textit{createOrderlist()} - Methode.\\
-
 \begin{figure}[H]	
 \caption{Route (Fahrt im Uhrzeigersinn)}
 \includegraphics[width=2\textwidth, width=470pt]{content/images/route.png}
 \label{pic:route}
 \end{figure}
-
 \textit{\textbf{Anweisung}}: Eine Anweisung besteht aus drei Teilen: einer Vor-Geschwindigkeit (weiter hier VG, im Code das Attribut \textit{beforeSpeed}), einem Tag, und einer Nach-Geschwindigkeit (weiter hier NG, im Code das Attribut \textit{afterSpeed}). Die VG wird auf der Zug-Seite sofort nach dem Eingang der Anweisung als die aktuelle Geschwindigkeit des Zuges gesetzt. Sowohl der Tag, als auch die NG werden auf der Zug-Seite temporär gespeichert. Nachdem der Zug eine Zeit gefahren ist und ein neuer Tag erkannt wurde, wird der Wert des ermittelten Tags mit dem gespeicherten Tag verglichen. So erkennt man eine Abweichung im Verhalten des Zuges. Falls keine Abweichung gibt und der erwartete Tag ermittelt wurde, wird die NG als aktuelle Geschwindigkeit gesetzt und die Position (der Tag) des Zuges wird dem Pi mitgeteilt.\\ 
-Beispiel-Anweisungen: (2,0.5,1): "Fahre mit Geschwindigkeit 2 bis zum Tag 0.5, danach setze die Geschwindigkeit auf 1". Der erste Wert - 2 - wird danach auf eine schnelle Geschwindigkeit abgebildet, der letzte - 1 - auf eine langsame Geschwindigkeit.\\
+\\
+\textit{Beispiel-Anweisungen:} (2,0.5,1): "Fahre mit Geschwindigkeit 2 bis zum Tag 0.5, danach setze die Geschwindigkeit auf 1". Der erste Wert - 2 - wird danach auf eine schnelle Geschwindigkeit abgebildet, der letzte - 1 - auf eine langsame Geschwindigkeit.\\
 (1,1,0): "Fahre mit Geschwindigkeit 1 bis zum Tag 1, danach setze die Geschwindigkeit auf 0". Bei Geschwindigkeit gleich 0 hält der Zug an.\\
 \begin{figure}[H]	
 \caption{Anweisung}
@@ -91,7 +89,7 @@ Deshalb fährt der Zug nach dem Anschalten bis zu dem ersten Bahnhof (keine Zwis
 \includegraphics[width=2\textwidth, width=470pt]{content/images/Act-dia1.png}
 \label{pic:init}
 \end{figure}
-
+%
 Im guten Szenario (so lange alle RFID-Tags vom Zug richtig erkannt werden) muss der Algorithmus die Liste von Anweisungen lediglich einmal erstellen; ansonsten wird die Methode \textit{repairOrderlist()} aufgerufen, die die createOrderlist()-Methode wieder verwendet und die neue Reihe von Anweisungen erstellt. Der Pi sendet mithilfe von PiSpeakerThread immer nur eine Anweisung und wartet, bis die geschickte Position (Tag) vom Zug erreicht und dem PiListenerThread mitgeteilt wird. Wenn sie übereinstimmen, ist alles in Ordnung und die nächste Anweisung kann geschickt werden, bis die Liste von Anweisungen leer wird.\\
 \\
 Das unten angegebene Diagramm stellt den Zusammenhang zwischen den Methoden und deren Reihenfolge grafisch dar. \\
@@ -100,16 +98,16 @@ Das unten angegebene Diagramm stellt den Zusammenhang zwischen den Methoden und 
 \includegraphics[width=2\textwidth, width=470pt]{content/images/Act-dia2.png}
 \label{pic:init}
 \end{figure}
-
+%
 \begin{figure}[H]	
 \caption{Klassendiagramm}
 \includegraphics[width=2\textwidth, width=470pt]{content/images/RaspberryPi.png}
 \label{pic:init}
 \end{figure}
-
+%
 \section{createOrderList() - Methode}
 Die Hauptaufgabe des Algorithmus ist die Berechnung der Liste von Anweisungen. Sobald diese vorhanden ist, bleibt es lediglich, die Anweisungen aus der Liste eine nach der anderen dem Zug zu schicken, bis die Liste leer ist. Wenn die Liste leer geworden ist und die letzte Anweisung dem Zug geschickt wurde, hat der Raspberry Pi seine Arbeit gemacht. Er teilt das dem Nutzer mit und ist bereit, neue Aufgaben zu bekommen (neue Eingaben der Reisende aufzunehmen). Die Start-Position ist dem Zug bereits bekannt - dies ist die letzte Position, die der Zug dem Pi beim Erreichen der Endstation mitteilt. So kann man auf die Fahrt zum ersten Bahnhof, die der Zug immer nach dem Start des Systems gemacht hat, verzichten.\\
-
+%
 Dabei sind folgende Bemerkungen wichtig:\\
 1) Die Matrix wird als ein zweidimensionaler Array implementiert.\\
 \\
@@ -189,19 +187,19 @@ $T = O( (n-1) + (n-1)*(n/2) + (n-1)*(n/2) ) = O(n^2)$\\
 Dabei wurde von den Entwicklern überlegt und diskutiert, ob der Algorithmus am Anfang die Route komplett berechnen und erst dann die erste Anweisung dem Zug schicken soll oder jedes Mal, wenn die Position des Zuges ihm mitgeteilt wurde überprüfen soll, was der Zug als nächstes zu tun hat. Es wurde die erste Variante gewählt und implementiert, welche als Vorteil die Eigenschaft hat, dass der Algorithmus ohne Verzögerung, die für die Berechnung notwendig ist, die nächste Anweisung dem Zug mitteilen kann. Als Kritik kann man den Punkt nennen, dass die Verzögerung am Anfang sich sammelt und dadurch größer ist. Außerdem soll die zweite Variante genommen werden, falls man häufige Änderungen (neue Eingaben der Reisende) erwartet. Diese Überlegungen sind allerdings nur für sehr große Dimensionen der Matrix wichtig und haben somit für die Geschwindigkeit in diesem Projekt keine Relevanz.\\
 \\
 Darüber hinaus wurde diskutiert, ob man zusätzlich zu der Matrix bzw. an ihrer Stelle eine verkettete Liste verweden könnte. Dies scheint den Algorithmus in dem Fall, dass der Zug auch im inneren Kreis fahren können soll, zu vereinfachen. So sind in diesem Fall an bestimmten Stellen Verzweigungen der Strecke möglich. Allerdings ist die Matrix lediglich eine Art der Darstellung von den Eingaben des Nutzers und lässt sich weiter beliebig anpassen und bearbeiten. So könnte man zwei weitere Zeilen B4 und B5 hinzufügen und vereinbaren, dass es vom Bahnhof 0 sowohl zum Bahnhof 1 (Zeile B1), als auch zum Bahnhof 5 (Zeile B5) einen Weg gibt.\\
-
-
+%
+%
 \section{repairOrderList() - Methode}
 Es kann passieren, dass der Zug einen RFID-Tag überfährt, ohne ihn zu erkennen. Der Zug wird in diesem Fall einen "falschen" Tag lesen und dem Algorithmus diesen Tag mitteilen, während er selbst nicht weiter fährt (ein Sicherheitsmechanismus). Der Algorithmus muss diese Abweichung behandeln. Dafür wird im Zug ein Buch über die Reisende geführt, die sich gerade im Zug befinden, zusammen mit ihren gewünschten Zielbahnhöfen. Wenn Reisende in den Zug einsteigen, werden sie aus der Matrix gelöscht. Wenn die Reisende aus dem Zug aussteigen, werden sie auch aus dem Buch im Zug gelöscht. So kann man bei einer Abweichung immer erkennen, wer noch an Stationen wartet und wer sich im Zug befindet (und wo er oder sie hin möchte). Eine neue Ausführung der Methode \textit{createOrderlist()} "repariert" die Liste mit Anweisungen. Dies ist nicht immer notwendig: Vielleicht hat der Zug eine Zwischenhaltestelle nicht erkannt und dort nicht langsamer bzw. schneller geworden?. Oder der Zug ist an Stationen vorbei gefahren, wo er nicht anhalten musste? In diesem Fall muss man eine neue Liste nicht erstellen, sondern man muss nur eine bzw. einige Anweisungen (die schon jedenfalls zufällig vom Zug durch Vorbeifahren ausgeführt wurden) aus der Liste entfernen, ohne diese dem Zug zu schicken. Die \textit{repairOrderlist()}-Methode kann somit verbessert werden. Bei unserer Anzahl der Bahnhöfe ist das unwichtig; bei einer großen Matrix lässt sich die Rechenzeit somit sparen.\\
-
-
-
+%
+%
+%
 %\begin{figure}[H]	
 %\caption{...}
 %\includegraphics[width=2\textwidth, width=470pt]{content/images/order.png}
 %\label{pic:pi_communication}
 %\end{figure}
-
+%
 \chapter{Semaphore}
 Die Semaphore und ihr Einsatz werden anhand der Implementierung an der Pi-Seite erklärt.\\
 \\
