@@ -29,6 +29,9 @@ Dabei ist es zu beachten, dass die Zahlen 0.5, 1.5 usw. vom Typ double sind. Zwe
 \includegraphics[width=2\textwidth, width=470pt]{content/images/route.png}
 \label{pic:route}
 \end{figure}
+\noindent
+\textit{\textbf{Start-Bahnhof}}: Dies ist der Bahnhof, an dem der Zug nach dem Start des System ankommt. Diese Position wird auch als erste dem Algorithmus auf der Pi-Seite mitgeteilt.\\
+\\
 \textit{\textbf{Anweisung}}: Eine Anweisung besteht aus drei Teilen: einer Vor-Geschwindigkeit (weiter hier VG, im Code das Attribut \textit{beforeSpeed}), einem Tag, und einer Nach-Geschwindigkeit (weiter hier NG, im Code das Attribut \textit{afterSpeed}). Die VG wird auf der Zug-Seite sofort nach dem Eingang der Anweisung als die aktuelle Geschwindigkeit des Zuges gesetzt. Sowohl der Tag, als auch die NG werden auf der Zug-Seite temporär gespeichert. Nachdem der Zug eine Zeit gefahren ist und ein neuer Tag erkannt wurde, wird der Wert des ermittelten Tags mit dem gespeicherten Tag verglichen. So erkennt man eine Abweichung im Verhalten des Zuges. Falls keine Abweichung gibt und der erwartete Tag ermittelt wurde, wird die NG als aktuelle Geschwindigkeit gesetzt und die Position (der Tag) des Zuges wird dem Pi mitgeteilt.\\ 
 \\
 \textit{Beispiel-Anweisungen:} (2,0.5,1): "Fahre mit Geschwindigkeit 2 bis zum Tag 0.5, danach setze die Geschwindigkeit auf 1". Der erste Wert - 2 - wird danach auf eine schnelle Geschwindigkeit abgebildet, der letzte - 1 - auf eine langsame Geschwindigkeit.\\
@@ -38,22 +41,21 @@ Dabei ist es zu beachten, dass die Zahlen 0.5, 1.5 usw. vom Typ double sind. Zwe
 \includegraphics[width=2\textwidth, width=330pt]{content/images/order.png}
 \label{pic:anweisung}
 \end{figure}
-
-
+\noindent
+%
 \section{Detaillierte Beschreibung/Ablauf}
 Der Grund dafür, dass der Algorithmus in einem eigenen Thread läuft, besteht darin, dass Raspberry Pi gleichzeitig in der Lage sein muss, mit dem Zug zu kommunizieren. Dies geschieht über Socket-Kommunikation, für welche Listener und Speaker Threads auf der Pi-Seite verantwortlich sind, die ensprechend die Informationen vom Zug erhalten (nämlich die Position des Zuges, das macht Listener Thread vom Pi) und Daten dem Zug mitteilen (nämlich die neue Anweisung, das macht Speaker Thread vom Pi). \\
-
+%
 \begin{figure}[H]	
 \caption{Kommunikation zwischen dem Zug und dem Raspberry Pi}
 \includegraphics[width=2\textwidth, width=470pt]{content/images/communication.png}
 \label{pic:communication}
 \end{figure}
-
-
+\noindent
 Die Eingabe, die der Algorithmus bearbeiten muss, beinhaltet die Information über die Anzahl der Reisenden, ihren Abfahrtbahnhof und ihren Zielbahnhof. Dies kann für Bequemlichkeit in der Form einer Matrix gespeichert werden:\\
 \\
 \\
-\begin{table}
+\begin{table}[H]
 \caption{Szenario 1}
 \center
  \begin{tabular}{|c|c|c|c|c|}
@@ -65,7 +67,7 @@ Die Eingabe, die der Algorithmus bearbeiten muss, beinhaltet die Information üb
         B3 & 0 & 0 & 2 & 0 \\   \hline
  \end{tabular}
 \end{table}
-\\
+\noindent
 \\
 Die oben angegebene Tabelle ist folgend zu verstehen:\\
 \\
@@ -90,6 +92,7 @@ Deshalb fährt der Zug nach dem Anschalten bis zu dem ersten Bahnhof (keine Zwis
 \label{pic:init}
 \end{figure}
 %
+\noindent
 Im guten Szenario (so lange alle RFID-Tags vom Zug richtig erkannt werden) muss der Algorithmus die Liste von Anweisungen lediglich einmal erstellen; ansonsten wird die Methode \textit{repairOrderlist()} aufgerufen, die die createOrderlist()-Methode wieder verwendet und die neue Reihe von Anweisungen erstellt. Der Pi sendet mithilfe von PiSpeakerThread immer nur eine Anweisung und wartet, bis die geschickte Position (Tag) vom Zug erreicht und dem PiListenerThread mitgeteilt wird. Wenn sie übereinstimmen, ist alles in Ordnung und die nächste Anweisung kann geschickt werden, bis die Liste von Anweisungen leer wird.\\
 \\
 Das unten angegebene Diagramm stellt den Zusammenhang zwischen den Methoden und deren Reihenfolge grafisch dar. \\
@@ -107,8 +110,9 @@ Das unten angegebene Diagramm stellt den Zusammenhang zwischen den Methoden und 
 %
 \section{createOrderList() - Methode}
 Die Hauptaufgabe des Algorithmus ist die Berechnung der Liste von Anweisungen. Sobald diese vorhanden ist, bleibt es lediglich, die Anweisungen aus der Liste eine nach der anderen dem Zug zu schicken, bis die Liste leer ist. Wenn die Liste leer geworden ist und die letzte Anweisung dem Zug geschickt wurde, hat der Raspberry Pi seine Arbeit gemacht. Er teilt das dem Nutzer mit und ist bereit, neue Aufgaben zu bekommen (neue Eingaben der Reisende aufzunehmen). Die Start-Position ist dem Zug bereits bekannt - dies ist die letzte Position, die der Zug dem Pi beim Erreichen der Endstation mitteilt. So kann man auf die Fahrt zum ersten Bahnhof, die der Zug immer nach dem Start des Systems gemacht hat, verzichten.\\
-%
+\\
 Dabei sind folgende Bemerkungen wichtig:\\
+\\
 1) Die Matrix wird als ein zweidimensionaler Array implementiert.\\
 \\
 2) Die Einträge, die sich auf der Hauptdiagonale der Matrix befinden, sollen gleich 0 sein und ignoriert werden. In der Realität macht es keinen Sinn, Reisende zu haben, die vom Bahnhof 0 zum Bahnhof 0, d.h. einen vollen Kreis, fahren. In der \textit{createOrderlist()}-Methode werden solche Einträge deshalb ignoriert. Bei der Eingabe des Nutzers wird eine Meldung ausgegeben, falls ein Eintrag auf der Hauptdiagonale ungleich 0 ist, und ein solcher Eintrag wird auf 0 gesetzt - lediglich für die genaue Darstellung, denn diese Einträge werden gar nicht berücksichtigt.\\
@@ -123,9 +127,11 @@ Dabei sind folgende Bemerkungen wichtig:\\
 \\
 \begin{figure}[H]	
 \caption{Versetzung der Hauptdiagonale}
-\includegraphics[width=2\textwidth, width=280pt]{content/images/matrix2.png}
+\center
+\includegraphics[width=2\textwidth, width=270pt]{content/images/matrix2.png}
 \label{pic:DiagonaleVersetzt}
 \end{figure}
+\noindent
 Damit man die Versetzung der Hauptdiagonale besser versteht, kann man sich die vorgenommene Transformation der Matrix folgend vorstellen: Die ersten zwei Zeilen werden ausgeschnitten und nach der Zeile "B2" hinzugefügt. So definiert die Startposition des Zuges immer die "pseudo-erste" Zeile der Matrix. Dabei werden die Elemente in der Matrix nicht unnötig kopiert - die Iteration durch die Matrix wird später lediglich anhand des Modulo-Operators angepasst. Aus Bequemlichkeit betrachten wir nun das Beispiel, in dem der Zug am Bahnhof 0 startet.\\
 \\
 \textit{Wie erstellt der Algorithmus die Liste von Anweisungen?\\}
@@ -133,9 +139,11 @@ Damit man die Versetzung der Hauptdiagonale besser versteht, kann man sich die v
 Dies lässt sich anhand der Matrix für das oben beschriebene Szenario 1 erklären.\\
 \begin{figure}[H]	
 \caption{Matrix mit einer Hauptdiagonale}
-\includegraphics[width=2\textwidth, width=330pt]{content/images/matrix.png}
+\center
+\includegraphics[width=2\textwidth, width=310pt]{content/images/matrix.png}
 \label{pic:Hauptdiagonale}
 \end{figure}
+\noindent
 Es wird ein Hilfsfeld \textit{stop} erstellt. Seine Länge ist (2*N - 2), es enthält boolesche Elemente, die mit "false" initialisiert werden. "False" entspricht dabei der Anweisung "do not stop", d.h. der Zug fährt weiter. Das erste Element (mit Index 0) im Feld \textit{stop} entspricht dabei dem Bahnhof, der gleich nach dem Start-Bahnhof kommt (in unserem Fall also dem Bahnhof 1), das zweite (Index 1) - dem weiteren Bahnhof (Bahnhof 2), usw. Das N-te Element (Index N-1) entspricht dem Start-Bahnhof, allerdings nach einem vollen Kreis.\\
 \\
 Die Matrix wird dreimal durchgelaufen.\\
@@ -148,12 +156,13 @@ Die Matrix wird dreimal durchgelaufen.\\
 4) Nun muss man das letzte Element mit dem Wert "true" in \textit{stop} finden. Dies ist die Endstation des Zuges. Falls ein solches gar nicht vorhanden ist, hat der Zug laut der Eingabe des Nutzers nichts zu tun. In unserem Fall sieht das Feld \textit{stop} folgendermaßen aus:\\
 \begin{figure}[H]	
 \caption{Hilfsfeld \textit{stop}}
-\includegraphics[width=2\textwidth, width=470pt]{content/images/stop1.png}
+\includegraphics[width=2\textwidth, width=290pt]{content/images/stop1.png}
 \label{pic:stop1}
 \end{figure}
+\noindent
 5) Anhand der Einträge im Feld \textit{stop} kann man nun die Anweisungen erstellen. Nämlich werden für jedes Element (bis zu der Endstation) aus \textit{stop} zwei Anweisungen erstellt: Für die Zwischenhaltestelle und für den Bahnhof. Die Geschwindigkeiten sind "low", falls der Zug nach dem Anhalten vom Bahnhof erst startet oder nach der Zwischenhaltestelle an einem Bahnhof anhalten muss, ansonsten "high", was einer hohen Geschwindigkeit entspricht.\\
 \\
-\begin{table}
+\begin{table}[H]
 \caption{Szenario 2}
 \center
  \begin{tabular}{|c|c|c|c|c|}
@@ -166,7 +175,7 @@ Die Matrix wird dreimal durchgelaufen.\\
  \end{tabular}
 \end{table}
 \\
-\\
+\noindent
 Im zweiten Szenario möchten lediglich drei Reisende vom Bahnhof 0 zum Bahnhof 2 fahren. Damit die Aufgabe schwieriger wird und gleichzeitig um den oben genannten Ansatz zu erklären, werden wir als Start-Position den Bahnhof 1 betrachten.\\
 \\
 \begin{figure}[H]	
@@ -174,13 +183,15 @@ Im zweiten Szenario möchten lediglich drei Reisende vom Bahnhof 0 zum Bahnhof 2
 \includegraphics[width=2\textwidth, width=450pt]{content/images/szenario2.png}
 \label{pic:szenario2}
 \end{figure}
+\noindent
 In diesem Fall sieht das Feld \textit{stop} folgendermaßen aus:\\
 \\
 \begin{figure}[H]	
 \caption{Hilfsfeld \textit{stop} für Szenario 2}
-\includegraphics[width=2\textwidth, width=450pt]{content/images/stop2.png}
+\includegraphics[width=2\textwidth, width=290pt]{content/images/stop2.png}
 \label{pic:stop2}
 \end{figure}
+\noindent
 Die \textbf{\textit{Laufzeit des Algorithmus}} ist folgendermaßen definiert:\\
 $T = O( (n-1) + (n-1)*(n/2) + (n-1)*(n/2) ) = O(n^2)$\\
 \\
