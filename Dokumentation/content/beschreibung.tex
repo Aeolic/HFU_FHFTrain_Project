@@ -1,0 +1,18 @@
+\chapter{Projektbeschreibung}
+
+Das Projekt wurde in zwei Versionen aufgeteilt, von denen zeitlich nur die erste umgesetzt werden konnte.
+
+\section{Erste Version}
+
+In der ersten Version des Semesterprojektes werden grundlegende Funktionen umgesetzt. Geplant ist ein Transportszenario mit vier Bahnhöfen (Siehe Abbildung \ref{pic:route} aus Kapitel Algorithmus).\\
+Auf dieser Strecke fährt ein Zug ohne Anhänger, auf welchem ein Embedded Linux läuft. Der Zug erhält Anweisungen von einer Zentralsteuerung, einem Raspberry Pi, und gibt an diese seine Position durch. Die Kommunikation erfolgt mittels einer Socket Verbindung. Der Pi und der Zug befinden sich im gleichen Netzwerk. Weiterhin werden Virtuelle Fahrgäste in den Bahnhöfen angelegt, welche vom Zug abgeholt werden sollen. Jeder Passagier möchte möglichst schnell zu einem bestimmten Bahnhof gebracht werden. Der Zielbahnhof wird für jeden Passagier abgelegt. Die Erstellung der Fahrgäste erfolgt durch Eingabe eines Szenarios per Kommandozeile in die Zentralsteuerung.\\
+In diesem ersten Szenario werden die Weichen nicht benutzt. Somit erfolgt die Verteilung der Bahnhöfe ausschließlich auf der äußeren Bahn. Es existieren weitere wichtige Punkte zwischen den Bahnhöfen. Bahnhöfe und diese weiteren Punkte sind physisch gesehen nur RFID-Tags, die der Zug beim Überfahren lesen kann.\\
+Eine Unterscheidung, ob es sich bei einem Tag um einen Bahnhof oder einen anderen Punkt handelt, erfolgt nur durch die Zentrale Steuereinheit.
+
+\section{Zweite Version}
+
+In der zweiten Version besitzt unser Bahnhofssystem mehr Bahnhöfe, wodurch die Weichen ebenfalls angesteuert werden müssen. Dies geschieht mittels eines separaten Java Programmes, da Java hier bessere Funktionen bietet.\\
+Um einen Korrekten Ablauf zu gewährleisten bekommt der Zug seine Anweisung erst gesendet wenn die Strecke frei ist, also alle Weichen, die für diesen Befehl benötigt werden, richtig gesetzt wurden.\\
+Nach dem Setzen einer Weiche wird überprüft, ob diese sich in der Korrekten Position befindet.\\
+Unterscheiden soll sich auch die Generierung von Passagieren. In unserer ersten Version wurden diese noch von der Zentralsteuerung einmalig generiert. Nun möchten wir dem Besucher unserer Anlage die Möglichkeit geben selbst Passagiere an Bahnhöfen zu platzieren. Dazu stellen wir ein Webinterface zur Verfügung. Die Anzahl der Passagiere wird gespeichert und kann von der Zentralsteuerung zur Berücksichtigung bei der Erstellung neuer Anweisungen ausgelesen werden.\\
+Zusätzlich muss über das Webinterface angegeben werden, zu welchem Bahnhof die Passagiere möchten. Dies soll jederzeit möglich sein, der Pi soll dann auf die Eingaben möglichst schnell reagieren und dem Zug, wenn nötig, neue Befehle übermitteln.
