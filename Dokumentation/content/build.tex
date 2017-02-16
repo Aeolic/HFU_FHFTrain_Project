@@ -2,11 +2,35 @@
 
 \section{Zug}
 
-Der Zug bootet beim Start ein komplettes Linux Image und verfügt über die Möglichkeit auch ein solches von einem Netzwerklaufwerk zu laden. Aufgrund dieser Tatsache werden beim Build für den Zug nicht einfach nur unsere Dateien in den Speicher des Zugs übertragen, sondern ein komplettes Dateisystem gebaut.\\\\
-Dazu waren verschiedene Vorbereitungen nötig:\\
+Der Zug bootet beim Start ein komplettes Linux Image und verfügt über die Möglichkeit auch ein solches von einem Netzwerklaufwerk zu laden. Aufgrund dieser Tatsache werden beim Build für den Zug nicht einfach nur unsere Dateien in den Speicher des Zugs übertragen, sondern ein komplettes Dateisystem gebaut. Dazu wurde das Tool "Buildroot" verwendet. \\\\
+Dazu waren verschiedene Vorbereitungen nötig:
 
-%%%%%%%%%%%%%%%%%%%
-% TODO
-%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}
+	\item Das Projektverzeichnis für den Build ist unter \textit{/nfs4cross/fhftrainWs16/} zu finden. Zuerst wurden alle nötigen Dateien aus der Versionsverwaltung geladen:\\
+	\textit{svn checkout https://svnsrv.hs-furtwangen.de/svn/mueller\_fhftrain\_2016}
+	
+	\item Nun konnte in das Verzeichnis\\ \textit{/nfs4cross/fhftrainWs16/mueller\_fhftrain\_2016/sw/br\_lok/application/projects}\\
+	das aktuelle Projekt geklont werden:\\
+	\textit{git clone https://github.com/Aeolic/HFU\_FHFTrain\_Project RhapsodyWS16}
+	
+	\item Das Makefile des Vorjahresprojekts war bereits eingerichtet. Dieses wurde in das Wurzelverzeichnis des Projekts (\textit{RhapsodyWS16/Code\_Merged}) kopiert und benötigte noch ein paar Anpassungen. Die Liste "ELEMENTS" enthält alle Paare von Komponenten und  Konfiguration die gebaut werden sollen. Hier wurden die Bezeichnungen angepasst und neue Komponenten hinzugefügt.
+	
+	\item Im \textit{projects} Verzeichnis befindet sich ebenfalls ein Makefile. In diesem befinden sich die "all" und "clean". In beiden wurde noch das alte Projekt verwendet, dies wurde angepasst.\\
+	Außerdem wurde an dieser Stelle ein Kopierbefehl für das Startscript hinzugefügt. Dieses befindet sich im aktuellen Projektverzeichnis und wird nun bei jedem Build nach
+	\textit{../../buildroot/output/target/etc/init.d/S55startProzesse} kopiert.
+	
+	\item Nächster Schritt war das bauen eines Kernels und des Dateisystems. Dazu wurden im Verzeichnis\\
+	\textit{/nfs4cross/fhftrainWs16/mueller\_fhftrain\_2016/sw/br\_lok/application}\\
+	die folgenden Make-Targets aufgerufen:\\
+	\textit{make prepare}\\
+	\textit{make initial\_buildroot}\\
+	\textit{make all}
+	Dadurch wurde mithilfe der Makefiles von Buildroot unter\\
+	\textit{/nfs4cross/fhftrainWs16/mueller\_fhftrain\_2016/sw/br\_lok/buildroot}\\
+	das Linux System abgelegt.
+\end{enumerate}
+Für jeden neuen Build muss nach diesen Vorbereitungen nur noch \textit{make all} ausgeführt werden. Dadurch wird lediglich das Projekt kompiliert, die entstandenen ausführbaren Dateien in das Buildroot Dateisystem kopiert und ein neues Image gebaut. Das erneute kompilieren des kompletten Buildroot ist nicht mehr nötig.\\
+Um das erstellte Image auch für den Zug zugänglich zu machen muss zusätzlich noch das Script "deploy.sh" ausgeführt werden, welches das erstellte Image auf das vom Zug erreichbare Netzwerklaufwerk kopiert.\\\\
+Das erstellte Image kann auch direkt auf dem Zug abgelegt werden um einen Netzwerkboot zu umgehen.
 
 \section{Raspberry Pi}
