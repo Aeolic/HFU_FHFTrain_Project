@@ -54,8 +54,10 @@ Der Grund dafür, dass der Algorithmus in einem eigenen Thread läuft, besteht d
 
 Die Eingabe, die der Algorithmus bearbeiten muss, beinhaltet die Information über die Anzahl der Reisenden, ihren Abfahrtbahnhof und ihren Zielbahnhof. Dies kann für Bequemlichkeit in der Form einer Matrix gespeichert werden:\\
 \\
-\\Szenario 1\\
 \\
+\begin{table}
+\caption{Szenario 1}
+\center
  \begin{tabular}{|c|c|c|c|c|}
  \hline
   Von/Nach & B0 & B1 & B2 & B3 \\ \hline
@@ -64,10 +66,9 @@ Die Eingabe, die der Algorithmus bearbeiten muss, beinhaltet die Information üb
       B2 & 0 & 0 & 0 & 0\\   \hline
         B3 & 0 & 0 & 2 & 0 \\   \hline
  \end{tabular}
+\end{table}
 \\
 \\
-\\
-
 Die oben angegebene Tabelle ist folgend zu verstehen:\\
 \\
 - 3 Reisende wollen vom Bahnhof0 zum Bahnhof2 fahren\\
@@ -95,13 +96,13 @@ Im guten Szenario (so lange alle RFID-Tags vom Zug richtig erkannt werden) muss 
 \\
 Das unten angegebene Diagramm stellt den Zusammenhang zwischen den Methoden und deren Reihenfolge grafisch dar. \\
 \begin{figure}[H]	
-\caption{Funktionalität}
+\caption{Der gewöhnliche Verlauf}
 \includegraphics[width=2\textwidth, width=470pt]{content/images/Act-dia2.png}
 \label{pic:init}
 \end{figure}
 
 \begin{figure}[H]	
-\caption{Funktionalität}
+\caption{Klassendiagramm}
 \includegraphics[width=2\textwidth, width=470pt]{content/images/RaspberryPi.png}
 \label{pic:init}
 \end{figure}
@@ -122,15 +123,21 @@ Dabei sind folgende Bemerkungen wichtig:\\
 \\
 6) Die Hauptdiagonale der Matrix ist "flexibel" - dies ist für die Logik der \textit{createOrderlist()}-Methode wichtig. Aus Bequemlichkeit betrachten wir das Beispiel mit dem Start am Bahnhof 0. So sieht die Diagonale gewöhnlich aus. Bei einem Start, z.B., am Bahnhof 2, wird sie allerdings "versetzt" und somit folgendermaßen aussehen:\\
 \\
+\begin{figure}[H]	
+\caption{Versetzung der Hauptdiagonale}
 \includegraphics[width=2\textwidth, width=280pt]{content/images/matrix2.png}
-\\
+\label{pic:DiagonaleVersetzt}
+\end{figure}
 Damit man die Versetzung der Hauptdiagonale besser versteht, kann man sich die vorgenommene Transformation der Matrix folgend vorstellen: Die ersten zwei Zeilen werden ausgeschnitten und nach der Zeile "B2" hinzugefügt. So definiert die Startposition des Zuges immer die "pseudo-erste" Zeile der Matrix. Dabei werden die Elemente in der Matrix nicht unnötig kopiert - die Iteration durch die Matrix wird später lediglich anhand des Modulo-Operators angepasst. Aus Bequemlichkeit betrachten wir nun das Beispiel, in dem der Zug am Bahnhof 0 startet.\\
 \\
 \textit{Wie erstellt der Algorithmus die Liste von Anweisungen?\\}
 \\
 Dies lässt sich anhand der Matrix für das oben beschriebene Szenario 1 erklären.\\
+\begin{figure}[H]	
+\caption{Matrix mit einer Hauptdiagonale}
 \includegraphics[width=2\textwidth, width=330pt]{content/images/matrix.png}
-\\
+\label{pic:Hauptdiagonale}
+\end{figure}
 Es wird ein Hilfsfeld \textit{stop} erstellt. Seine Länge ist (2*N - 2), es enthält boolesche Elemente, die mit "false" initialisiert werden. "False" entspricht dabei der Anweisung "do not stop", d.h. der Zug fährt weiter. Das erste Element (mit Index 0) im Feld \textit{stop} entspricht dabei dem Bahnhof, der gleich nach dem Start-Bahnhof kommt (in unserem Fall also dem Bahnhof 1), das zweite (Index 1) - dem weiteren Bahnhof (Bahnhof 2), usw. Das N-te Element (Index N-1) entspricht dem Start-Bahnhof, allerdings nach einem vollen Kreis.\\
 \\
 Die Matrix wird dreimal durchgelaufen.\\
@@ -141,11 +148,16 @@ Die Matrix wird dreimal durchgelaufen.\\
 3) Beim 3. Durchlauf werden die Elemente unter der Hauptdiagonale berücksichtigt. Während die Durchläufe 1) und 2) immer für die Strecke \textit{(Vollkreis - 1 Station)} verantwortlich sind, erledigt der 3. Durchlauf die letzte Hälfte des Feldes \textit{stop}. So wird der Eintrag "2" in der Zeile "B3" dazu führen, dass das Element stop[2] (nochmal!) auf "true" gesetzt wird (allgemein notwendig, obwohl man am Bahnhof 3 schon anhält - ein Zufall dank dem Eintrag in der Zeile "B1", das wird nicht immer so sein). Außerdem wird stop[5] auf "true" gesetzt: Bahnhof "B2" muss erreicht werden.\\
 \\
 4) Nun muss man das letzte Element mit dem Wert "true" in \textit{stop} finden. Dies ist die Endstation des Zuges. Falls ein solches gar nicht vorhanden ist, hat der Zug laut der Eingabe des Nutzers nichts zu tun. In unserem Fall sieht das Feld \textit{stop} folgendermaßen aus:\\
+\begin{figure}[H]	
+\caption{Hilfsfeld \textit{stop}}
 \includegraphics[width=2\textwidth, width=470pt]{content/images/stop1.png}
+\label{pic:stop1}
+\end{figure}
 5) Anhand der Einträge im Feld \textit{stop} kann man nun die Anweisungen erstellen. Nämlich werden für jedes Element (bis zu der Endstation) aus \textit{stop} zwei Anweisungen erstellt: Für die Zwischenhaltestelle und für den Bahnhof. Die Geschwindigkeiten sind "low", falls der Zug nach dem Anhalten vom Bahnhof erst startet oder nach der Zwischenhaltestelle an einem Bahnhof anhalten muss, ansonsten "high", was einer hohen Geschwindigkeit entspricht.\\
 \\
-\\Szenario 2:\\
-\\
+\begin{table}
+\caption{Szenario 2}
+\center
  \begin{tabular}{|c|c|c|c|c|}
  \hline
   Von/Nach & B0 & B1 & B2 & B3 \\ \hline
@@ -154,16 +166,24 @@ Die Matrix wird dreimal durchgelaufen.\\
       B2 & 0 & 0 & 0 & 0\\   \hline
         B3 & 0 & 0 & 0 & 0 \\   \hline
  \end{tabular}
+\end{table}
 \\
 \\
 Im zweiten Szenario möchten lediglich drei Reisende vom Bahnhof 0 zum Bahnhof 2 fahren. Damit die Aufgabe schwieriger wird und gleichzeitig um den oben genannten Ansatz zu erklären, werden wir als Start-Position den Bahnhof 1 betrachten.\\
 \\
+\begin{figure}[H]	
+\caption{Szenario 2}
 \includegraphics[width=2\textwidth, width=450pt]{content/images/szenario2.png}
+\label{pic:szenario2}
+\end{figure}
 In diesem Fall sieht das Feld \textit{stop} folgendermaßen aus:\\
 \\
+\begin{figure}[H]	
+\caption{Hilfsfeld \textit{stop} für Szenario 2}
 \includegraphics[width=2\textwidth, width=450pt]{content/images/stop2.png}
-\\
-Die Laufzeit des Algorithmus ist folgendermaßen definiert:\\
+\label{pic:stop2}
+\end{figure}
+Die \textbf{\textit{Laufzeit des Algorithmus}} ist folgendermaßen definiert:\\
 $T = O( (n-1) + (n-1)*(n/2) + (n-1)*(n/2) ) = O(n^2)$\\
 \\
 Dabei wurde von den Entwicklern überlegt und diskutiert, ob der Algorithmus am Anfang die Route komplett berechnen und erst dann die erste Anweisung dem Zug schicken soll oder jedes Mal, wenn die Position des Zuges ihm mitgeteilt wurde überprüfen soll, was der Zug als nächstes zu tun hat. Es wurde die erste Variante gewählt und implementiert, welche als Vorteil die Eigenschaft hat, dass der Algorithmus ohne Verzögerung, die für die Berechnung notwendig ist, die nächste Anweisung dem Zug mitteilen kann. Als Kritik kann man den Punkt nennen, dass die Verzögerung am Anfang sich sammelt und dadurch größer ist. Außerdem soll die zweite Variante genommen werden, falls man häufige Änderungen (neue Eingaben der Reisende) erwartet. Diese Überlegungen sind allerdings nur für sehr große Dimensionen der Matrix wichtig und haben somit für die Geschwindigkeit in diesem Projekt keine Relevanz.\\
