@@ -34,7 +34,7 @@ Dabei ist es zu beachten, dass die Zahlen 0.5, 1.5 usw. vom Typ double sind. Zwe
 \\
 \textit{\textbf{Anweisung}}: Eine Anweisung besteht aus drei Teilen: einer Vor-Geschwindigkeit (weiter hier VG, im Code das Attribut \textit{beforeSpeed}), einem Tag, und einer Nach-Geschwindigkeit (weiter hier NG, im Code das Attribut \textit{afterSpeed}). Die VG wird auf der Zug-Seite sofort nach dem Eingang der Anweisung als die aktuelle Geschwindigkeit des Zuges gesetzt. Sowohl der Tag, als auch die NG werden auf der Zug-Seite temporär gespeichert. Nachdem der Zug eine Zeit gefahren ist und ein neuer Tag erkannt wurde, wird der Wert des ermittelten Tags mit dem gespeicherten Tag verglichen. So erkennt man eine Abweichung im Verhalten des Zuges. Falls keine Abweichung gibt und der erwartete Tag ermittelt wurde, wird die NG als aktuelle Geschwindigkeit gesetzt und die Position (der Tag) des Zuges wird dem Pi mitgeteilt.\\ 
 \\
-\textit{Beispiel-Anweisungen:} (2,0.5,1): "Fahre mit Geschwindigkeit 2 bis zum Tag 0.5, danach setze die Geschwindigkeit auf 1". Der erste Wert - 2 - wird danach auf eine schnelle Geschwindigkeit abgebildet, der letzte - 1 - auf eine langsame Geschwindigkeit.\\
+\textit{Beispiel-Anweisungen:} (2,0.5,1): "Fahre mit Geschwindigkeit 2 bis zum Tag 0.5, danach setze die Geschwindigkeit auf 1". Der erste Wert - 2 - wird danach (auf der Zug-Seite) auf eine schnelle Geschwindigkeit abgebildet, der letzte - 1 - auf eine langsame Geschwindigkeit.\\
 (1,1,0): "Fahre mit Geschwindigkeit 1 bis zum Tag 1, danach setze die Geschwindigkeit auf 0". Bei Geschwindigkeit gleich 0 hält der Zug an.\\
 \begin{figure}[H]	
 \caption{Anweisung}
@@ -109,7 +109,7 @@ Das unten angegebene Diagramm stellt den Zusammenhang zwischen den Methoden und 
 \end{figure}
 %
 \section{createOrderList() - Methode}
-Die Hauptaufgabe des Algorithmus ist die Berechnung der Liste von Anweisungen. Sobald diese vorhanden ist, bleibt es lediglich, die Anweisungen aus der Liste eine nach der anderen dem Zug zu schicken, bis die Liste leer ist. Wenn die Liste leer geworden ist und die letzte Anweisung dem Zug geschickt wurde, hat der Raspberry Pi seine Arbeit gemacht. Er teilt das dem Nutzer mit und ist bereit, neue Aufgaben zu bekommen (neue Eingaben der Reisende aufzunehmen). Die Start-Position ist dem Zug bereits bekannt - dies ist die letzte Position, die der Zug dem Pi beim Erreichen der Endstation mitteilt. So kann man auf die Fahrt zum ersten Bahnhof, die der Zug immer nach dem Start des Systems gemacht hat, verzichten.\\
+Der Algorithmus wurde von uns komplett entwickelt. Die Hauptaufgabe des Algorithmus ist die Berechnung der Liste von Anweisungen. Sobald diese vorhanden ist, bleibt es lediglich, die Anweisungen aus der Liste eine nach der anderen dem Zug zu schicken, bis die Liste leer ist. Wenn die Liste leer geworden ist und die letzte Anweisung dem Zug geschickt wurde, hat der Raspberry Pi seine Arbeit gemacht. Er teilt das dem Nutzer mit und ist bereit, neue Aufgaben zu bekommen (neue Eingaben der Reisende aufzunehmen). Die Start-Position ist dem Zug bereits bekannt - dies ist die letzte Position, die der Zug dem Pi beim Erreichen der Endstation mitteilt. So kann man auf die Fahrt zum ersten Bahnhof, die der Zug immer nach dem Start des Systems gemacht hat, verzichten.\\
 \\
 Dabei sind folgende Bemerkungen wichtig:\\
 \\
@@ -134,7 +134,7 @@ Dabei sind folgende Bemerkungen wichtig:\\
 \noindent
 Damit man die Versetzung der Hauptdiagonale besser versteht, kann man sich die vorgenommene Transformation der Matrix folgend vorstellen: Die ersten zwei Zeilen werden ausgeschnitten und nach der Zeile "B2" hinzugefügt. So definiert die Startposition des Zuges immer die "pseudo-erste" Zeile der Matrix. Dabei werden die Elemente in der Matrix nicht unnötig kopiert - die Iteration durch die Matrix wird später lediglich anhand des Modulo-Operators angepasst. Aus Bequemlichkeit betrachten wir nun das Beispiel, in dem der Zug am Bahnhof 0 startet.\\
 \\
-\textit{Wie erstellt der Algorithmus die Liste von Anweisungen?\\}
+\textit{\textbf{Wie erstellt der Algorithmus die Liste von Anweisungen?}\\}
 \\
 Dies lässt sich anhand der Matrix für das oben beschriebene Szenario 1 erklären.\\
 \begin{figure}[H]	
@@ -144,7 +144,7 @@ Dies lässt sich anhand der Matrix für das oben beschriebene Szenario 1 erklär
 \label{pic:Hauptdiagonale}
 \end{figure}
 \noindent
-Es wird ein Hilfsfeld \textit{stop} erstellt. Seine Länge ist (2*N - 2), es enthält boolesche Elemente, die mit "false" initialisiert werden. "False" entspricht dabei der Anweisung "do not stop", d.h. der Zug fährt weiter. Das erste Element (mit Index 0) im Feld \textit{stop} entspricht dabei dem Bahnhof, der gleich nach dem Start-Bahnhof kommt (in unserem Fall also dem Bahnhof 1), das zweite (Index 1) - dem weiteren Bahnhof (Bahnhof 2), usw. Das N-te Element (Index N-1) entspricht dem Start-Bahnhof, allerdings nach einem vollen Kreis.\\
+Es wird ein Hilfsfeld \textit{stop} erstellt. Seine Länge ist (2*N - 2); es enthält boolesche Elemente, die mit "false" initialisiert werden. "False" entspricht dabei der Anweisung "do not stop", d.h. der Zug fährt an dem RFID-Tag weiter. Das erste Element (mit Index 0) im Feld \textit{stop} entspricht dabei dem Bahnhof, der gleich nach dem Start-Bahnhof kommt (in unserem Fall also dem Bahnhof 1), das zweite (Index 1) - dem weiteren Bahnhof (Bahnhof 2), usw. Das N-te Element (Index N-1) entspricht dem Start-Bahnhof, allerdings nach einem vollen Kreis. Deshalb muss man die beiden Hälften des Feldes unterschiedlich bearbeiten.\\
 \\
 Die Matrix wird dreimal durchgelaufen.\\
 1) Beim 1. Durchlauf wird lediglich die "pseudo-erste" (in diesem Fall tatsächlich die erste) Zeile analysiert, nämlich die Zeile "B0". Alle Einträge, die ungleich 0 sind, verlangen vom Zug das Anhalten noch im ersten Kreis (genauer gesprochen, ist diese Strecke genau 1 Station kleiner, als ein voller Kreis) am Bahnhof, der dem Index der Spalte entspricht. In unserem Fall ist das Spalte "B2". Deshalb wird stop[1] gleich "true".\\
@@ -160,8 +160,10 @@ Die Matrix wird dreimal durchgelaufen.\\
 \label{pic:stop1}
 \end{figure}
 \noindent
-5) Anhand der Einträge im Feld \textit{stop} kann man nun die Anweisungen erstellen. Nämlich werden für jedes Element (bis zu der Endstation) aus \textit{stop} zwei Anweisungen erstellt: Für die Zwischenhaltestelle und für den Bahnhof. Die Geschwindigkeiten sind "low", falls der Zug nach dem Anhalten vom Bahnhof erst startet oder nach der Zwischenhaltestelle an einem Bahnhof anhalten muss, ansonsten "high", was einer hohen Geschwindigkeit entspricht.\\
+5) Anhand der Einträge im Feld \textit{stop} kann man nun die Anweisungen erstellen. Nämlich werden für jedes Element (bis zu der Endstation) aus \textit{stop} zwei Anweisungen erstellt: Für die Zwischenhaltestelle und für den Bahnhof. Die Geschwindigkeiten sind "low" (gleich 1), falls der Zug nach dem Anhalten vom Bahnhof erst startet oder nach der Zwischenhaltestelle an einem Bahnhof anhalten muss, ansonsten "high" (gleich 2), was einer hohen Geschwindigkeit entspricht. Die tatsächliche Geschwindigkeit wird auf der Zug-Seite definiert. So abstrahiert der Algorithmus von den technischen Details des Zuges und arbeitet mit Geschwindigkeiten "schnell", "langsam", und "stehen bleiben".\\
+%to edit
 \\
+Im \textit{zweiten Szenario} möchten lediglich drei Reisende vom Bahnhof 0 zum Bahnhof 2 fahren.\\
 \begin{table}[H]
 \caption{Szenario 2}
 \center
@@ -174,9 +176,8 @@ Die Matrix wird dreimal durchgelaufen.\\
         B3 & 0 & 0 & 0 & 0 \\   \hline
  \end{tabular}
 \end{table}
-\\
 \noindent
-Im zweiten Szenario möchten lediglich drei Reisende vom Bahnhof 0 zum Bahnhof 2 fahren. Damit die Aufgabe schwieriger wird und gleichzeitig um den oben genannten Ansatz zu erklären, werden wir als Start-Position den Bahnhof 1 betrachten.\\
+Damit die Aufgabe schwieriger wird und gleichzeitig um den oben genannten Ansatz zu erklären, werden wir als Start-Position den Bahnhof 1 betrachten.\\
 \\
 \begin{figure}[H]	
 \caption{Szenario 2}
