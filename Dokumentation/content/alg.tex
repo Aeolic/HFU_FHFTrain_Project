@@ -160,7 +160,9 @@ Die Matrix wird dreimal durchgelaufen.\\
 \label{pic:stop1}
 \end{figure}
 \noindent
-5) Anhand der Einträge im Feld \textit{stop} kann man nun die Anweisungen erstellen. Nämlich werden für jedes Element (bis zu der Endstation) aus \textit{stop} zwei Anweisungen erstellt: Für die Zwischenhaltestelle und für den Bahnhof. Die Geschwindigkeiten sind "low" (gleich 1), falls der Zug nach dem Anhalten vom Bahnhof erst startet oder nach der Zwischenhaltestelle an einem Bahnhof anhalten muss, ansonsten "high" (gleich 2), was einer hohen Geschwindigkeit entspricht. Die tatsächliche Geschwindigkeit wird auf der Zug-Seite definiert. So abstrahiert der Algorithmus von den technischen Details des Zuges und arbeitet mit Geschwindigkeiten "schnell", "langsam", und "stehen bleiben".\\
+5) Anhand der Einträge im Feld \textit{stop} kann man nun die Anweisungen erstellen. Nämlich werden für jedes Element (bis zu der Endstation) aus \textit{stop} zwei Anweisungen erstellt: Für die Zwischenhaltestelle und für den Bahnhof. Die Geschwindigkeiten sind folgend definiert: "low" (gleich 1), falls der Zug nach dem Anhalten vom Bahnhof erst startet oder nach der Zwischenhaltestelle an einem Bahnhof anhalten muss; "0", falls der Zug an dem RFID-Tag anhalten soll (dies macht nur bei \textit{afterSpeed} Sinn); ansonsten "high" (gleich 2), was einer hohen Geschwindigkeit entspricht. Die tatsächliche Geschwindigkeit wird auf der Zug-Seite definiert. So abstrahiert der Algorithmus von den technischen Details des Zuges und arbeitet nur mit für ihn verständlichen Geschwindigkeiten "schnell", "langsam", und "stehen bleiben".\\
+\\
+Eine grafische Darstellung der Liste mit Anweisungen \textit{orderList} findet man unten für das Hilfsfeld \textit{stop} für das zweite Szenario.\\
 %to edit
 \\
 Im \textit{zweiten Szenario} möchten lediglich drei Reisende vom Bahnhof 0 zum Bahnhof 2 fahren.\\
@@ -185,14 +187,16 @@ Damit die Aufgabe schwieriger wird und gleichzeitig um den oben genannten Ansatz
 \label{pic:szenario2}
 \end{figure}
 \noindent
-In diesem Fall sieht das Feld \textit{stop} folgendermaßen aus:\\
-\\
+Die Liste der Anweisungen \textit{orderList} und das Feld \textit{stop} sehen in diesem Fall folgendermaßen aus:\\
 \begin{figure}[H]	
-\caption{Hilfsfeld \textit{stop} für Szenario 2}
-\includegraphics[width=2\textwidth, width=290pt]{content/images/stop2.png}
-\label{pic:stop2}
+\caption{\textit{orderList} für Szenario 2}
+\includegraphics[width=2\textwidth, width=430pt]{content/images/orderList.png}
+\label{pic:orderList2}
 \end{figure}
 \noindent
+Man sieht aus den Anweisungen, dass der Zug langsam startet: Mit Geschwindigkeit "1" bis zum Tag "1.5". Dort setzt er sie auf "2" und fährt so bis zum Tag "3.5". Ab dort muss er langsamer fahren: Er kommt einem Bahnhof nah, bei dem er anhalten soll - Bahnhof 0. Dort steigen Reisende ein und der Zug fährt langsam ab. Beim Tag "0.5" darf er wieder schneller werden und fährt deshalb mit "2" bis zum Tag "1.5", wo er wieder langsamer (\textit{afterSpeed} gleich "1") wird. Am Tag "2" bleibt der Zug stehen - dies ist seine Endstation.\\
+\section{Laufzeit und alternative Ansätze für die Implementierung}
+%Laufzeit
 Die \textbf{\textit{Laufzeit des Algorithmus}} ist folgendermaßen definiert:\\
 $T = O( (n-1) + (n-1)*(n/2) + (n-1)*(n/2) ) = O(n^2)$\\
 \\
