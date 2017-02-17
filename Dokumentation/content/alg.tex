@@ -132,7 +132,7 @@ Dabei sind folgende Bemerkungen wichtig:\\
 \label{pic:DiagonaleVersetzt}
 \end{figure}
 \noindent
-Damit man die Versetzung der Hauptdiagonale besser versteht, kann man sich die vorgenommene Transformation der Matrix folgend vorstellen: Die ersten zwei Zeilen werden ausgeschnitten und nach der Zeile "B2" hinzugefügt. So definiert die Startposition des Zuges immer die "pseudo-erste" Zeile der Matrix. Dabei werden die Elemente in der Matrix nicht unnötig kopiert - die Iteration durch die Matrix wird später lediglich anhand des Modulo-Operators angepasst. Aus Bequemlichkeit betrachten wir nun das Beispiel, in dem der Zug am Bahnhof 0 startet.\\
+Damit man die Versetzung der Hauptdiagonale besser versteht, kann man sich die vorgenommene Transformation der Matrix folgend vorstellen: Die ersten zwei Zeilen werden ausgeschnitten und nach der Zeile "B3" hinzugefügt. So definiert die Startposition des Zuges immer die "pseudo-erste" Zeile der Matrix. Dabei werden die Elemente in der Matrix nicht unnötig kopiert - die Iteration durch die Matrix wird später lediglich anhand des Modulo-Operators angepasst. Aus Bequemlichkeit betrachten wir nun das Beispiel, in dem der Zug am Bahnhof 0 startet.\\
 \\
 \textit{\textbf{Wie erstellt der Algorithmus die Liste von Anweisungen?}\\}
 \\
@@ -156,6 +156,7 @@ Die Matrix wird dreimal durchgelaufen.\\
 4) Nun muss man das letzte Element mit dem Wert "true" in \textit{stop} finden. Dies ist die Endstation des Zuges. Falls ein solches gar nicht vorhanden ist, hat der Zug laut der Eingabe des Nutzers nichts zu tun. In unserem Fall sieht das Feld \textit{stop} folgendermaßen aus:\\
 \begin{figure}[H]	
 \caption{Hilfsfeld \textit{stop}}
+\center
 \includegraphics[width=2\textwidth, width=290pt]{content/images/stop1.png}
 \label{pic:stop1}
 \end{figure}
@@ -183,7 +184,8 @@ Damit die Aufgabe schwieriger wird und gleichzeitig um den oben genannten Ansatz
 \\
 \begin{figure}[H]	
 \caption{Szenario 2}
-\includegraphics[width=2\textwidth, width=450pt]{content/images/szenario2.png}
+\center
+\includegraphics[width=2\textwidth, width=350pt]{content/images/szenario2.png}
 \label{pic:szenario2}
 \end{figure}
 \noindent
@@ -219,7 +221,7 @@ Es kann passieren, dass der Zug einen RFID-Tag überfährt, ohne ihn zu erkennen
 \chapter{Semaphore}
 Die Semaphore und ihr Einsatz werden anhand der Implementierung an der Pi-Seite erklärt.\\
 \\
-Nachdem der Algorithmus die Eingaben des Nutzers gespeichert hat, braucht er die Start-Position des Zuges, damit er die Liste von Anweisungen erstellen kann. Diese erfährt er mithilfe von der Methode \textit{readTrainPosition()}. Der Wert darf allerdings erst dann gelesen werden, wenn der Zug ihn dem PiListenerThread mitgeteilt hat. Bevor das passiert, darf der Algorithmus nichts machen und muss blockiert sein. Die einfache Lösung, die sich anbieten könnte, besteht darin, dass man eine weitere Methode \textit{algorithmCanRead()} hinzufügt, die ein "Flag" - eine boolesche Variable überprüft, die vom PiListenerThread auf "erlaubt" gesetzt wird, sobald die Position aktualisiert wurde. Der Algorithmus liest die Position und setzt das "Flag" selbst auf "nicht erlaubt" - damit er sie nicht wieder liest, bevor eine neue Position vom Zug mitgeteilt worden ist. Das Wort "blockiert" ist hier entscheidend. Wie oft soll das "Flag" überprüft werden? Wie lange soll der Algorithmus blockiert werden? Wie bekommt er rechtzeitig mit, dass die Position aktualisiert wurde? Der oben genannte Ansatz verlängt Polling, d.h. Ressourcen(Rechenzeit)-Verschwendung. Die richtige Lösung an dieser Stelle ist der Einsatz von Semaphoren.\\
+Nachdem der Algorithmus die Eingaben des Nutzers gespeichert hat, braucht er die Start-Position des Zuges, damit er die Liste von Anweisungen erstellen kann. Diese erfährt er mithilfe von der Methode \textit{readTrainPosition()}. Der Wert darf allerdings erst dann gelesen werden, wenn der Zug ihn dem PiListenerThread mitgeteilt hat. Bevor das passiert, darf der Algorithmus nichts machen und muss blockiert sein. Die einfache Lösung, die sich anbieten könnte, besteht darin, dass man eine weitere Methode \textit{algorithmCanRead()} hinzufügt, die ein "Flag" - eine boolesche Variable - überprüft, die vom PiListenerThread auf "erlaubt" gesetzt wird, sobald die Position aktualisiert wurde. Der Algorithmus liest die Position und setzt das "Flag" selbst auf "nicht erlaubt" - damit er sie nicht wieder liest, bevor eine neue Position vom Zug mitgeteilt worden ist. Das Wort "blockiert" ist hier entscheidend. Wie oft soll das "Flag" überprüft werden? Wie lange soll der Algorithmus blockiert werden? Wie bekommt er rechtzeitig mit, dass die Position aktualisiert wurde? Der oben genannte Ansatz verlängt Polling, d.h. Ressourcen(Rechenzeit)-Verschwendung. Die richtige Lösung an dieser Stelle ist der Einsatz von Semaphoren.\\
 \\
 Rhapsody bietet eine Factory von Semaphoren an. Ein Factory-Objekt verfügt über eine Methode \textit{createOMOSSemaphore()}, die den Zeiger auf eine neuerstellte Semaphore zurückliefert. Bei der Erzeugung kann man definieren, ob die Semaphore frei ist oder blockieren soll (das Attribut \textit{initialCount}, by default gleich 1) und wie groß der maximale Wert (das Attribut \textit{maxCount}, bezeichnet die Anzahl von Ressourcen, by default auch 1) sein soll. Die Semaphore bietet die Methoden \textit{p()} (Ressource nehmen) und \textit{v()} (Ressource freigeben), die hier \textit{wait(-1)} und \textit{signal()} genannt werden. Wenn ein Thread \textit{wait(-1)} aufruft, während \textit{initialCount} den Wert 0 hat (keine Ressourcen vorhanden), wird er blockiert. \textit{Signal}() blockiert, wenn \textit{initialCount} gleich \textit{maxCount} ist, allerdings nicht bei allen Plattformen.\\
 In unserem Fall ist es wichtig, dass signal() auch blockiert, denn wir wollen nicht, dass der PiListenerThread die Position des Zuges aktualisiert, bevor der Algorithmus (der aus irgendwelchem Grund zu langsam war) die alte Position einmal gelesen hat. Dies würde dazu führen, dass der Algorithmus nicht mitbekommt, dass der Zug da war, wo er sein musste, und dass der Zug seine Position richtig erkannt hat, und es wird \textit{repairOrderlist}()-Methode aufgerufen.\\
